@@ -1,2 +1,2 @@
 # itunes-rss
-iTuens RSS feed
+A Play app to provide RSS feed for podcasts tags
