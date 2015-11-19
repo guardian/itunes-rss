@@ -16,7 +16,7 @@ object Application extends Controller {
 
     val query = ItemQuery(tagId)
       .showElements("audio")
-      .showTags("all")
+      .showTags("keyword")
       .showFields("all")
       .pageSize(100) // TODO check this value
 
