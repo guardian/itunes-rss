@@ -41,7 +41,7 @@ class iTunesRssItem(val podcast: Content) {
       </itunes:duration>
       <itunes:author>theguardian.com</itunes:author>
       <itunes:explicit>no</itunes:explicit>{ /* TODO hardcoded; waiting for the Scala Client to support this field */ }
-      <itunes:keywords>TODO</itunes:keywords>
+      <itunes:keywords>{ makeKeywordsList(podcast.tags) }</itunes:keywords>
       <itunes:subtitle>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:subtitle>
       <itunes:summary>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:summary>
     </item>
@@ -64,5 +64,10 @@ class iTunesRssItem(val podcast: Content) {
       element <- elements.headOption
       asset <- element.assets.headOption
     } yield asset
+  }
+
+  private def makeKeywordsList(tags: Seq[Tag]): String = {
+    val keys = for (t <- tags) yield t.webTitle
+    keys.mkString(", ")
   }
 }
