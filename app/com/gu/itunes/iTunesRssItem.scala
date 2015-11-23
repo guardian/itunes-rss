@@ -50,7 +50,8 @@ class iTunesRssItem(val podcast: Content) {
             typeData <- asset.typeData
           } yield typeData
 
-          typeData.flatMap(_.explicit).getOrElse("")
+          val exp = typeData.flatMap(_.explicit).getOrElse(false)
+          if (exp) "yes" else "no"
         }
       </itunes:explicit>
       <itunes:keywords>{ makeKeywordsList(podcast.tags) }</itunes:keywords>
