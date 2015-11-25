@@ -20,7 +20,6 @@ class iTunesRssItem(val podcast: Content) {
       </pubDate>
       <guid>
         {
-          //val elem = podcast.elements.flatMap(elements => elements.headOption.flatMap(e => e.assets.headOption))
           val guid = for {
             asset <- getFirstAsset(podcast)
             guid <- asset.file
@@ -54,6 +53,17 @@ class iTunesRssItem(val podcast: Content) {
           if (exp) "yes" else "no"
         }
       </itunes:explicit>
+      <itunes:clean>
+        {
+          val typeData = for {
+            asset <- getFirstAsset(podcast)
+            typeData <- asset.typeData
+          } yield typeData
+
+          val clean = typeData.flatMap(_.clean).getOrElse(false)
+          if (clean) "yes" else "no"
+        }
+      </itunes:clean>
       <itunes:keywords>{ makeKeywordsList(podcast.tags) }</itunes:keywords>
       <itunes:subtitle>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:subtitle>
       <itunes:summary>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:summary>
