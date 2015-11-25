@@ -1,10 +1,7 @@
 package com.gu.itunes
 
-import com.gu.contentapi.client.utils.CapiModelEnrichment._
 import com.gu.contentapi.client.model.v1._
-import org.joda.time.DateTime
-import org.joda.time.format.ISODateTimeFormat
-
+import java.text.SimpleDateFormat
 import scala.xml.Node
 
 class iTunesRssItem(val podcast: Content) {
@@ -14,10 +11,15 @@ class iTunesRssItem(val podcast: Content) {
       <title> { podcast.webTitle } </title>
       <description> { podcast.fields.flatMap(_.standfirst).getOrElse("") } </description>
       <enclosure url=""/>
-      <pubDate>{ podcast.webPublicationDate.map(_.toJodaDateTime).getOrElse(new DateTime()).toString(ISODateTimeFormat.dateTimeNoMillis) }</pubDate>
+      <pubDate>
+        {
+          val dd = podcast.webPublicationDate.map(_.dateTime).getOrElse(0)
+          val format = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss z")
+          format.format(dd)
+        }
+      </pubDate>
       <guid>
         {
-          //val elem = podcast.elements.flatMap(elements => elements.headOption.flatMap(e => e.assets.headOption))
           val guid = for {
             asset <- getFirstAsset(podcast)
             guid <- asset.file
@@ -40,7 +42,28 @@ class iTunesRssItem(val podcast: Content) {
         }
       </itunes:duration>
       <itunes:author>theguardian.com</itunes:author>
-      <itunes:explicit>no</itunes:explicit>{ /* TODO hardcoded; waiting for the Scala Client to support this field */ }
+      <itunes:explicit>
+        {
+          val typeData = for {
+            asset <- getFirstAsset(podcast)
+            typeData <- asset.typeData
+          } yield typeData
+
+          val exp = typeData.flatMap(_.explicit).getOrElse(false)
+          if (exp) "yes" else "no"
+        }
+      </itunes:explicit>
+      <itunes:clean>
+        {
+          val typeData = for {
+            asset <- getFirstAsset(podcast)
+            typeData <- asset.typeData
+          } yield typeData
+
+          val clean = typeData.flatMap(_.clean).getOrElse(false)
+          if (clean) "yes" else "no"
+        }
+      </itunes:clean>
       <itunes:keywords>{ makeKeywordsList(podcast.tags) }</itunes:keywords>
       <itunes:subtitle>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:subtitle>
       <itunes:summary>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:summary>

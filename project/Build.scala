@@ -24,7 +24,7 @@ object iTunesRssBuild extends Build {
     .settings(
 
       libraryDependencies ++= Seq(
-        "com.gu" %% "content-api-client" % "7.7",
+        "com.gu" %% "content-api-client" % "7.9",
         "org.scalactic" %% "scalactic" % "2.2.4",
         "org.scalatest" %% "scalatest" % "2.2.5" % "test"
       ),
