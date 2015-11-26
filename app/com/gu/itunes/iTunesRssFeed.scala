@@ -1,5 +1,8 @@
 package com.gu.itunes
 
+import java.text.SimpleDateFormat
+import java.util.Date
+
 import com.gu.contentapi.client.model.ItemResponse
 import com.gu.contentapi.client.model.v1._
 import org.joda.time._
@@ -32,7 +35,10 @@ object iTunesRssFeed {
               { podcast.copyright }
             </copyright>
             <lastBuildDate>
-              { new DateTime().toString(ISODateTimeFormat.dateTimeNoMillis) }
+              {
+                val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
+                format.format(new Date())
+              }
             </lastBuildDate>
             <ttl>15</ttl>
             <itunes:owner>

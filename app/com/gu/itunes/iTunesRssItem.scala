@@ -14,7 +14,7 @@ class iTunesRssItem(val podcast: Content) {
       <pubDate>
         {
           val dd = podcast.webPublicationDate.map(_.dateTime).getOrElse(0)
-          val format = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss z")
+          val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
           format.format(dd)
         }
       </pubDate>
