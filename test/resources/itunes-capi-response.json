@@ -1,0 +1,622 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "internal",
+    "total": 563,
+    "startIndex": 1,
+    "pageSize": 3,
+    "currentPage": 1,
+    "pages": 188,
+    "orderBy": "newest",
+    "tag": {
+      "podcast": {
+        "explicit": false,
+        "image": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png",
+        "copyright": "theguardian.com © 2014",
+        "author": "theguardian.com",
+        "linkUrl": "http://www.theguardian.com",
+        "subscriptionUrl": "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=136697669"
+      },
+      "webTitle": "Science Weekly",
+      "description": "The Guardian's science team bring you the best analysis and interviews from the worlds of science and technology",
+      "id": "science/series/science",
+      "sectionId": "science",
+      "type": "series",
+      "webUrl": "http://www.theguardian.com/science/series/science",
+      "apiUrl": "http://content.guardianapis.com/science/series/science",
+      "sectionName": "Science"
+    },
+    "results": [
+      {
+        "id": "science/audio/2015/nov/20/mathematics-john-conway-numbers-game-theory",
+        "type": "podcast",
+        "sectionId": "science",
+        "webTitle": "Inside the mind of renowned mathematician John Conway - podcast",
+        "webPublicationDate": "2015-11-20T07:30:00Z",
+        "fields": {
+          "isPremoderated": "false",
+          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2015/7/22/1437584183397/4c3c1adf-4c99-4d0c-b3dd-0d92d9d6dc6a-140x84.jpeg",
+          "shouldHideAdverts": "false",
+          "wordcount": "92",
+          "shortUrl": "http://gu.com/p/4ec73",
+          "commentCloseDate": "2015-11-23T07:30:00Z",
+          "standfirst": "John Conway sheds light on the true nature of numbers, the beauty lying within maths and why game-playing is so important to mathematical discovery",
+          "secureThumbnail": "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2015/7/22/1437584183397/4c3c1adf-4c99-4d0c-b3dd-0d92d9d6dc6a-140x84.jpeg",
+          "liveBloggingNow": "false",
+          "body": "<p><a href=\"http://www.theguardian.com/science/2015/jul/23/john-horton-conway-the-most-charismatic-mathematician-in-the-world\">John Conway</a> is Emeritus Professor of Mathematics at Princeton University.<br />He's a mathematician widely known for his contributions to game theory, finite groups, knot theory, number theory and coding theory.</p><p>He has also devised many recreational maths games, including<br />the <a href=\"https://en.wikipedia.org/wiki/Conway's_Game_of_Life\">Game of Life</a> cellular automaton, which brilliantly demonstrates how simplicity can generate complexity.</p><p>John's life story is told in a new biography, Genius at play: The Curious Mind of John Horton Conway, by the science journalist and author <a href=\"http://www.siobhanroberts.com/\">Siobhan Roberts</a>.</p><p><em>Subscribe for free <a href=\"http://bit.ly/science-weekly\">via iTunes</a> or our <a href=\"https://soundcloud.com/guardianscienceweekly\">SoundCloud</a> account to ensure you don't miss a single episode</em></p>",
+          "productionOffice": "UK",
+          "showInRelatedContent": "true",
+          "hasStoryPackage": "false",
+          "internalPageCode": "2410266",
+          "internalContentCode": "458409634",
+          "publication": "theguardian.com",
+          "trailText": "<p>John Conway sheds light on the true nature of numbers, the beauty lying within maths and why game-playing is so important to mathematical discovery</p>",
+          "allowUgc": "false",
+          "lastModified": "2015-11-20T17:34:04Z",
+          "headline": "Inside the mind of renowned mathematician John Conway - podcast",
+          "isInappropriateForSponsorship": "false",
+          "byline": "Ian Sample",
+          "commentable": "false"
+        },
+        "webUrl": "http://www.theguardian.com/science/audio/2015/nov/20/mathematics-john-conway-numbers-game-theory",
+        "apiUrl": "http://content.guardianapis.com/science/audio/2015/nov/20/mathematics-john-conway-numbers-game-theory",
+        "sectionName": "Science",
+        "elements": [
+          {
+            "id": "gu-audio-458409634",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3",
+                "typeData": {
+                  "explicit": "false",
+                  "source": "Guardian",
+                  "durationMinutes": "29",
+                  "durationSeconds": "7"
+                }
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "id": "science/science",
+            "webTitle": "Science",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/science",
+            "apiUrl": "http://content.guardianapis.com/science/science",
+            "sectionName": "Science"
+          },
+          {
+            "id": "science/mathematics",
+            "webTitle": "Mathematics",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/mathematics",
+            "apiUrl": "http://content.guardianapis.com/science/mathematics",
+            "sectionName": "Science"
+          }
+        ]
+      },
+      {
+        "id": "science/audio/2015/nov/13/conspiracy-theories-david-icke",
+        "type": "podcast",
+        "sectionId": "science",
+        "webTitle": "Why are conspiracy theories so attractive? podcast",
+        "webPublicationDate": "2015-11-13T17:11:00Z",
+        "fields": {
+          "isPremoderated": "false",
+          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/6/27/1372330897211/8f5ea9d8-cd53-4597-ae40-f24cb6de7ecd-140x84.jpeg",
+          "shouldHideAdverts": "false",
+          "wordcount": "73",
+          "shortUrl": "http://gu.com/p/4e7hx",
+          "commentCloseDate": "2015-11-16T17:11:24Z",
+          "standfirst": "Should we distrust our own ability to reason? Why is debunking conspiracy theories such a risky business? And is David Icke a force for good?",
+          "secureThumbnail": "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/6/27/1372330897211/8f5ea9d8-cd53-4597-ae40-f24cb6de7ecd-140x84.jpeg",
+          "liveBloggingNow": "false",
+          "body": "<p><a href=\"http://www.bloomsbury.com/author/rob-brotherton\">Rob Brotherton</a> is an academic psychologist and theorist of conspiracy theories. His new book is <a href=\"http://www.theguardian.com/science/2015/nov/07/conspiracy-theories-why-people-need-to-believe-them\">Suspicious Minds: Why We Believe Conspiracy Theories</a>. He joins us down the line from New York City. </p><p>With Nicola Davis in the studio is <a href=\"http://www.gold.ac.uk/psychology/staff/french/\">Chris French</a>, professor of psychology at Goldsmiths, University of London, where he heads the Anomalistic Psychology Research Unit.</p><p><em>Subscribe for free <a href=\"http://bit.ly/science-weekly\">via iTunes</a> or our <a href=\"https://soundcloud.com/guardianscienceweekly\">SoundCloud</a> account to ensure you don't miss a single episode</em></p>",
+          "productionOffice": "UK",
+          "showInRelatedContent": "true",
+          "hasStoryPackage": "false",
+          "internalPageCode": "2406889",
+          "internalContentCode": "458381209",
+          "publication": "theguardian.com",
+          "trailText": "<p>Should we distrust our own ability to reason? Why is debunking conspiracy theories such a risky business? And is David Icke a force for good?</p>",
+          "allowUgc": "false",
+          "lastModified": "2015-11-13T17:46:06Z",
+          "headline": "Why are conspiracy theories so attractive? Podcast",
+          "isInappropriateForSponsorship": "false",
+          "byline": "Nicola Davis",
+          "commentable": "false"
+        },
+        "webUrl": "http://www.theguardian.com/science/audio/2015/nov/13/conspiracy-theories-david-icke",
+        "apiUrl": "http://content.guardianapis.com/science/audio/2015/nov/13/conspiracy-theories-david-icke",
+        "sectionName": "Science",
+        "elements": [
+          {
+            "id": "gu-audio-458381209",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1447432633353/5114/gdn.sci.151116.ic.Science_Weekly.mp3",
+                "typeData": {
+                  "explicit": "false",
+                  "source": "Guardian",
+                  "durationMinutes": "27",
+                  "durationSeconds": "0"
+                }
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "id": "science/science",
+            "webTitle": "Science",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/science",
+            "apiUrl": "http://content.guardianapis.com/science/science",
+            "sectionName": "Science"
+          },
+          {
+            "id": "science/psychology",
+            "webTitle": "Psychology",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/psychology",
+            "apiUrl": "http://content.guardianapis.com/science/psychology",
+            "sectionName": "Science"
+          }
+        ]
+      },
+      {
+        "id": "science/audio/2015/nov/06/science-weekly-podcast-story-brain-david-eagleman-neuroscience",
+        "type": "podcast",
+        "sectionId": "science",
+        "webTitle": "The story of our brains - podcast",
+        "webPublicationDate": "2015-11-06T07:30:00Z",
+        "fields": {
+          "isPremoderated": "false",
+          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/5/2/1399039361104/A-phrenological-map-of-th-004.jpg",
+          "shouldHideAdverts": "false",
+          "wordcount": "103",
+          "shortUrl": "http://gu.com/p/4dqj8",
+          "commentCloseDate": "2015-11-09T07:30:00Z",
+          "standfirst": "Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains",
+          "secureThumbnail": "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/5/2/1399039361104/A-phrenological-map-of-th-004.jpg",
+          "liveBloggingNow": "false",
+          "body": "<p>This week's guest is <a href=\"http://www.eagleman.com/\">David Eagleman,</a> assistant professor of neuroscience at Baylor College of Medicine, Houston, where he directs the Laboratory for Perception and Action as well as the Initiative on Neuroscience and Law. He's written numerous books on neuroscience, along with the international fiction bestseller, Sum. He discusses his latest book <a href=\"http://www.eagleman.com/thebrain\">The Brain - The Story Of You</a>, which guides us through the world of extreme sports, criminal justice, facial expressions, genocide, brain surgery, gut feelings, robotics and how our brains construct our own subjective reality.</p><p><em>Subscribe for free <a href=\"http://bit.ly/science-weekly\">via iTunes</a> or our <a href=\"https://soundcloud.com/guardianscienceweekly\">SoundCloud</a> account to ensure you don't miss a single episode</em></p>",
+          "productionOffice": "UK",
+          "showInRelatedContent": "true",
+          "hasStoryPackage": "false",
+          "internalPageCode": "2401118",
+          "internalContentCode": "458329008",
+          "publication": "theguardian.com",
+          "trailText": "<p>Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains</p>",
+          "allowUgc": "false",
+          "lastModified": "2015-11-06T07:30:56Z",
+          "headline": "The story of our brains - podcast",
+          "isInappropriateForSponsorship": "false",
+          "byline": "Nicola Davis",
+          "commentable": "false"
+        },
+        "webUrl": "http://www.theguardian.com/science/audio/2015/nov/06/science-weekly-podcast-story-brain-david-eagleman-neuroscience",
+        "apiUrl": "http://content.guardianapis.com/science/audio/2015/nov/06/science-weekly-podcast-story-brain-david-eagleman-neuroscience",
+        "sectionName": "Science",
+        "elements": [
+          {
+            "id": "gu-audio-458329008",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3",
+                "typeData": {
+                  "explicit": "false",
+                  "source": "Guardian",
+                  "durationMinutes": "25",
+                  "durationSeconds": "37"
+                }
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "id": "science/science",
+            "webTitle": "Science",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/science",
+            "apiUrl": "http://content.guardianapis.com/science/science",
+            "sectionName": "Science"
+          },
+          {
+            "id": "books/david-eagleman",
+            "webTitle": "David Eagleman",
+            "type": "keyword",
+            "sectionId": "books",
+            "webUrl": "http://www.theguardian.com/books/david-eagleman",
+            "apiUrl": "http://content.guardianapis.com/books/david-eagleman",
+            "sectionName": "Books"
+          },
+          {
+            "id": "science/neuroscience",
+            "webTitle": "Neuroscience",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/neuroscience",
+            "apiUrl": "http://content.guardianapis.com/science/neuroscience",
+            "sectionName": "Science"
+          }
+        ]
+      }
+    ],
+    "leadContent": [
+      {
+        "id": "science/audio/2014/nov/07/cern-royal-society-science-book-prize",
+        "type": "audio",
+        "sectionId": "science",
+        "webTitle": "Royal Society Winton Prize for Science Books - podcast",
+        "webPublicationDate": "2014-11-07T16:26:00Z",
+        "fields": {
+          "isPremoderated": "false",
+          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/10/24/1414170922653/Shortlisted-books-for-Roy-001.jpg",
+          "shouldHideAdverts": "false",
+          "wordcount": "126",
+          "shortUrl": "http://gu.com/p/435bj",
+          "internalStoryPackageCode": "81198",
+          "commentCloseDate": "2014-11-10T16:26:54Z",
+          "standfirst": "Which is the best popular science book of the year? Robin McKie and Nicky Clayton discuss the six shortlisted. Plus, Rosetta's moment in space and Cern gets its new leader",
+          "secureThumbnail": "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/10/24/1414170922653/Shortlisted-books-for-Roy-001.jpg",
+          "liveBloggingNow": "false",
+          "body": "<p>On the show this week, <a href=\"http://www.theguardian.com/profile/iansample\">Ian Sample</a> looks at the shortlist for this year's <a href=\"https://royalsociety.org/awards/science-books/shortlist/\">Royal Society Winton Prize for Science Books</a>, with <a href=\"http://www.theguardian.com/profile/robinmckie\">Robin McKie</a>, the Observer's science and technology editor, and <a href=\"http://www.psychol.cam.ac.uk/directory/nicola-clayton\">Professor Nicky Clayton</a>, a University of Cambridge neuroscientist, and chair of the judges of the 2014 Royal Society Winton Prize for Science Books.</p><p>Also on the show we have our picks from the week's science news, including the upcoming <a href=\"http://sci.esa.int/rosetta/\">attempt to land a European space probe on a speeding comet</a>, and the announcement that Fabiola Gianotti, who led one of the teams that discovered the Higgs boson, will be the <a href=\"http://news.sciencemag.org/people-events/2014/11/italian-physicist-lead-worlds-leading-particle-physics-lab\">new leader of the Cern particle physics lab near Geneva</a>.</p><p><em>Subscribe for free <a href=\"http://bit.ly/science-weekly\">via iTunes</a> or our <a href=\"https://soundcloud.com/guardianscienceweekly\">SoundCloud</a> account to ensure you don't miss a single episode</em></p>",
+          "productionOffice": "UK",
+          "showInRelatedContent": "true",
+          "hasStoryPackage": "true",
+          "internalPageCode": "2188774",
+          "internalContentCode": "451459946",
+          "publication": "theguardian.com",
+          "trailText": "<p>The best popular science book of the year, Rosetta's moment in space and Cern's new leader</p>",
+          "allowUgc": "false",
+          "lastModified": "2014-11-07T18:21:44Z",
+          "headline": "Royal Society Winton Prize for Science Books - podcast",
+          "isInappropriateForSponsorship": "false",
+          "byline": "Presented by Ian Sample and produced by Iain Chambers",
+          "commentable": "false"
+        },
+        "webUrl": "http://www.theguardian.com/science/audio/2014/nov/07/cern-royal-society-science-book-prize",
+        "apiUrl": "http://content.guardianapis.com/science/audio/2014/nov/07/cern-royal-society-science-book-prize",
+        "sectionName": "Science",
+        "elements": [
+          {
+            "id": "gu-audio-451459946",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1415315200719/128/gdn.sci.141106.ic.Science_Podcast.mp3",
+                "typeData": {
+                  "explicit": "false",
+                  "source": "guardian.co.uk",
+                  "durationMinutes": "28",
+                  "durationSeconds": "42"
+                }
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "id": "science/science",
+            "webTitle": "Science",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/science",
+            "apiUrl": "http://content.guardianapis.com/science/science",
+            "sectionName": "Science"
+          },
+          {
+            "id": "science/cern",
+            "webTitle": "Cern",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/cern",
+            "apiUrl": "http://content.guardianapis.com/science/cern",
+            "sectionName": "Science"
+          },
+          {
+            "id": "books/royal-society-science-book-prize",
+            "webTitle": "Royal Society Winton Prize for Science Books",
+            "description": "The latest news and comment on the Royal Society Winton Prize for Science Books",
+            "type": "keyword",
+            "sectionId": "books",
+            "webUrl": "http://www.theguardian.com/books/royal-society-science-book-prize",
+            "apiUrl": "http://content.guardianapis.com/books/royal-society-science-book-prize",
+            "sectionName": "Books"
+          },
+          {
+            "id": "science/rosetta-space-probe",
+            "webTitle": "Rosetta space probe",
+            "description": "The latest news and comment on the Rosetta space probe",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/rosetta-space-probe",
+            "apiUrl": "http://content.guardianapis.com/science/rosetta-space-probe",
+            "sectionName": "Science"
+          },
+          {
+            "id": "science/space",
+            "webTitle": "Space",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/space",
+            "apiUrl": "http://content.guardianapis.com/science/space",
+            "sectionName": "Science"
+          },
+          {
+            "id": "science/royal-society",
+            "webTitle": "Royal Society",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/royal-society",
+            "apiUrl": "http://content.guardianapis.com/science/royal-society",
+            "sectionName": "Science"
+          },
+          {
+            "id": "books/scienceandnature",
+            "webTitle": "Science and nature",
+            "type": "keyword",
+            "sectionId": "books",
+            "webUrl": "http://www.theguardian.com/books/scienceandnature",
+            "apiUrl": "http://content.guardianapis.com/books/scienceandnature",
+            "sectionName": "Books"
+          },
+          {
+            "id": "books/books",
+            "webTitle": "Books",
+            "type": "keyword",
+            "sectionId": "books",
+            "webUrl": "http://www.theguardian.com/books/books",
+            "apiUrl": "http://content.guardianapis.com/books/books",
+            "sectionName": "Books"
+          }
+        ]
+      },
+      {
+        "id": "science/audio/2014/nov/03/chemistry-food-and-drink",
+        "type": "audio",
+        "sectionId": "science",
+        "webTitle": "The science of food and drink - podcast",
+        "webPublicationDate": "2014-11-03T07:00:00Z",
+        "fields": {
+          "isPremoderated": "false",
+          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/About/General/2013/2/1/1359726277532/Hugh-Fearnley-Whittingsta-003.jpg",
+          "shouldHideAdverts": "false",
+          "wordcount": "92",
+          "shortUrl": "http://gu.com/p/42pne",
+          "commentCloseDate": "2014-11-06T07:00:03Z",
+          "standfirst": "Food author Harold McGee reveals the chemistry of cooking and what is it like to work with Heston Bluementhal. And finally we find out why James Bond prefers his Martini shaken, not stirred",
+          "secureThumbnail": "https://static-secure.guim.co.uk/sys-images/Guardian/About/General/2013/2/1/1359726277532/Hugh-Fearnley-Whittingsta-003.jpg",
+          "liveBloggingNow": "false",
+          "body": "<p>This week, we look at the science of food, and the chemistry behind cocktails.</p><p>Author <a href=\"http://www.curiouscook.com/site/about-harold-mcgee.html\">Harold McGee</a> speaks to <a href=\"http://www.theguardian.com/profile/pascalwyse\">Pascal Wyse</a> about how he made academic food science palatable to home cooks and what he learned from egg chemists (not a made-up title, they do exist). </p><p>And <a href=\"http://www.theguardian.com/profile/nicola-davis\">Nicola Davis</a> visits the <a href=\"http://www.thedrinkfactory.com/#eat-together\">Drink Factory Research Labs</a> to find out how to make the perfect Martini, why mixology has taken off, and whether you should really shake your Martini.</p><p><em>Subscribe for free <a href=\"http://bit.ly/science-weekly\">via iTunes</a> or our <a href=\"https://soundcloud.com/guardianscienceweekly\">SoundCloud</a> account to ensure you don't miss a single episode</em></p>",
+          "productionOffice": "UK",
+          "showInRelatedContent": "true",
+          "hasStoryPackage": "false",
+          "internalPageCode": "2183990",
+          "internalContentCode": "450911337",
+          "publication": "theguardian.com",
+          "trailText": "<p>Food author Harold McGee on the chemistry of cooking and working with Heston Bluementhal</p>",
+          "allowUgc": "false",
+          "lastModified": "2014-11-03T07:00:13Z",
+          "headline": "The science of food and drink - podcast",
+          "isInappropriateForSponsorship": "false",
+          "byline": "Nicola Davis",
+          "commentable": "false"
+        },
+        "webUrl": "http://www.theguardian.com/science/audio/2014/nov/03/chemistry-food-and-drink",
+        "apiUrl": "http://content.guardianapis.com/science/audio/2014/nov/03/chemistry-food-and-drink",
+        "sectionName": "Science",
+        "elements": [
+          {
+            "id": "gu-audio-450911337",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1414599978449/1094/gdn.141102.ic.Science_Weekly.mp3",
+                "typeData": {
+                  "explicit": "false",
+                  "source": "guardian.co.uk",
+                  "durationMinutes": "25",
+                  "durationSeconds": "22"
+                }
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "id": "science/science",
+            "webTitle": "Science",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/science",
+            "apiUrl": "http://content.guardianapis.com/science/science",
+            "sectionName": "Science"
+          },
+          {
+            "id": "science/chemistry",
+            "webTitle": "Chemistry",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/chemistry",
+            "apiUrl": "http://content.guardianapis.com/science/chemistry",
+            "sectionName": "Science"
+          },
+          {
+            "id": "lifeandstyle/food-and-drink",
+            "webTitle": "Food & drink",
+            "type": "keyword",
+            "sectionId": "lifeandstyle",
+            "webUrl": "http://www.theguardian.com/lifeandstyle/food-and-drink",
+            "apiUrl": "http://content.guardianapis.com/lifeandstyle/food-and-drink",
+            "sectionName": "Life and style"
+          },
+          {
+            "id": "lifeandstyle/lifeandstyle",
+            "webTitle": "Life and style",
+            "type": "keyword",
+            "sectionId": "lifeandstyle",
+            "webUrl": "http://www.theguardian.com/lifeandstyle/lifeandstyle",
+            "apiUrl": "http://content.guardianapis.com/lifeandstyle/lifeandstyle",
+            "sectionName": "Life and style"
+          }
+        ]
+      },
+      {
+        "id": "science/audio/2014/jul/07/science-weekly-podcast-robbert-dijkgraaf-where-great-minds-think",
+        "type": "podcast",
+        "sectionId": "science",
+        "webTitle": "Science Weekly podcast: Robbert Dijkgraaf on where great minds can think",
+        "webPublicationDate": "2014-07-07T05:00:00Z",
+        "fields": {
+          "isPremoderated": "false",
+          "thumbnail": "http://static.guim.co.uk/sys-images/Football/Pix/pictures/2009/5/13/1242211680756/Albert-Einstein-writes-a--004.jpg",
+          "shouldHideAdverts": "false",
+          "wordcount": "204",
+          "shortUrl": "http://gu.com/p/3qy7m",
+          "commentCloseDate": "2014-07-10T05:00:00Z",
+          "standfirst": "The celebrated Dutch mathematician discusses his role as director of Princeton's Institute for Advanced Studies and why, from Einstein to Chomsky, big ideas are born there",
+          "secureThumbnail": "https://static-secure.guim.co.uk/sys-images/Football/Pix/pictures/2009/5/13/1242211680756/Albert-Einstein-writes-a--004.jpg",
+          "liveBloggingNow": "false",
+          "body": "<p>This week on Science Weekly with <strong>Ian Sample</strong> we meet <strong>Robbert Dijkgraaf </strong>to discuss the history and future of one of the great institutions that foster great ideas in science and philosophy, the <strong>Institute for Advanced Studies</strong> based in Princeton in the US.  Dijkgraaf also talks about the importance of bringing leading scientists from different fields together under one roof and why breakthroughs in science often come from unexpected places.</p><p>To discuss some of this week's big science and environment stories, Ian is joined by <strong>Jessica Aldred</strong>, production editor on the Guardian environment desk, and <strong>Nicola Davis, </strong>commissioning editor of Observer Tech Monthly. The team discuss a recent report on the health of the Caribbean's coral reefs and why <a href=\"http://www.theguardian.com/environment/2014/jul/02/caribbean-coral-reef-lost-fishing-pollution-report\">in little more the 20 years' time</a> the reefs may be dead if action is not taken now. They also talk about <a href=\"http://www.theguardian.com/technology/2014/jul/01/britain-robotics-test-centre-strategy-robots\">the UK's first robot strategy report</a> and how <a href=\"http://www.theguardian.com/world/2014/jul/02/yetis-ruled-out-by-scientists\">analysis of alleged yeti samples</a> reveals plenty of dog hair but also DNA from a lost species of bear.</p><p><em>Subscribe for free <a href=\"http://bit.ly/science-weekly\">via iTunes</a> to ensure every episode gets delivered. (Here is the <a href=\"http://bit.ly/sw-xml\">non-iTunes URL feed</a>).</p><p>Follow the podcast on our <a href=\"http://bit.ly/sw-twitter\">Science Weekly Twitter feed</a> and <a href=\"http://bit.ly/g-sci-twitter\">receive updates</a> on all breaking science news stories from Guardian Science.</p><p>Email <a href=\"mailto:scienceweeklypodcast@gmail.com\">scienceweeklypodcast@gmail.com</a>.</em></p>",
+          "productionOffice": "UK",
+          "showInRelatedContent": "true",
+          "hasStoryPackage": "false",
+          "internalPageCode": "2121601",
+          "internalContentCode": "441296331",
+          "publication": "theguardian.com",
+          "trailText": "<p>Mathematician Robbert Dijkgraaf on Einstein, Chomsky and the need for a place for great minds to think big</p>",
+          "allowUgc": "false",
+          "lastModified": "2014-10-06T16:06:47Z",
+          "headline": "Science Weekly podcast: Robbert Dijkgraaf on where great minds think",
+          "isInappropriateForSponsorship": "false",
+          "byline": "Presented by Ian Sample and produced by Jason Phipps with Jessica Aldred and Nicola Davis",
+          "commentable": "true"
+        },
+        "webUrl": "http://www.theguardian.com/science/audio/2014/jul/07/science-weekly-podcast-robbert-dijkgraaf-where-great-minds-think",
+        "apiUrl": "http://content.guardianapis.com/science/audio/2014/jul/07/science-weekly-podcast-robbert-dijkgraaf-where-great-minds-think",
+        "sectionName": "Science",
+        "elements": [
+          {
+            "id": "gu-audio-441296331",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1404485877366/4653/gnl.sci.140707.jp.science_weekly.mp3",
+                "typeData": {
+                  "explicit": "false",
+                  "source": "Guardian",
+                  "durationMinutes": "44",
+                  "durationSeconds": "7"
+                }
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "id": "science/science",
+            "webTitle": "Science",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/science",
+            "apiUrl": "http://content.guardianapis.com/science/science",
+            "sectionName": "Science"
+          },
+          {
+            "id": "technology/robots",
+            "webTitle": "Robots",
+            "type": "keyword",
+            "sectionId": "technology",
+            "webUrl": "http://www.theguardian.com/technology/robots",
+            "apiUrl": "http://content.guardianapis.com/technology/robots",
+            "sectionName": "Technology"
+          },
+          {
+            "id": "science/mathematics",
+            "webTitle": "Mathematics",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/mathematics",
+            "apiUrl": "http://content.guardianapis.com/science/mathematics",
+            "sectionName": "Science"
+          },
+          {
+            "id": "science/alberteinstein",
+            "webTitle": "Albert Einstein",
+            "type": "keyword",
+            "sectionId": "science",
+            "webUrl": "http://www.theguardian.com/science/alberteinstein",
+            "apiUrl": "http://content.guardianapis.com/science/alberteinstein",
+            "sectionName": "Science"
+          },
+          {
+            "id": "us-news/noam-chomsky",
+            "webTitle": "Noam Chomsky",
+            "type": "keyword",
+            "sectionId": "us-news",
+            "webUrl": "http://www.theguardian.com/us-news/noam-chomsky",
+            "apiUrl": "http://content.guardianapis.com/us-news/noam-chomsky",
+            "sectionName": "US news"
+          },
+          {
+            "id": "environment/coral",
+            "webTitle": "Coral",
+            "type": "keyword",
+            "sectionId": "environment",
+            "webUrl": "http://www.theguardian.com/environment/coral",
+            "apiUrl": "http://content.guardianapis.com/environment/coral",
+            "sectionName": "Environment"
+          },
+          {
+            "id": "environment/environment",
+            "webTitle": "Environment",
+            "type": "keyword",
+            "sectionId": "environment",
+            "webUrl": "http://www.theguardian.com/environment/environment",
+            "apiUrl": "http://content.guardianapis.com/environment/environment",
+            "sectionName": "Environment"
+          },
+          {
+            "id": "environment/conservation",
+            "webTitle": "Conservation",
+            "type": "keyword",
+            "sectionId": "environment",
+            "webUrl": "http://www.theguardian.com/environment/conservation",
+            "apiUrl": "http://content.guardianapis.com/environment/conservation",
+            "sectionName": "Environment"
+          }
+        ]
+      }
+    ]
+  }
+}
