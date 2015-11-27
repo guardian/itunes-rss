@@ -1,13 +1,11 @@
+import com.typesafe.sbt.packager.universal.UniversalPlugin
 import sbt._
 import Keys._
-import play.Play.autoImport._
-import PlayKeys._
 import play.sbt._
-import play.sbt.routes.RoutesKeys._
 import com.typesafe.sbt.SbtScalariform.scalariformSettings
-import com.typesafe.sbt.packager.Keys._
 import com.gu.riffraff.artifact._
 import RiffRaffArtifact.autoImport._
+import UniversalPlugin.autoImport._
 
 object iTunesRssBuild extends Build {
 
@@ -18,9 +16,10 @@ object iTunesRssBuild extends Build {
     scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
   )
 
-  val root = Project("itunes-rss", file("."))
+  val root = Project("content-api-itunes-rss", file("."))
     .enablePlugins(PlayScala)
     .enablePlugins(RiffRaffArtifact)
+    .enablePlugins(UniversalPlugin)
     .settings(
 
       libraryDependencies ++= Seq(
@@ -29,7 +28,7 @@ object iTunesRssBuild extends Build {
         "org.scalatest" %% "scalatest" % "2.2.5" % "test"
       ),
       riffRaffPackageName := "content-api-itunes  -rss",
-      riffRaffPackageType := (packageZipTarball in config("universal")).value
+      riffRaffPackageType := (packageZipTarball in Universal).value
     )
     .settings(basicSettings)
     .settings(scalariformSettings)
