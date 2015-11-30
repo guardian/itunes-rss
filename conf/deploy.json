@@ -1,0 +1,22 @@
+{
+  "defaultStacks": [ "content-api-itunes-rss" ],
+  "packages": {
+    "content-api-itunes-rss": {
+      "type": "autoscaling",
+      "data": {
+        "bucket": "content-api-dist"
+      }
+    }
+  },
+  "recipes": {
+    "default": {
+      "depends": [ "artifactUploadOnly", "deployOnly" ]
+    },
+    "artifactUploadOnly": {
+      "actions": [ "content-api-itunes-rss.uploadArtifacts" ]
+    },
+    "deployOnly": {
+      "actions": [ "content-api-itunes-rss.deploy" ]
+    }
+  }
+}
