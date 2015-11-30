@@ -1,0 +1,218 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "iTunes RSS feed generator",
+
+    "Parameters": {
+        "Stage": {
+            "Description": "Stage name",
+            "Type": "String",
+            "Default": "PROD"
+        },
+        "VPC": {
+            "Description": "Virtual Private Cloud to run EC2 instances within",
+            "Type": "AWS::EC2::VPC::Id"
+        },
+        "Subnets": {
+            "Description": "Subnets to run load balancer within",
+            "Type": "List<AWS::EC2::Subnet::Id>"
+        }
+    },
+
+    "Resources": {
+        "RootRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Statement": [{
+                        "Effect": "Allow",
+                        "Principal": { "Service": ["ec2.amazonaws.com" ] },
+                        "Action": [ "sts:AssumeRole" ]
+                    }]
+                },
+                "Path": "/"
+            }
+        },
+        "DescribeStackResourcePolicy": {
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": "describe-stack-resource",
+                "PolicyDocument": {
+                    "Statement": [{
+                        "Effect": "Allow",
+                        "Action": ["cloudformation:DescribeStackResource"],
+                        "Resource": "*"
+                    }]
+                },
+                "Roles": [{ "Ref": "RootRole" }]
+            }
+        },
+        "DownloadConfigFromS3Policy": {
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": "download-config-from-s3",
+                "PolicyDocument": {
+                    "Statement": [{
+                        "Effect": "Allow",
+                        "Action": ["s3:GetObject"],
+                        "Resource": "arn:aws:s3:::content-api-config/*"
+                    }]
+                },
+                "Roles": [{"Ref": "RootRole" }]
+            }
+        },
+        "InstanceProfile": {
+            "Type": "AWS::IAM::InstanceProfile",
+            "Properties": {
+                "Path": "/",
+                "Roles": [{ "Ref": "RootRole" }]
+            }
+        },
+        "LoadBalancer": {
+            "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
+            "Properties": {
+                "Scheme": "internet-facing",
+                "SecurityGroups": [ { "Ref": "LoadBalancerSecurityGroup" } ],
+                "Subnets": { "Ref": "Subnets" },
+                "CrossZone": true,
+                "Listeners": [
+                    {
+                        "Protocol": "HTTP",
+                        "LoadBalancerPort": "80",
+                        "InstancePort": "9000"
+                    }
+                ],
+                "HealthCheck": {
+                    "Target": "HTTP:9000/healthcheck",
+                    "Timeout": "5",
+                    "Interval": "10",
+                    "UnhealthyThreshold": "2",
+                    "HealthyThreshold": "2"
+                }
+            }
+        },
+        "AutoscalingGroup": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Properties": {
+                "VPCZoneIdentifier": { "Ref": "Subnets" },
+                "AvailabilityZones": { "Fn::GetAZs": "" },
+                "LaunchConfigurationName": { "Ref": "LaunchConfig" },
+                "MinSize": "1",
+                "MaxSize": "2",
+                "DesiredCapacity": "1",
+                "HealthCheckType": "ELB",
+                "HealthCheckGracePeriod": 300,
+                "LoadBalancerNames": [ { "Ref": "LoadBalancer" } ],
+                "Tags": [
+                    {
+                        "Key": "Stage",
+                        "Value": { "Ref": "Stage" },
+                        "PropagateAtLaunch": "true"
+                    },
+                    {
+                        "Key": "Stack",
+                        "Value": "content-api-itunes-rss",
+                        "PropagateAtLaunch": "true"
+                    },
+                    {
+                        "Key": "App",
+                        "Value": "content-api-itunes-rss",
+                        "PropagateAtLaunch": "true"
+                    }
+                ]
+            }
+        },
+        "LaunchConfig": {
+            "Type": "AWS::AutoScaling::LaunchConfiguration",
+
+            "Properties": {
+                "ImageId": "ami-04da7f77",
+                "AssociatePublicIpAddress": true,
+                "SecurityGroups": [ { "Ref": "ApplicationSecurityGroup" } ],
+                "InstanceType": "t2.micro",
+                "IamInstanceProfile": { "Ref": "InstanceProfile" },
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [ "\n", [
+                            "#!/bin/bash -ev",
+
+                            "adduser --disabled-password content-api",
+                            "wget -NP /home/ubuntu/.ssh https://s3-eu-west-1.amazonaws.com/content-api-dist/authorized_keys",
+                            "cd /home/content-api",
+                            "mkdir logs",
+                            "mkdir -p /etc/gu",
+
+                            { "Fn::Join": [ "", [ "wget https://s3-eu-west-1.amazonaws.com/content-api-dist/content-api-itunes-rss/",{ "Ref": "Stage" }, "/content-api-itunes-rss/content-api-itunes-rss-0.1-SNAPSHOT.tgz" ] ] },
+                            { "Fn::Join": [ "", [ "wget https://s3-eu-west-1.amazonaws.com/content-api-dist/content-api-itunes-rss/",{ "Ref": "Stage" }, "/content-api-itunes-rss/content-api-itunes-rss.conf" ] ] },
+                            "tar -xvf content-api-itunes-rss-0.1-SNAPSHOT.tgz",
+                            "rm content-api-itunes-rss-0.1-SNAPSHOT.tgz",
+                            "mv content-api-itunes-rss-0.1-SNAPSHOT content-api-itunes-rss",
+                            "mv content-api-itunes-rss.conf /etc/init",
+                            "chown -R content-api /home/content-api /etc/gu",
+                            "chgrp -R content-api /home/content-api /etc/gu",
+                            { "Fn::Join": [ "", [ "aws s3 cp s3://content-api-config/content-api-itunes-rss/",{ "Ref": "Stage" }, "/content-api-itunes-rss.conf /etc/gu/content-api-itunes-rss.conf" ] ] },
+
+                            "start content-api-itunes-rss"
+                        ] ]
+                    }
+                }
+            }
+        },
+
+        "LoadBalancerSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Public access to the load balancer on port 80",
+                "VpcId": { "Ref": "VPC" },
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "80",
+                        "ToPort": "80",
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ],
+                "SecurityGroupEgress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "9000",
+                        "ToPort": "9000",
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ]
+            }
+        },
+        "ApplicationSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "SSH and HTTP",
+                "VpcId": { "Ref": "VPC" },
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "9000",
+                        "ToPort": "9000",
+                        "CidrIp": "77.91.248.0/21"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "9000",
+                        "ToPort": "9000",
+                        "SourceSecurityGroupId": { "Ref": "LoadBalancerSecurityGroup" }
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "22",
+                        "ToPort": "22",
+                        "CidrIp": "77.91.248.0/21"
+                    }
+                ]
+            }
+        }
+    },
+
+    "Outputs": {
+        "LoadBalancer": {
+            "Value": { "Fn::GetAtt": [ "LoadBalancer", "DNSName" ] }
+        }
+    }
+}
