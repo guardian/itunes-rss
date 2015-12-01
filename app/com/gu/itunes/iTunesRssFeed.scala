@@ -48,7 +48,7 @@ object iTunesRssFeed {
             <itunes:image href={ podcast.image.getOrElse("") }/>
             <itunes:author>theguardian.com</itunes:author>
             <itunes:explicit>
-              { if (podcast.explicit) "yes" else "no" }
+              { if (podcast.explicit) "yes" else "clean" }
             </itunes:explicit>
             <itunes:keywords/>
             <itunes:summary>
@@ -60,10 +60,9 @@ object iTunesRssFeed {
               </title>
               <url>http://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
               <link>http://www.theguardian.com</link>
-            </image>{
-              for {
-                p <- podcasts
-              } yield new iTunesRssItem(p).toXml
+            </image>
+            {
+              for (p <- podcasts) yield new iTunesRssItem(p).toXml
             }
           </channel>
         </rss>

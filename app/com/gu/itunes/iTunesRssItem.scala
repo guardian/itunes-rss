@@ -13,9 +13,9 @@ class iTunesRssItem(val podcast: Content) {
       <enclosure url=""/>
       <pubDate>
         {
-          val dd = podcast.webPublicationDate.map(_.dateTime).getOrElse(0)
+          val lastModified = podcast.fields.flatMap(_.lastModified).map(_.dateTime).getOrElse(0)
           val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
-          format.format(dd)
+          format.format(lastModified)
         }
       </pubDate>
       <guid>
@@ -50,20 +50,11 @@ class iTunesRssItem(val podcast: Content) {
           } yield typeData
 
           val exp = typeData.flatMap(_.explicit).getOrElse(false)
-          if (exp) "yes" else "no"
+          val cln = typeData.flatMap(_.clean).getOrElse(true)
+
+          if (exp) "yes" else if (cln) "clean" else ""
         }
       </itunes:explicit>
-      <itunes:clean>
-        {
-          val typeData = for {
-            asset <- getFirstAsset(podcast)
-            typeData <- asset.typeData
-          } yield typeData
-
-          val clean = typeData.flatMap(_.clean).getOrElse(false)
-          if (clean) "yes" else "no"
-        }
-      </itunes:clean>
       <itunes:keywords>{ makeKeywordsList(podcast.tags) }</itunes:keywords>
       <itunes:subtitle>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:subtitle>
       <itunes:summary>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:summary>
