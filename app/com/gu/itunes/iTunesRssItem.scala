@@ -7,57 +7,64 @@ import scala.xml.Node
 class iTunesRssItem(val podcast: Content) {
 
   def toXml: Node = {
+
+    /* shared objects */
+    val asset = getFirstAsset(podcast)
+
+    val typeData: Option[AssetFields] = for {
+      asset <- getFirstAsset(podcast)
+      typeData <- asset.typeData
+    } yield typeData
+
+    /* these vals match the XML fields */
+    val title = podcast.webTitle
+
+    val description = podcast.fields.flatMap(_.standfirst).getOrElse("")
+
+    val url = asset.flatMap(_.file).getOrElse("")
+
+    val sizeInBytes = typeData.flatMap(_.sizeInBytes).getOrElse(0).toString
+
+    val mType = asset.flatMap(_.mimeType).getOrElse("")
+
+    val pubDate = {
+      val lastModified = podcast.fields.flatMap(_.lastModified).map(_.dateTime).getOrElse(0)
+      val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
+      format.format(lastModified)
+    }
+
+    val guid = asset.flatMap(_.file).getOrElse("")
+
+    val duration = {
+      val seconds = typeData.flatMap(_.durationSeconds)
+      val minutes = typeData.flatMap(_.durationMinutes)
+      convertDate(seconds, minutes)
+    }
+
+    val explicit = {
+      val exp = typeData.flatMap(_.explicit).getOrElse(false)
+      val cln = typeData.flatMap(_.clean).getOrElse(true)
+      if (exp) "yes" else if (cln) "clean" else ""
+    }
+
+    val keywords = makeKeywordsList(podcast.tags)
+
+    val subtitle = podcast.fields.flatMap(_.standfirst).getOrElse("")
+
+    val summary = podcast.fields.flatMap(_.standfirst).getOrElse("")
+
     <item>
-      <title> { podcast.webTitle } </title>
-      <description> { podcast.fields.flatMap(_.standfirst).getOrElse("") } </description>
-      <enclosure url=""/>
-      <pubDate>
-        {
-          val lastModified = podcast.fields.flatMap(_.lastModified).map(_.dateTime).getOrElse(0)
-          val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
-          format.format(lastModified)
-        }
-      </pubDate>
-      <guid>
-        {
-          val guid = for {
-            asset <- getFirstAsset(podcast)
-            guid <- asset.file
-          } yield guid
-
-          guid.getOrElse("")
-        }
-      </guid>
-      <itunes:duration>
-        {
-          val typeData: Option[AssetFields] = for {
-            asset <- getFirstAsset(podcast)
-            typeData <- asset.typeData
-          } yield typeData
-
-          val seconds = typeData.flatMap(_.durationSeconds)
-          val minutes = typeData.flatMap(_.durationMinutes)
-
-          convertDate(seconds, minutes)
-        }
-      </itunes:duration>
+      <title> { title } </title>
+      <description> { description } </description>
+      <enclosure url={ url } length={ sizeInBytes } type={ mType }/>
+      <pubDate>{ pubDate }</pubDate>
+      <guid>{ guid }</guid>
+      <itunes:duration>{ duration }</itunes:duration>
       <itunes:author>theguardian.com</itunes:author>
-      <itunes:explicit>
-        {
-          val typeData = for {
-            asset <- getFirstAsset(podcast)
-            typeData <- asset.typeData
-          } yield typeData
-
-          val exp = typeData.flatMap(_.explicit).getOrElse(false)
-          val cln = typeData.flatMap(_.clean).getOrElse(true)
-
-          if (exp) "yes" else if (cln) "clean" else ""
-        }
-      </itunes:explicit>
-      <itunes:keywords>{ makeKeywordsList(podcast.tags) }</itunes:keywords>
-      <itunes:subtitle>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:subtitle>
-      <itunes:summary>{ podcast.fields.flatMap(_.standfirst).getOrElse("") }</itunes:summary>
+      <itunes:explicit>{ explicit }</itunes:explicit>
+      <itunes:keywords>{ keywords }</itunes:keywords>
+      <itunes:subtitle>{ subtitle }</itunes:subtitle>
+      <itunes:summary>{ summary }</itunes:summary>
     </item>
   }
 

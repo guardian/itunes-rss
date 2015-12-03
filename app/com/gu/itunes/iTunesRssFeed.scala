@@ -5,8 +5,6 @@ import java.util.Date
 
 import com.gu.contentapi.client.model.ItemResponse
 import com.gu.contentapi.client.model.v1._
-import org.joda.time._
-import org.joda.time.format._
 import org.scalactic.{ Bad, Good, Or }
 
 import scala.xml.Node
@@ -21,19 +19,11 @@ object iTunesRssFeed {
       case Some(podcast) => Good {
         <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
           <channel>
-            <title>
-              { tag.webTitle }
-            </title>
-            <link>
-              { tag.webUrl }
-            </link>
-            <description>
-              { tag.description.getOrElse("") }
-            </description>
+            <title>{ tag.webTitle }</title>
+            <link>{ tag.webUrl }</link>
+            <description>{ tag.description.getOrElse("") }</description>
             <language>en-gb</language>
-            <copyright>
-              { podcast.copyright }
-            </copyright>
+            <copyright>{ podcast.copyright }</copyright>
             <lastBuildDate>
               {
                 val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
@@ -51,13 +41,9 @@ object iTunesRssFeed {
               { if (podcast.explicit) "yes" else "clean" }
             </itunes:explicit>
             <itunes:keywords/>
-            <itunes:summary>
-              { tag.description.getOrElse("") }
-            </itunes:summary>
+            <itunes:summary>{ tag.description.getOrElse("") }</itunes:summary>
             <image>
-              <title>
-                { tag.webTitle }
-              </title>
+              <title>{ tag.webTitle }</title>
               <url>http://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
               <link>http://www.theguardian.com</link>
             </image>
