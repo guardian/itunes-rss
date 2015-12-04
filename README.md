@@ -19,7 +19,7 @@ $ sbt run
 ## To generate the RSS feed locally:
 
 ```
-$ curl localhost:9000/itunesrss?tagId=science/series/science
+$ curl localhost:9000/{some-podcast-id}/podcast.xml
 ```
 
 ## To run the tests:

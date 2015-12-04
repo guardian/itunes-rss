@@ -3,11 +3,11 @@
 # ~~~~
 
 # Home page
-GET        /itunesrss          controllers.Application.itunesRss(tagId: String)
+GET        /*tagId/podcast.xml      controllers.Application.itunesRss(tagId: String)
 
 
-GET        /healthcheck         controllers.Application.healthcheck
+GET        /healthcheck             controllers.Application.healthcheck
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
+GET        /assets/*file            controllers.Assets.versioned(path="/public", file: Asset)
 
