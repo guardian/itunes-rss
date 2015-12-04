@@ -28,7 +28,7 @@ class iTunesRssItem(val podcast: Content) {
     val mType = asset.flatMap(_.mimeType).getOrElse("")
 
     val pubDate = {
-      val lastModified = podcast.fields.flatMap(_.lastModified).map(_.dateTime).getOrElse(0)
+      val lastModified = podcast.webPublicationDate.map(_.dateTime).getOrElse(0)
       val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
       format.format(lastModified)
     }
