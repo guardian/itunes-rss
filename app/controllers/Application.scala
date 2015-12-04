@@ -26,7 +26,7 @@ object Application extends Controller {
       .showElements("audio")
       .showTags("keyword")
       .showFields("all")
-      .pageSize(100) // TODO check this value
+      .pageSize(2) // TODO check this value
 
     client.getResponse(query) map { itemResponse =>
       itemResponse.status match {
