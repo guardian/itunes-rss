@@ -27,7 +27,7 @@ class ItunesRssTagSpec extends FlatSpec with ItunesTestData with Matchers {
           </itunes:owner>
           <itunes:image href="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png"/>
           <itunes:author>theguardian.com</itunes:author>
-          <itunes:explicit>no</itunes:explicit>
+          <itunes:explicit></itunes:explicit>
           <itunes:keywords/>
           <itunes:summary>
             The Guardian's science team bring you the best analysis and interviews from the worlds of science and technology
@@ -47,8 +47,8 @@ class ItunesRssTagSpec extends FlatSpec with ItunesTestData with Matchers {
     expectedXml \ "channel" \ "language" should be(currentXml \ "channel" \ "language")
     expectedXml \ "channel" \ "copyright" should be(currentXml \ "channel" \ "copyright")
     expectedXml \ "channel" \ "ttl" should be(currentXml \ "channel" \ "ttl")
-    expectedXml \ "channel" \ "itunes:owner" should be(currentXml \ "channel" \ "itunes:owner")
-    expectedXml \ "channel" \ "itunes:image href" should be(currentXml \ "channel" \ "itunes:image href")
+    expectedXml \ "channel" \ "owner" should be(currentXml \ "channel" \ "owner")
+    expectedXml \ "channel" \ "image" should be(currentXml \ "channel" \ "image")
     expectedXml \ "channel" \ "author" should be(currentXml \ "channel" \ "author")
     expectedXml \ "channel" \ "explicit" should be(currentXml \ "channel" \ "explicit")
     expectedXml \ "channel" \ "summary" should be(currentXml \ "channel" \ "summary")
