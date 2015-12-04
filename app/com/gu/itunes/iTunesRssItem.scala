@@ -43,7 +43,7 @@ class iTunesRssItem(val podcast: Content) {
 
     val explicit = {
       val exp = typeData.flatMap(_.explicit).getOrElse(false)
-      val cln = typeData.flatMap(_.clean).getOrElse(true)
+      val cln = typeData.flatMap(_.clean).getOrElse(false)
       if (exp) "yes" else if (cln) "clean" else ""
     }
 

@@ -27,7 +27,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
         </guid>
         <itunes:duration>00:29:07</itunes:duration>
         <itunes:author>theguardian.com</itunes:author>
-        <itunes:explicit>clean</itunes:explicit>
+        <itunes:explicit></itunes:explicit>
         <itunes:keywords>Science, Mathematics</itunes:keywords>
         <itunes:subtitle>
           John Conway sheds light on the true nature of numbers, the beauty lying within maths and why game-playing is so important to mathematical discovery
@@ -48,7 +48,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
         </guid>
         <itunes:duration>00:27:00</itunes:duration>
         <itunes:author>theguardian.com</itunes:author>
-        <itunes:explicit>clean</itunes:explicit>
+        <itunes:explicit></itunes:explicit>
         <itunes:keywords>Science, Psychology</itunes:keywords>
         <itunes:subtitle>
           Should we distrust our own ability to reason? Why is debunking conspiracy theories such a risky business? And is David Icke a force for good?
@@ -69,7 +69,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
         </guid>
         <itunes:duration>00:25:37</itunes:duration>
         <itunes:author>theguardian.com</itunes:author>
-        <itunes:explicit>clean</itunes:explicit>
+        <itunes:explicit></itunes:explicit>
         <itunes:keywords>Science, David Eagleman, Neuroscience</itunes:keywords>
         <itunes:subtitle>
           Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains
