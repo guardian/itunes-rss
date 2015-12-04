@@ -21,7 +21,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
           John Conway sheds light on the true nature of numbers, the beauty lying within maths and why game-playing is so important to mathematical discovery
         </description>
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3" length="0" type="audio/mpeg"/>
-        <pubDate>Fri, 20 Nov 2015 17:34:04 GMT</pubDate>
+        <pubDate>Fri, 20 Nov 2015 07:30:00 GMT</pubDate>
         <guid>
           http://static.guim.co.uk/audio/kip/science/series/science/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3
         </guid>
@@ -42,7 +42,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
           Should we distrust our own ability to reason? Why is debunking conspiracy theories such a risky business? And is David Icke a force for good?
         </description>
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1447432633353/5114/gdn.sci.151116.ic.Science_Weekly.mp3" length="0" type="audio/mpeg"/>
-        <pubDate>Fri, 13 Nov 2015 17:46:06 GMT</pubDate>
+        <pubDate>Fri, 13 Nov 2015 17:11:00 GMT</pubDate>
         <guid>
           http://static.guim.co.uk/audio/kip/science/series/science/1447432633353/5114/gdn.sci.151116.ic.Science_Weekly.mp3
         </guid>
@@ -63,7 +63,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
           Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains
         </description>
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3" length="0" type="audio/mpeg"/>
-        <pubDate>Fri, 06 Nov 2015 07:30:56 GMT</pubDate>
+        <pubDate>Fri, 06 Nov 2015 07:30:00 GMT</pubDate>
         <guid>
           http://static.guim.co.uk/audio/kip/science/series/science/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3
         </guid>
