@@ -4,7 +4,7 @@ import com.gu.contentapi.client.model.v1._
 import java.text.SimpleDateFormat
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content) {
+class iTunesRssItem(val podcast: Content, val tagId: String) {
 
   def toXml: Node = {
 
@@ -33,7 +33,13 @@ class iTunesRssItem(val podcast: Content) {
       format.format(lastModified)
     }
 
-    val guid = asset.flatMap(_.file).getOrElse("")
+    /* Old content served from http(s)://static(-secure).guim.co.uk/{...} will have the guid field set
+    to http://download.guardian.co.uk/{...} for legacy reasons (to match the R2 implementation);
+    new content served from https://audio.guim.co.uk will preserve its structure. */
+
+    val capiUrl = asset.flatMap(_.file).getOrElse("")
+    val regex = s"""https?://static(-secure)?.guim.co.uk/audio/kip/$tagId"""
+    val guid = capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio")
 
     val duration = {
       val seconds = typeData.flatMap(_.durationSeconds)
