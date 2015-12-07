@@ -48,7 +48,7 @@ object iTunesRssFeed {
               <link>http://www.theguardian.com</link>
             </image>
             {
-              for (p <- podcasts) yield new iTunesRssItem(p).toXml
+              for (p <- podcasts) yield new iTunesRssItem(p, tag.id).toXml
             }
           </channel>
         </rss>

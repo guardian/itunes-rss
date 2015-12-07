@@ -9,7 +9,8 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
   it should "check that the produced XML for the podcasts is consistent" in {
 
     val results = itunesCapiResponse.results
-    val podcasts = for (p <- results) yield new iTunesRssItem(p).toXml
+    val tagId = itunesCapiResponse.tag.get.id
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId).toXml
     val trimmedPodcasts = for (p <- podcasts) yield trim(p)
 
     val expectedXml = RemoveWhitespace.transform(
@@ -23,7 +24,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3" length="0" type="audio/mpeg"/>
         <pubDate>Fri, 20 Nov 2015 07:30:00 GMT</pubDate>
         <guid>
-          http://static.guim.co.uk/audio/kip/science/series/science/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3
+          http://download.guardian.co.uk/draft/audio/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3
         </guid>
         <itunes:duration>00:29:07</itunes:duration>
         <itunes:author>theguardian.com</itunes:author>
@@ -44,7 +45,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1447432633353/5114/gdn.sci.151116.ic.Science_Weekly.mp3" length="0" type="audio/mpeg"/>
         <pubDate>Fri, 13 Nov 2015 17:11:00 GMT</pubDate>
         <guid>
-          http://static.guim.co.uk/audio/kip/science/series/science/1447432633353/5114/gdn.sci.151116.ic.Science_Weekly.mp3
+          https://audio.guim.co.uk/2015/12/03-53462-gdn.tech.151203.sb.digital-babysitting.mp3
         </guid>
         <itunes:duration>00:27:00</itunes:duration>
         <itunes:author>theguardian.com</itunes:author>
@@ -65,7 +66,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3" length="0" type="audio/mpeg"/>
         <pubDate>Fri, 06 Nov 2015 07:30:00 GMT</pubDate>
         <guid>
-          http://static.guim.co.uk/audio/kip/science/series/science/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3
+          http://download.guardian.co.uk/draft/audio/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3
         </guid>
         <itunes:duration>00:25:37</itunes:duration>
         <itunes:author>theguardian.com</itunes:author>
