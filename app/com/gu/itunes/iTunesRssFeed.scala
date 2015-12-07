@@ -11,7 +11,10 @@ import scala.xml.Node
 
 object iTunesRssFeed {
 
-  def apply(resp: ItemResponse): Node Or String = toXml(resp.tag.get, resp.results)
+  def apply(resp: ItemResponse): Node Or String = resp.tag match {
+    case Some(t) => toXml(t, resp.results)
+    case None => Bad("No tag found")
+  }
 
   def toXml(tag: Tag, podcasts: List[Content]): Node Or String = {
 
