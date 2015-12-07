@@ -13,7 +13,8 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 object Application extends Controller {
 
-  val apiKey = Play.current.configuration.getString("apiKey").getOrElse("boo")
+  val apiKey = Play.current.configuration.getString("apiKey")
+    .getOrElse(sys.error("You must provide a CAPI key, either in application.conf or as the API_KEY environment variable"))
 
   val maxAge = 300
   val staleWhileRevalidateSeconds = 600
