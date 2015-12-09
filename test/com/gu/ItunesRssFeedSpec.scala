@@ -3,7 +3,7 @@ package com.gu.itunes
 import org.scalatest._
 import scala.xml.Utility.trim
 
-class ItunesRssTagSpec extends FlatSpec with ItunesTestData with Matchers {
+class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
 
   it should "check that the produced XML for the tags is consistent" in {
 

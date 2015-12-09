@@ -4,7 +4,7 @@ import com.gu.itunes.XmlTestUtils.RemoveWhitespace
 import org.scalatest._
 import scala.xml.Utility.trim
 
-class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
+class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
   it should "check that the produced XML for the podcasts is consistent" in {
 
@@ -43,7 +43,7 @@ class ItunesRssPodcastsSpec extends FlatSpec with ItunesTestData with Matchers {
           Should we distrust our own ability to reason? Why is debunking conspiracy theories such a risky business? And is David Icke a force for good?
         </description>
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1447432633353/5114/gdn.sci.151116.ic.Science_Weekly.mp3" length="0" type="audio/mpeg"/>
-        <pubDate>Fri, 13 Nov 2015 17:11:00 GMT</pubDate>
+        <pubDate>Fri, 04 Dec 2015 11:04:27 GMT</pubDate>
         <guid>
           https://audio.guim.co.uk/2015/12/03-53462-gdn.tech.151203.sb.digital-babysitting.mp3
         </guid>

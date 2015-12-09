@@ -1,7 +1,9 @@
 package com.gu.itunes
 
+import org.joda.time._
 import com.gu.contentapi.client.model.v1._
-import java.text.SimpleDateFormat
+import com.gu.contentapi.client.utils.CapiModelEnrichment._
+
 import scala.xml.Node
 
 class iTunesRssItem(val podcast: Content, val tagId: String) {
@@ -28,9 +30,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String) {
     val mType = asset.flatMap(_.mimeType).getOrElse("")
 
     val pubDate = {
-      val lastModified = podcast.webPublicationDate.map(_.dateTime).getOrElse(0)
-      val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
-      format.format(lastModified)
+      val lastModified = podcast.webPublicationDate.map(_.toJodaDateTime).getOrElse(DateTime.now)
+      DateSupport.toRssTimeFormat(lastModified)
     }
 
     /* Old content served from http(s)://static(-secure).guim.co.uk/{...} will have the guid field set
