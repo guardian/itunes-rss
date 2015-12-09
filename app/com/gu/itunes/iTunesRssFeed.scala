@@ -1,10 +1,8 @@
 package com.gu.itunes
 
-import java.text.SimpleDateFormat
-import java.util.Date
-
 import com.gu.contentapi.client.model.ItemResponse
 import com.gu.contentapi.client.model.v1._
+import org.joda.time.DateTime
 import org.scalactic.{ Bad, Good, Or }
 
 import scala.xml.Node
@@ -28,10 +26,7 @@ object iTunesRssFeed {
             <language>en-gb</language>
             <copyright>{ podcast.copyright }</copyright>
             <lastBuildDate>
-              {
-                val format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z")
-                format.format(new Date())
-              }
+              { DateSupport.toRssTimeFormat(DateTime.now) }
             </lastBuildDate>
             <ttl>15</ttl>
             <itunes:owner>
