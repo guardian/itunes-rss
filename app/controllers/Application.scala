@@ -29,7 +29,7 @@ object Application extends Controller {
       .showElements("audio")
       .showTags("keyword")
       .showFields("all")
-      .pageSize(20) // number of podcasts to be served
+      .pageSize(30) // number of podcasts to be served
 
     client.getResponse(query) map { itemResponse =>
       itemResponse.status match {
