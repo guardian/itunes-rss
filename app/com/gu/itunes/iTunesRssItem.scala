@@ -51,7 +51,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String) {
     val explicit = {
       val exp = typeData.flatMap(_.explicit).getOrElse(false)
       val cln = typeData.flatMap(_.clean).getOrElse(false)
-      if (exp) "yes" else if (cln) "clean" else ""
+      if (exp) Some("yes") else if (cln) Some("clean") else None
     }
 
     val keywords = makeKeywordsList(podcast.tags)
@@ -68,7 +68,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String) {
       <guid>{ guid }</guid>
       <itunes:duration>{ duration }</itunes:duration>
       <itunes:author>theguardian.com</itunes:author>
-      <itunes:explicit>{ explicit }</itunes:explicit>
+      {
+        explicit match {
+          case Some(value) => <itunes:explicit>{ value }</itunes:explicit>
+          case None =>
+        }
+      }
       <itunes:keywords>{ keywords }</itunes:keywords>
       <itunes:subtitle>{ subtitle }</itunes:subtitle>
       <itunes:summary>{ summary }</itunes:summary>
