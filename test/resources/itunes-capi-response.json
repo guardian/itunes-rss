@@ -147,7 +147,7 @@
                 "mimeType": "audio/mpeg",
                 "file": "https://audio.guim.co.uk/2015/12/03-53462-gdn.tech.151203.sb.digital-babysitting.mp3",
                 "typeData": {
-                  "explicit": "false",
+                  "explicit": "true",
                   "source": "Guardian",
                   "durationMinutes": "27",
                   "durationSeconds": "0"
@@ -209,7 +209,7 @@
           "commentable": "false"
         },
         "webUrl": "http://www.theguardian.com/science/audio/2015/nov/06/science-weekly-podcast-story-brain-david-eagleman-neuroscience",
-        "apiUrl": "http://content.guardianapis.com/science/audio/2015/nov/06/science-weekly-podcast-story-brain-david-eagleman-neuroscience",
+        "apiUrl": " ",
         "sectionName": "Science",
         "elements": [
           {
@@ -225,7 +225,8 @@
                   "explicit": "false",
                   "source": "Guardian",
                   "durationMinutes": "25",
-                  "durationSeconds": "37"
+                  "durationSeconds": "37",
+                  "clean": "true"
                 }
               }
             ]

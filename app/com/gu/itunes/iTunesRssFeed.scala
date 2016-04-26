@@ -35,9 +35,10 @@ object iTunesRssFeed {
             </itunes:owner>
             <itunes:image href={ podcast.image.getOrElse("") }/>
             <itunes:author>theguardian.com</itunes:author>
-            <itunes:explicit>
-              { if (podcast.explicit) "yes" else "" }
-            </itunes:explicit>
+            {
+              if (podcast.explicit)
+                <itunes:explicit>yes</itunes:explicit>
+            }
             <itunes:keywords/>
             <itunes:summary>{ tag.description.getOrElse("") }</itunes:summary>
             <image>
