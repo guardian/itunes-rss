@@ -2,13 +2,14 @@ package controllers
 
 import com.gu.contentapi.client.GuardianContentApiError
 import com.gu.contentapi.client.model.ItemQuery
-import com.gu.itunes.{ iTunesRssFeed, CustomCapiClient }
+import com.gu.itunes._
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.{ DateTimeZone, DateTime }
 import org.scalactic.{ Bad, Good }
 import play.api.Play
 import play.api.Logger
-import play.api.mvc.{ Action, Controller }
+import play.api.mvc.{ Action, Controller, Result }
+import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
 object Application extends Controller {
@@ -23,6 +24,15 @@ object Application extends Controller {
   private val HTTPDateFormat = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss 'GMT'").withZone(DateTimeZone.UTC)
 
   def itunesRss(tagId: String) = Action.async {
+    val redirect = Redirection.redirect(tagId)
+    redirect match {
+      case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId).url))
+      case None => rawRss(tagId)
+    }
+  }
+
+  def rawRss(tagId: String): Future[Result] = {
+
     val client = new CustomCapiClient(apiKey)
 
     val query = ItemQuery(tagId)
