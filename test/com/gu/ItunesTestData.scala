@@ -2,8 +2,8 @@ package com.gu.itunes
 
 import com.google.common.io.Resources
 import com.google.common.base.Charsets
-import com.gu.contentapi.client.model.ItemResponse
-import com.gu.contentapi.client.parser.JsonParser
+import com.gu.contentapi.client.model.v1.ItemResponse
+import com.gu.contentapi.json.JsonParser
 
 trait ItunesTestData {
 

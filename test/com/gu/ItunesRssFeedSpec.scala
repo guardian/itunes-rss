@@ -36,6 +36,9 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
             <url>http://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
             <link>http://www.theguardian.com</link>
           </image>
+          <itunes:category text="Health">
+            <itunes:category text="Fitness &amp; Nutrition"/>
+          </itunes:category>
         </channel>
       </rss>
     )

@@ -1,6 +1,6 @@
 package com.gu.itunes
 
-import com.gu.contentapi.client.model.ItemResponse
+import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.v1._
 import org.joda.time.DateTime
 import org.scalactic.{ Bad, Good, Or }
@@ -10,7 +10,7 @@ import scala.xml.Node
 object iTunesRssFeed {
 
   def apply(resp: ItemResponse): Node Or String = resp.tag match {
-    case Some(t) => toXml(t, resp.results)
+    case Some(t) => toXml(t, resp.results.getOrElse(Nil).toList)
     case None => Bad("No tag found")
   }
 
@@ -47,6 +47,19 @@ object iTunesRssFeed {
               <link>http://www.theguardian.com</link>
             </image>
             {
+              for (category <- podcast.categories.getOrElse(Nil)) {
+                <itunes:category text={ escape(category.main) }>
+                  {
+                    category.sub match {
+                      case Some(s) => <itunes:category text={ escape(s) }/>
+                      case None =>
+                    }
+                  }
+                </itunes:category>
+              }
+
+            }
+            {
               for (p <- podcasts) yield new iTunesRssItem(p, tag.id).toXml
             }
           </channel>
@@ -56,6 +69,10 @@ object iTunesRssFeed {
         "No podcast found"
       }
     }
+  }
+
+  private def escape(category: String): String = {
+    category.replace("&", "&amp;")
   }
 }
 
