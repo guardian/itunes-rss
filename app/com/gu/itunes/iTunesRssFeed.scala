@@ -65,18 +65,14 @@ object iTunesRssFeed {
 
 class CategoryRss(val category: PodcastCategory) {
   def toXml: Node = {
-    <itunes:category text={ escape(category.main) }>
+    <itunes:category text={ category.main }>
       {
         category.sub match {
-          case Some(s) => <itunes:category text={ escape(s) }/>
+          case Some(s) => <itunes:category text={ s }/>
           case None =>
         }
       }
     </itunes:category>
-  }
-
-  private def escape(category: String): String = {
-    category.replace("&", "&amp;")
   }
 
 }
