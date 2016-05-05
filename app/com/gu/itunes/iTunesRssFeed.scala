@@ -47,17 +47,7 @@ object iTunesRssFeed {
               <link>http://www.theguardian.com</link>
             </image>
             {
-              for (category <- podcast.categories.getOrElse(Nil)) {
-                <itunes:category text={ escape(category.main) }>
-                  {
-                    category.sub match {
-                      case Some(s) => <itunes:category text={ escape(s) }/>
-                      case None =>
-                    }
-                  }
-                </itunes:category>
-              }
-
+              for (category <- podcast.categories.getOrElse(Nil)) yield new CategoryRss(category).toXml
             }
             {
               for (p <- podcasts) yield new iTunesRssItem(p, tag.id).toXml
@@ -71,8 +61,18 @@ object iTunesRssFeed {
     }
   }
 
-  private def escape(category: String): String = {
-    category.replace("&", "&amp;")
-  }
 }
 
+class CategoryRss(val category: PodcastCategory) {
+  def toXml: Node = {
+    <itunes:category text={ category.main }>
+      {
+        category.sub match {
+          case Some(s) => <itunes:category text={ s }/>
+          case None =>
+        }
+      }
+    </itunes:category>
+  }
+
+}
