@@ -55,5 +55,6 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
     expectedXml \ "channel" \ "explicit" should be(currentXml \ "channel" \ "explicit")
     expectedXml \ "channel" \ "summary" should be(currentXml \ "channel" \ "summary")
     expectedXml \ "channel" \ "image" should be(currentXml \ "channel" \ "image")
+    expectedXml \ "channel" \ "category" should be(currentXml \ "channel" \ "category")
   }
 }
