@@ -1,36 +1,27 @@
 package com.gu.itunes
 
 import com.gu.contentapi.client.GuardianContentClient
-import com.gu.contentapi.client.model.{ SearchQuery, SearchResponse }
-import com.gu.contentapi.client.parser.JsonParser
+import com.gu.contentapi.client.model.SearchQuery
+import com.gu.contentapi.client.model.v1.SearchResponse
+import com.gu.contentapi.json.JsonParser
 import dispatch.Http
 import play.api.Logger
 
 import scala.concurrent.duration.Duration
 import scala.concurrent.{ ExecutionContext, Future }
 
-class CustomCapiClient(apiKey: String) extends GuardianContentClient(apiKey) {
+class CustomCapiClient(apiKey: String) extends GuardianContentClient(apiKey, useThrift = true) {
 
   // Use the same HTTP client for the whole lifecycle of the Play app,
   // rather than creating a new one per request
   override protected lazy val http = CustomCapiClient.http
 
-  override protected def fetch(url: String)(implicit context: ExecutionContext): Future[String] = {
+  override protected def fetch(url: String)(implicit context: ExecutionContext): Future[Array[Byte]] = {
     val start = System.nanoTime()
     val future = super.fetch(url)(context)
     future map { result =>
       val end = System.nanoTime()
       Logger.info(s"Received CAPI response in ${Duration.fromNanos(end - start).toMillis} ms")
-      result
-    }
-  }
-
-  override def getResponse(searchQuery: SearchQuery)(implicit context: ExecutionContext): Future[SearchResponse] = {
-    fetch(getUrl(searchQuery)) map { string =>
-      val start = System.nanoTime()
-      val result = JsonParser.parseSearch(string)
-      val end = System.nanoTime()
-      Logger.info(s"Parsed JSON in ${Duration.fromNanos(end - start).toMillis} ms")
       result
     }
   }

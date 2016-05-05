@@ -12,7 +12,7 @@ object iTunesRssBuild extends Build {
   val basicSettings = Seq(
     organization  := "com.gu",
     description   := "iTunes RSS feed",
-    scalaVersion  := "2.11.7",
+    scalaVersion  := "2.11.8",
     scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
   )
 
@@ -23,7 +23,7 @@ object iTunesRssBuild extends Build {
     .settings(
 
       libraryDependencies ++= Seq(
-        "com.gu" %% "content-api-client" % "7.9",
+        "com.gu" %% "content-api-client" % "8.9",
         "org.scalactic" %% "scalactic" % "2.2.4",
         "org.scalatest" %% "scalatest" % "2.2.5" % "test"
       ),

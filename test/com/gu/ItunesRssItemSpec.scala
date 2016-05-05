@@ -8,7 +8,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
   it should "check that the produced XML for the podcasts is consistent" in {
 
-    val results = itunesCapiResponse.results
+    val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
     val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId).toXml
     val trimmedPodcasts = for (p <- podcasts) yield trim(p)
