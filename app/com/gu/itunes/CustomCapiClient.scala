@@ -10,7 +10,7 @@ import play.api.Logger
 import scala.concurrent.duration.Duration
 import scala.concurrent.{ ExecutionContext, Future }
 
-class CustomCapiClient(apiKey: String) extends GuardianContentClient(apiKey, useThrift = true) {
+class CustomCapiClient(apiKey: String) extends GuardianContentClient(apiKey, useThrift = false) {
 
   // Use the same HTTP client for the whole lifecycle of the Play app,
   // rather than creating a new one per request
