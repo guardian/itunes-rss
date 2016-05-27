@@ -76,7 +76,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String) {
       }
       <itunes:keywords>{ keywords }</itunes:keywords>
       <itunes:subtitle>{ subtitle }</itunes:subtitle>
-      <itunes:summary>{ summary }</itunes:summary>
+      <itunes:summary>
+        { summary }
+        <br/>
+        <br/>
+        <![CDATA[<a href="https://membership.theguardian.com/supporter?INTCMP=MEMBERSHIP_SUPPORTER_PODCASTS">Enjoy our podcasts? support us!</a>]]>
+      </itunes:summary>
     </item>
   }
 

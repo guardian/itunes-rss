@@ -30,6 +30,9 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
           <itunes:keywords/>
           <itunes:summary>
             The Guardian's science team bring you the best analysis and interviews from the worlds of science and technology
+            <br/>
+            <br/>
+            <![CDATA[<a href="https://membership.theguardian.com/supporter?INTCMP=MEMBERSHIP_SUPPORTER_PODCASTS">Enjoy our podcasts? support us!</a>]]>
           </itunes:summary>
           <image>
             <title>Science Weekly</title>
