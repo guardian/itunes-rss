@@ -40,7 +40,12 @@ object iTunesRssFeed {
                 <itunes:explicit>yes</itunes:explicit>
             }
             <itunes:keywords/>
-            <itunes:summary>{ tag.description.getOrElse("") }</itunes:summary>
+            <itunes:summary>
+              { tag.description.getOrElse("") }
+              <br/>
+              <br/>
+              <![CDATA[<a href="https://membership.theguardian.com/supporter?INTCMP=MEMBERSHIP_SUPPORTER_PODCASTS">Enjoy our podcasts? support us!</a>]]>
+            </itunes:summary>
             <image>
               <title>{ tag.webTitle }</title>
               <url>http://static.guim.co.uk/sitecrumbs/Guardian.gif</url>

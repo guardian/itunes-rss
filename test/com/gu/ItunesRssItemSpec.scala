@@ -34,6 +34,9 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </itunes:subtitle>
         <itunes:summary>
           John Conway sheds light on the true nature of numbers, the beauty lying within maths and why game-playing is so important to mathematical discovery
+          <br/>
+          <br/>
+          <![CDATA[<a href="https://membership.theguardian.com/supporter?INTCMP=MEMBERSHIP_SUPPORTER_PODCASTS">Enjoy our podcasts? support us!</a>]]>
         </itunes:summary>
       </item>
       <item>
@@ -55,6 +58,9 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </itunes:subtitle>
         <itunes:summary>
           Should we distrust our own ability to reason? Why is debunking conspiracy theories such a risky business? And is David Icke a force for good?
+          <br/>
+          <br/>
+          <![CDATA[<a href="https://membership.theguardian.com/supporter?INTCMP=MEMBERSHIP_SUPPORTER_PODCASTS">Enjoy our podcasts? support us!</a>]]>
         </itunes:summary>
       </item>
       <item>
@@ -76,6 +82,9 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </itunes:subtitle>
         <itunes:summary>
           Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains
+          <br/>
+          <br/>
+          <![CDATA[<a href="https://membership.theguardian.com/supporter?INTCMP=MEMBERSHIP_SUPPORTER_PODCASTS">Enjoy our podcasts? support us!</a>]]>
         </itunes:summary>
       </item>
     )
