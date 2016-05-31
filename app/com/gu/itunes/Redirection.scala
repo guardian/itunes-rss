@@ -9,6 +9,8 @@ object Redirection {
   def redirect(tagId: String): Option[String] = {
     if (tagId == "film/series/filmweekly") {
       Some("film/series/the-dailies-podcast")
+    } else if (tagId == "technology/series/techweekly") {
+      Some("technology/series/chips-with-everything")
     } else {
       None
     }
