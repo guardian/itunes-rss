@@ -15,6 +15,10 @@
         "Subnets": {
             "Description": "Subnets to run load balancer within",
             "Type": "List<AWS::EC2::Subnet::Id>"
+        },
+        "AMI": {
+            "Description": "AMI ID",
+            "Type": "String"
         }
     },
 
@@ -125,7 +129,7 @@
             "Type": "AWS::AutoScaling::LaunchConfiguration",
 
             "Properties": {
-                "ImageId": "ami-04da7f77",
+                "ImageId": {"Ref": "AMI"},
                 "AssociatePublicIpAddress": true,
                 "SecurityGroups": [ { "Ref": "ApplicationSecurityGroup" } ],
                 "InstanceType": "t2.nano",
