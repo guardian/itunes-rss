@@ -14,7 +14,7 @@ object iTunesRssFeed {
     case None => Bad("No tag found")
   }
 
-  def toXml(tag: Tag, podcasts: List[Content]): Node Or String = {
+  def toXml(tag: Tag, contents: List[Content]): Node Or String = {
 
     tag.podcast match {
       case Some(podcast) => Good {
@@ -50,7 +50,7 @@ object iTunesRssFeed {
               for (category <- podcast.categories.getOrElse(Nil)) yield new CategoryRss(category).toXml
             }
             {
-              for (p <- podcasts) yield new iTunesRssItem(p, tag.id).toXml
+              for (p <- contents.filter(c => hasEpisode(c))) yield new iTunesRssItem(p, tag.id).toXml
             }
           </channel>
         </rss>
@@ -61,6 +61,10 @@ object iTunesRssFeed {
     }
   }
 
+  def hasEpisode(content: Content): Boolean = {
+    /* should contain at least one audio asset */
+    content.elements.exists(elements => elements.flatMap(e => e.assets).exists(_.`type` == AssetType.Audio))
+  }
 }
 
 class CategoryRss(val category: PodcastCategory) {
