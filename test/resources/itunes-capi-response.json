@@ -11,10 +11,10 @@
     "tag": {
       "podcast": {
         "explicit": false,
-        "image": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png",
+        "image": "https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png",
         "copyright": "theguardian.com © 2014",
         "author": "theguardian.com",
-        "linkUrl": "http://www.theguardian.com",
+        "linkUrl": "https://www.theguardian.com",
         "subscriptionUrl": "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=136697669",
         "categories": [
             {
@@ -28,8 +28,8 @@
       "id": "science/series/science",
       "sectionId": "science",
       "type": "series",
-      "webUrl": "http://www.theguardian.com/science/series/science",
-      "apiUrl": "http://content.guardianapis.com/science/series/science",
+      "webUrl": "https://www.theguardian.com/science/series/science",
+      "apiUrl": "https://content.guardianapis.com/science/series/science",
       "sectionName": "Science"
     },
     "results": [
@@ -64,8 +64,8 @@
           "byline": "Ian Sample",
           "commentable": "false"
         },
-        "webUrl": "http://www.theguardian.com/science/audio/2015/nov/20/mathematics-john-conway-numbers-game-theory",
-        "apiUrl": "http://content.guardianapis.com/science/audio/2015/nov/20/mathematics-john-conway-numbers-game-theory",
+        "webUrl": "https://www.theguardian.com/science/audio/2015/nov/20/mathematics-john-conway-numbers-game-theory",
+        "apiUrl": "https://content.guardianapis.com/science/audio/2015/nov/20/mathematics-john-conway-numbers-game-theory",
         "sectionName": "Science",
         "elements": [
           {
@@ -93,8 +93,8 @@
             "webTitle": "Science",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/science",
-            "apiUrl": "http://content.guardianapis.com/science/science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
             "sectionName": "Science"
           },
           {
@@ -102,8 +102,8 @@
             "webTitle": "Mathematics",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/mathematics",
-            "apiUrl": "http://content.guardianapis.com/science/mathematics",
+            "webUrl": "https://www.theguardian.com/science/mathematics",
+            "apiUrl": "https://content.guardianapis.com/science/mathematics",
             "sectionName": "Science"
           }
         ]
@@ -116,7 +116,7 @@
         "webPublicationDate": "2015-12-04T12:04:27+01:00",
         "fields": {
           "isPremoderated": "false",
-          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/6/27/1372330897211/8f5ea9d8-cd53-4597-ae40-f24cb6de7ecd-140x84.jpeg",
+          "thumbnail": "https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/6/27/1372330897211/8f5ea9d8-cd53-4597-ae40-f24cb6de7ecd-140x84.jpeg",
           "shouldHideAdverts": "false",
           "wordcount": "73",
           "shortUrl": "http://gu.com/p/4e7hx",
@@ -139,8 +139,8 @@
           "byline": "Nicola Davis",
           "commentable": "false"
         },
-        "webUrl": "http://www.theguardian.com/science/audio/2015/nov/13/conspiracy-theories-david-icke",
-        "apiUrl": "http://content.guardianapis.com/science/audio/2015/nov/13/conspiracy-theories-david-icke",
+        "webUrl": "https://www.theguardian.com/science/audio/2015/nov/13/conspiracy-theories-david-icke",
+        "apiUrl": "https://content.guardianapis.com/science/audio/2015/nov/13/conspiracy-theories-david-icke",
         "sectionName": "Science",
         "elements": [
           {
@@ -168,8 +168,8 @@
             "webTitle": "Science",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/science",
-            "apiUrl": "http://content.guardianapis.com/science/science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
             "sectionName": "Science"
           },
           {
@@ -177,8 +177,8 @@
             "webTitle": "Psychology",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/psychology",
-            "apiUrl": "http://content.guardianapis.com/science/psychology",
+            "webUrl": "https://www.theguardian.com/science/psychology",
+            "apiUrl": "https://content.guardianapis.com/science/psychology",
             "sectionName": "Science"
           }
         ]
@@ -191,7 +191,7 @@
         "webPublicationDate": "2015-11-06T07:30:00Z",
         "fields": {
           "isPremoderated": "false",
-          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/5/2/1399039361104/A-phrenological-map-of-th-004.jpg",
+          "thumbnail": "https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/5/2/1399039361104/A-phrenological-map-of-th-004.jpg",
           "shouldHideAdverts": "false",
           "wordcount": "103",
           "shortUrl": "http://gu.com/p/4dqj8",
@@ -214,7 +214,7 @@
           "byline": "Nicola Davis",
           "commentable": "false"
         },
-        "webUrl": "http://www.theguardian.com/science/audio/2015/nov/06/science-weekly-podcast-story-brain-david-eagleman-neuroscience",
+        "webUrl": "https://www.theguardian.com/science/audio/2015/nov/06/science-weekly-podcast-story-brain-david-eagleman-neuroscience",
         "apiUrl": " ",
         "sectionName": "Science",
         "elements": [
@@ -244,8 +244,8 @@
             "webTitle": "Science",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/science",
-            "apiUrl": "http://content.guardianapis.com/science/science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
             "sectionName": "Science"
           },
           {
@@ -253,8 +253,8 @@
             "webTitle": "David Eagleman",
             "type": "keyword",
             "sectionId": "books",
-            "webUrl": "http://www.theguardian.com/books/david-eagleman",
-            "apiUrl": "http://content.guardianapis.com/books/david-eagleman",
+            "webUrl": "https://www.theguardian.com/books/david-eagleman",
+            "apiUrl": "https://content.guardianapis.com/books/david-eagleman",
             "sectionName": "Books"
           },
           {
@@ -262,8 +262,8 @@
             "webTitle": "Neuroscience",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/neuroscience",
-            "apiUrl": "http://content.guardianapis.com/science/neuroscience",
+            "webUrl": "https://www.theguardian.com/science/neuroscience",
+            "apiUrl": "https://content.guardianapis.com/science/neuroscience",
             "sectionName": "Science"
           }
         ]
@@ -278,7 +278,7 @@
         "webPublicationDate": "2014-11-07T16:26:00Z",
         "fields": {
           "isPremoderated": "false",
-          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/10/24/1414170922653/Shortlisted-books-for-Roy-001.jpg",
+          "thumbnail": "https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/10/24/1414170922653/Shortlisted-books-for-Roy-001.jpg",
           "shouldHideAdverts": "false",
           "wordcount": "126",
           "shortUrl": "http://gu.com/p/435bj",
@@ -302,8 +302,8 @@
           "byline": "Presented by Ian Sample and produced by Iain Chambers",
           "commentable": "false"
         },
-        "webUrl": "http://www.theguardian.com/science/audio/2014/nov/07/cern-royal-society-science-book-prize",
-        "apiUrl": "http://content.guardianapis.com/science/audio/2014/nov/07/cern-royal-society-science-book-prize",
+        "webUrl": "https://www.theguardian.com/science/audio/2014/nov/07/cern-royal-society-science-book-prize",
+        "apiUrl": "https://content.guardianapis.com/science/audio/2014/nov/07/cern-royal-society-science-book-prize",
         "sectionName": "Science",
         "elements": [
           {
@@ -314,7 +314,7 @@
               {
                 "type": "audio",
                 "mimeType": "audio/mpeg",
-                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1415315200719/128/gdn.sci.141106.ic.Science_Podcast.mp3",
+                "file": "https://static.guim.co.uk/audio/kip/science/series/science/1415315200719/128/gdn.sci.141106.ic.Science_Podcast.mp3",
                 "typeData": {
                   "explicit": "false",
                   "source": "guardian.co.uk",
@@ -331,8 +331,8 @@
             "webTitle": "Science",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/science",
-            "apiUrl": "http://content.guardianapis.com/science/science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
             "sectionName": "Science"
           },
           {
@@ -340,8 +340,8 @@
             "webTitle": "Cern",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/cern",
-            "apiUrl": "http://content.guardianapis.com/science/cern",
+            "webUrl": "https://www.theguardian.com/science/cern",
+            "apiUrl": "https://content.guardianapis.com/science/cern",
             "sectionName": "Science"
           },
           {
@@ -350,8 +350,8 @@
             "description": "The latest news and comment on the Royal Society Winton Prize for Science Books",
             "type": "keyword",
             "sectionId": "books",
-            "webUrl": "http://www.theguardian.com/books/royal-society-science-book-prize",
-            "apiUrl": "http://content.guardianapis.com/books/royal-society-science-book-prize",
+            "webUrl": "https://www.theguardian.com/books/royal-society-science-book-prize",
+            "apiUrl": "https://content.guardianapis.com/books/royal-society-science-book-prize",
             "sectionName": "Books"
           },
           {
@@ -360,8 +360,8 @@
             "description": "The latest news and comment on the Rosetta space probe",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/rosetta-space-probe",
-            "apiUrl": "http://content.guardianapis.com/science/rosetta-space-probe",
+            "webUrl": "https://www.theguardian.com/science/rosetta-space-probe",
+            "apiUrl": "https://content.guardianapis.com/science/rosetta-space-probe",
             "sectionName": "Science"
           },
           {
@@ -369,8 +369,8 @@
             "webTitle": "Space",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/space",
-            "apiUrl": "http://content.guardianapis.com/science/space",
+            "webUrl": "https://www.theguardian.com/science/space",
+            "apiUrl": "https://content.guardianapis.com/science/space",
             "sectionName": "Science"
           },
           {
@@ -378,8 +378,8 @@
             "webTitle": "Royal Society",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/royal-society",
-            "apiUrl": "http://content.guardianapis.com/science/royal-society",
+            "webUrl": "https://www.theguardian.com/science/royal-society",
+            "apiUrl": "https://content.guardianapis.com/science/royal-society",
             "sectionName": "Science"
           },
           {
@@ -387,8 +387,8 @@
             "webTitle": "Science and nature",
             "type": "keyword",
             "sectionId": "books",
-            "webUrl": "http://www.theguardian.com/books/scienceandnature",
-            "apiUrl": "http://content.guardianapis.com/books/scienceandnature",
+            "webUrl": "https://www.theguardian.com/books/scienceandnature",
+            "apiUrl": "https://content.guardianapis.com/books/scienceandnature",
             "sectionName": "Books"
           },
           {
@@ -396,8 +396,8 @@
             "webTitle": "Books",
             "type": "keyword",
             "sectionId": "books",
-            "webUrl": "http://www.theguardian.com/books/books",
-            "apiUrl": "http://content.guardianapis.com/books/books",
+            "webUrl": "https://www.theguardian.com/books/books",
+            "apiUrl": "https://content.guardianapis.com/books/books",
             "sectionName": "Books"
           }
         ]
@@ -410,7 +410,7 @@
         "webPublicationDate": "2014-11-03T07:00:00Z",
         "fields": {
           "isPremoderated": "false",
-          "thumbnail": "http://static.guim.co.uk/sys-images/Guardian/About/General/2013/2/1/1359726277532/Hugh-Fearnley-Whittingsta-003.jpg",
+          "thumbnail": "https://static.guim.co.uk/sys-images/Guardian/About/General/2013/2/1/1359726277532/Hugh-Fearnley-Whittingsta-003.jpg",
           "shouldHideAdverts": "false",
           "wordcount": "92",
           "shortUrl": "http://gu.com/p/42pne",
@@ -433,8 +433,8 @@
           "byline": "Nicola Davis",
           "commentable": "false"
         },
-        "webUrl": "http://www.theguardian.com/science/audio/2014/nov/03/chemistry-food-and-drink",
-        "apiUrl": "http://content.guardianapis.com/science/audio/2014/nov/03/chemistry-food-and-drink",
+        "webUrl": "https://www.theguardian.com/science/audio/2014/nov/03/chemistry-food-and-drink",
+        "apiUrl": "https://content.guardianapis.com/science/audio/2014/nov/03/chemistry-food-and-drink",
         "sectionName": "Science",
         "elements": [
           {
@@ -445,7 +445,7 @@
               {
                 "type": "audio",
                 "mimeType": "audio/mpeg",
-                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1414599978449/1094/gdn.141102.ic.Science_Weekly.mp3",
+                "file": "https://static.guim.co.uk/audio/kip/science/series/science/1414599978449/1094/gdn.141102.ic.Science_Weekly.mp3",
                 "typeData": {
                   "explicit": "false",
                   "source": "guardian.co.uk",
@@ -462,8 +462,8 @@
             "webTitle": "Science",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/science",
-            "apiUrl": "http://content.guardianapis.com/science/science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
             "sectionName": "Science"
           },
           {
@@ -471,8 +471,8 @@
             "webTitle": "Chemistry",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/chemistry",
-            "apiUrl": "http://content.guardianapis.com/science/chemistry",
+            "webUrl": "https://www.theguardian.com/science/chemistry",
+            "apiUrl": "https://content.guardianapis.com/science/chemistry",
             "sectionName": "Science"
           },
           {
@@ -480,8 +480,8 @@
             "webTitle": "Food & drink",
             "type": "keyword",
             "sectionId": "lifeandstyle",
-            "webUrl": "http://www.theguardian.com/lifeandstyle/food-and-drink",
-            "apiUrl": "http://content.guardianapis.com/lifeandstyle/food-and-drink",
+            "webUrl": "https://www.theguardian.com/lifeandstyle/food-and-drink",
+            "apiUrl": "https://content.guardianapis.com/lifeandstyle/food-and-drink",
             "sectionName": "Life and style"
           },
           {
@@ -489,8 +489,8 @@
             "webTitle": "Life and style",
             "type": "keyword",
             "sectionId": "lifeandstyle",
-            "webUrl": "http://www.theguardian.com/lifeandstyle/lifeandstyle",
-            "apiUrl": "http://content.guardianapis.com/lifeandstyle/lifeandstyle",
+            "webUrl": "https://www.theguardian.com/lifeandstyle/lifeandstyle",
+            "apiUrl": "https://content.guardianapis.com/lifeandstyle/lifeandstyle",
             "sectionName": "Life and style"
           }
         ]
@@ -503,7 +503,7 @@
         "webPublicationDate": "2014-07-07T05:00:00Z",
         "fields": {
           "isPremoderated": "false",
-          "thumbnail": "http://static.guim.co.uk/sys-images/Football/Pix/pictures/2009/5/13/1242211680756/Albert-Einstein-writes-a--004.jpg",
+          "thumbnail": "https://static.guim.co.uk/sys-images/Football/Pix/pictures/2009/5/13/1242211680756/Albert-Einstein-writes-a--004.jpg",
           "shouldHideAdverts": "false",
           "wordcount": "204",
           "shortUrl": "http://gu.com/p/3qy7m",
@@ -526,8 +526,8 @@
           "byline": "Presented by Ian Sample and produced by Jason Phipps with Jessica Aldred and Nicola Davis",
           "commentable": "true"
         },
-        "webUrl": "http://www.theguardian.com/science/audio/2014/jul/07/science-weekly-podcast-robbert-dijkgraaf-where-great-minds-think",
-        "apiUrl": "http://content.guardianapis.com/science/audio/2014/jul/07/science-weekly-podcast-robbert-dijkgraaf-where-great-minds-think",
+        "webUrl": "https://www.theguardian.com/science/audio/2014/jul/07/science-weekly-podcast-robbert-dijkgraaf-where-great-minds-think",
+        "apiUrl": "https://content.guardianapis.com/science/audio/2014/jul/07/science-weekly-podcast-robbert-dijkgraaf-where-great-minds-think",
         "sectionName": "Science",
         "elements": [
           {
@@ -538,7 +538,7 @@
               {
                 "type": "audio",
                 "mimeType": "audio/mpeg",
-                "file": "http://static.guim.co.uk/audio/kip/science/series/science/1404485877366/4653/gnl.sci.140707.jp.science_weekly.mp3",
+                "file": "https://static.guim.co.uk/audio/kip/science/series/science/1404485877366/4653/gnl.sci.140707.jp.science_weekly.mp3",
                 "typeData": {
                   "explicit": "false",
                   "source": "Guardian",
@@ -555,8 +555,8 @@
             "webTitle": "Science",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/science",
-            "apiUrl": "http://content.guardianapis.com/science/science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
             "sectionName": "Science"
           },
           {
@@ -564,8 +564,8 @@
             "webTitle": "Robots",
             "type": "keyword",
             "sectionId": "technology",
-            "webUrl": "http://www.theguardian.com/technology/robots",
-            "apiUrl": "http://content.guardianapis.com/technology/robots",
+            "webUrl": "https://www.theguardian.com/technology/robots",
+            "apiUrl": "https://content.guardianapis.com/technology/robots",
             "sectionName": "Technology"
           },
           {
@@ -573,8 +573,8 @@
             "webTitle": "Mathematics",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/mathematics",
-            "apiUrl": "http://content.guardianapis.com/science/mathematics",
+            "webUrl": "https://www.theguardian.com/science/mathematics",
+            "apiUrl": "https://content.guardianapis.com/science/mathematics",
             "sectionName": "Science"
           },
           {
@@ -582,8 +582,8 @@
             "webTitle": "Albert Einstein",
             "type": "keyword",
             "sectionId": "science",
-            "webUrl": "http://www.theguardian.com/science/alberteinstein",
-            "apiUrl": "http://content.guardianapis.com/science/alberteinstein",
+            "webUrl": "https://www.theguardian.com/science/alberteinstein",
+            "apiUrl": "https://content.guardianapis.com/science/alberteinstein",
             "sectionName": "Science"
           },
           {
@@ -591,8 +591,8 @@
             "webTitle": "Noam Chomsky",
             "type": "keyword",
             "sectionId": "us-news",
-            "webUrl": "http://www.theguardian.com/us-news/noam-chomsky",
-            "apiUrl": "http://content.guardianapis.com/us-news/noam-chomsky",
+            "webUrl": "https://www.theguardian.com/us-news/noam-chomsky",
+            "apiUrl": "https://content.guardianapis.com/us-news/noam-chomsky",
             "sectionName": "US news"
           },
           {
@@ -600,8 +600,8 @@
             "webTitle": "Coral",
             "type": "keyword",
             "sectionId": "environment",
-            "webUrl": "http://www.theguardian.com/environment/coral",
-            "apiUrl": "http://content.guardianapis.com/environment/coral",
+            "webUrl": "https://www.theguardian.com/environment/coral",
+            "apiUrl": "https://content.guardianapis.com/environment/coral",
             "sectionName": "Environment"
           },
           {
@@ -609,8 +609,8 @@
             "webTitle": "Environment",
             "type": "keyword",
             "sectionId": "environment",
-            "webUrl": "http://www.theguardian.com/environment/environment",
-            "apiUrl": "http://content.guardianapis.com/environment/environment",
+            "webUrl": "https://www.theguardian.com/environment/environment",
+            "apiUrl": "https://content.guardianapis.com/environment/environment",
             "sectionName": "Environment"
           },
           {
@@ -618,8 +618,8 @@
             "webTitle": "Conservation",
             "type": "keyword",
             "sectionId": "environment",
-            "webUrl": "http://www.theguardian.com/environment/conservation",
-            "apiUrl": "http://content.guardianapis.com/environment/conservation",
+            "webUrl": "https://www.theguardian.com/environment/conservation",
+            "apiUrl": "https://content.guardianapis.com/environment/conservation",
             "sectionName": "Environment"
           }
         ]
