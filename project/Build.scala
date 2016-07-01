@@ -23,6 +23,7 @@ object iTunesRssBuild extends Build {
     .settings(
 
       libraryDependencies ++= Seq(
+        "org.jsoup" % "jsoup" % "1.8.1",
         "com.gu" %% "content-api-client" % "8.9",
         "org.scalactic" %% "scalactic" % "2.2.4",
         "org.scalatest" %% "scalatest" % "2.2.5" % "test"

@@ -16,13 +16,15 @@ object iTunesRssFeed {
 
   def toXml(tag: Tag, contents: List[Content]): Node Or String = {
 
+    val description = Filtering.description(tag.description.getOrElse(""))
+
     tag.podcast match {
       case Some(podcast) => Good {
         <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
           <channel>
             <title>{ tag.webTitle }</title>
             <link>{ tag.webUrl }</link>
-            <description>{ tag.description.getOrElse("") }</description>
+            <description>{ description }</description>
             <language>en-gb</language>
             <copyright>{ podcast.copyright }</copyright>
             <lastBuildDate>
@@ -40,11 +42,11 @@ object iTunesRssFeed {
                 <itunes:explicit>yes</itunes:explicit>
             }
             <itunes:keywords/>
-            <itunes:summary>{ tag.description.getOrElse("") }</itunes:summary>
+            <itunes:summary>{ description }</itunes:summary>
             <image>
               <title>{ tag.webTitle }</title>
-              <url>http://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
-              <link>http://www.theguardian.com</link>
+              <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
+              <link>https://www.theguardian.com</link>
             </image>
             {
               for (category <- podcast.categories.getOrElse(Nil)) yield new CategoryRss(category).toXml
