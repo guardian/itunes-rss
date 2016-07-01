@@ -13,7 +13,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
       <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
         <channel>
           <title>Science Weekly</title>
-          <link>http://www.theguardian.com/science/series/science</link>
+          <link>https://www.theguardian.com/science/series/science</link>
           <description>
             The Guardian's science team bring you the best analysis and interviews from the worlds of science and technology
           </description>
@@ -25,7 +25,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
             <itunes:email>userhelp@theguardian.com</itunes:email>
             <itunes:name>theguardian.com</itunes:name>
           </itunes:owner>
-          <itunes:image href="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png"/>
+          <itunes:image href="https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png"/>
           <itunes:author>theguardian.com</itunes:author>
           <itunes:keywords/>
           <itunes:summary>
@@ -33,8 +33,8 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
           </itunes:summary>
           <image>
             <title>Science Weekly</title>
-            <url>http://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
-            <link>http://www.theguardian.com</link>
+            <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
+            <link>https://www.theguardian.com</link>
           </image>
           <itunes:category text="Health">
             <itunes:category text="Fitness &amp; Nutrition"/>

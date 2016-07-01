@@ -21,7 +21,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String) {
     /* these vals match the XML fields */
     val title = podcast.webTitle
 
-    val description = podcast.fields.flatMap(_.standfirst).getOrElse("")
+    val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse(""))
 
     val url = asset.flatMap(_.file).getOrElse("")
 
@@ -56,9 +56,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String) {
 
     val keywords = makeKeywordsList(podcast.tags)
 
-    val subtitle = podcast.fields.flatMap(_.standfirst).getOrElse("")
+    val subtitle = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse(""))
 
-    val summary = podcast.fields.flatMap(_.standfirst).getOrElse("")
+    val summary = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse(""))
 
     <item>
       <title> { title } </title>
