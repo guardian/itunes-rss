@@ -1,0 +1,15 @@
+[Unit]
+Description=itunes-rss
+
+[Service]
+User=content-api
+Group=content-api
+Restart=no
+Environment='HOME=/home/content-api'
+Environment='JAVA_OPTS=-Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/home/content-api/logs/gc.log -XX:+TieredCompilation -XX:ReservedCodeCacheSize=256m -Dconfig.file=/etc/gu/content-api-itunes-rss.conf'
+WorkingDirectory=/home/content-api
+
+ExecStart=/home/content-api/content-api-itunes-rss/bin/content-api-itunes-rss
+
+[Install]
+WantedBy=multi-user.target
