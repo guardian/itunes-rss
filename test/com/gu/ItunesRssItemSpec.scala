@@ -3,6 +3,7 @@ package com.gu.itunes
 import com.gu.itunes.XmlTestUtils.RemoveWhitespace
 import org.scalatest._
 import scala.xml.Utility.trim
+import com.gu.contentapi.client.model.v1.Asset
 
 class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
@@ -10,7 +11,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId).toXml
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head: Asset).toXml
     val trimmedPodcasts = for (p <- podcasts) yield trim(p)
 
     val expectedXml = RemoveWhitespace.transform(

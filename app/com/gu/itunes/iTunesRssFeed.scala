@@ -52,7 +52,10 @@ object iTunesRssFeed {
               for (category <- podcast.categories.getOrElse(Nil)) yield new CategoryRss(category).toXml
             }
             {
-              for (p <- contents.filter(c => hasEpisode(c))) yield new iTunesRssItem(p, tag.id).toXml
+              for {
+                podcast <- contents
+                asset <- getFirstAudioAsset(podcast)
+              } yield new iTunesRssItem(podcast, tag.id, asset).toXml
             }
           </channel>
         </rss>
@@ -63,10 +66,15 @@ object iTunesRssFeed {
     }
   }
 
-  def hasEpisode(content: Content): Boolean = {
-    /* should contain at least one audio asset */
-    content.elements.exists(elements => elements.flatMap(e => e.assets).exists(_.`type` == AssetType.Audio))
+  private def getFirstAudioAsset(podcast: Content): Option[Asset] = {
+    // should contain at least one audio asset
+    for {
+      elements <- podcast.elements
+      element <- elements.headOption
+      asset <- element.assets.find(_.`type` == AssetType.Audio)
+    } yield asset
   }
+
 }
 
 class CategoryRss(val category: PodcastCategory) {

@@ -6,28 +6,19 @@ import com.gu.contentapi.client.utils.CapiModelEnrichment._
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
   def toXml: Node = {
 
-    /* shared objects */
-    val asset = getFirstAsset(podcast)
-
-    val typeData: Option[AssetFields] = for {
-      asset <- getFirstAsset(podcast)
-      typeData <- asset.typeData
-    } yield typeData
-
-    /* these vals match the XML fields */
     val title = podcast.webTitle
 
     val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse(""))
 
-    val url = asset.flatMap(_.file).getOrElse("")
+    val url = asset.file.getOrElse("")
 
-    val sizeInBytes = typeData.flatMap(_.sizeInBytes).getOrElse(0).toString
+    val sizeInBytes = asset.typeData.flatMap(_.sizeInBytes).getOrElse(0).toString
 
-    val mType = asset.flatMap(_.mimeType).getOrElse("")
+    val mType = asset.mimeType.getOrElse("")
 
     val pubDate = {
       val lastModified = podcast.webPublicationDate.map(_.toJodaDateTime).getOrElse(DateTime.now)
@@ -38,19 +29,19 @@ class iTunesRssItem(val podcast: Content, val tagId: String) {
     to http://download.guardian.co.uk/{...} for legacy reasons (to match the R2 implementation);
     new content served from https://audio.guim.co.uk will preserve its structure. */
 
-    val capiUrl = asset.flatMap(_.file).getOrElse("")
+    val capiUrl = asset.file.getOrElse("")
     val regex = s"""https?://static(-secure)?.guim.co.uk/audio/kip/$tagId"""
     val guid = capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio")
 
     val duration = {
-      val seconds = typeData.flatMap(_.durationSeconds)
-      val minutes = typeData.flatMap(_.durationMinutes)
+      val seconds = asset.typeData.flatMap(_.durationSeconds)
+      val minutes = asset.typeData.flatMap(_.durationMinutes)
       convertDate(seconds, minutes)
     }
 
     val explicit = {
-      val exp = typeData.flatMap(_.explicit).getOrElse(false)
-      val cln = typeData.flatMap(_.clean).getOrElse(false)
+      val exp = asset.typeData.flatMap(_.explicit).getOrElse(false)
+      val cln = asset.typeData.flatMap(_.clean).getOrElse(false)
       if (exp) Some("yes") else if (cln) Some("clean") else None
     }
 
@@ -89,14 +80,6 @@ class iTunesRssItem(val podcast: Content, val tagId: String) {
     val sec = rst % 60
 
     s"${if (hrs < 10) "0" + hrs else hrs}:${if (min <= 9) "0" + min else min}:${if (sec <= 9) "0" + sec else sec}"
-  }
-
-  private def getFirstAsset(podcast: Content): Option[Asset] = {
-    for {
-      elements <- podcast.elements
-      element <- elements.headOption
-      asset <- element.assets.headOption
-    } yield asset
   }
 
   private def makeKeywordsList(tags: Seq[Tag]): String = {
