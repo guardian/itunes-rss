@@ -22,6 +22,9 @@ object iTunesRssFeed {
       case Some(podcast) => Good {
         <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
           <channel>
+            {
+              if (tag.webTitle == "What would a feminist do?") <itunes:new-feed-url>{ tag.webUrl + "/podcast.xml" }</itunes:new-feed-url>
+            }
             <title>{ tag.webTitle }</title>
             <link>{ tag.webUrl }</link>
             <description>{ description }</description>
