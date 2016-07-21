@@ -101,7 +101,7 @@
                 "AvailabilityZones": { "Fn::GetAZs": "" },
                 "LaunchConfigurationName": { "Ref": "LaunchConfig" },
                 "MinSize": "1",
-                "MaxSize": "2",
+                "MaxSize": "20",
                 "DesiredCapacity": "1",
                 "HealthCheckType": "ELB",
                 "HealthCheckGracePeriod": 300,
@@ -125,6 +125,44 @@
                 ]
             }
         },
+        "ScaleUpPolicy" : {
+          "Type" : "AWS::AutoScaling::ScalingPolicy",
+          "Properties" : {
+            "AutoScalingGroupName" : { "Ref" : "AutoscalingGroup" },
+            "AdjustmentType" : "PercentChangeInCapacity",
+            "ScalingAdjustment" : "100",
+            "Cooldown" : "60"
+          }
+        },
+        "ScaleDownPolicy" : {
+          "Type" : "AWS::AutoScaling::ScalingPolicy",
+          "Properties" : {
+            "AutoScalingGroupName" : { "Ref" : "AutoscalingGroup" },
+            "AdjustmentType" : "ChangeInCapacity",
+            "ScalingAdjustment" : "-1",
+            "Cooldown" : "600"
+          }
+        },
+        "HighCPUAlarm": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Properties": {
+              "AlarmDescription" : "CPU utilization alarm for autoscaling",
+              "EvaluationPeriods" : "1",
+              "Statistic" : "Average",
+              "Threshold" : "10",
+              "AlarmActions" : [ { "Ref": "ScaleUpPolicy" } ],
+              "OKActions" : [ { "Ref": "ScaleDownPolicy" } ],
+              "ComparisonOperator" : "GreaterThanThreshold",
+              "Dimensions" : [ {
+                  "Name": "AutoScalingGroupName",
+                  "Value": { "Ref": "AutoscalingGroup" }
+              } ],
+              "MetricName" : "CPUUtilization",
+              "Namespace" : "AWS/EC2",
+              "Period" : "60"
+            }
+        },
+
         "LaunchConfig": {
             "Type": "AWS::AutoScaling::LaunchConfiguration",
 
@@ -132,7 +170,7 @@
                 "ImageId": {"Ref": "AMI"},
                 "AssociatePublicIpAddress": true,
                 "SecurityGroups": [ { "Ref": "ApplicationSecurityGroup" } ],
-                "InstanceType": "t2.nano",
+                "InstanceType": "t2.micro",
                 "IamInstanceProfile": { "Ref": "InstanceProfile" },
                 "UserData": {
                     "Fn::Base64": {
