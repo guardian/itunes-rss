@@ -3,17 +3,23 @@ package com.gu.itunes
 object Redirection {
 
   /*
-    iTunes site manager does not allow to change the XML feed location for an existing podcast.
-    this prevents guardian editors to migrate an existing podcast audience to a new tag.    
+    To update a RSS feed URL (it happens when editors want to change tags) we need to:
+      1. return a 301 redirect response for the old feed to the new feed
+      2. use the <itunes:new-feed-url> tag in the new feed to point to the new URL
+
+    Documentation: https://help.apple.com/itc/podcasts_connect/#/itca489031e0
   */
-  def redirect(tagId: String): Option[String] = {
-    if (tagId == "film/series/filmweekly") {
-      Some("film/series/the-dailies-podcast")
-    } else if (tagId == "technology/series/techweekly") {
-      Some("technology/series/chips-with-everything")
-    } else {
-      None
-    }
-  }
+
+  val BaseUrl = "https://www.theguardian.com"
+
+  val redirectsMapping = Map[String, String](
+    "film/series/filmweekly" -> "film/series/the-dailies-podcast",
+    "technology/series/techweekly" -> "technology/series/chips-with-everything",
+    "politics/series/politics-for-humans" -> "us-news/series/politics-for-humans"
+  )
+
+  def redirect(tagId: String): Option[String] = redirectsMapping.get(tagId)
+
+  def isNewFeedUrl(tagId: String): Boolean = redirectsMapping.values.toList.contains(tagId)
 
 }
