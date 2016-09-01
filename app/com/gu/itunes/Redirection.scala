@@ -15,7 +15,8 @@ object Redirection {
   val redirectsMapping = Map[String, String](
     "film/series/filmweekly" -> "film/series/the-dailies-podcast",
     "technology/series/techweekly" -> "technology/series/chips-with-everything",
-    "politics/series/politics-for-humans" -> "us-news/series/politics-for-humans"
+    "politics/series/politics-for-humans" -> "us-news/series/politics-for-humans",
+    "australia-news/series/token-podcast" -> "society/series/token"
   )
 
   def redirect(tagId: String): Option[String] = redirectsMapping.get(tagId)
