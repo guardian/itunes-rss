@@ -12,18 +12,26 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val title = podcast.webTitle
 
-    val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse(""))
+    val lastModified = podcast.webPublicationDate.map(_.toJodaDateTime).getOrElse(DateTime.now)
+
+    val pubDate = DateSupport.toRssTimeFormat(lastModified)
+
+    val membershipCta = {
+      val launchDay = new DateTime(2016, 12, 6, 0, 0)
+      if (lastModified.isAfter(launchDay) && tagId == "politics/series/politicsweekly") {
+        """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
+      } else {
+        ""
+      }
+    }
+
+    val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse("")) + membershipCta
 
     val url = asset.file.getOrElse("")
 
     val sizeInBytes = asset.typeData.flatMap(_.sizeInBytes).getOrElse(0).toString
 
     val mType = asset.mimeType.getOrElse("")
-
-    val pubDate = {
-      val lastModified = podcast.webPublicationDate.map(_.toJodaDateTime).getOrElse(DateTime.now)
-      DateSupport.toRssTimeFormat(lastModified)
-    }
 
     /* Old content served from http(s)://static(-secure).guim.co.uk/{...} will have the guid field set
     to http://download.guardian.co.uk/{...} for legacy reasons (to match the R2 implementation);
@@ -49,7 +57,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val subtitle = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse(""))
 
-    val summary = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse(""))
+    val summary = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse("")) + membershipCta
 
     <item>
       <title> { title } </title>
