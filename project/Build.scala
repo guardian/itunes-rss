@@ -28,8 +28,8 @@ object iTunesRssBuild extends Build {
         "org.scalactic" %% "scalactic" % "2.2.4",
         "org.scalatest" %% "scalatest" % "2.2.5" % "test"
       ),
-      riffRaffPackageName := "content-api-itunes-rss",
-      riffRaffManifestProjectName := "Content Platforms::itunes-rss",
+      riffRaffPackageName := "itunes-rss",
+      riffRaffManifestProjectName := s"Off-platform::${name.value}",
       riffRaffPackageType := (packageZipTarball in Universal).value,
       riffRaffBuildIdentifier := sys.env.getOrElse("BUILD_NUMBER", "DEV"),
       riffRaffUploadArtifactBucket := Some("riffraff-artifact"),
