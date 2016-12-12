@@ -7,16 +7,16 @@ import com.gu.riffraff.artifact._
 import RiffRaffArtifact.autoImport._
 import UniversalPlugin.autoImport._
 
-object iTunesRssBuild extends Build {
+object PodcastsRssBuild extends Build {
 
   val basicSettings = Seq(
     organization  := "com.gu",
-    description   := "iTunes RSS feed",
+    description   := "podcasts RSS feed",
     scalaVersion  := "2.11.8",
     scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
   )
 
-  val root = Project("content-api-itunes-rss", file("."))
+  val root = Project("podcasts-rss", file("."))
     .enablePlugins(PlayScala)
     .enablePlugins(RiffRaffArtifact)
     .enablePlugins(UniversalPlugin)
@@ -28,7 +28,7 @@ object iTunesRssBuild extends Build {
         "org.scalactic" %% "scalactic" % "2.2.4",
         "org.scalatest" %% "scalatest" % "2.2.5" % "test"
       ),
-      riffRaffPackageName := "itunes-rss",
+      riffRaffPackageName := "podcasts-rss",
       riffRaffManifestProjectName := s"Off-platform::${name.value}",
       riffRaffPackageType := (packageZipTarball in Universal).value,
       riffRaffBuildIdentifier := sys.env.getOrElse("BUILD_NUMBER", "DEV"),

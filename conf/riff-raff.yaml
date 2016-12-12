@@ -3,17 +3,14 @@ stacks:
 regions:
 - eu-west-1
 deployments:
-  itunes-rss:
+  podcasts-rss:
     type: autoscaling
     parameters:
       bucket: content-api-dist
-  itunes-rss-ami-update:
+  podcasts-rss-ami-update:
     type: ami-cloudformation-parameter
+    app: podcasts-rss
     parameters:
       amiTags:
-        Recipe: ubuntu-wily-java8,
+        Recipe: ubuntu-wily-java8
         AmigoStage: PROD
-      amiParameter: AMI
-      cloudFormationStackName: itunes-rss
-      prependStackToCloudFormationStackName: false
-      appendStageToCloudFormationStackName: true
