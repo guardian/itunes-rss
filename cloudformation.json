@@ -1,8 +1,13 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "iTunes RSS feed generator",
+    "Description": "Podcasts RSS feed generator",
 
     "Parameters": {
+        "Stack": {
+            "Description": "Stack name",
+            "Type": "String",
+            "Default": "content-api"
+        },
         "Stage": {
             "Description": "Stage name",
             "Type": "String",
@@ -114,12 +119,12 @@
                     },
                     {
                         "Key": "Stack",
-                        "Value": "content-api-itunes-rss",
+                        "Value": { "Ref": "Stack" },
                         "PropagateAtLaunch": "true"
                     },
                     {
                         "Key": "App",
-                        "Value": "content-api-itunes-rss",
+                        "Value": "podcasts-rss",
                         "PropagateAtLaunch": "true"
                     }
                 ]
@@ -178,22 +183,28 @@
                             "#!/bin/bash -ev",
 
                             "adduser --disabled-password content-api",
-                            "wget -NP /home/ubuntu/.ssh https://s3-eu-west-1.amazonaws.com/content-api-dist/authorized_keys",
+
+                            { "Fn::Join": [ "", [ "aws configure set region ", { "Ref" : "AWS::Region" } ] ] },
+ 
+                            "aws s3 cp s3://content-api-dist/authorized_keys /home/ubuntu/.ssh/authorized_keys",
+
+
                             "cd /home/content-api",
                             "mkdir logs",
                             "mkdir -p /etc/gu",
 
-                            { "Fn::Join": [ "", [ "wget https://s3-eu-west-1.amazonaws.com/content-api-dist/content-api-itunes-rss/",{ "Ref": "Stage" }, "/content-api-itunes-rss/content-api-itunes-rss-0.1-SNAPSHOT.tgz" ] ] },
-                            { "Fn::Join": [ "", [ "wget https://s3-eu-west-1.amazonaws.com/content-api-dist/content-api-itunes-rss/",{ "Ref": "Stage" }, "/content-api-itunes-rss/content-api-itunes-rss.conf" ] ] },
-                            "tar -xvf content-api-itunes-rss-0.1-SNAPSHOT.tgz",
-                            "rm content-api-itunes-rss-0.1-SNAPSHOT.tgz",
-                            "mv content-api-itunes-rss-0.1-SNAPSHOT content-api-itunes-rss",
-                            "mv content-api-itunes-rss.conf /etc/init",
+                            { "Fn::Join": [ "", [ "aws s3 cp s3://content-api-config/podcasts-rss/", { "Ref": "Stage" }, "/podcasts-rss.conf /etc/gu/podcasts-rss.conf" ] ] },
+
+                            { "Fn::Join": [ "", [ "aws s3 cp s3://content-api-dist/", { "Ref": "Stack" }, "/", { "Ref": "Stage" }, "/podcasts-rss/podcasts-rss.service /etc/systemd/system/podcasts-rss.service" ] ] },
+                            { "Fn::Join": [ "", [ "aws s3 cp s3://content-api-dist/", { "Ref": "Stack" }, "/", { "Ref": "Stage" }, "/podcasts-rss/podcasts-rss-0.1-SNAPSHOT.tgz ." ] ] },
+
+                            "tar -xvf podcasts-rss-0.1-SNAPSHOT.tgz",
+                            "rm podcasts-rss-0.1-SNAPSHOT.tgz",
+                            "mv podcasts-rss-0.1-SNAPSHOT podcasts-rss",
                             "chown -R content-api /home/content-api /etc/gu",
                             "chgrp -R content-api /home/content-api /etc/gu",
-                            { "Fn::Join": [ "", [ "aws s3 cp s3://content-api-config/content-api-itunes-rss/",{ "Ref": "Stage" }, "/content-api-itunes-rss.conf /etc/gu/content-api-itunes-rss.conf" ] ] },
 
-                            "start content-api-itunes-rss"
+                            "systemctl start podcasts-rss"
                         ] ]
                     }
                 }
