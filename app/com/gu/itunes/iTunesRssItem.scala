@@ -28,7 +28,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
     def acastTrial(url: String): String = {
       val launchDay = new DateTime(2017, 4, 6, 0, 0)
       if (lastModified.isAfter(launchDay) && tagId == "technology/series/chips-with-everything") {
-         "https://flex.acast.com/?url=" + url.replace("https://", "")
+         "https://flex.acast.com/" + url.replace("https://", "")
       }
       else url
     }
