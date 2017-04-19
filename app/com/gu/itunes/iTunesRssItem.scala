@@ -25,9 +25,17 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       }
     }
 
+    def acastTrial(url: String): String = {
+      val launchDay = new DateTime(2017, 4, 19, 0, 0)
+      if (lastModified.isAfter(launchDay) && tagId == "technology/series/chips-with-everything") {
+         "https://flex.acast.com/" + url.replace("https://", "")
+      }
+      else url
+    }
+
     val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse("")) + membershipCta
 
-    val url = asset.file.getOrElse("")
+    val url = acastTrial(asset.file.getOrElse(""))
 
     val sizeInBytes = asset.typeData.flatMap(_.sizeInBytes).getOrElse(0).toString
 
