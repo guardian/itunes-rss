@@ -27,6 +27,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     def acastProxy(url: String): String = {
       val launchDay = new DateTime(2017, 5, 2, 0, 0)
+      val chipsWithEverythingLaunchDay = new DateTime(2017, 4, 19, 0, 0)
       val acastPodcasts = Seq(
         "football/series/footballweekly",
         "news/series/the-audio-long-read",
@@ -38,7 +39,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         "society/series/token"
       )
 
-      if (lastModified.isAfter(launchDay) && acastPodcasts.contains(tagId)) {
+      if ((tagId == "technology/series/chips-with-everything" && lastModified.isAfter(chipsWithEverythingLaunchDay)) ||
+        lastModified.isAfter(launchDay) && acastPodcasts.contains(tagId)) {
          "https://flex.acast.com/" + url.replace("https://", "")
       }
       else url
