@@ -25,9 +25,20 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       }
     }
 
-    def acastTrial(url: String): String = {
-      val launchDay = new DateTime(2017, 4, 19, 0, 0)
-      if (lastModified.isAfter(launchDay) && tagId == "technology/series/chips-with-everything") {
+    def acastProxy(url: String): String = {
+      val launchDay = new DateTime(2017, 5, 2, 0, 0)
+      val acastPodcasts = Seq(
+        "football/series/footballweekly",
+        "news/series/the-audio-long-read",
+        "science/series/science",
+        "politics/series/politicsweekly",
+        "arts/series/culture",
+        "books/series/books",
+        "technology/series/chips-with-everything",
+        "society/series/token"
+      )
+
+      if (lastModified.isAfter(launchDay) && acastPodcasts.contains(tagId)) {
          "https://flex.acast.com/" + url.replace("https://", "")
       }
       else url
@@ -35,7 +46,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse("")) + membershipCta
 
-    val url = acastTrial(asset.file.getOrElse(""))
+    val url = acastProxy(asset.file.getOrElse(""))
 
     val sizeInBytes = asset.typeData.flatMap(_.sizeInBytes).getOrElse(0).toString
 
