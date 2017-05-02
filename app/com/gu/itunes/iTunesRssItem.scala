@@ -34,7 +34,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         "politics/series/politicsweekly",
         "arts/series/culture",
         "books/series/books",
-        "technology/series/chips-with-everything"
+        "technology/series/chips-with-everything",
+        "society/series/token"
       )
 
       if (lastModified.isAfter(launchDay) && acastPodcasts.contains(tagId)) {
