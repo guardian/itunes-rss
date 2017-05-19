@@ -19,7 +19,8 @@ object Redirection {
     "film/series/filmweekly" -> "film/series/the-dailies-podcast",
     "technology/series/techweekly" -> "technology/series/chips-with-everything",
     "politics/series/politics-for-humans" -> "us-news/series/politics-for-humans",
-    "australia-news/series/token-podcast" -> "society/series/token"
+    "australia-news/series/token-podcast" -> "society/series/token",
+    "membership/series/guardian-live-podcast" -> "membership/series/we-need-to-talk-about"
   )
 
   def redirect(tagId: String): Option[String] = redirectsMapping.get(tagId)
