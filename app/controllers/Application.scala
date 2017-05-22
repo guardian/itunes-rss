@@ -26,7 +26,7 @@ object Application extends Controller {
   def itunesRss(tagId: String) = Action.async { implicit request =>
     val redirect = Redirection.redirect(tagId)
     redirect match {
-      case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId).absoluteURL()))
+      case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId).absoluteURL(true)))
       case None => rawRss(tagId)
     }
   }
