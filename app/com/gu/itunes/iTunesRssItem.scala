@@ -34,7 +34,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         "science/series/science",
         "politics/series/politicsweekly",
         "arts/series/culture",
-        "books/series/books",
+        "books/series",
         "technology/series/chips-with-everything",
         "society/series/token"
       )
