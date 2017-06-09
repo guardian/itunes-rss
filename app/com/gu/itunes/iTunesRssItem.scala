@@ -28,7 +28,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
     def acastProxy(url: String): String = {
       case class AcastLaunchGroup(launchDate: DateTime, tagIds: Seq[String])
 
-      val acastPodcasts: Seq[AcastLaunchGroup] = List(
+      val acastPodcasts: Seq[AcastLaunchGroup] = Seq(
         AcastLaunchGroup(new DateTime(2017, 4, 19, 0, 0), Seq("technology/series/chips-with-everything")),
         AcastLaunchGroup(new DateTime(2017, 5, 2, 0, 0), Seq(
           "football/series/footballweekly",
