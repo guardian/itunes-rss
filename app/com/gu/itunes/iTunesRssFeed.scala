@@ -22,7 +22,7 @@ object iTunesRssFeed {
       case Some(podcast) => Good {
         <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
           <channel>
-            <itunes:new-feed-url>{ s"${tag.webUrl}/podcast.xml" }</itunes:new-feed-url>
+            <itunes:new-feed-url>{s"${tag.webUrl}/podcast.xml"}</itunes:new-feed-url>
             <title>{ tag.webTitle }</title>
             <link>{ tag.webUrl }</link>
             <description>{ description }</description>
