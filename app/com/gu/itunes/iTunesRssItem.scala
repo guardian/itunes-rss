@@ -28,7 +28,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
     def acastProxy(url: String): String = {
       val launchDay = new DateTime(2017, 5, 2, 0, 0)
       val chipsWithEverythingLaunchDay = new DateTime(2017, 4, 19, 0, 0)
-      val acastPodcasts = Seq(
+      val secondGroupLaunchDay = new DateTime(2017, 6, 12, 0, 0)
+      val acastPodcastsFirstGroup = Seq(
         "football/series/footballweekly",
         "news/series/the-audio-long-read",
         "science/series/science",
@@ -38,9 +39,28 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         "technology/series/chips-with-everything",
         "society/series/token"
       )
+      val acastPodcastsSecondGroup = Seq(
+        "politics/series/brexit-means",
+        "global-development/series/global-development-podcast",
+        "news/series/the-story",
+        "lifeandstyle/series/close-encounters",
+        "music/series/musicweekly",
+        "lifeandstyle/series/guardian-guide-to-running-podcast-beginner",
+        "commentisfree/series/what-would-a-feminist-do",
+        "tv-and-radio/series/game-of-thrones-the-citadel-podcast",
+        "australia-news/series/australian-politics-live",
+        "australia-news/series/behind-the-lines-podcast",
+        "artanddesign/series/guardian-australia-culture-podcast",
+        "film/series/the-dailies-podcast",
+        "world/series/project",
+        "us-news/series/politics-for-humans"
+      )
 
-      if ((tagId == "technology/series/chips-with-everything" && lastModified.isAfter(chipsWithEverythingLaunchDay)) ||
-        lastModified.isAfter(launchDay) && acastPodcasts.contains(tagId)) {
+      if (
+        (tagId == "technology/series/chips-with-everything" && lastModified.isAfter(chipsWithEverythingLaunchDay)) ||
+        lastModified.isAfter(launchDay) && acastPodcastsFirstGroup.contains(tagId) ||
+        lastModified.isAfter(secondGroupLaunchDay) && acastPodcastsSecondGroup.contains(tagId)
+      ) {
          "https://flex.acast.com/" + url.replace("https://", "")
       }
       else url
