@@ -1,0 +1,485 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "internal",
+    "total": 17,
+    "startIndex": 1,
+    "pageSize": 3,
+    "currentPage": 1,
+    "pages": 6,
+    "orderBy": "newest",
+    "tag": {
+      "id": "politics/series/brexit-means",
+      "type": "series",
+      "sectionId": "politics",
+      "sectionName": "Politics",
+      "webTitle": "The Guardian's Brexit Means...",
+      "webUrl": "https://www.theguardian.com/politics/series/brexit-means",
+      "apiUrl": "https://content.guardianapis.com/politics/series/brexit-means",
+      "description": "<p>We delve into the nitty gritty of Brexit and try to make some sort of sense of it, bringing you episodes as and when you need them.&nbsp;</p><p>In the coming months weâ€™ll be hearing from Britons and Europeans, Leavers and Remainers, politicians and ordinary people, economists, businessmen, lawyers, researchers, campaigners and many more about what Brexit means for them, for the UK and for the EU, how it might work â€“ and how it might not.</p><p>It will be a podcast that canâ€™t get enough of experts... And we want to hear from you too.</p>",
+      "podcast": {
+        "linkUrl": "http://www.theguardian.com/podcasts",
+        "copyright": "theguardian.com Â© 2017",
+        "author": "theguardian.com",
+        "subscriptionUrl": "https://itunes.apple.com/us/podcast/id1183290765",
+        "explicit": false,
+        "image": "https://uploads.guim.co.uk/2016/11/30/Brexit_Means..3000.jpg",
+        "categories": [
+          {
+            "main": "News & Politics"
+          }
+        ]
+      }
+    },
+    "results": [
+      {
+        "id": "politics/audio/2017/may/31/what-does-no-deal-actually-mean-brexit-means-podcast",
+        "type": "audio",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2018-07-31T06:00:16Z",
+        "webTitle": "What does 'no deal' actually mean? â€“ Brexit Means podcast",
+        "webUrl": "https://www.theguardian.com/politics/audio/2017/may/31/what-does-no-deal-actually-mean-brexit-means-podcast",
+        "apiUrl": "https://content.guardianapis.com/politics/audio/2017/may/31/what-does-no-deal-actually-mean-brexit-means-podcast",
+        "fields": {
+          "headline": "What does 'no deal' actually mean? â€“ Brexit Means podcast",
+          "standfirst": "<p>Forget â€˜Brexit means Brexitâ€™ and â€˜strong and stableâ€™ â€“ the government has a new mantra. Jon Henley, Dan Roberts and Jennifer Rankin discuss what â€˜no deal is better than a bad dealâ€™ might entail for the UK</p>",
+          "trailText": "Forget â€˜Brexit means Brexitâ€™ and â€˜strong and stableâ€™ â€“ the government has a new mantra. Jon Henley, Dan Roberts and Jennifer Rankin discuss what â€˜no deal is better than a bad dealâ€™ might entail for the UK",
+          "byline": "Presented by Jon Henley with Jennifer Rankin and Dan Roberts. Produced by Rowan Slaney",
+          "main": "<!-- Invalid audio element without \"html\" field -->",
+          "body": "<p><strong>Subscribe to us on <a href=\"https://itunes.apple.com/au/podcast/token/id1066024293?mt=2\">iTunes</a>, <a href=\"https://audioboom.com/channel/brexitmeans\">Audioboom</a>, <a href=\"https://www.mixcloud.com/BrexitMeans/\">Mixcloud</a>, <a href=\"https://soundcloud.com/user-18960974\">Soundcloud </a>and <a href=\"https://www.acast.com/token-podcast\">Acast</a> and join the discussion on <a href=\"https://www.facebook.com/GuardianPodcasts/\">Facebook</a> and <a href=\"https://twitter.com/guardianaudio\">Twitter</a>.</strong></p> <p>Today marks 10 days to go until the UKâ€™s general election, and there are now less than three weeks before Brexit negotiations start.</p> <p>The EU published quite detailed â€“ if not widely noticed â€“ <a href=\"https://www.theguardian.com/politics/2017/may/30/painstaking-detail-brexit-process-revealed-eu-documents\">position papers</a> this week on what we can expect from two particular aspects of the divorce talks, namely the Brexit bill and citizensâ€™ rights. To look into this further, <strong>Jon Henley</strong> will be talking to the Guardianâ€™s Brussels correspondent, <strong>Jennifer Rankin</strong>.</p> <p>Jon is also joined by our Brexit policy editor, <strong>Dan Roberts,</strong> to discuss â€œ<a href=\"https://www.theguardian.com/politics/2017/jan/17/prime-minister-vows-to-put-final-brexit-deal-before-parliament\">No deal is better than a bad deal</a>â€, a phrase that is fast becoming the British governmentâ€™s new mantra, in place of â€œBrexit means Brexitâ€™ and â€œstrong and stable leadershipâ€™. But does anyone realise what it actually means?</p> <p><strong>To get in touch with us, post your comment below or email <a href=\"mailto:brexitpodcast@theguardian.com\">brexitpodcast@theguardian.com</a>. And to write a review and be in with a chance of featuring in our weekly podcast column, email <a href=\"mailto:podcasts@theguardian.com\">podcasts@theguardian.com</a></strong><br /></p>",
+          "wordcount": "182",
+          "commentCloseDate": "2017-06-08T23:00:00Z",
+          "commentable": "true",
+          "creationDate": "2017-05-30T14:10:46Z",
+          "firstPublicationDate": "2017-05-31T06:00:16Z",
+          "internalComposerCode": "592d7d66e4b0bdd87e2f1794",
+          "internalPageCode": "3524123",
+          "isInappropriateForSponsorship": "false",
+          "isPremoderated": "false",
+          "lastModified": "2017-06-09T10:13:59Z",
+          "productionOffice": "UK",
+          "publication": "theguardian.com",
+          "shortUrl": "https://gu.com/p/6hx52",
+          "shouldHideAdverts": "false",
+          "showInRelatedContent": "true",
+          "thumbnail": "https://media.guim.co.uk/7437dc3640fb84d4a285ef81b04abcf167070967/0_200_4221_2533/500.jpg",
+          "legallySensitive": "false",
+          "lang": "en",
+          "internalRevision": "287",
+          "internalShortId": "/p/6hx52",
+          "bodyText": "Subscribe to us on iTunes, Audioboom, Mixcloud, Soundcloud and Acast and join the discussion on Facebook and Twitter. Today marks 10 days to go until the UKâ€™s general election, and there are now less than three weeks before Brexit negotiations start. The EU published quite detailed â€“ if not widely noticed â€“ position papers this week on what we can expect from two particular aspects of the divorce talks, namely the Brexit bill and citizensâ€™ rights. To look into this further, Jon Henley will be talking to the Guardianâ€™s Brussels correspondent, Jennifer Rankin. Jon is also joined by our Brexit policy editor, Dan Roberts, to discuss â€œNo deal is better than a bad dealâ€, a phrase that is fast becoming the British governmentâ€™s new mantra, in place of â€œBrexit means Brexitâ€™ and â€œstrong and stable leadershipâ€™. But does anyone realise what it actually means? To get in touch with us, post your comment below or email brexitpodcast@theguardian.com. And to write a review and be in with a chance of featuring in our weekly podcast column, email podcasts@theguardian.com",
+          "charCount": "1068"
+        },
+        "tags": [
+          {
+            "id": "politics/eu-referendum",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "EU referendum and Brexit",
+            "webUrl": "https://www.theguardian.com/politics/eu-referendum",
+            "apiUrl": "https://content.guardianapis.com/politics/eu-referendum",
+            "references": []
+          },
+          {
+            "id": "politics/theresamay",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Theresa May",
+            "webUrl": "https://www.theguardian.com/politics/theresamay",
+            "apiUrl": "https://content.guardianapis.com/politics/theresamay",
+            "references": []
+          },
+          {
+            "id": "politics/general-election-2017",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "General election 2017",
+            "webUrl": "https://www.theguardian.com/politics/general-election-2017",
+            "apiUrl": "https://content.guardianapis.com/politics/general-election-2017",
+            "references": []
+          },
+          {
+            "id": "world/eu",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "European Union",
+            "webUrl": "https://www.theguardian.com/world/eu",
+            "apiUrl": "https://content.guardianapis.com/world/eu",
+            "references": []
+          },
+          {
+            "id": "uk/uk",
+            "type": "keyword",
+            "sectionId": "uk-news",
+            "sectionName": "UK news",
+            "webTitle": "UK news",
+            "webUrl": "https://www.theguardian.com/uk/uk",
+            "apiUrl": "https://content.guardianapis.com/uk/uk",
+            "references": []
+          },
+          {
+            "id": "politics/politics",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Politics",
+            "webUrl": "https://www.theguardian.com/politics/politics",
+            "apiUrl": "https://content.guardianapis.com/politics/politics",
+            "references": []
+          },
+          {
+            "id": "politics/foreignpolicy",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Foreign policy",
+            "webUrl": "https://www.theguardian.com/politics/foreignpolicy",
+            "apiUrl": "https://content.guardianapis.com/politics/foreignpolicy",
+            "references": []
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-592d7d66e4b0bdd87e2f1794",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2017/05/30-51066-gnl.rs.brexit.20170530.thelastbeforethelection.mp3",
+                "typeData": {
+                  "source": "The Guardian",
+                  "secureFile": "https://audio.guim.co.uk/2017/05/30-51066-gnl.rs.brexit.20170530.thelastbeforethelection.mp3",
+                  "sizeInBytes": "17998809",
+                  "durationMinutes": "18",
+                  "durationSeconds": "18",
+                  "embedType": "audio"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false
+      },
+      {
+        "id": "politics/audio/2017/may/24/eu-agrees-negotiation-guidelines-and-terrorism-hits-manchester-brexit-means-podcast",
+        "type": "audio",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2017-05-24T16:08:13Z",
+        "webTitle": "EU agrees negotiation guidelines and terrorism hits Manchester â€“ Brexit Means podcast",
+        "webUrl": "https://www.theguardian.com/politics/audio/2017/may/24/eu-agrees-negotiation-guidelines-and-terrorism-hits-manchester-brexit-means-podcast",
+        "apiUrl": "https://content.guardianapis.com/politics/audio/2017/may/24/eu-agrees-negotiation-guidelines-and-terrorism-hits-manchester-brexit-means-podcast",
+        "fields": {
+          "headline": "EU agrees negotiation guidelines and terrorism hits Manchester â€“ Brexit Means podcast",
+          "standfirst": "<p>Join Jon Henley and Daniel Boffey as they discuss the EU27â€™s directives for the first phase of Brexit negotiations and whether, in the light of the attack in Manchester, security and intelligence sharing will be a factor in those talks</p>",
+          "trailText": "Join Jon Henley and Daniel Boffey as they discuss the EU27â€™s directives for the first phase of Brexit negotiations and whether, in the light of the attack in Manchester, security and intelligence sharing will be a factor in those talks",
+          "byline": "Presented by Jon Henley with Daniel Boffey and produced by Rowan Slaney",
+          "main": "<!-- Invalid audio element without \"html\" field -->",
+          "body": "<p><strong>Subscribe to us on <a href=\"https://itunes.apple.com/au/podcast/token/id1066024293?mt=2\">iTunes</a>, <a href=\"https://audioboom.com/channel/brexitmeans\">Audioboom</a>, <a href=\"https://www.mixcloud.com/BrexitMeans/\">Mixcloud</a>, <a href=\"https://soundcloud.com/user-18960974\">Soundcloud </a>and <a href=\"https://www.acast.com/token-podcast\">Acast</a> and join the discussion on <a href=\"https://www.facebook.com/GuardianPodcasts/\">Facebook</a> and <a href=\"https://twitter.com/guardianaudio\">Twitter</a>.</strong></p> <p>This week the EU27 unanimously signed off on their negotiating position for Brexit talks, which we now know are likely to begin sometime in the week starting 19 June.</p> <p>Michel Barnier, the blocâ€™s chief negotiator, presented the EU27â€™s key directives in an 18-page document covering the first phase of the negotiations â€“ the divorce deal â€“ and insisted it would stick to its longstanding demand that there could be no discussion of a future trade relationship before sufficient progress had been made on that.</p> <p>And in a week in which Britain was shaken by a horrific terror attack in Manchester that claimed 22 lives and injured 59 people, some of them critically, is the question of security and intelligence sharing likely to be a factor in Brexit talks?</p> <p>As well as this, the EU is hoping to avoid a hard border in Ireland, and wants to ensure that any future government can be held to account if it fails to uphold the Brexit agreement.</p> <p>Joining Jon Henley is Daniel Boffey, the Guardianâ€™s Brussels bureau chief.</p>",
+          "wordcount": "194",
+          "commentCloseDate": "2017-05-30T23:00:00Z",
+          "commentable": "true",
+          "creationDate": "2017-05-24T15:00:00Z",
+          "firstPublicationDate": "2017-05-24T16:08:13Z",
+          "internalComposerCode": "59259ff0e4b0041183401212",
+          "internalPageCode": "3505406",
+          "isInappropriateForSponsorship": "false",
+          "isPremoderated": "false",
+          "lastModified": "2017-05-31T13:49:28Z",
+          "productionOffice": "UK",
+          "publication": "theguardian.com",
+          "shortUrl": "https://gu.com/p/6g2dn",
+          "shouldHideAdverts": "false",
+          "showInRelatedContent": "true",
+          "thumbnail": "https://media.guim.co.uk/e867b54492801ac32ae35f1e249963ef135f875c/370_705_2198_1319/500.jpg",
+          "legallySensitive": "false",
+          "lang": "en",
+          "internalRevision": "374",
+          "internalShortId": "/p/6g2dn",
+          "bodyText": "Subscribe to us on iTunes, Audioboom, Mixcloud, Soundcloud and Acast and join the discussion on Facebook and Twitter. This week the EU27 unanimously signed off on their negotiating position for Brexit talks, which we now know are likely to begin sometime in the week starting 19 June. Michel Barnier, the blocâ€™s chief negotiator, presented the EU27â€™s key directives in an 18-page document covering the first phase of the negotiations â€“ the divorce deal â€“ and insisted it would stick to its longstanding demand that there could be no discussion of a future trade relationship before sufficient progress had been made on that. And in a week in which Britain was shaken by a horrific terror attack in Manchester that claimed 22 lives and injured 59 people, some of them critically, is the question of security and intelligence sharing likely to be a factor in Brexit talks? As well as this, the EU is hoping to avoid a hard border in Ireland, and wants to ensure that any future government can be held to account if it fails to uphold the Brexit agreement. Joining Jon Henley is Daniel Boffey, the Guardianâ€™s Brussels bureau chief.",
+          "charCount": "1128"
+        },
+        "tags": [
+          {
+            "id": "politics/eu-referendum",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "EU referendum and Brexit",
+            "webUrl": "https://www.theguardian.com/politics/eu-referendum",
+            "apiUrl": "https://content.guardianapis.com/politics/eu-referendum",
+            "references": []
+          },
+          {
+            "id": "world/ireland",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "Ireland",
+            "webUrl": "https://www.theguardian.com/world/ireland",
+            "apiUrl": "https://content.guardianapis.com/world/ireland",
+            "references": []
+          },
+          {
+            "id": "politics/article-50",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Article 50",
+            "webUrl": "https://www.theguardian.com/politics/article-50",
+            "apiUrl": "https://content.guardianapis.com/politics/article-50",
+            "references": []
+          },
+          {
+            "id": "politics/politics",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Politics",
+            "webUrl": "https://www.theguardian.com/politics/politics",
+            "apiUrl": "https://content.guardianapis.com/politics/politics",
+            "references": []
+          },
+          {
+            "id": "uk/uk",
+            "type": "keyword",
+            "sectionId": "uk-news",
+            "sectionName": "UK news",
+            "webTitle": "UK news",
+            "webUrl": "https://www.theguardian.com/uk/uk",
+            "apiUrl": "https://content.guardianapis.com/uk/uk",
+            "references": []
+          },
+          {
+            "id": "world/world",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "World news",
+            "webUrl": "https://www.theguardian.com/world/world",
+            "apiUrl": "https://content.guardianapis.com/world/world",
+            "references": []
+          },
+          {
+            "id": "politics/foreignpolicy",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Foreign policy",
+            "webUrl": "https://www.theguardian.com/politics/foreignpolicy",
+            "apiUrl": "https://content.guardianapis.com/politics/foreignpolicy",
+            "references": []
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-59259ff0e4b0041183401212",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2017/05/24-54013-gnl.rs.brexit.20170524.negotiationsguidelines.mp3",
+                "typeData": {
+                  "source": "The Guardian",
+                  "secureFile": "https://audio.guim.co.uk/2017/05/24-54013-gnl.rs.brexit.20170524.negotiationsguidelines.mp3",
+                  "sizeInBytes": "21076248",
+                  "durationMinutes": "21",
+                  "durationSeconds": "31",
+                  "embedType": "audio"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false
+      },
+      {
+        "id": "politics/audio/2017/may/17/how-will-the-general-election-affect-brexit-brexit-means-podcast",
+        "type": "audio",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2017-05-17T06:00:01Z",
+        "webTitle": "How will the general election affect Brexit? Brexit Means podcast",
+        "webUrl": "https://www.theguardian.com/politics/audio/2017/may/17/how-will-the-general-election-affect-brexit-brexit-means-podcast",
+        "apiUrl": "https://content.guardianapis.com/politics/audio/2017/may/17/how-will-the-general-election-affect-brexit-brexit-means-podcast",
+        "fields": {
+          "headline": "How will the general election affect Brexit? Brexit Means podcast",
+          "standfirst": "<p><strong>Jon Henley</strong> and <strong>Dan Roberts</strong> discuss what a new crop of Tory MPs could mean for Brexit as well as Emmanuel Macron and Angela Merkelâ€™s new friendship</p>",
+          "trailText": "<strong>Jon Henley</strong> and <strong>Dan Roberts</strong> discuss what a new crop of Tory MPs could mean for Brexit as well as Emmanuel Macron and Angela Merkelâ€™s new friendship",
+          "byline": "Presented by Jon Henley  with Dan Roberts and produced by Rowan Slaney",
+          "main": "<!-- Invalid audio element without \"html\" field -->",
+          "body": "<p><strong>Subscribe to us on <a href=\"https://itunes.apple.com/au/podcast/token/id1066024293?mt=2\">iTunes</a>, <a href=\"https://audioboom.com/channel/brexitmeans\">Audioboom</a>, <a href=\"https://www.mixcloud.com/BrexitMeans/\">Mixcloud</a>, <a href=\"https://soundcloud.com/user-18960974\">Soundcloud </a>and <a href=\"https://www.acast.com/token-podcast\">Acast</a> and join the discussion on <a href=\"https://www.facebook.com/GuardianPodcasts/\">Facebook</a> and <a href=\"https://twitter.com/guardianaudio\">Twitter</a>.</strong></p> <p>With the UK general election just three weeks away, a lot of the speculation around how the outcome might affect Brexit has centred on the idea that a big majority for Theresa May might give the prime minister political leeway at home to be a bit more flexible on the terms of the UKâ€™s departure â€“ possibly leading to a softer Brexit. </p> <p>But new research suggests the new crop of <a href=\"https://www.theguardian.com/politics/2017/may/15/tories-set-to-become-more-eurosceptic-campaign-group-says\">Conservative MPs are likely to be significantly more pro-Brexit than the backbenchers they are replacing</a> â€“ something that may put the prime minister under even greater pressure to avoid compromises with the EU27.</p> <p>Plus, after the new French president,<a href=\"https://www.theguardian.com/world/2017/may/15/emmanuel-macron-angela-merkel-berlin-eurozone\"> Emmanuel Macron, got along so famously with Angela Merkel </a>at their first official meeting in Berlin this week, weâ€™ll be asking whether what looks like a new dynamic â€“ and a new determination â€“ on the continent may also end up making a hard, or â€˜cleanâ€™, Brexit more likely.</p> <p><strong>To get in touch with us, email <a href=\"mailto:brexitpodcast@theguardian.com\">brexitpodcast@theguardian.com</a>. And to write a review and be in with a chance of featuring in our weekly podcast column, email <a href=\"mailto:podcasts@theguardian.com\">podcasts@theguardian.com</a>.</strong></p>",
+          "wordcount": "206",
+          "commentCloseDate": "2017-05-23T23:00:00Z",
+          "commentable": "true",
+          "creationDate": "2017-05-16T14:36:42Z",
+          "firstPublicationDate": "2017-05-17T06:00:01Z",
+          "internalComposerCode": "591b0e7ae4b0a9ae59334331",
+          "internalPageCode": "3479710",
+          "isInappropriateForSponsorship": "false",
+          "isPremoderated": "false",
+          "lastModified": "2017-05-31T13:49:40Z",
+          "productionOffice": "UK",
+          "publication": "theguardian.com",
+          "shortUrl": "https://gu.com/p/6ey74",
+          "shouldHideAdverts": "false",
+          "showInRelatedContent": "true",
+          "thumbnail": "https://media.guim.co.uk/3aa827c56c5833c5f9cf644e7186feceb6d00d0c/0_0_4301_2581/500.jpg",
+          "legallySensitive": "false",
+          "sensitive": "true",
+          "lang": "en",
+          "internalRevision": "241",
+          "internalShortId": "/p/6ey74",
+          "bodyText": "Subscribe to us on iTunes, Audioboom, Mixcloud, Soundcloud and Acast and join the discussion on Facebook and Twitter. With the UK general election just three weeks away, a lot of the speculation around how the outcome might affect Brexit has centred on the idea that a big majority for Theresa May might give the prime minister political leeway at home to be a bit more flexible on the terms of the UKâ€™s departure â€“ possibly leading to a softer Brexit. But new research suggests the new crop of Conservative MPs are likely to be significantly more pro-Brexit than the backbenchers they are replacing â€“ something that may put the prime minister under even greater pressure to avoid compromises with the EU27. Plus, after the new French president, Emmanuel Macron, got along so famously with Angela Merkel at their first official meeting in Berlin this week, weâ€™ll be asking whether what looks like a new dynamic â€“ and a new determination â€“ on the continent may also end up making a hard, or â€˜cleanâ€™, Brexit more likely. To get in touch with us, email brexitpodcast@theguardian.com. And to write a review and be in with a chance of featuring in our weekly podcast column, email podcasts@theguardian.com.",
+          "charCount": "1201"
+        },
+        "tags": [
+          {
+            "id": "politics/eu-referendum",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "EU referendum and Brexit",
+            "webUrl": "https://www.theguardian.com/politics/eu-referendum",
+            "apiUrl": "https://content.guardianapis.com/politics/eu-referendum",
+            "references": []
+          },
+          {
+            "id": "world/angela-merkel",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "Angela Merkel",
+            "webUrl": "https://www.theguardian.com/world/angela-merkel",
+            "apiUrl": "https://content.guardianapis.com/world/angela-merkel",
+            "references": []
+          },
+          {
+            "id": "world/emmanuel-macron",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "Emmanuel Macron",
+            "webUrl": "https://www.theguardian.com/world/emmanuel-macron",
+            "apiUrl": "https://content.guardianapis.com/world/emmanuel-macron",
+            "references": []
+          },
+          {
+            "id": "politics/theresamay",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Theresa May",
+            "webUrl": "https://www.theguardian.com/politics/theresamay",
+            "apiUrl": "https://content.guardianapis.com/politics/theresamay",
+            "references": []
+          },
+          {
+            "id": "world/eu",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "European Union",
+            "webUrl": "https://www.theguardian.com/world/eu",
+            "apiUrl": "https://content.guardianapis.com/world/eu",
+            "references": []
+          },
+          {
+            "id": "politics/article-50",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Article 50",
+            "webUrl": "https://www.theguardian.com/politics/article-50",
+            "apiUrl": "https://content.guardianapis.com/politics/article-50",
+            "references": []
+          },
+          {
+            "id": "world/europe-news",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "Europe",
+            "webUrl": "https://www.theguardian.com/world/europe-news",
+            "apiUrl": "https://content.guardianapis.com/world/europe-news",
+            "references": []
+          },
+          {
+            "id": "politics/politics",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Politics",
+            "webUrl": "https://www.theguardian.com/politics/politics",
+            "apiUrl": "https://content.guardianapis.com/politics/politics",
+            "references": []
+          },
+          {
+            "id": "uk/uk",
+            "type": "keyword",
+            "sectionId": "uk-news",
+            "sectionName": "UK news",
+            "webTitle": "UK news",
+            "webUrl": "https://www.theguardian.com/uk/uk",
+            "apiUrl": "https://content.guardianapis.com/uk/uk",
+            "references": []
+          },
+          {
+            "id": "world/world",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "World news",
+            "webUrl": "https://www.theguardian.com/world/world",
+            "apiUrl": "https://content.guardianapis.com/world/world",
+            "references": []
+          },
+          {
+            "id": "politics/foreignpolicy",
+            "type": "keyword",
+            "sectionId": "politics",
+            "sectionName": "Politics",
+            "webTitle": "Foreign policy",
+            "webUrl": "https://www.theguardian.com/politics/foreignpolicy",
+            "apiUrl": "https://content.guardianapis.com/politics/foreignpolicy",
+            "references": []
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-591b0e7ae4b0a9ae59334331",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2017/05/16-53769-gnl.rs.brexitmeans.20170516.threeweeks.mp3",
+                "typeData": {
+                  "source": "The Guardian",
+                  "secureFile": "https://audio.guim.co.uk/2017/05/16-53769-gnl.rs.brexitmeans.20170516.threeweeks.mp3",
+                  "sizeInBytes": "18315082",
+                  "durationMinutes": "18",
+                  "durationSeconds": "59",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false
+      }
+    ],
+    "leadContent": []
+  }
+}

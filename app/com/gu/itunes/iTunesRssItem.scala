@@ -56,14 +56,11 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         "us-news/series/politics-for-humans"
       )
 
-      if (
-        (tagId == "technology/series/chips-with-everything" && lastModified.isAfter(chipsWithEverythingLaunchDay)) ||
+      if ((tagId == "technology/series/chips-with-everything" && lastModified.isAfter(chipsWithEverythingLaunchDay)) ||
         lastModified.isAfter(launchDay) && acastPodcastsFirstGroup.contains(tagId) ||
-        lastModified.isAfter(secondGroupLaunchDay) && acastPodcastsSecondGroup.contains(tagId)
-      ) {
-         "https://flex.acast.com/" + url.replace("https://", "")
-      }
-      else url
+        lastModified.isAfter(secondGroupLaunchDay) && acastPodcastsSecondGroup.contains(tagId)) {
+        "https://flex.acast.com/" + url.replace("https://", "")
+      } else url
     }
 
     val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse("")) + membershipCta
