@@ -16,4 +16,10 @@ trait ItunesTestData {
     val json = Resources.toString(Resources.getResource("itunes-capi-response.json"), Charsets.UTF_8)
     JsonParser.parseItem(json)
   }
+
+  // content.guardianapis.com/politics/series/brexit-means?show-fields=all&show-elements=audio&show-tags=keyword&page-size=3
+  val itunesCapiResponseAcastTest: ItemResponse = {
+    val json = Resources.toString(Resources.getResource("itunes-capi-response-acast-test.json"), Charsets.UTF_8)
+    JsonParser.parseItem(json)
+  }
 }

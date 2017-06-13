@@ -26,24 +26,42 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
     }
 
     def acastProxy(url: String): String = {
-      val launchDay = new DateTime(2017, 5, 2, 0, 0)
-      val chipsWithEverythingLaunchDay = new DateTime(2017, 4, 19, 0, 0)
-      val acastPodcasts = Seq(
-        "football/series/footballweekly",
-        "news/series/the-audio-long-read",
-        "science/series/science",
-        "politics/series/politicsweekly",
-        "arts/series/culture",
-        "books/series/books",
-        "technology/series/chips-with-everything",
-        "society/series/token"
-      )
+      case class AcastLaunchGroup(launchDate: DateTime, tagIds: Seq[String])
 
-      if ((tagId == "technology/series/chips-with-everything" && lastModified.isAfter(chipsWithEverythingLaunchDay)) ||
-        lastModified.isAfter(launchDay) && acastPodcasts.contains(tagId)) {
-         "https://flex.acast.com/" + url.replace("https://", "")
-      }
-      else url
+      val acastPodcasts: Seq[AcastLaunchGroup] = Seq(
+        AcastLaunchGroup(new DateTime(2017, 4, 19, 0, 0), Seq("technology/series/chips-with-everything")),
+        AcastLaunchGroup(new DateTime(2017, 5, 2, 0, 0), Seq(
+          "football/series/footballweekly",
+          "news/series/the-audio-long-read",
+          "science/series/science",
+          "politics/series/politicsweekly",
+          "arts/series/culture",
+          "books/series/books",
+          "technology/series/chips-with-everything",
+          "society/series/token"
+        )
+        ),
+        AcastLaunchGroup(new DateTime(2017, 6, 12, 0, 0), Seq(
+          "politics/series/brexit-means",
+          "global-development/series/global-development-podcast",
+          "news/series/the-story",
+          "lifeandstyle/series/close-encounters",
+          "music/series/musicweekly",
+          "lifeandstyle/series/guardian-guide-to-running-podcast-beginner",
+          "commentisfree/series/what-would-a-feminist-do",
+          "tv-and-radio/series/game-of-thrones-the-citadel-podcast",
+          "australia-news/series/australian-politics-live",
+          "australia-news/series/behind-the-lines-podcast",
+          "artanddesign/series/guardian-australia-culture-podcast",
+          "film/series/the-dailies-podcast",
+          "world/series/project",
+          "us-news/series/politics-for-humans"
+        )
+        )
+      )
+      val useAcastProxy: Boolean = acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
+      if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
+
     }
 
     val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse("")) + membershipCta
