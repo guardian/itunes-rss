@@ -7,6 +7,8 @@ deployments:
     type: autoscaling
     parameters:
       bucket: content-api-dist
+    dependencies:
+      - podcasts-rss-ami-update
   podcasts-rss-ami-update:
     type: ami-cloudformation-parameter
     app: podcasts-rss
