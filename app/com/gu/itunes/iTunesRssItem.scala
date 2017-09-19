@@ -64,7 +64,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     }
 
-    val description = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse("")) + membershipCta
+    private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trail)
+    
+    val description = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
     val url = acastProxy(asset.file.getOrElse(""))
 
@@ -94,9 +96,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val keywords = makeKeywordsList(podcast.tags)
 
-    val subtitle = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse(""))
+    val subtitle = Filtering.standfirst(standfirstOrTrail.getOrElse(""))
 
-    val summary = Filtering.standfirst(podcast.fields.flatMap(_.standfirst).getOrElse("")) + membershipCta
+    val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
     <item>
       <title> { title } </title>
