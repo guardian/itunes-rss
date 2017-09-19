@@ -8,6 +8,8 @@ import scala.xml.Node
 
 class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
+  private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trail)  
+  
   def toXml: Node = {
 
     val title = podcast.webTitle
@@ -63,8 +65,6 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
 
     }
-
-    private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trail)
     
     val description = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
