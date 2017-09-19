@@ -8,7 +8,7 @@ import scala.xml.Node
 
 class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
-  private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trail)  
+  private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trailText)  
   
   def toXml: Node = {
 
