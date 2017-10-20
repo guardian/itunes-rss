@@ -24,7 +24,7 @@ object PodcastsRssBuild extends Build {
 
       libraryDependencies ++= Seq(
         "org.jsoup" % "jsoup" % "1.8.1",
-        "com.gu" %% "content-api-client" % "8.9",
+        "com.gu" %% "content-api-client" % "11.36",
         "org.scalactic" %% "scalactic" % "2.2.4",
         "org.scalatest" %% "scalatest" % "2.2.5" % "test"
       ),

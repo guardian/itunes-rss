@@ -8,13 +8,13 @@ import scala.xml.Node
 
 class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
-  private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trailText)  
-  
+  private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trailText)
+
   def toXml: Node = {
 
     val title = podcast.webTitle
 
-    val lastModified = podcast.webPublicationDate.map(_.toJodaDateTime).getOrElse(DateTime.now)
+    val lastModified = podcast.webPublicationDate.map(new DateTime(_)).getOrElse(DateTime.now)
 
     val pubDate = DateSupport.toRssTimeFormat(lastModified)
 
@@ -65,7 +65,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
 
     }
-    
+
     val description = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
     val url = acastProxy(asset.file.getOrElse(""))

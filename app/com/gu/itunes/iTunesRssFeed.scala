@@ -22,7 +22,7 @@ object iTunesRssFeed {
       case Some(podcast) => Good {
         <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
           <channel>
-            <itunes:new-feed-url>{s"${tag.webUrl}/podcast.xml"}</itunes:new-feed-url>
+            <itunes:new-feed-url>{ s"${tag.webUrl}/podcast.xml" }</itunes:new-feed-url>
             <title>{ tag.webTitle }</title>
             <link>{ tag.webUrl }</link>
             <description>{ description }</description>
@@ -32,6 +32,12 @@ object iTunesRssFeed {
               { DateSupport.toRssTimeFormat(DateTime.now) }
             </lastBuildDate>
             <ttl>15</ttl>
+            {
+              podcast.podcastType match {
+                case Some(value) => <itunes:type>{ value }</itunes:type>
+                case None =>
+              }
+            }
             <itunes:owner>
               <itunes:email>userhelp@theguardian.com</itunes:email>
               <itunes:name>theguardian.com</itunes:name>
