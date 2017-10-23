@@ -1,3 +1,4 @@
+
 package com.gu.itunes
 
 import org.scalatest._
@@ -21,6 +22,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
           <copyright>theguardian.com © 2014</copyright>
           <lastBuildDate></lastBuildDate>
           <ttl>15</ttl>
+          <itunes:type>Serial</itunes:type>
           <itunes:owner>
             <itunes:email>userhelp@theguardian.com</itunes:email>
             <itunes:name>theguardian.com</itunes:name>
@@ -48,6 +50,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
     expectedXml \ "channel" \ "description" should be(currentXml \ "channel" \ "description")
     expectedXml \ "channel" \ "language" should be(currentXml \ "channel" \ "language")
     expectedXml \ "channel" \ "copyright" should be(currentXml \ "channel" \ "copyright")
+    expectedXml \ "channel" \ "type" should be(currentXml \ "channel" \ "type")
     expectedXml \ "channel" \ "ttl" should be(currentXml \ "channel" \ "ttl")
     expectedXml \ "channel" \ "owner" should be(currentXml \ "channel" \ "owner")
     expectedXml \ "channel" \ "image" should be(currentXml \ "channel" \ "image")

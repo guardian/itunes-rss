@@ -2,7 +2,6 @@ package com.gu.itunes
 
 import org.joda.time._
 import com.gu.contentapi.client.model.v1._
-import com.gu.contentapi.client.utils.CapiModelEnrichment._
 
 import scala.xml.Node
 
@@ -14,7 +13,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val title = podcast.webTitle
 
-    val lastModified = podcast.webPublicationDate.map(new DateTime(_)).getOrElse(DateTime.now)
+    val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
     val pubDate = DateSupport.toRssTimeFormat(lastModified)
 
