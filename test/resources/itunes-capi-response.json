@@ -18,10 +18,11 @@
         "subscriptionUrl": "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=136697669",
         "categories": [
             {
-                "main":"Health", 
-                "sub":"Fitness & Nutrition" 
+                "main":"Health",
+                "sub":"Fitness & Nutrition"
             }
-        ] 
+        ],
+        "podcastType": "Serial"
       },
       "webTitle": "Science Weekly",
       "description": "The Guardian's science team bring you the best analysis and interviews from the worlds of science and technology",

@@ -16,6 +16,8 @@ object PodcastsRssBuild extends Build {
     scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
   )
 
+  val capiVersion = "11.36"
+
   val root = Project("podcasts-rss", file("."))
     .enablePlugins(PlayScala)
     .enablePlugins(RiffRaffArtifact)
@@ -24,9 +26,10 @@ object PodcastsRssBuild extends Build {
 
       libraryDependencies ++= Seq(
         "org.jsoup" % "jsoup" % "1.8.1",
-        "com.gu" %% "content-api-client" % "8.9",
+        "com.gu" %% "content-api-client" % capiVersion,
         "org.scalactic" %% "scalactic" % "2.2.4",
-        "org.scalatest" %% "scalatest" % "2.2.5" % "test"
+        "org.scalatest" %% "scalatest" % "2.2.5" % "test",
+        "com.gu" %% "content-api-models-json" % capiVersion % "test"
       ),
       riffRaffPackageName := "podcasts-rss",
       riffRaffManifestProjectName := s"Off-platform::${name.value}",

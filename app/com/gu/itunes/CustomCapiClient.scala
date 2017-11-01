@@ -1,16 +1,13 @@
 package com.gu.itunes
 
+import java.util.concurrent.TimeUnit
 import com.gu.contentapi.client.GuardianContentClient
-import com.gu.contentapi.client.model.SearchQuery
-import com.gu.contentapi.client.model.v1.SearchResponse
-import com.gu.contentapi.json.JsonParser
-import dispatch.Http
+import okhttp3.{ ConnectionPool, OkHttpClient }
 import play.api.Logger
-
 import scala.concurrent.duration.Duration
 import scala.concurrent.{ ExecutionContext, Future }
 
-class CustomCapiClient(apiKey: String) extends GuardianContentClient(apiKey, useThrift = true) {
+class CustomCapiClient(apiKey: String) extends GuardianContentClient(apiKey) {
 
   // Use the same HTTP client for the whole lifecycle of the Play app,
   // rather than creating a new one per request
@@ -30,16 +27,11 @@ class CustomCapiClient(apiKey: String) extends GuardianContentClient(apiKey, use
 
 object CustomCapiClient {
 
-  val http = Http configure {
-    _
-      .setAllowPoolingConnections(true)
-      .setMaxConnectionsPerHost(10)
-      .setMaxConnections(10)
-      .setConnectTimeout(10000)
-      .setRequestTimeout(10000)
-      .setCompressionEnforced(true)
-      .setFollowRedirect(true)
-      .setConnectionTTL(60000) // to respect DNS TTLs
-  }
+  val http = new OkHttpClient.Builder()
+    .connectTimeout(1000, TimeUnit.SECONDS)
+    .readTimeout(2000, TimeUnit.SECONDS)
+    .followRedirects(true)
+    .connectionPool(new ConnectionPool(10, 60, TimeUnit.SECONDS))
+    .build()
 
 }
