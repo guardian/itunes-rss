@@ -16,7 +16,6 @@ object PodcastsRssBuild extends Build {
     scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
   )
 
-  val circeVersion = "0.8.0"
   val capiVersion = "11.36"
 
   val root = Project("podcasts-rss", file("."))
@@ -29,8 +28,6 @@ object PodcastsRssBuild extends Build {
         "org.jsoup" % "jsoup" % "1.8.1",
         "com.gu" %% "content-api-client" % capiVersion,
         "org.scalactic" %% "scalactic" % "2.2.4",
-        "io.circe" %% "circe-core" % circeVersion,
-        "io.circe" %% "circe-parser" % circeVersion,
         "org.scalatest" %% "scalatest" % "2.2.5" % "test",
         "com.gu" %% "content-api-models-json" % capiVersion % "test"
       ),
