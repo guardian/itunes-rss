@@ -52,7 +52,9 @@ Resources:
         - Effect: Allow
           Action:
           - s3:GetObject
-          Resource: arn:aws:s3:::content-api-config/*
+          Resource: 
+          - arn:aws:s3:::content-api-config/*
+          - arn:aws:s3:::content-api-dist/*
       Roles:
       - Ref: RootRole
   InstanceProfile:
