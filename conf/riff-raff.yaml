@@ -16,3 +16,5 @@ deployments:
       amiTags:
         Recipe: ubuntu-xenial-java8
         AmigoStage: PROD
+      amiEncrypted: true
+
