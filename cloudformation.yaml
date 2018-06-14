@@ -22,6 +22,8 @@ Resources:
   RootRole:
     Type: AWS::IAM::Role
     Properties:
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM
       AssumeRolePolicyDocument:
         Statement:
         - Effect: Allow
@@ -52,7 +54,9 @@ Resources:
         - Effect: Allow
           Action:
           - s3:GetObject
-          Resource: arn:aws:s3:::content-api-config/*
+          Resource: 
+          - arn:aws:s3:::content-api-config/*
+          - arn:aws:s3:::content-api-dist/*
       Roles:
       - Ref: RootRole
   InstanceProfile:
@@ -160,7 +164,6 @@ Resources:
             #!/bin/bash -ev
             adduser --disabled-password content-api
             aws configure set region ${AWS::Region}
-            aws s3 cp s3://content-api-dist/authorized_keys /home/ubuntu/.ssh/authorized_keys
 
             cd /home/content-api
             mkdir logs
