@@ -18,6 +18,9 @@ Parameters:
   AMI:
     Description: AMI ID
     Type: String
+  AlarmTopic:
+    Description: SNS topic ARN for Cloudwatch alerts
+    Type: String
 Resources:
   RootRole:
     Type: AWS::IAM::Role
@@ -59,6 +62,18 @@ Resources:
           - arn:aws:s3:::content-api-dist/*
       Roles:
       - Ref: RootRole
+  CloudwatchPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: cloudwatch-policy
+      PolicyDocument:
+        Statement:
+        - Effect: Allow
+          Action:
+          - cloudwatch:*
+          Resource: '*'
+      Roles:
+      - !Ref RootRole
   InstanceProfile:
     Type: AWS::IAM::InstanceProfile
     Properties:
@@ -147,6 +162,23 @@ Resources:
       MetricName: CPUUtilization
       Namespace: AWS/EC2
       Period: '60'
+  High5xxAlarmAlert:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${Stack}-podcasts-rss-${Stage}-alarm-5xx-alert
+      AlarmDescription: Number of 5XXs is >= 20 per minute for a 2 minute period
+      Namespace: AWS/ELB
+      Dimensions:
+      - Name: LoadBalancerName
+        Value: !Ref LoadBalancer
+      MetricName: HTTPCode_Backend_5XX
+      Statistic: Sum
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Threshold: '20'
+      Period: '60'
+      EvaluationPeriods: '2'
+      AlarmActions:
+      - !Ref AlarmTopic
   LaunchConfig:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
