@@ -70,7 +70,10 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         AcastLaunchGroup(new DateTime(2018, 5, 29, 0, 0), Seq(
           "membership/series/we-need-to-talk-about"
         )
-        )
+        ),
+        AcastLaunchGroup(new DateTime(2018, 9, 13, 0, 0), Seq(
+          "society/series/beyondtheblade"
+        ))
       )
       val useAcastProxy: Boolean = acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
