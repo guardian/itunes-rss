@@ -23,7 +23,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
       } else if (tagId == "news/series/todayinfocus" ) {
         """. To support The Guardian’s independent journalism, visit http://gu.com/todayinfocus/support"""
-      } {
+      } else {
         ""
       }
     }
