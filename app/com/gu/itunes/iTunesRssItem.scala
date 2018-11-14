@@ -21,7 +21,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       val launchDay = new DateTime(2016, 12, 6, 0, 0)
       if (lastModified.isAfter(launchDay) && tagId == "politics/series/politicsweekly") {
         """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
-      } else if (tagId == "news/series/todayinfocus" ) {
+      } else if (tagId == "news/series/todayinfocus") {
         """. To support The Guardian’s independent journalism, visit http://gu.com/todayinfocus/support"""
       } else {
         ""
@@ -99,7 +99,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val capiUrl = asset.file.getOrElse("")
     val regex = s"""https?://static(-secure)?.guim.co.uk/audio/kip/$tagId"""
-    val guid = capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio")
+    val guid = podcast.fields
+      .flatMap(_.internalComposerCode)
+      .getOrElse(capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio"))
 
     val duration = {
       val seconds = asset.typeData.flatMap(_.durationSeconds)
