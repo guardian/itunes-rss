@@ -99,9 +99,14 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val capiUrl = asset.file.getOrElse("")
     val regex = s"""https?://static(-secure)?.guim.co.uk/audio/kip/$tagId"""
-    val guid = podcast.fields
-      .flatMap(_.internalComposerCode)
-      .getOrElse(capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio"))
+    val guid = {
+      val launchDay = new DateTime(2018, 11, 15, 0, 0)
+      val default = capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio")
+      if (lastModified.isAfter(launchDay))
+        podcast.fields.flatMap(_.internalComposerCode).getOrElse(default)
+      else
+        default
+    }
 
     val duration = {
       val seconds = asset.typeData.flatMap(_.durationSeconds)
