@@ -18,12 +18,18 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
     val pubDate = DateSupport.toRssTimeFormat(lastModified)
 
     val membershipCta = {
-      val launchDay = new DateTime(2016, 12, 6, 0, 0)
       val launchDayTIF = new DateTime(2018, 11, 14, 0, 0)
-      if (lastModified.isAfter(launchDay) && tagId == "politics/series/politicsweekly") {
-        """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
-      } else if (lastModified.isAfter(launchDayTIF) && tagId == "news/series/todayinfocus") {
-        """. To support The Guardian’s independent journalism, visit http://gu.com/todayinfocus/support"""
+      val launchDayPW = new DateTime(2016, 12, 6, 0, 0)
+      val launchDayPWNew = new DateTime(2018, 11, 15, 0, 0)
+      if (tagId == "politics/series/politicsweekly") {
+        if (lastModified.isAfter(launchDayPWNew))
+          """. To support The Guardian’s independent journalism, visit <a href="https://gu.com/give/podcast">gu.com/give/podcast</a>"""
+        else if (lastModified.isAfter(launchDayPW))
+          """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
+        else
+          ""
+      } else if (tagId == "news/series/todayinfocus" && lastModified.isAfter(launchDayTIF)) {
+        """. To support The Guardian’s independent journalism, visit <a href="https://gu.com/todayinfocus/support">gu.com/todayinfocus/support</a>"""
       } else {
         ""
       }
@@ -143,7 +149,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       }
       <itunes:keywords>{ keywords }</itunes:keywords>
       <itunes:subtitle>{ subtitle }</itunes:subtitle>
-      <itunes:summary>{ summary }</itunes:summary>
+      <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
     </item>
   }
 
