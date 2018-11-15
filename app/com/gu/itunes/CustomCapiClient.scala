@@ -23,10 +23,7 @@ class CustomCapiClient(val apiKey: String) extends ContentApiClient {
       override def onFailure(call: Call, e: IOException) = response failure e
 
       override def onResponse(call: Call, resp: Response) =
-        if (!resp.isSuccessful)
-          response failure (new IOException("Invalid HTTP response: " ++ resp.toString))
-        else
-          response success HttpResponse(resp.body.bytes, resp.code, resp.message)
+        response success HttpResponse(resp.body.bytes, resp.code, resp.message)
     })
 
     response.future map { result =>

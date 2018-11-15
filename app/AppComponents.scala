@@ -10,7 +10,7 @@ class AppComponents(context: Context)
   with NoHttpFiltersComponents
   with AssetsComponents {
 
-  val appController = new Application(controllerComponents)
+  val appController = new Application(controllerComponents, configuration)
   val router: Router = new Routes(httpErrorHandler, appController, assets)
 
 }

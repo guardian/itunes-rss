@@ -5,15 +5,14 @@ import com.gu.itunes._
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.{ DateTimeZone, DateTime }
 import org.scalactic.{ Bad, Good }
-import play.api.Play
-import play.api.Logger
+import play.api.{ Configuration, Play, Logger }
 import play.api.mvc.{ ControllerComponents, Action, BaseController, Result }
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
-class Application(val controllerComponents: ControllerComponents) extends BaseController {
+class Application(val controllerComponents: ControllerComponents, val config: Configuration) extends BaseController {
 
-  val apiKey = Play.current.configuration.getString("apiKey")
+  val apiKey = config.getOptional[String]("apiKey")
     .getOrElse(sys.error("You must provide a CAPI key, either in application.conf or as the API_KEY environment variable"))
 
   val maxAge = 300
