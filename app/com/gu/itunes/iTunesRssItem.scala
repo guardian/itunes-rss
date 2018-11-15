@@ -149,7 +149,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       }
       <itunes:keywords>{ keywords }</itunes:keywords>
       <itunes:subtitle>{ subtitle }</itunes:subtitle>
-      <itunes:summary><![CDATA[{ summary }]]</itunes:summary>
+      <itunes:summary>{ scala.xml.Unparsed("<![CDATA[%s]]>".format(summary)) }</itunes:summary>
     </item>
   }
 
