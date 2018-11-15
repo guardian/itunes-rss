@@ -26,6 +26,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
           """. To support The Guardian’s independent journalism, visit https://gu.com/give/podcast"""
         else if (lastModified.isAfter(launchDayPW))
           """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
+        else
+          ""
       } else if (tagId == "news/series/todayinfocus" && lastModified.isAfter(launchDayTIF)) {
         """. To support The Guardian’s independent journalism, visit http://gu.com/todayinfocus/support"""
       } else {
