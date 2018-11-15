@@ -1,18 +1,17 @@
-package controllers
+package com.gu.itunes
 
-import com.gu.contentapi.client.GuardianContentApiError
-import com.gu.contentapi.client.model.ItemQuery
+import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
 import com.gu.itunes._
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.{ DateTimeZone, DateTime }
 import org.scalactic.{ Bad, Good }
 import play.api.Play
 import play.api.Logger
-import play.api.mvc.{ Action, Controller, Result }
+import play.api.mvc.{ ControllerComponents, Action, BaseController, Result }
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
-object Application extends Controller {
+class Application(val controllerComponents: ControllerComponents) extends BaseController {
 
   val apiKey = Play.current.configuration.getString("apiKey")
     .getOrElse(sys.error("You must provide a CAPI key, either in application.conf or as the API_KEY environment variable"))
@@ -52,8 +51,7 @@ object Application extends Controller {
               "Surrogate-Control" -> cacheControl,
               "Cache-Control" -> cacheControl,
               "Expires" -> expiresTime.toString(HTTPDateFormat),
-              "Date" -> now.toString(HTTPDateFormat)
-            )
+              "Date" -> now.toString(HTTPDateFormat))
           case Bad(errorMsg) =>
             Logger.warn(s"Failed to render XML. tagId = $tagId, errorMsg = $errorMsg")
             InternalServerError
@@ -61,8 +59,8 @@ object Application extends Controller {
         case _ => NotFound
       }
     } recover {
-      case GuardianContentApiError(404, _, _) => NotFound
-      case GuardianContentApiError(status, msg, errorResponse) =>
+      case ContentApiError(404, _, _) => NotFound
+      case ContentApiError(status, msg, errorResponse) =>
         Logger.warn(s"Unexpected response code from CAPI. tagId = $tagId, HTTP status = $status, error response = $errorResponse")
         InternalServerError
     }

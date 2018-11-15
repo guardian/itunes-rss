@@ -78,8 +78,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         <itunes:summary>
           Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains
         </itunes:summary>
-      </item>
-    )
+      </item>)
     val result = trimmedPodcasts zip expectedXml
 
     result foreach (x => x._1 \ "title" should be(x._2 \ "title"))
