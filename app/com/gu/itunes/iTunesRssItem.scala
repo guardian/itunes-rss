@@ -23,13 +23,13 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       val launchDayPWNew = new DateTime(2018, 11, 15, 0, 0)
       if (tagId == "politics/series/politicsweekly") {
         if (lastModified.isAfter(launchDayPWNew))
-          """. To support The Guardian’s independent journalism, visit https://gu.com/give/podcast"""
+          """. To support The Guardian’s independent journalism, visit <a href="https://gu.com/give/podcast">gu.com/give/podcast</a>"""
         else if (lastModified.isAfter(launchDayPW))
           """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
         else
           ""
       } else if (tagId == "news/series/todayinfocus" && lastModified.isAfter(launchDayTIF)) {
-        """. To support The Guardian’s independent journalism, visit http://gu.com/todayinfocus/support"""
+        """. To support The Guardian’s independent journalism, visit <a href="https://gu.com/todayinfocus/support">gu.com/todayinfocus/support</a>"""
       } else {
         ""
       }
@@ -149,7 +149,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       }
       <itunes:keywords>{ keywords }</itunes:keywords>
       <itunes:subtitle>{ subtitle }</itunes:subtitle>
-      <itunes:summary>{ summary }</itunes:summary>
+      <itunes:summary><![CDATA[{ summary }]]</itunes:summary>
     </item>
   }
 
