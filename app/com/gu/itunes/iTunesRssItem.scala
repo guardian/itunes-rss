@@ -18,9 +18,18 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
     val pubDate = DateSupport.toRssTimeFormat(lastModified)
 
     val membershipCta = {
-      val launchDay = new DateTime(2016, 12, 6, 0, 0)
-      if (lastModified.isAfter(launchDay) && tagId == "politics/series/politicsweekly") {
-        """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
+      val launchDayTIF = new DateTime(2018, 11, 14, 0, 0)
+      val launchDayPW = new DateTime(2016, 12, 6, 0, 0)
+      val launchDayPWNew = new DateTime(2018, 11, 15, 0, 0)
+      if (tagId == "politics/series/politicsweekly") {
+        if (lastModified.isAfter(launchDayPWNew))
+          """. To support The Guardian’s independent journalism, visit <a href="https://gu.com/give/podcast">gu.com/give/podcast</a>"""
+        else if (lastModified.isAfter(launchDayPW))
+          """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
+        else
+          ""
+      } else if (tagId == "news/series/todayinfocus" && lastModified.isAfter(launchDayTIF)) {
+        """. To support The Guardian’s independent journalism, visit <a href="https://gu.com/todayinfocus/support">gu.com/todayinfocus/support</a>"""
       } else {
         ""
       }
@@ -64,7 +73,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         AcastLaunchGroup(new DateTime(2018, 9, 13, 0, 0), Seq(
           "society/series/beyondtheblade")),
         AcastLaunchGroup(new DateTime(2018, 10, 25, 0, 0), Seq(
-          "news/series/todayinfocus")))
+          "news/series/todayinfocus")),
+        AcastLaunchGroup(new DateTime(2018, 11, 24, 0, 0), Seq(
+          "australia-news/series/witch-hunt")))
       val useAcastProxy: Boolean = acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
 
@@ -84,7 +95,14 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val capiUrl = asset.file.getOrElse("")
     val regex = s"""https?://static(-secure)?.guim.co.uk/audio/kip/$tagId"""
-    val guid = capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio")
+    val guid = {
+      val launchDay = new DateTime(2018, 11, 14, 0, 0)
+      val default = capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio")
+      if (lastModified.isAfter(launchDay))
+        podcast.fields.flatMap(_.internalComposerCode).getOrElse(default)
+      else
+        default
+    }
 
     val duration = {
       val seconds = asset.typeData.flatMap(_.durationSeconds)
@@ -120,7 +138,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       }
       <itunes:keywords>{ keywords }</itunes:keywords>
       <itunes:subtitle>{ subtitle }</itunes:subtitle>
-      <itunes:summary>{ summary }</itunes:summary>
+      <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
     </item>
   }
 
