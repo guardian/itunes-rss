@@ -42,8 +42,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
             <itunes:category text="Fitness &amp; Nutrition"/>
           </itunes:category>
         </channel>
-      </rss>
-    )
+      </rss>)
 
     expectedXml \ "channel" \ "title" should be(currentXml \ "channel" \ "title")
     expectedXml \ "channel" \ "link" should be(currentXml \ "channel" \ "link")

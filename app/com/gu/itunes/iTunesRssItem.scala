@@ -48,9 +48,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
           "arts/series/culture",
           "books/series/books",
           "technology/series/chips-with-everything",
-          "society/series/token"
-        )
-        ),
+          "society/series/token")),
         AcastLaunchGroup(new DateTime(2017, 6, 12, 0, 0), Seq(
           "politics/series/brexit-means",
           "global-development/series/global-development-podcast",
@@ -65,31 +63,19 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
           "artanddesign/series/guardian-australia-culture-podcast",
           "film/series/the-dailies-podcast",
           "world/series/project",
-          "us-news/series/politics-for-humans"
-        )
-        ),
+          "us-news/series/politics-for-humans")),
         AcastLaunchGroup(new DateTime(2018, 2, 21, 0, 0), Seq(
-          "culture/series/thestart"
-        )
-        ),
+          "culture/series/thestart")),
         AcastLaunchGroup(new DateTime(2018, 5, 30, 0, 0), Seq(
-          "australia-news/series/the-reckoning-guardian-australia-podcast"
-        )
-        ),
+          "australia-news/series/the-reckoning-guardian-australia-podcast")),
         AcastLaunchGroup(new DateTime(2018, 5, 29, 0, 0), Seq(
-          "membership/series/we-need-to-talk-about"
-        )
-        ),
+          "membership/series/we-need-to-talk-about")),
         AcastLaunchGroup(new DateTime(2018, 9, 13, 0, 0), Seq(
-          "society/series/beyondtheblade"
-        )),
+          "society/series/beyondtheblade")),
         AcastLaunchGroup(new DateTime(2018, 10, 25, 0, 0), Seq(
-          "news/series/todayinfocus"
-        )),
+          "news/series/todayinfocus")),
         AcastLaunchGroup(new DateTime(2018, 11, 24, 0, 0), Seq(
-          "australia-news/series/witch-hunt"
-        ))
-      )
+          "australia-news/series/witch-hunt")))
       val useAcastProxy: Boolean = acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
 
