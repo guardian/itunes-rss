@@ -122,6 +122,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
+    val author = if (tagId == "society/series/token") "The Guardian" else "theguardian.com"
+
     <item>
       <title> { title } </title>
       <description> { description } </description>
@@ -129,7 +131,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       <pubDate>{ pubDate }</pubDate>
       <guid>{ guid }</guid>
       <itunes:duration>{ duration }</itunes:duration>
-      <itunes:author>theguardian.com</itunes:author>
+      <itunes:author>{ author }</itunes:author>
       {
         explicit match {
           case Some(value) => <itunes:explicit>{ value }</itunes:explicit>
