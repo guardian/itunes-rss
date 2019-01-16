@@ -122,7 +122,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
-    val author = if (podcast.id == "society/series/token") "The Guardian" else "theguardian.com"
+    val author = if (tagId == "society/series/token") "The Guardian" else "theguardian.com"
 
     <item>
       <title> { title } </title>
