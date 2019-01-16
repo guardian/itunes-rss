@@ -202,11 +202,11 @@ Resources:
             mkdir -p /etc/gu
             aws s3 cp s3://content-api-config/podcasts-rss/${Stage}/podcasts-rss.conf /etc/gu/podcasts-rss.conf
             aws s3 cp s3://content-api-dist/${Stack}/${Stage}/podcasts-rss/podcasts-rss.service /etc/systemd/system/podcasts-rss.service
-            aws s3 cp s3://content-api-dist/${Stack}/${Stage}/podcasts-rss/podcasts-rss-0.1-SNAPSHOT.tgz .
+            aws s3 cp s3://content-api-dist/${Stack}/${Stage}/podcasts-rss/podcasts-rss-0.1.0-SNAPSHOT.tgz .
 
-            tar -xvf podcasts-rss-0.1-SNAPSHOT.tgz
-            rm podcasts-rss-0.1-SNAPSHOT.tgz
-            mv podcasts-rss-0.1-SNAPSHOT podcasts-rss
+            tar -xvf podcasts-rss-0.1.0-SNAPSHOT.tgz
+            rm podcasts-rss-0.1.0-SNAPSHOT.tgz
+            mv podcasts-rss-0.1.0-SNAPSHOT podcasts-rss
 
             chown -R content-api /home/content-api /etc/gu
             chgrp -R content-api /home/content-api /etc/gu
