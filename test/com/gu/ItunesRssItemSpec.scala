@@ -11,7 +11,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head: Asset).toXml
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, "The Guardian", p.elements.get.head.assets.head: Asset).toXml
     val trimmedPodcasts = for (p <- podcasts) yield trim(p)
 
     val expectedXml = RemoveWhitespace.transform(
@@ -28,7 +28,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
           http://download.guardian.co.uk/draft/audio/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3
         </guid>
         <itunes:duration>00:29:07</itunes:duration>
-        <itunes:author>theguardian.com</itunes:author>
+        <itunes:author>The Guardian</itunes:author>
         <itunes:keywords>Science, Mathematics</itunes:keywords>
         <itunes:subtitle>
           John Conway sheds light on the true nature of numbers, the beauty lying within maths and why game-playing is so important to mathematical discovery
@@ -48,7 +48,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
           https://audio.guim.co.uk/2015/12/03-53462-gdn.tech.151203.sb.digital-babysitting.mp3
         </guid>
         <itunes:duration>00:27:00</itunes:duration>
-        <itunes:author>theguardian.com</itunes:author>
+        <itunes:author>The Guardian</itunes:author>
         <itunes:explicit>yes</itunes:explicit>
         <itunes:keywords>Science, Psychology</itunes:keywords>
         <itunes:subtitle>
@@ -69,7 +69,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
           http://download.guardian.co.uk/draft/audio/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3
         </guid>
         <itunes:duration>00:25:37</itunes:duration>
-        <itunes:author>theguardian.com</itunes:author>
+        <itunes:author>The Guardian</itunes:author>
         <itunes:explicit>clean</itunes:explicit>
         <itunes:keywords>Science, David Eagleman, Neuroscience</itunes:keywords>
         <itunes:subtitle>
