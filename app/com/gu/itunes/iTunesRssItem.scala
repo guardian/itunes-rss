@@ -5,7 +5,7 @@ import com.gu.contentapi.client.model.v1._
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
+class iTunesRssItem(val podcast: Content, val tagId: String, author: String, asset: Asset) {
 
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trailText)
 
@@ -121,8 +121,6 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
     val subtitle = Filtering.standfirst(standfirstOrTrail.getOrElse(""))
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
-
-    val author = if (tagId == "society/series/token") "The Guardian" else "theguardian.com"
 
     <item>
       <title> { title } </title>
