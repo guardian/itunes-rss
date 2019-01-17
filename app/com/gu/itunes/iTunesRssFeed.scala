@@ -18,6 +18,8 @@ object iTunesRssFeed {
 
     val description = Filtering.description(tag.description.getOrElse(""))
 
+    val author = if (tag.id == "society/series/token") "The Guardian" else "theguardian.com"
+
     tag.podcast match {
       case Some(podcast) => Good {
         <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
@@ -40,10 +42,10 @@ object iTunesRssFeed {
             }
             <itunes:owner>
               <itunes:email>userhelp@theguardian.com</itunes:email>
-              <itunes:name>theguardian.com</itunes:name>
+              <itunes:name>{ author }</itunes:name>
             </itunes:owner>
             <itunes:image href={ podcast.image.getOrElse("") }/>
-            <itunes:author>theguardian.com</itunes:author>
+            <itunes:author>{ author }</itunes:author>
             {
               if (podcast.explicit)
                 <itunes:explicit>yes</itunes:explicit>
@@ -62,7 +64,7 @@ object iTunesRssFeed {
               for {
                 podcast <- contents
                 asset <- getFirstAudioAsset(podcast)
-              } yield new iTunesRssItem(podcast, tag.id, asset).toXml
+              } yield new iTunesRssItem(podcast, tag.id, author, asset).toXml
             }
           </channel>
         </rss>
