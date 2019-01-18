@@ -18,7 +18,7 @@ object iTunesRssFeed {
 
     val description = Filtering.description(tag.description.getOrElse(""))
 
-    val author = if (tag.id == "society/series/token") "The Guardian" else "theguardian.com"
+    val author = if (tag.id == "society/series/token" || tag.id == "books/series/books") "The Guardian" else "theguardian.com"
 
     tag.podcast match {
       case Some(podcast) => Good {
