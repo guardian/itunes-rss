@@ -20,6 +20,8 @@ object iTunesRssFeed {
 
     val author = if (tag.id == "society/series/token" || tag.id == "books/series/books") "The Guardian" else "theguardian.com"
 
+    val pubDate = DateSupport.toRssTimeFormat(DateTime.now)
+
     tag.podcast match {
       case Some(podcast) => Good {
         <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:snf="http://www.smartnews.be/snf" version="2.0">
@@ -30,12 +32,8 @@ object iTunesRssFeed {
             <description>{ description }</description>
             <language>en-gb</language>
             <copyright>{ podcast.copyright }</copyright>
-            <lastBuildDate>
-              { DateSupport.toRssTimeFormat(DateTime.now) }
-            </lastBuildDate>
-            <pubDate>
-              { DateSupport.toRssTimeFormat(DateTime.now) }
-            </pubDate>
+            <lastBuildDate>{ pubDate }</lastBuildDate>
+            <pubDate>{ pubDate }</pubDate>
             <snf:logo>
               <url>https://i.guim.co.uk/img/media/34715756efe2e3da06e30801edb9d03a1c9ab8df/226_0_2223_1334/master/2223.jpg?width=220&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=5e01a897c857dc33979cd7fc75fdcf56</url>
             </snf:logo>
