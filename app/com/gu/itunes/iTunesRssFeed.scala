@@ -9,6 +9,8 @@ import scala.xml.Node
 
 object iTunesRssFeed {
 
+  val author = "The Guardian"
+
   def apply(resp: ItemResponse): Node Or String = resp.tag match {
     case Some(t) => toXml(t, resp.results.getOrElse(Nil).toList)
     case None => Bad("No tag found")
@@ -17,8 +19,6 @@ object iTunesRssFeed {
   def toXml(tag: Tag, contents: List[Content]): Node Or String = {
 
     val description = Filtering.description(tag.description.getOrElse(""))
-
-    val author = if (tag.id == "society/series/token" || tag.id == "books/series/books") "The Guardian" else "theguardian.com"
 
     tag.podcast match {
       case Some(podcast) => Good {
@@ -64,7 +64,7 @@ object iTunesRssFeed {
               for {
                 podcast <- contents
                 asset <- getFirstAudioAsset(podcast)
-              } yield new iTunesRssItem(podcast, tag.id, author, asset).toXml
+              } yield new iTunesRssItem(podcast, tag.id, asset).toXml
             }
           </channel>
         </rss>
