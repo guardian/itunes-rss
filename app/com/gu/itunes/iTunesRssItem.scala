@@ -96,9 +96,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, author: String, ass
     val capiUrl = asset.file.getOrElse("")
     val regex = s"""https?://static(-secure)?.guim.co.uk/audio/kip/$tagId"""
     val guid = {
-      val launchDay = new DateTime(2018, 11, 14, 0, 0)
       val default = capiUrl.replaceAll(regex, "http://download.guardian.co.uk/draft/audio")
-      if (lastModified.isAfter(launchDay))
+      if (lastModified.isAfter(iTunesRssItem.guuidLaunchDay))
         podcast.fields.flatMap(_.internalComposerCode).getOrElse(default)
       else
         default
@@ -122,6 +121,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, author: String, ass
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
+    val body = podcast.fields.flatMap(_.body).getOrElse("")
+
     <item>
       <title> { title } </title>
       <description> { description } </description>
@@ -139,6 +140,19 @@ class iTunesRssItem(val podcast: Content, val tagId: String, author: String, ass
       <itunes:keywords>{ keywords }</itunes:keywords>
       <itunes:subtitle>{ subtitle }</itunes:subtitle>
       <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
+      <content:encoded>{ body }</content:encoded>
+      <snf:advertisement>
+        <snf:adcontent>
+          <![CDATA[  
+          <script src='https://www.googletagservices.com/tag/js/gpt.js'>
+            googletag.pubads().definePassback('/59666047/smartnews', [300, 250]).display();
+          </script>
+          ]]>
+        </snf:adcontent>
+      </snf:advertisement>
+      <snf:analytics><![CDATA[
+        <script type="text/javascript" charset="utf8" src="https://j.ophan.co.uk/smart-news.js"></script>
+      ]]></snf:analytics>
     </item>
   }
 
@@ -157,4 +171,10 @@ class iTunesRssItem(val podcast: Content, val tagId: String, author: String, ass
     val keys = for (t <- tags) yield t.webTitle
     keys.mkString(", ")
   }
+}
+
+object iTunesRssItem {
+
+  val guuidLaunchDay = new DateTime(2018, 11, 14, 0, 0)
+
 }
