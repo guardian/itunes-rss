@@ -34,6 +34,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     val client = new CustomCapiClient(apiKey)
 
     val query = ItemQuery(tagId)
+      .rights("syndicatable")
       .showElements("audio")
       .showTags("keyword")
       .showFields("all")
