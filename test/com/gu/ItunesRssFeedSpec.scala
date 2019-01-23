@@ -25,10 +25,10 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
           <itunes:type>Serial</itunes:type>
           <itunes:owner>
             <itunes:email>userhelp@theguardian.com</itunes:email>
-            <itunes:name>theguardian.com</itunes:name>
+            <itunes:name>The Guardian</itunes:name>
           </itunes:owner>
           <itunes:image href="https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png"/>
-          <itunes:author>theguardian.com</itunes:author>
+          <itunes:author>The Guardian</itunes:author>
           <itunes:keywords/>
           <itunes:summary>
             The Guardian's science team bring you the best analysis and interviews from the worlds of science and technology
