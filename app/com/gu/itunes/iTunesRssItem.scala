@@ -5,7 +5,7 @@ import com.gu.contentapi.client.model.v1._
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, author: String, asset: Asset) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trailText)
 
@@ -129,7 +129,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, author: String, ass
       <pubDate>{ pubDate }</pubDate>
       <guid>{ guid }</guid>
       <itunes:duration>{ duration }</itunes:duration>
-      <itunes:author>{ author }</itunes:author>
+      <itunes:author>{ iTunesRssFeed.author }</itunes:author>
       {
         explicit match {
           case Some(value) => <itunes:explicit>{ value }</itunes:explicit>
