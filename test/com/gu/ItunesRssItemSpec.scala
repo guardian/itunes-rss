@@ -11,7 +11,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, "The Guardian", p.elements.get.head.assets.head: Asset).toXml
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head: Asset).toXml
     val trimmedPodcasts = for (p <- podcasts) yield trim(p)
 
     val expectedXml = RemoveWhitespace.transform(
