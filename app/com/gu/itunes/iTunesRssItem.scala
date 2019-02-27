@@ -24,38 +24,38 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       val launchDayPWNew = new DateTime(2018, 11, 15, 0, 0)
       if (tagId == "politics/series/politicsweekly") {
         if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://gu.com/politicspod">gu.com/politicspod</a>"""
+          """. Help support our independent journalism at <a href="https://www.theguardian.com/politicspod">theguardian.com/politicspod</a>"""
         else if (lastModified.isAfter(launchDayPWNew))
-          """. To support The Guardian’s independent journalism, visit <a href="https://gu.com/give/podcast">gu.com/give/podcast</a>"""
+          """. To support The Guardian’s independent journalism, visit <a href="https://www.theguardian.com/give/podcast">theguardian.com/give/podcast</a>"""
         else if (lastModified.isAfter(launchDayPW))
-          """. Please support our work and help us keep the world informed. To fund us, go to https://gu.com/give/podcast"""
+          """. Please support our work and help us keep the world informed. To fund us, go to https://www.theguardian.com/give/podcast"""
         else
           ""
       } else if (tagId == "news/series/todayinfocus") {
         if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://gu.com/infocus">gu.com/infocus</a>"""
+          """. Help support our independent journalism at <a href="https://www.theguardian.com/infocus">theguardian.com/infocus</a>"""
         else if (lastModified.isAfter(launchDayTIF))
-          """. To support The Guardian’s independent journalism, visit <a href="https://gu.com/todayinfocus/support">gu.com/todayinfocus/support</a>"""
+          """. To support The Guardian’s independent journalism, visit <a href="https://www.theguardian.com/todayinfocus/support">theguardian.com/todayinfocus/support</a>"""
         else
           ""
       } else if (tagId == "books/series/books") {
         if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://gu.com/bookspod">gu.com/bookspod</a>"""
+          """. Help support our independent journalism at <a href="https://www.theguardian.com/bookspod">theguardian.com/bookspod</a>"""
         else
           ""
       } else if (tagId == "news/series/the-audio-long-read") {        
         if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://gu.com/longreadpod">gu.com/longreadpod</a>"""
+          """. Help support our independent journalism at <a href="https://www.theguardian.com/longreadpod">theguardian.com/longreadpod</a>"""
         else
           ""
       } else if (tagId == "science/series/science") {
         if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://gu.com/sciencepod">gu.com/sciencepod</a>"""
+          """. Help support our independent journalism at <a href="https://www.theguardian.com/sciencepod">theguardian.com/sciencepod</a>"""
         else
           ""
       } else if (tagId == "technology/series/chips-with-everything") {
         if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://gu.com/chipspod">gu.com/chipspod</a>"""
+          """. Help support our independent journalism at <a href="https://www.theguardian.com/chipspod">theguardian.com/chipspod</a>"""
         else
           ""
       } else {
