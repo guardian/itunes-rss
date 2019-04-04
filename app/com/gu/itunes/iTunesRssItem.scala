@@ -22,6 +22,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       val launchDayTIF = new DateTime(2018, 11, 14, 0, 0)
       val launchDayPW = new DateTime(2016, 12, 6, 0, 0)
       val launchDayPWNew = new DateTime(2018, 11, 15, 0, 0)
+      val footballWeekly = new DateTime(2019, 4, 4, 0, 0)
+
       if (tagId == "politics/series/politicsweekly") {
         if (lastModified.isAfter(theMomentFrom))
           """. Help support our independent journalism at <a href="https://www.theguardian.com/politicspod">theguardian.com/politicspod</a>"""
@@ -58,6 +60,10 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
           """. Help support our independent journalism at <a href="https://www.theguardian.com/chipspod">theguardian.com/chipspod</a>"""
         else
           ""
+      } else if (tagId == "football/series/footballweekly") {
+        if (lastModified.isAfter(footballWeekly))
+          """. Help support our independent journalism at <a href="https://www.theguardian.com/footballweeklypod">theguardian.com/footballweeklypod</a>"""
+        else ""
       } else {
         ""
       }
