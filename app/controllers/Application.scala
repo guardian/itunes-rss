@@ -37,7 +37,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       .showElements("audio")
       .showTags("keyword")
       .showFields("all")
-      .pageSize(100) // number of podcasts to be served
+      .pageSize(200) // number of podcasts to be served (max single request page size)
 
     client.getResponse(query) map { itemResponse =>
       itemResponse.status match {
