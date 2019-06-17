@@ -17,7 +17,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
     val expectedXml = RemoveWhitespace.transform(
       <item>
         <title>
-          Inside the mind of renowned mathematician John Conway - podcast
+          Inside the mind of renowned mathematician John Conway
         </title>
         <description>
           John Conway sheds light on the true nature of numbers, the beauty lying within maths and why game-playing is so important to mathematical discovery
