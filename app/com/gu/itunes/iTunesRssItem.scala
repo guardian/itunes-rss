@@ -11,7 +11,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
   def toXml: Node = {
 
-    val title = podcast.webTitle
+    // TODO: remove the below when suffix is added only where it is needed, and not by journalists
+    val suffix = """(.*) [-–|] podcast$""".r
+    val title = podcast.webTitle match { case suffix(prefix) => prefix; case otherwise => otherwise }
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
@@ -45,7 +47,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
           """. Help support our independent journalism at <a href="https://www.theguardian.com/bookspod">theguardian.com/bookspod</a>"""
         else
           ""
-      } else if (tagId == "news/series/the-audio-long-read") {        
+      } else if (tagId == "news/series/the-audio-long-read") {
         if (lastModified.isAfter(theMomentFrom))
           """. Help support our independent journalism at <a href="https://www.theguardian.com/longreadpod">theguardian.com/longreadpod</a>"""
         else
