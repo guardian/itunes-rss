@@ -11,7 +11,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
 
   def toXml: Node = {
 
-    val title = podcast.webTitle
+    val title = podcast.webTitle.stripSuffix(" – podcast")
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
