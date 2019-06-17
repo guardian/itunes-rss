@@ -59,7 +59,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </itunes:summary>
       </item>
       <item>
-        <title>The story of our brains - podcast</title>
+        <title>The story of our brains</title>
         <description>
           Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains
         </description>

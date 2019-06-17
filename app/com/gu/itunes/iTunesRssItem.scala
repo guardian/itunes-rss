@@ -47,7 +47,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
           """. Help support our independent journalism at <a href="https://www.theguardian.com/bookspod">theguardian.com/bookspod</a>"""
         else
           ""
-      } else if (tagId == "news/series/the-audio-long-read") {        
+      } else if (tagId == "news/series/the-audio-long-read") {
         if (lastModified.isAfter(theMomentFrom))
           """. Help support our independent journalism at <a href="https://www.theguardian.com/longreadpod">theguardian.com/longreadpod</a>"""
         else
