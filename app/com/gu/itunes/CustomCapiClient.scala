@@ -1,12 +1,15 @@
 package com.gu.itunes
 
 import java.util.concurrent.TimeUnit
-import com.gu.contentapi.client.ContentApiClient
+
+import com.gu.contentapi.client.{ ContentApiBackoff, ContentApiClient, ScheduledExecutor }
 import com.gu.contentapi.client.model.HttpResponse
 import java.io.IOException
-import okhttp3.{ ConnectionPool, OkHttpClient, Request, Response, Callback, Call }
+
+import okhttp3.{ Call, Callback, ConnectionPool, OkHttpClient, Request, Response }
 import play.api.Logger
-import scala.concurrent.duration.Duration
+
+import scala.concurrent.duration._
 import scala.concurrent.{ ExecutionContext, Future, Promise }
 
 class CustomCapiClient(val apiKey: String) extends ContentApiClient {
@@ -33,6 +36,9 @@ class CustomCapiClient(val apiKey: String) extends ContentApiClient {
     }
   }
 
+  override implicit val executor: ScheduledExecutor = ScheduledExecutor()
+  private val initialDelay = 250.millis
+  override val backoffStrategy: ContentApiBackoff = ContentApiBackoff.constantStrategy(initialDelay, maxAttempts = 3)
 }
 
 object CustomCapiClient {
