@@ -124,7 +124,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
           "football/series/forgotten-stories-of-football")),
         AcastLaunchGroup(new DateTime(2020, 6, 18, 0, 0), Seq(
           "society/series/innermost")),
-        AcastLaunchGroup(new DateTime(2020, 11, 26, 0, 0), Seq(
+        AcastLaunchGroup(new DateTime(2020, 11, 25, 0, 0), Seq(
           "australia-news/series/temporary"))
       )
 
