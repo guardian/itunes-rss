@@ -126,7 +126,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
           "society/series/innermost")),
         AcastLaunchGroup(new DateTime(2020, 11, 25, 0, 0), Seq(
           "australia-news/series/temporary")),
-        AcastLaunchGroup(new DateTime(2021, 1, 20, 0, 0), Seq(
+        AcastLaunchGroup(new DateTime(2021, 1, 19, 0, 0), Seq(
           "music/series/reverberate"))
       )
 
