@@ -125,7 +125,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         AcastLaunchGroup(new DateTime(2020, 6, 18, 0, 0), Seq(
           "society/series/innermost")),
         AcastLaunchGroup(new DateTime(2020, 11, 25, 0, 0), Seq(
-          "australia-news/series/temporary"))
+          "australia-news/series/temporary")),
+        AcastLaunchGroup(new DateTime(2021, 1, 19, 0, 0), Seq(
+          "music/series/reverberate"))
       )
 
       val useAcastProxy: Boolean = acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
