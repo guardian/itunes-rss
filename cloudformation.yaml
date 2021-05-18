@@ -47,7 +47,7 @@ Resources:
           - cloudformation:DescribeStackResource
           Resource: "*"
       Roles:
-      - Ref: RootRole
+      - !Ref: RootRole
   DownloadConfigFromS3Policy:
     Type: AWS::IAM::Policy
     Properties:
@@ -61,7 +61,7 @@ Resources:
           - arn:aws:s3:::content-api-config/*
           - arn:aws:s3:::content-api-dist/*
       Roles:
-      - Ref: RootRole
+      - !Ref: RootRole
   CloudwatchPolicy:
     Type: AWS::IAM::Policy
     Properties:
@@ -103,15 +103,15 @@ Resources:
     Properties:
       Path: "/"
       Roles:
-      - Ref: RootRole
+      - !Ref: RootRole
   LoadBalancer:
     Type: AWS::ElasticLoadBalancing::LoadBalancer
     Properties:
       Scheme: internet-facing
       SecurityGroups:
-      - Ref: LoadBalancerSecurityGroup
+      - !Ref: LoadBalancerSecurityGroup
       Subnets:
-        Ref: Subnets
+        !Ref: Subnets
       CrossZone: true
       Listeners:
       - Protocol: HTTP
@@ -127,26 +127,26 @@ Resources:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
       VPCZoneIdentifier:
-        Ref: Subnets
+        !Ref: Subnets
       AvailabilityZones:
         Fn::GetAZs: ''
       LaunchConfigurationName:
-        Ref: LaunchConfig
+        !Ref: LaunchConfig
       MinSize: '1'
       MaxSize: '20'
       DesiredCapacity: '1'
       HealthCheckType: ELB
       HealthCheckGracePeriod: 300
       LoadBalancerNames:
-      - Ref: LoadBalancer
+      - !Ref: LoadBalancer
       Tags:
       - Key: Stage
         Value:
-          Ref: Stage
+          !Ref: Stage
         PropagateAtLaunch: 'true'
       - Key: Stack
         Value:
-          Ref: Stack
+          !Ref: Stack
         PropagateAtLaunch: 'true'
       - Key: App
         Value: podcasts-rss
@@ -155,7 +155,7 @@ Resources:
     Type: AWS::AutoScaling::ScalingPolicy
     Properties:
       AutoScalingGroupName:
-        Ref: AutoscalingGroup
+        !Ref: AutoscalingGroup
       AdjustmentType: PercentChangeInCapacity
       ScalingAdjustment: '100'
       Cooldown: '60'
@@ -163,7 +163,7 @@ Resources:
     Type: AWS::AutoScaling::ScalingPolicy
     Properties:
       AutoScalingGroupName:
-        Ref: AutoscalingGroup
+        !Ref: AutoscalingGroup
       AdjustmentType: ChangeInCapacity
       ScalingAdjustment: "-1"
       Cooldown: '600'
@@ -175,14 +175,14 @@ Resources:
       Statistic: Average
       Threshold: '10'
       AlarmActions:
-      - Ref: ScaleUpPolicy
+      - !Ref: ScaleUpPolicy
       OKActions:
-      - Ref: ScaleDownPolicy
+      - !Ref: ScaleDownPolicy
       ComparisonOperator: GreaterThanThreshold
       Dimensions:
       - Name: AutoScalingGroupName
         Value:
-          Ref: AutoscalingGroup
+          !Ref: AutoscalingGroup
       MetricName: CPUUtilization
       Namespace: AWS/EC2
       Period: '60'
@@ -207,14 +207,14 @@ Resources:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
       ImageId:
-        Ref: AMI
+        !Ref: AMI
       AssociatePublicIpAddress: true
       SecurityGroups:
-      - Ref: ApplicationSecurityGroup
-      - Ref: WazuhSecurityGroup
+      - !Ref: ApplicationSecurityGroup
+      - !Ref: WazuhSecurityGroup
       InstanceType: t3.small
       IamInstanceProfile:
-        Ref: InstanceProfile
+        !Ref: InstanceProfile
       UserData:
         Fn::Base64:
           !Sub |
@@ -242,7 +242,7 @@ Resources:
     Properties:
       GroupDescription: Public access to the load balancer on port 80
       VpcId:
-        Ref: VPC
+        !Ref: VPC
       SecurityGroupIngress:
       - IpProtocol: tcp
         FromPort: '80'
@@ -258,7 +258,7 @@ Resources:
     Properties:
       GroupDescription: SSH and HTTP
       VpcId:
-        Ref: VPC
+        !Ref: VPC
       SecurityGroupIngress:
       - IpProtocol: tcp
         FromPort: '9000'
@@ -268,7 +268,7 @@ Resources:
         FromPort: '9000'
         ToPort: '9000'
         SourceSecurityGroupId:
-          Ref: LoadBalancerSecurityGroup
+          !Ref: LoadBalancerSecurityGroup
       - IpProtocol: tcp
         FromPort: '22'
         ToPort: '22'

@@ -14,7 +14,7 @@ deployments:
     app: podcasts-rss
     parameters:
       amiTags:
-        Recipe: ubuntu-xenial-java8
+        Recipe: ubuntu-bionic-capi
         AmigoStage: PROD
       amiEncrypted: true
 
