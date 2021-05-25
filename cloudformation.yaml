@@ -74,6 +74,30 @@ Resources:
           Resource: '*'
       Roles:
       - !Ref RootRole
+  DescribeInstancesPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action: ec2:DescribeInstances
+            Effect: Allow
+            Resource: '*'
+      PolicyName: ec2-describe-instances
+      Roles:
+        - !Ref RootRole
+  Ec2DescribeAutoScalingGroupsPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: ec2-describe-autoscaling-groups
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Action:
+              - autoscaling:DescribeAutoScalingGroups
+              - autoscaling:DescribeAutoScalingInstances
+            Resource: "*"
+      Roles:
+        - !Ref RootRole
   InstanceProfile:
     Type: AWS::IAM::InstanceProfile
     Properties:
@@ -187,6 +211,7 @@ Resources:
       AssociatePublicIpAddress: true
       SecurityGroups:
       - Ref: ApplicationSecurityGroup
+      - Ref: WazuhSecurityGroup
       InstanceType: t3.small
       IamInstanceProfile:
         Ref: InstanceProfile
@@ -248,6 +273,17 @@ Resources:
         FromPort: '22'
         ToPort: '22'
         CidrIp: 77.91.248.0/21
+  WazuhSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow outbound traffic from wazuh agent to manager
+      VpcId:
+        !Ref VPC
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 1514
+          ToPort: 1515
+          CidrIp: 0.0.0.0/0
 Outputs:
   LoadBalancer:
     Value:
