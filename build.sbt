@@ -4,6 +4,7 @@ organization  := "com.gu"
 description   := "podcasts RSS feed"
 scalaVersion  := "2.12.7"
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
+routesGenerator := InjectedRoutesGenerator
 
 val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, RiffRaffArtifact, UniversalPlugin)

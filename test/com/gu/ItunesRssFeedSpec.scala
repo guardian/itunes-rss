@@ -1,8 +1,12 @@
 
 package com.gu.itunes
 
+import org.scalactic.Bad
 import org.scalatest._
+
+import scala.util.{ Failure, Success, Try }
 import scala.xml.Utility.trim
+import play.api.mvc.Results._
 
 class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
 
@@ -59,4 +63,16 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
     expectedXml \ "channel" \ "image" should be(currentXml \ "channel" \ "image")
     expectedXml \ "channel" \ "category" should be(currentXml \ "channel" \ "category")
   }
+
+  it should "return a 404 if a podcast cannot be found" in {
+    val attempt = Try(iTunesRssFeed(tagMissingPodcastFieldResponse))
+    attempt.get match {
+      case Bad(failed: Failed) =>
+        failed.message should be("podcast not found")
+        failed.status should be(NotFound)
+      case _ =>
+        fail("""expected Bad(Failed("podcast not found", NotFound))""")
+    }
+  }
+
 }

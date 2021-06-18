@@ -1,14 +1,20 @@
 package com.gu.itunes
 
 import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
-import com.gu.itunes._
 import org.joda.time.format.DateTimeFormat
-import org.joda.time.{ DateTimeZone, DateTime }
+import org.joda.time.{ DateTime, DateTimeZone }
 import org.scalactic.{ Bad, Good }
-import play.api.{ Configuration, Play, Logger }
-import play.api.mvc.{ ControllerComponents, Action, BaseController, Result }
-import scala.concurrent.Future
+import play.api.mvc.Results._
+import play.api.mvc.{ BaseController, ControllerComponents, Result }
+import play.api.{ Configuration, Logger }
+
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
+
+case class Failed(message: String, status: Status) {
+  override val toString: String =
+    s"message: $message, status: ${status.toString}"
+}
 
 class Application(val controllerComponents: ControllerComponents, val config: Configuration) extends BaseController {
 
@@ -51,14 +57,15 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
               "Cache-Control" -> cacheControl,
               "Expires" -> expiresTime.toString(HTTPDateFormat),
               "Date" -> now.toString(HTTPDateFormat))
-          case Bad(errorMsg) =>
-            Logger.warn(s"Failed to render XML. tagId = $tagId, errorMsg = $errorMsg")
-            InternalServerError
+          case Bad(failed: Failed) =>
+            Logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
+            failed.status
         }
         case _ => NotFound
       }
     } recover {
       case ContentApiError(404, _, _) => NotFound
+      // maybe this generic InternalServerError could be a better representation of the CAPI failure mode
       case ContentApiError(status, msg, errorResponse) =>
         Logger.warn(s"Unexpected response code from CAPI. tagId = $tagId, HTTP status = $status, error response = $errorResponse")
         InternalServerError
