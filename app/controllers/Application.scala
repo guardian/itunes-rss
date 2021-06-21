@@ -13,7 +13,7 @@ import scala.concurrent.Future
 
 case class Failed(message: String, status: Status) {
   override val toString: String =
-    s"message: $message, status: ${status.toString}"
+    s"message: $message, status: ${status.header.status}"
 }
 
 class Application(val controllerComponents: ControllerComponents, val config: Configuration) extends BaseController {

@@ -70,6 +70,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
       case Bad(failed: Failed) =>
         failed.message should be("podcast not found")
         failed.status should be(NotFound)
+        failed.toString should be("message: podcast not found, status: 404")
       case _ =>
         fail("""expected Bad(Failed("podcast not found", NotFound))""")
     }
