@@ -1,0 +1,2479 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "internal",
+    "total": 563,
+    "startIndex": 1,
+    "pageSize": 3,
+    "currentPage": 1,
+    "pages": 188,
+    "orderBy": "newest",
+    "tag": {
+      "id": "football/series/james-richardson-european-newspaper-review",
+      "type": "series",
+      "sectionId": "football",
+      "sectionName": "Football",
+      "webTitle": "James Richardson's European football papers review",
+      "webUrl": "https://www.theguardian.com/football/series/james-richardson-european-newspaper-review",
+      "apiUrl": "https://content.guardianapis.com/football/series/james-richardson-european-newspaper-review",
+      "description": "Football Weekly host James Richardson reviews what the European newspapers are saying about the big Champions League and Europa League matches",
+      "internalName": "James Richardson's European football papers review"
+    },
+    "results": [
+      {
+        "id": "football/video/2014/may/16/beto-hero-turin-james-richardsons-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-05-15T22:01:00Z",
+        "webTitle": "Beto, 'The Hero of Turin': James Richardson's European football papers review - video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/may/16/beto-hero-turin-james-richardsons-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/may/16/beto-hero-turin-james-richardsons-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/uefa-europa-league",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Europa League",
+            "webUrl": "https://www.theguardian.com/football/uefa-europa-league",
+            "apiUrl": "https://content.guardianapis.com/football/uefa-europa-league",
+            "references": [
+
+            ],
+            "internalName": "Europa League"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "football/world-cup-football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "World Cup",
+            "webUrl": "https://www.theguardian.com/football/world-cup-football",
+            "apiUrl": "https://content.guardianapis.com/football/world-cup-football",
+            "references": [
+
+            ],
+            "description": "<p>Coverage of football World Cups from all years.&nbsp;<a href=\"https://www.theguardian.com/football/world-cup-2018\">Go to World Cup 2018.</a></p>",
+            "internalName": "World Cup (football)"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          },
+          {
+            "id": "football/sevilla",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Sevilla",
+            "webUrl": "https://www.theguardian.com/football/sevilla",
+            "apiUrl": "https://content.guardianapis.com/football/sevilla",
+            "references": [
+
+            ],
+            "internalName": "Sevilla (Football club)"
+          },
+          {
+            "id": "football/benfica",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Benfica",
+            "webUrl": "https://www.theguardian.com/football/benfica",
+            "apiUrl": "https://content.guardianapis.com/football/benfica",
+            "references": [
+
+            ],
+            "internalName": "Benfica (Football club)"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/may/02/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-05-01T22:01:00Z",
+        "webTitle": "'A Spanish party in Lisbon': James Richardson's European football papers review – video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/may/02/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/may/02/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/atleticomadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Atlético Madrid",
+            "webUrl": "https://www.theguardian.com/football/atleticomadrid",
+            "apiUrl": "https://content.guardianapis.com/football/atleticomadrid",
+            "references": [
+
+            ],
+            "internalName": "Atletico Madrid (Football club)"
+          },
+          {
+            "id": "football/realmadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Real Madrid",
+            "webUrl": "https://www.theguardian.com/football/realmadrid",
+            "apiUrl": "https://content.guardianapis.com/football/realmadrid",
+            "references": [
+
+            ],
+            "internalName": "Real Madrid (Football club)"
+          },
+          {
+            "id": "football/chelsea",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Chelsea",
+            "webUrl": "https://www.theguardian.com/football/chelsea",
+            "apiUrl": "https://content.guardianapis.com/football/chelsea",
+            "references": [
+
+            ],
+            "description": "Read the latest Chelsea news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Chelsea (Football)"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/carlo-ancelotti",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Carlo Ancelotti",
+            "webUrl": "https://www.theguardian.com/football/carlo-ancelotti",
+            "apiUrl": "https://content.guardianapis.com/football/carlo-ancelotti",
+            "references": [
+
+            ],
+            "internalName": "Carlo Ancelotti"
+          },
+          {
+            "id": "football/jose-mourinho",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "José Mourinho",
+            "webUrl": "https://www.theguardian.com/football/jose-mourinho",
+            "apiUrl": "https://content.guardianapis.com/football/jose-mourinho",
+            "references": [
+
+            ],
+            "internalName": "Jose Mourinho"
+          },
+          {
+            "id": "football/pep-guardiola",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Pep Guardiola",
+            "webUrl": "https://www.theguardian.com/football/pep-guardiola",
+            "apiUrl": "https://content.guardianapis.com/football/pep-guardiola",
+            "references": [
+
+            ],
+            "internalName": "Pep Guardiola (football)"
+          },
+          {
+            "id": "football/tito-vilanova",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Tito Vilanova",
+            "webUrl": "https://www.theguardian.com/football/tito-vilanova",
+            "apiUrl": "https://content.guardianapis.com/football/tito-vilanova",
+            "references": [
+
+            ],
+            "internalName": "Tito Vilanova"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/apr/25/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-04-24T22:01:00Z",
+        "webTitle": "Real Madrid's 'golden goal': James Richardson's European football papers review - video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/apr/25/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/apr/25/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/realmadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Real Madrid",
+            "webUrl": "https://www.theguardian.com/football/realmadrid",
+            "apiUrl": "https://content.guardianapis.com/football/realmadrid",
+            "references": [
+
+            ],
+            "internalName": "Real Madrid (Football club)"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/chelsea",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Chelsea",
+            "webUrl": "https://www.theguardian.com/football/chelsea",
+            "apiUrl": "https://content.guardianapis.com/football/chelsea",
+            "references": [
+
+            ],
+            "description": "Read the latest Chelsea news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Chelsea (Football)"
+          },
+          {
+            "id": "football/atleticomadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Atlético Madrid",
+            "webUrl": "https://www.theguardian.com/football/atleticomadrid",
+            "apiUrl": "https://content.guardianapis.com/football/atleticomadrid",
+            "references": [
+
+            ],
+            "internalName": "Atletico Madrid (Football club)"
+          },
+          {
+            "id": "football/jose-mourinho",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "José Mourinho",
+            "webUrl": "https://www.theguardian.com/football/jose-mourinho",
+            "apiUrl": "https://content.guardianapis.com/football/jose-mourinho",
+            "references": [
+
+            ],
+            "internalName": "Jose Mourinho"
+          },
+          {
+            "id": "football/pep-guardiola",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Pep Guardiola",
+            "webUrl": "https://www.theguardian.com/football/pep-guardiola",
+            "apiUrl": "https://content.guardianapis.com/football/pep-guardiola",
+            "references": [
+
+            ],
+            "internalName": "Pep Guardiola (football)"
+          },
+          {
+            "id": "football/acmilan",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Milan",
+            "webUrl": "https://www.theguardian.com/football/acmilan",
+            "apiUrl": "https://content.guardianapis.com/football/acmilan",
+            "references": [
+
+            ],
+            "internalName": "Milan (AC Milan Football club)"
+          },
+          {
+            "id": "world/silvio-berlusconi",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "Silvio Berlusconi",
+            "webUrl": "https://www.theguardian.com/world/silvio-berlusconi",
+            "apiUrl": "https://content.guardianapis.com/world/silvio-berlusconi",
+            "references": [
+
+            ],
+            "internalName": "Silvio Berlusconi"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/apr/11/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-04-10T22:01:00Z",
+        "webTitle": "'Who is to blame at PSG?' – James Richardson's European football papers video review",
+        "webUrl": "https://www.theguardian.com/football/video/2014/apr/11/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/apr/11/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          },
+          {
+            "id": "football/barcelona",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Barcelona",
+            "webUrl": "https://www.theguardian.com/football/barcelona",
+            "apiUrl": "https://content.guardianapis.com/football/barcelona",
+            "references": [
+
+            ],
+            "internalName": "Barcelona (Football club)"
+          },
+          {
+            "id": "football/manchester-united",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester United",
+            "webUrl": "https://www.theguardian.com/football/manchester-united",
+            "apiUrl": "https://content.guardianapis.com/football/manchester-united",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester United news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester United (Football)"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/parisstgermain",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Paris Saint-Germain",
+            "webUrl": "https://www.theguardian.com/football/parisstgermain",
+            "apiUrl": "https://content.guardianapis.com/football/parisstgermain",
+            "references": [
+
+            ],
+            "internalName": "Paris Saint-Germain (PSG Football club)"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/apr/04/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-04-03T22:15:00Z",
+        "webTitle": "'The perfect storm for Barcelona' – James Richardson's European football papers video review",
+        "webUrl": "https://www.theguardian.com/football/video/2014/apr/04/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/apr/04/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/wayne-rooney",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Wayne Rooney",
+            "webUrl": "https://www.theguardian.com/football/wayne-rooney",
+            "apiUrl": "https://content.guardianapis.com/football/wayne-rooney",
+            "references": [
+
+            ],
+            "internalName": "Wayne Rooney"
+          },
+          {
+            "id": "football/manchester-united",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester United",
+            "webUrl": "https://www.theguardian.com/football/manchester-united",
+            "apiUrl": "https://content.guardianapis.com/football/manchester-united",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester United news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester United (Football)"
+          },
+          {
+            "id": "football/barcelona",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Barcelona",
+            "webUrl": "https://www.theguardian.com/football/barcelona",
+            "apiUrl": "https://content.guardianapis.com/football/barcelona",
+            "references": [
+
+            ],
+            "internalName": "Barcelona (Football club)"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/mar/21/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-03-21T00:01:00Z",
+        "webTitle": "'It's your fault, Mancini': James Richardson's European football papers review - video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/mar/21/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/mar/21/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/acmilan",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Milan",
+            "webUrl": "https://www.theguardian.com/football/acmilan",
+            "apiUrl": "https://content.guardianapis.com/football/acmilan",
+            "references": [
+
+            ],
+            "internalName": "Milan (AC Milan Football club)"
+          },
+          {
+            "id": "football/galatasaray",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Galatasaray",
+            "webUrl": "https://www.theguardian.com/football/galatasaray",
+            "apiUrl": "https://content.guardianapis.com/football/galatasaray",
+            "references": [
+
+            ],
+            "internalName": "Galatasaray (Football club)"
+          },
+          {
+            "id": "football/roberto-mancini",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Roberto Mancini",
+            "webUrl": "https://www.theguardian.com/football/roberto-mancini",
+            "apiUrl": "https://content.guardianapis.com/football/roberto-mancini",
+            "references": [
+
+            ],
+            "internalName": "Roberto Mancini (football)"
+          },
+          {
+            "id": "football/chelsea",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Chelsea",
+            "webUrl": "https://www.theguardian.com/football/chelsea",
+            "apiUrl": "https://content.guardianapis.com/football/chelsea",
+            "references": [
+
+            ],
+            "description": "Read the latest Chelsea news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Chelsea (Football)"
+          },
+          {
+            "id": "football/manchester-united",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester United",
+            "webUrl": "https://www.theguardian.com/football/manchester-united",
+            "apiUrl": "https://content.guardianapis.com/football/manchester-united",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester United news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester United (Football)"
+          },
+          {
+            "id": "football/olympiakos",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Olympiakos",
+            "webUrl": "https://www.theguardian.com/football/olympiakos",
+            "apiUrl": "https://content.guardianapis.com/football/olympiakos",
+            "references": [
+
+            ],
+            "internalName": "Olympiakos (Football club)"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/mar/14/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-03-14T00:01:00Z",
+        "webTitle": "Uli Hoeness: 'one man at Bayern who has trouble putting things in the net' - James Richardson's European football papers video review",
+        "webUrl": "https://www.theguardian.com/football/video/2014/mar/14/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/mar/14/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/atleticomadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Atlético Madrid",
+            "webUrl": "https://www.theguardian.com/football/atleticomadrid",
+            "apiUrl": "https://content.guardianapis.com/football/atleticomadrid",
+            "references": [
+
+            ],
+            "internalName": "Atletico Madrid (Football club)"
+          },
+          {
+            "id": "football/acmilan",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Milan",
+            "webUrl": "https://www.theguardian.com/football/acmilan",
+            "apiUrl": "https://content.guardianapis.com/football/acmilan",
+            "references": [
+
+            ],
+            "internalName": "Milan (AC Milan Football club)"
+          },
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/mar/07/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-03-07T00:01:00Z",
+        "webTitle": "'The Özil debate': James Richardson's European football papers review - video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/mar/07/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/mar/07/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "football/mesut-ozil",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Mesut Ozil",
+            "webUrl": "https://www.theguardian.com/football/mesut-ozil",
+            "apiUrl": "https://content.guardianapis.com/football/mesut-ozil",
+            "references": [
+
+            ],
+            "internalName": "Mesut Ozil"
+          },
+          {
+            "id": "football/ronaldo",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Cristiano Ronaldo",
+            "webUrl": "https://www.theguardian.com/football/ronaldo",
+            "apiUrl": "https://content.guardianapis.com/football/ronaldo",
+            "references": [
+
+            ],
+            "internalName": "Cristiano Ronaldo"
+          },
+          {
+            "id": "football/germany",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Germany",
+            "webUrl": "https://www.theguardian.com/football/germany",
+            "apiUrl": "https://content.guardianapis.com/football/germany",
+            "references": [
+
+            ],
+            "internalName": "Germany football team"
+          },
+          {
+            "id": "football/portugal",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Portugal",
+            "webUrl": "https://www.theguardian.com/football/portugal",
+            "apiUrl": "https://content.guardianapis.com/football/portugal",
+            "references": [
+
+            ],
+            "internalName": "Portugal football team"
+          },
+          {
+            "id": "football/france",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "France",
+            "webUrl": "https://www.theguardian.com/football/france",
+            "apiUrl": "https://content.guardianapis.com/football/france",
+            "references": [
+
+            ],
+            "internalName": "France football team"
+          },
+          {
+            "id": "football/spain",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Spain",
+            "webUrl": "https://www.theguardian.com/football/spain",
+            "apiUrl": "https://content.guardianapis.com/football/spain",
+            "references": [
+
+            ],
+            "internalName": "Spain football team"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/feb/28/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-02-28T00:01:00Z",
+        "webTitle": "'Cristiano Ronaldo, return of the giant': James Richardson's European football papers review – video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/feb/28/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/feb/28/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/realmadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Real Madrid",
+            "webUrl": "https://www.theguardian.com/football/realmadrid",
+            "apiUrl": "https://content.guardianapis.com/football/realmadrid",
+            "references": [
+
+            ],
+            "internalName": "Real Madrid (Football club)"
+          },
+          {
+            "id": "football/schalke",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Schalke",
+            "webUrl": "https://www.theguardian.com/football/schalke",
+            "apiUrl": "https://content.guardianapis.com/football/schalke",
+            "references": [
+
+            ],
+            "internalName": "Schalke (Football club)"
+          },
+          {
+            "id": "football/olympiakos",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Olympiakos",
+            "webUrl": "https://www.theguardian.com/football/olympiakos",
+            "apiUrl": "https://content.guardianapis.com/football/olympiakos",
+            "references": [
+
+            ],
+            "internalName": "Olympiakos (Football club)"
+          },
+          {
+            "id": "football/manchester-united",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester United",
+            "webUrl": "https://www.theguardian.com/football/manchester-united",
+            "apiUrl": "https://content.guardianapis.com/football/manchester-united",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester United news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester United (Football)"
+          },
+          {
+            "id": "football/chelsea",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Chelsea",
+            "webUrl": "https://www.theguardian.com/football/chelsea",
+            "apiUrl": "https://content.guardianapis.com/football/chelsea",
+            "references": [
+
+            ],
+            "description": "Read the latest Chelsea news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Chelsea (Football)"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/feb/21/raphael-honigsteins-european-football-papers-video-review",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-02-21T00:01:00Z",
+        "webTitle": "'The triumph of Tata': Raphael Honigstein's European football papers review – video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/feb/21/raphael-honigsteins-european-football-papers-video-review",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/feb/21/raphael-honigsteins-european-football-papers-video-review",
+        "tags": [
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/acmilan",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Milan",
+            "webUrl": "https://www.theguardian.com/football/acmilan",
+            "apiUrl": "https://content.guardianapis.com/football/acmilan",
+            "references": [
+
+            ],
+            "internalName": "Milan (AC Milan Football club)"
+          },
+          {
+            "id": "football/parisstgermain",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Paris Saint-Germain",
+            "webUrl": "https://www.theguardian.com/football/parisstgermain",
+            "apiUrl": "https://content.guardianapis.com/football/parisstgermain",
+            "references": [
+
+            ],
+            "internalName": "Paris Saint-Germain (PSG Football club)"
+          },
+          {
+            "id": "football/bayerleverkusen",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayer Leverkusen",
+            "webUrl": "https://www.theguardian.com/football/bayerleverkusen",
+            "apiUrl": "https://content.guardianapis.com/football/bayerleverkusen",
+            "references": [
+
+            ],
+            "internalName": "Bayer Leverkusen (Football club)"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/arsenal",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Arsenal",
+            "webUrl": "https://www.theguardian.com/football/arsenal",
+            "apiUrl": "https://content.guardianapis.com/football/arsenal",
+            "references": [
+
+            ],
+            "description": "Read the latest Arsenal news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Arsenal FC (Football)"
+          },
+          {
+            "id": "football/manchestercity",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester City",
+            "webUrl": "https://www.theguardian.com/football/manchestercity",
+            "apiUrl": "https://content.guardianapis.com/football/manchestercity",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester City news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester City (Football)"
+          },
+          {
+            "id": "football/barcelona",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Barcelona",
+            "webUrl": "https://www.theguardian.com/football/barcelona",
+            "apiUrl": "https://content.guardianapis.com/football/barcelona",
+            "references": [
+
+            ],
+            "internalName": "Barcelona (Football club)"
+          },
+          {
+            "id": "football/atleticomadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Atlético Madrid",
+            "webUrl": "https://www.theguardian.com/football/atleticomadrid",
+            "apiUrl": "https://content.guardianapis.com/football/atleticomadrid",
+            "references": [
+
+            ],
+            "internalName": "Atletico Madrid (Football club)"
+          },
+          {
+            "id": "football/pep-guardiola",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Pep Guardiola",
+            "webUrl": "https://www.theguardian.com/football/pep-guardiola",
+            "apiUrl": "https://content.guardianapis.com/football/pep-guardiola",
+            "references": [
+
+            ],
+            "internalName": "Pep Guardiola (football)"
+          },
+          {
+            "id": "football/zlatan-ibrahimovic",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Zlatan Ibrahimovic",
+            "webUrl": "https://www.theguardian.com/football/zlatan-ibrahimovic",
+            "apiUrl": "https://content.guardianapis.com/football/zlatan-ibrahimovic",
+            "references": [
+
+            ],
+            "internalName": "Zlatan Ibrahimovic"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      }
+    ],
+    "leadContent": [
+      {
+        "id": "football/video/2014/may/16/beto-hero-turin-james-richardsons-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-05-15T22:01:00Z",
+        "webTitle": "Beto, 'The Hero of Turin': James Richardson's European football papers review - video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/may/16/beto-hero-turin-james-richardsons-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/may/16/beto-hero-turin-james-richardsons-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/uefa-europa-league",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Europa League",
+            "webUrl": "https://www.theguardian.com/football/uefa-europa-league",
+            "apiUrl": "https://content.guardianapis.com/football/uefa-europa-league",
+            "references": [
+
+            ],
+            "internalName": "Europa League"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "football/world-cup-football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "World Cup",
+            "webUrl": "https://www.theguardian.com/football/world-cup-football",
+            "apiUrl": "https://content.guardianapis.com/football/world-cup-football",
+            "references": [
+
+            ],
+            "description": "<p>Coverage of football World Cups from all years.&nbsp;<a href=\"https://www.theguardian.com/football/world-cup-2018\">Go to World Cup 2018.</a></p>",
+            "internalName": "World Cup (football)"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          },
+          {
+            "id": "football/sevilla",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Sevilla",
+            "webUrl": "https://www.theguardian.com/football/sevilla",
+            "apiUrl": "https://content.guardianapis.com/football/sevilla",
+            "references": [
+
+            ],
+            "internalName": "Sevilla (Football club)"
+          },
+          {
+            "id": "football/benfica",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Benfica",
+            "webUrl": "https://www.theguardian.com/football/benfica",
+            "apiUrl": "https://content.guardianapis.com/football/benfica",
+            "references": [
+
+            ],
+            "internalName": "Benfica (Football club)"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/may/02/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-05-01T22:01:00Z",
+        "webTitle": "'A Spanish party in Lisbon': James Richardson's European football papers review – video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/may/02/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/may/02/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/atleticomadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Atlético Madrid",
+            "webUrl": "https://www.theguardian.com/football/atleticomadrid",
+            "apiUrl": "https://content.guardianapis.com/football/atleticomadrid",
+            "references": [
+
+            ],
+            "internalName": "Atletico Madrid (Football club)"
+          },
+          {
+            "id": "football/realmadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Real Madrid",
+            "webUrl": "https://www.theguardian.com/football/realmadrid",
+            "apiUrl": "https://content.guardianapis.com/football/realmadrid",
+            "references": [
+
+            ],
+            "internalName": "Real Madrid (Football club)"
+          },
+          {
+            "id": "football/chelsea",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Chelsea",
+            "webUrl": "https://www.theguardian.com/football/chelsea",
+            "apiUrl": "https://content.guardianapis.com/football/chelsea",
+            "references": [
+
+            ],
+            "description": "Read the latest Chelsea news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Chelsea (Football)"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/carlo-ancelotti",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Carlo Ancelotti",
+            "webUrl": "https://www.theguardian.com/football/carlo-ancelotti",
+            "apiUrl": "https://content.guardianapis.com/football/carlo-ancelotti",
+            "references": [
+
+            ],
+            "internalName": "Carlo Ancelotti"
+          },
+          {
+            "id": "football/jose-mourinho",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "José Mourinho",
+            "webUrl": "https://www.theguardian.com/football/jose-mourinho",
+            "apiUrl": "https://content.guardianapis.com/football/jose-mourinho",
+            "references": [
+
+            ],
+            "internalName": "Jose Mourinho"
+          },
+          {
+            "id": "football/pep-guardiola",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Pep Guardiola",
+            "webUrl": "https://www.theguardian.com/football/pep-guardiola",
+            "apiUrl": "https://content.guardianapis.com/football/pep-guardiola",
+            "references": [
+
+            ],
+            "internalName": "Pep Guardiola (football)"
+          },
+          {
+            "id": "football/tito-vilanova",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Tito Vilanova",
+            "webUrl": "https://www.theguardian.com/football/tito-vilanova",
+            "apiUrl": "https://content.guardianapis.com/football/tito-vilanova",
+            "references": [
+
+            ],
+            "internalName": "Tito Vilanova"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/apr/11/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-04-10T22:01:00Z",
+        "webTitle": "'Who is to blame at PSG?' – James Richardson's European football papers video review",
+        "webUrl": "https://www.theguardian.com/football/video/2014/apr/11/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/apr/11/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          },
+          {
+            "id": "football/barcelona",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Barcelona",
+            "webUrl": "https://www.theguardian.com/football/barcelona",
+            "apiUrl": "https://content.guardianapis.com/football/barcelona",
+            "references": [
+
+            ],
+            "internalName": "Barcelona (Football club)"
+          },
+          {
+            "id": "football/manchester-united",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester United",
+            "webUrl": "https://www.theguardian.com/football/manchester-united",
+            "apiUrl": "https://content.guardianapis.com/football/manchester-united",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester United news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester United (Football)"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/parisstgermain",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Paris Saint-Germain",
+            "webUrl": "https://www.theguardian.com/football/parisstgermain",
+            "apiUrl": "https://content.guardianapis.com/football/parisstgermain",
+            "references": [
+
+            ],
+            "internalName": "Paris Saint-Germain (PSG Football club)"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/apr/04/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-04-03T22:15:00Z",
+        "webTitle": "'The perfect storm for Barcelona' – James Richardson's European football papers video review",
+        "webUrl": "https://www.theguardian.com/football/video/2014/apr/04/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/apr/04/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/wayne-rooney",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Wayne Rooney",
+            "webUrl": "https://www.theguardian.com/football/wayne-rooney",
+            "apiUrl": "https://content.guardianapis.com/football/wayne-rooney",
+            "references": [
+
+            ],
+            "internalName": "Wayne Rooney"
+          },
+          {
+            "id": "football/manchester-united",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester United",
+            "webUrl": "https://www.theguardian.com/football/manchester-united",
+            "apiUrl": "https://content.guardianapis.com/football/manchester-united",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester United news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester United (Football)"
+          },
+          {
+            "id": "football/barcelona",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Barcelona",
+            "webUrl": "https://www.theguardian.com/football/barcelona",
+            "apiUrl": "https://content.guardianapis.com/football/barcelona",
+            "references": [
+
+            ],
+            "internalName": "Barcelona (Football club)"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/mar/21/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-03-21T00:01:00Z",
+        "webTitle": "'It's your fault, Mancini': James Richardson's European football papers review - video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/mar/21/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/mar/21/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/acmilan",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Milan",
+            "webUrl": "https://www.theguardian.com/football/acmilan",
+            "apiUrl": "https://content.guardianapis.com/football/acmilan",
+            "references": [
+
+            ],
+            "internalName": "Milan (AC Milan Football club)"
+          },
+          {
+            "id": "football/galatasaray",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Galatasaray",
+            "webUrl": "https://www.theguardian.com/football/galatasaray",
+            "apiUrl": "https://content.guardianapis.com/football/galatasaray",
+            "references": [
+
+            ],
+            "internalName": "Galatasaray (Football club)"
+          },
+          {
+            "id": "football/roberto-mancini",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Roberto Mancini",
+            "webUrl": "https://www.theguardian.com/football/roberto-mancini",
+            "apiUrl": "https://content.guardianapis.com/football/roberto-mancini",
+            "references": [
+
+            ],
+            "internalName": "Roberto Mancini (football)"
+          },
+          {
+            "id": "football/chelsea",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Chelsea",
+            "webUrl": "https://www.theguardian.com/football/chelsea",
+            "apiUrl": "https://content.guardianapis.com/football/chelsea",
+            "references": [
+
+            ],
+            "description": "Read the latest Chelsea news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Chelsea (Football)"
+          },
+          {
+            "id": "football/manchester-united",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester United",
+            "webUrl": "https://www.theguardian.com/football/manchester-united",
+            "apiUrl": "https://content.guardianapis.com/football/manchester-united",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester United news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester United (Football)"
+          },
+          {
+            "id": "football/olympiakos",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Olympiakos",
+            "webUrl": "https://www.theguardian.com/football/olympiakos",
+            "apiUrl": "https://content.guardianapis.com/football/olympiakos",
+            "references": [
+
+            ],
+            "internalName": "Olympiakos (Football club)"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/mar/14/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-03-14T00:01:00Z",
+        "webTitle": "Uli Hoeness: 'one man at Bayern who has trouble putting things in the net' - James Richardson's European football papers video review",
+        "webUrl": "https://www.theguardian.com/football/video/2014/mar/14/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/mar/14/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/atleticomadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Atlético Madrid",
+            "webUrl": "https://www.theguardian.com/football/atleticomadrid",
+            "apiUrl": "https://content.guardianapis.com/football/atleticomadrid",
+            "references": [
+
+            ],
+            "internalName": "Atletico Madrid (Football club)"
+          },
+          {
+            "id": "football/acmilan",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Milan",
+            "webUrl": "https://www.theguardian.com/football/acmilan",
+            "apiUrl": "https://content.guardianapis.com/football/acmilan",
+            "references": [
+
+            ],
+            "internalName": "Milan (AC Milan Football club)"
+          },
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/feb/28/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-02-28T00:01:00Z",
+        "webTitle": "'Cristiano Ronaldo, return of the giant': James Richardson's European football papers review – video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/feb/28/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/feb/28/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/realmadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Real Madrid",
+            "webUrl": "https://www.theguardian.com/football/realmadrid",
+            "apiUrl": "https://content.guardianapis.com/football/realmadrid",
+            "references": [
+
+            ],
+            "internalName": "Real Madrid (Football club)"
+          },
+          {
+            "id": "football/schalke",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Schalke",
+            "webUrl": "https://www.theguardian.com/football/schalke",
+            "apiUrl": "https://content.guardianapis.com/football/schalke",
+            "references": [
+
+            ],
+            "internalName": "Schalke (Football club)"
+          },
+          {
+            "id": "football/olympiakos",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Olympiakos",
+            "webUrl": "https://www.theguardian.com/football/olympiakos",
+            "apiUrl": "https://content.guardianapis.com/football/olympiakos",
+            "references": [
+
+            ],
+            "internalName": "Olympiakos (Football club)"
+          },
+          {
+            "id": "football/manchester-united",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester United",
+            "webUrl": "https://www.theguardian.com/football/manchester-united",
+            "apiUrl": "https://content.guardianapis.com/football/manchester-united",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester United news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester United (Football)"
+          },
+          {
+            "id": "football/chelsea",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Chelsea",
+            "webUrl": "https://www.theguardian.com/football/chelsea",
+            "apiUrl": "https://content.guardianapis.com/football/chelsea",
+            "references": [
+
+            ],
+            "description": "Read the latest Chelsea news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Chelsea (Football)"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/feb/21/raphael-honigsteins-european-football-papers-video-review",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-02-21T00:01:00Z",
+        "webTitle": "'The triumph of Tata': Raphael Honigstein's European football papers review – video",
+        "webUrl": "https://www.theguardian.com/football/video/2014/feb/21/raphael-honigsteins-european-football-papers-video-review",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/feb/21/raphael-honigsteins-european-football-papers-video-review",
+        "tags": [
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "football/championsleague",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Champions League",
+            "webUrl": "https://www.theguardian.com/football/championsleague",
+            "apiUrl": "https://content.guardianapis.com/football/championsleague",
+            "references": [
+
+            ],
+            "internalName": "Champions League"
+          },
+          {
+            "id": "football/acmilan",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Milan",
+            "webUrl": "https://www.theguardian.com/football/acmilan",
+            "apiUrl": "https://content.guardianapis.com/football/acmilan",
+            "references": [
+
+            ],
+            "internalName": "Milan (AC Milan Football club)"
+          },
+          {
+            "id": "football/parisstgermain",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Paris Saint-Germain",
+            "webUrl": "https://www.theguardian.com/football/parisstgermain",
+            "apiUrl": "https://content.guardianapis.com/football/parisstgermain",
+            "references": [
+
+            ],
+            "internalName": "Paris Saint-Germain (PSG Football club)"
+          },
+          {
+            "id": "football/bayerleverkusen",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayer Leverkusen",
+            "webUrl": "https://www.theguardian.com/football/bayerleverkusen",
+            "apiUrl": "https://content.guardianapis.com/football/bayerleverkusen",
+            "references": [
+
+            ],
+            "internalName": "Bayer Leverkusen (Football club)"
+          },
+          {
+            "id": "football/bayernmunich",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bayern Munich",
+            "webUrl": "https://www.theguardian.com/football/bayernmunich",
+            "apiUrl": "https://content.guardianapis.com/football/bayernmunich",
+            "references": [
+
+            ],
+            "internalName": "Bayern Munich (Football club)"
+          },
+          {
+            "id": "football/arsenal",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Arsenal",
+            "webUrl": "https://www.theguardian.com/football/arsenal",
+            "apiUrl": "https://content.guardianapis.com/football/arsenal",
+            "references": [
+
+            ],
+            "description": "Read the latest Arsenal news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Arsenal FC (Football)"
+          },
+          {
+            "id": "football/manchestercity",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Manchester City",
+            "webUrl": "https://www.theguardian.com/football/manchestercity",
+            "apiUrl": "https://content.guardianapis.com/football/manchestercity",
+            "references": [
+
+            ],
+            "description": "Read the latest Manchester City news, transfer rumours, match reports, fixtures and live scores from the Guardian",
+            "internalName": "Manchester City (Football)"
+          },
+          {
+            "id": "football/barcelona",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Barcelona",
+            "webUrl": "https://www.theguardian.com/football/barcelona",
+            "apiUrl": "https://content.guardianapis.com/football/barcelona",
+            "references": [
+
+            ],
+            "internalName": "Barcelona (Football club)"
+          },
+          {
+            "id": "football/atleticomadrid",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Atlético Madrid",
+            "webUrl": "https://www.theguardian.com/football/atleticomadrid",
+            "apiUrl": "https://content.guardianapis.com/football/atleticomadrid",
+            "references": [
+
+            ],
+            "internalName": "Atletico Madrid (Football club)"
+          },
+          {
+            "id": "football/pep-guardiola",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Pep Guardiola",
+            "webUrl": "https://www.theguardian.com/football/pep-guardiola",
+            "apiUrl": "https://content.guardianapis.com/football/pep-guardiola",
+            "references": [
+
+            ],
+            "internalName": "Pep Guardiola (football)"
+          },
+          {
+            "id": "football/zlatan-ibrahimovic",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Zlatan Ibrahimovic",
+            "webUrl": "https://www.theguardian.com/football/zlatan-ibrahimovic",
+            "apiUrl": "https://content.guardianapis.com/football/zlatan-ibrahimovic",
+            "references": [
+
+            ],
+            "internalName": "Zlatan Ibrahimovic"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/feb/14/james-richardson-european-football-papers-review-video",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-02-14T00:01:00Z",
+        "webTitle": "Rafael van der Vaart: 'We were frightened of our own supporters' – James Richardson's European football papers video review",
+        "webUrl": "https://www.theguardian.com/football/video/2014/feb/14/james-richardson-european-football-papers-review-video",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/feb/14/james-richardson-european-football-papers-review-video",
+        "tags": [
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "football/hamburg",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Hamburg",
+            "webUrl": "https://www.theguardian.com/football/hamburg",
+            "apiUrl": "https://content.guardianapis.com/football/hamburg",
+            "references": [
+
+            ],
+            "internalName": "Hamburg (Football club)"
+          },
+          {
+            "id": "football/bundesligafootball",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Bundesliga",
+            "webUrl": "https://www.theguardian.com/football/bundesligafootball",
+            "apiUrl": "https://content.guardianapis.com/football/bundesligafootball",
+            "references": [
+
+            ],
+            "internalName": "Bundesliga (Football)"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "football/video/2014/feb/07/james-richardson-european-football-papers-video-review",
+        "type": "video",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2014-02-07T00:01:00Z",
+        "webTitle": "'Beckham scores historic goal in Miami' – James Richardson's European football papers video review",
+        "webUrl": "https://www.theguardian.com/football/video/2014/feb/07/james-richardson-european-football-papers-video-review",
+        "apiUrl": "https://content.guardianapis.com/football/video/2014/feb/07/james-richardson-european-football-papers-video-review",
+        "tags": [
+          {
+            "id": "football/david-beckham",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "David Beckham",
+            "webUrl": "https://www.theguardian.com/football/david-beckham",
+            "apiUrl": "https://content.guardianapis.com/football/david-beckham",
+            "references": [
+
+            ],
+            "internalName": "David Beckham"
+          },
+          {
+            "id": "football/cagliari",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Cagliari",
+            "webUrl": "https://www.theguardian.com/football/cagliari",
+            "apiUrl": "https://content.guardianapis.com/football/cagliari",
+            "references": [
+
+            ],
+            "internalName": "Cagliari (Football club)"
+          },
+          {
+            "id": "football/spain",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Spain",
+            "webUrl": "https://www.theguardian.com/football/spain",
+            "apiUrl": "https://content.guardianapis.com/football/spain",
+            "references": [
+
+            ],
+            "internalName": "Spain football team"
+          },
+          {
+            "id": "football/football",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football/football",
+            "apiUrl": "https://content.guardianapis.com/football/football",
+            "references": [
+
+            ],
+            "internalName": "Football"
+          },
+          {
+            "id": "sport/sport",
+            "type": "keyword",
+            "sectionId": "sport",
+            "sectionName": "Sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport/sport",
+            "apiUrl": "https://content.guardianapis.com/sport/sport",
+            "references": [
+
+            ],
+            "internalName": "Sport"
+          },
+          {
+            "id": "football/inter-miami",
+            "type": "keyword",
+            "sectionId": "football",
+            "sectionName": "Football",
+            "webTitle": "Inter Miami",
+            "webUrl": "https://www.theguardian.com/football/inter-miami",
+            "apiUrl": "https://content.guardianapis.com/football/inter-miami",
+            "references": [
+
+            ],
+            "internalName": "Inter Miami"
+          }
+        ],
+        "elements": [
+
+        ],
+        "references": [
+
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      }
+    ]
+  }
+}

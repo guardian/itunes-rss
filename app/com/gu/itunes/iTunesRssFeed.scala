@@ -4,6 +4,7 @@ import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.v1._
 import org.joda.time.DateTime
 import org.scalactic.{ Bad, Good, Or }
+import play.api.mvc.Results._
 
 import scala.xml.Node
 
@@ -11,12 +12,12 @@ object iTunesRssFeed {
 
   val author = "The Guardian"
 
-  def apply(resp: ItemResponse): Node Or String = resp.tag match {
+  def apply(resp: ItemResponse): Node Or Failed = resp.tag match {
     case Some(t) => toXml(t, resp.results.getOrElse(Nil).toList)
-    case None => Bad("No tag found")
+    case None => Bad(Failed("tag not found", NotFound))
   }
 
-  def toXml(tag: Tag, contents: List[Content]): Node Or String = {
+  def toXml(tag: Tag, contents: List[Content]): Node Or Failed = {
 
     val description = Filtering.description(tag.description.getOrElse(""))
 
@@ -70,7 +71,7 @@ object iTunesRssFeed {
         </rss>
       }
       case None => Bad {
-        "No podcast found"
+        Failed("podcast not found", NotFound)
       }
     }
   }

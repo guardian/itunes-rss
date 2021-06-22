@@ -22,6 +22,11 @@ trait ItunesTestData {
     parseJson[ItemResponse](json)
   }
 
+  val tagMissingPodcastFieldResponse: ItemResponse = {
+    val json = loadJson("itunes-capi-response-no-podcast-tag.json")
+    parseJson[ItemResponse](json)
+  }
+
   // content.guardianapis.com/politics/series/brexit-means?show-fields=all&show-elements=audio&show-tags=keyword&page-size=3
   val itunesCapiResponseAcastTest: ItemResponse = {
     val json = loadJson("itunes-capi-response-acast-test.json")
