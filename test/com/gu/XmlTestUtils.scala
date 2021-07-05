@@ -21,7 +21,7 @@ object XmlTestUtils {
    */
   def parseContentHtml(itemXml: Elem): Elem = {
     val text = (itemXml \ "encoded").head.text
-    val withoutDoctype = text.lines.drop(1).mkString("\n")
+    val withoutDoctype = text.linesIterator.drop(1).mkString("\n")
     XML.loadString(withoutDoctype)
   }
 
