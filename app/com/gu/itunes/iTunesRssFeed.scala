@@ -12,12 +12,12 @@ object iTunesRssFeed {
 
   val author = "The Guardian"
 
-  def apply(resp: ItemResponse): Node Or Failed = resp.tag match {
-    case Some(t) => toXml(t, resp.results.getOrElse(Nil).toList)
+  def apply(resp: ItemResponse, adFree: Boolean = false): Node Or Failed = resp.tag match {
+    case Some(t) => toXml(t, resp.results.getOrElse(Nil).toList, adFree)
     case None => Bad(Failed("tag not found", NotFound))
   }
 
-  def toXml(tag: Tag, contents: List[Content]): Node Or Failed = {
+  def toXml(tag: Tag, contents: List[Content], adFree: Boolean): Node Or Failed = {
 
     val description = Filtering.description(tag.description.getOrElse(""))
 
@@ -65,7 +65,7 @@ object iTunesRssFeed {
               for {
                 podcast <- contents
                 asset <- getFirstAudioAsset(podcast)
-              } yield new iTunesRssItem(podcast, tag.id, asset).toXml
+              } yield new iTunesRssItem(podcast, tag.id, asset, adFree).toXml
             }
           </channel>
         </rss>

@@ -32,14 +32,14 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     redirect match {
       case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId, userApiKey).absoluteURL(true)))
       case None =>
-        val apiKeyToUse = userApiKey.getOrElse(apiKey)
-        rawRss(tagId, apiKeyToUse)
+        rawRss(tagId, userApiKey)
     }
   }
 
-  private def rawRss(tagId: String, apiKey: String): Future[Result] = {
+  private def rawRss(tagId: String, userApiKey: Option[String]): Future[Result] = {
+    val apiKeyToUse = userApiKey.getOrElse(apiKey)
 
-    val client = new CustomCapiClient(apiKey)
+    val client = new CustomCapiClient(apiKeyToUse)
 
     val query = ItemQuery(tagId)
       .showElements("audio")
@@ -49,19 +49,26 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
 
     client.getResponse(query) map { itemResponse =>
       itemResponse.status match {
-        case "ok" => iTunesRssFeed(itemResponse) match {
-          case Good(xml) =>
-            val now = DateTime.now()
-            val expiresTime = now.plusSeconds(maxAge)
+        case "ok" => {
+          // Ad free if a user supplied key partner key has been used
+          val isAdFree = userApiKey.exists { _ =>
+            itemResponse.userTier == "partner"
+          }
 
-            Ok(xml).withHeaders(
-              "Surrogate-Control" -> cacheControl,
-              "Cache-Control" -> cacheControl,
-              "Expires" -> expiresTime.toString(HTTPDateFormat),
-              "Date" -> now.toString(HTTPDateFormat))
-          case Bad(failed: Failed) =>
-            Logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
-            failed.status
+          iTunesRssFeed(itemResponse, isAdFree) match {
+            case Good(xml) =>
+              val now = DateTime.now()
+              val expiresTime = now.plusSeconds(maxAge)
+
+              Ok(xml).withHeaders(
+                "Surrogate-Control" -> cacheControl,
+                "Cache-Control" -> cacheControl,
+                "Expires" -> expiresTime.toString(HTTPDateFormat),
+                "Date" -> now.toString(HTTPDateFormat))
+            case Bad(failed: Failed) =>
+              Logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
+              failed.status
+          }
         }
         case _ => NotFound
       }
