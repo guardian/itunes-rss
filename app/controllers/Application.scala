@@ -27,11 +27,13 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   val cacheControl = s"max-age=$maxAge, stale-while-revalidate=$staleWhileRevalidateSeconds, stale-if-error=$oneDayInSeconds"
   private val HTTPDateFormat = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss 'GMT'").withZone(DateTimeZone.UTC)
 
-  def itunesRss(tagId: String) = Action.async { implicit request =>
+  def itunesRss(tagId: String, userApiKey: Option[String]) = Action.async { implicit request =>
     val redirect = Redirection.redirect(tagId)
     redirect match {
-      case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId).absoluteURL(true)))
-      case None => rawRss(tagId, apiKey)
+      case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId, userApiKey).absoluteURL(true)))
+      case None =>
+        val apiKeyToUse = userApiKey.getOrElse(apiKey)
+        rawRss(tagId, apiKeyToUse)
     }
   }
 
