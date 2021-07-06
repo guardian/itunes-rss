@@ -1,6 +1,6 @@
 # itunes-rss
 
-A Play app to provide RSS feeds for podcast tags.
+A Play app to provide iTunes formatted RSS feeds for podcast tags.
 
 ## Method
 
@@ -8,6 +8,11 @@ Given a CAPI podcast tag id as a request path variable, requests CAPI content fo
 Renders the audio elements as an iTunes formatted RSS feed.
 
 Requires a configured CAPI API key to make it's CAPI calls.
+
+
+## Acast ads and membership callouts
+
+Depending on the tag, Acast ad urls and membership calls to action may be inserted into the iTunes feed.
 
 
 ## To run locally
