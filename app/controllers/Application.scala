@@ -31,11 +31,11 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     val redirect = Redirection.redirect(tagId)
     redirect match {
       case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId).absoluteURL(true)))
-      case None => rawRss(tagId)
+      case None => rawRss(tagId, apiKey)
     }
   }
 
-  private def rawRss(tagId: String): Future[Result] = {
+  private def rawRss(tagId: String, apiKey: String): Future[Result] = {
 
     val client = new CustomCapiClient(apiKey)
 
