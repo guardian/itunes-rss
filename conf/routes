@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET        /*tagId/podcast.xml      com.gu.itunes.Application.itunesRss(tagId: String, apiKey: Option[String])
+GET        /*tagId/podcast.xml      com.gu.itunes.Application.itunesRss(tagId: String, `api-key`: Option[String])
 
 
 GET        /healthcheck             com.gu.itunes.Application.healthcheck
