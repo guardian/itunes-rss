@@ -35,7 +35,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     }
   }
 
-  def rawRss(tagId: String): Future[Result] = {
+  private def rawRss(tagId: String): Future[Result] = {
 
     val client = new CustomCapiClient(apiKey)
 
