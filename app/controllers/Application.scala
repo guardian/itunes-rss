@@ -1,12 +1,12 @@
 package com.gu.itunes
 
-import com.gu.contentapi.client.model.{ContentApiError, ItemQuery}
+import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
 import org.joda.time.format.DateTimeFormat
-import org.joda.time.{DateTime, DateTimeZone}
-import org.scalactic.{Bad, Good}
+import org.joda.time.{ DateTime, DateTimeZone }
+import org.scalactic.{ Bad, Good }
 import play.api.mvc.Results._
-import play.api.mvc.{BaseController, ControllerComponents, Result}
-import play.api.{Configuration, Logger}
+import play.api.mvc.{ BaseController, ControllerComponents, Result }
+import play.api.{ Configuration, Logger }
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -59,7 +59,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     } yield {
       itemResponse.status match {
         case "ok" => {
-          val isAdFree = userApiKeyTier.contains("external")
+          val isAdFree = userApiKeyTier.contains("rights-managed")
           iTunesRssFeed(itemResponse, isAdFree) match {
             case Good(xml) =>
               val now = DateTime.now()
