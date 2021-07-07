@@ -1,12 +1,12 @@
 package com.gu.itunes
 
-import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
+import com.gu.contentapi.client.model.{ContentApiError, ItemQuery}
 import org.joda.time.format.DateTimeFormat
-import org.joda.time.{ DateTime, DateTimeZone }
-import org.scalactic.{ Bad, Good }
+import org.joda.time.{DateTime, DateTimeZone}
+import org.scalactic.{Bad, Good}
 import play.api.mvc.Results._
-import play.api.mvc.{ BaseController, ControllerComponents, Result }
-import play.api.{ Configuration, Logger }
+import play.api.mvc.{BaseController, ControllerComponents, Result}
+import play.api.{Configuration, Logger}
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -37,9 +37,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   }
 
   private def rawRss(tagId: String, userApiKey: Option[String]): Future[Result] = {
-    val apiKeyToUse = userApiKey.getOrElse(apiKey)
-
-    val client = new CustomCapiClient(apiKeyToUse)
+    val client = new CustomCapiClient(apiKey)
 
     val query = ItemQuery(tagId)
       .showElements("audio")
@@ -47,14 +45,21 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       .showFields("all")
       .pageSize(200) // number of podcasts to be served (max single request page size)
 
-    client.getResponse(query) map { itemResponse =>
+    (for {
+      itemResponse <- client.getResponse(query)
+      userApiKeyTier <- userApiKey.map { userApiKey =>
+        // If an external partner has identified themselves using an api-key we will query to resolve the user tier
+        new CustomCapiClient(userApiKey).getResponse(ItemQuery(tagId).pageSize(0)).map { resp =>
+          Some(resp.userTier)
+        }
+      }.getOrElse {
+        Future.successful(None)
+      }
+
+    } yield {
       itemResponse.status match {
         case "ok" => {
-          // Ad free if a user supplied key partner key has been used
-          val isAdFree = userApiKey.exists { _ =>
-            itemResponse.userTier == "partner"
-          }
-
+          val isAdFree = userApiKeyTier.contains("external")
           iTunesRssFeed(itemResponse, isAdFree) match {
             case Good(xml) =>
               val now = DateTime.now()
@@ -72,7 +77,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
         }
         case _ => NotFound
       }
-    } recover {
+    }).recover {
       case ContentApiError(404, _, _) => NotFound
       case ContentApiError(403, _, _) => Forbidden
       // maybe this generic InternalServerError could be a better representation of the CAPI failure mode
