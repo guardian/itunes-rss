@@ -23,9 +23,9 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
           John Conway sheds light on the true nature of numbers, the beauty lying within maths and why game-playing is so important to mathematical discovery
         </description>
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3" length="0" type="audio/mpeg"/>
-        <pubDate>Fri, 20 Nov 2015 07:30:00 GMT</pubDate>
-        <guid>
-          http://download.guardian.co.uk/draft/audio/1447948283860/6835/gdn.sci.151120.ic.Science_Weekly_2.mp3
+        <pubDate>Sun, 20 Jan 2019 07:30:00 GMT</pubDate>
+        <guid isPermaLink="false">
+          composer-code-123
         </guid>
         <itunes:duration>00:29:07</itunes:duration>
         <itunes:author>The Guardian</itunes:author>
@@ -44,7 +44,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </description>
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1447432633353/5114/gdn.sci.151116.ic.Science_Weekly.mp3" length="0" type="audio/mpeg"/>
         <pubDate>Fri, 04 Dec 2015 11:04:27 GMT</pubDate>
-        <guid>
+        <guid isPermaLink="true">
           https://audio.guim.co.uk/2015/12/03-53462-gdn.tech.151203.sb.digital-babysitting.mp3
         </guid>
         <itunes:duration>00:27:00</itunes:duration>
@@ -65,7 +65,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </description>
         <enclosure url="http://static.guim.co.uk/audio/kip/science/series/science/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3" length="0" type="audio/mpeg"/>
         <pubDate>Fri, 06 Nov 2015 07:30:00 GMT</pubDate>
-        <guid>
+        <guid isPermaLink="true">
           http://download.guardian.co.uk/draft/audio/1446638390950/3741/gdn.sci.151106.ic.Science_Weekly.mp3
         </guid>
         <itunes:duration>00:25:37</itunes:duration>
