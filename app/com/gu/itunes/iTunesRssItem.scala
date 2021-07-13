@@ -5,7 +5,7 @@ import com.gu.contentapi.client.model.v1._
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false) {
 
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse podcast.fields.flatMap(_.trailText)
 
@@ -26,46 +26,50 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
       val launchDayPWNew = new DateTime(2018, 11, 15, 0, 0)
       val footballWeekly = new DateTime(2019, 4, 4, 0, 0)
 
-      if (tagId == "politics/series/politicsweekly") {
-        if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://www.theguardian.com/politicspod">theguardian.com/politicspod</a>"""
-        else if (lastModified.isAfter(launchDayPWNew))
-          """. To support The Guardian’s independent journalism, visit <a href="https://www.theguardian.com/give/podcast">theguardian.com/give/podcast</a>"""
-        else if (lastModified.isAfter(launchDayPW))
-          """. Please support our work and help us keep the world informed. To fund us, go to https://www.theguardian.com/give/podcast"""
-        else
+      if (!adFree) {
+        if (tagId == "politics/series/politicsweekly") {
+          if (lastModified.isAfter(theMomentFrom))
+            """. Help support our independent journalism at <a href="https://www.theguardian.com/politicspod">theguardian.com/politicspod</a>"""
+          else if (lastModified.isAfter(launchDayPWNew))
+            """. To support The Guardian’s independent journalism, visit <a href="https://www.theguardian.com/give/podcast">theguardian.com/give/podcast</a>"""
+          else if (lastModified.isAfter(launchDayPW))
+            """. Please support our work and help us keep the world informed. To fund us, go to https://www.theguardian.com/give/podcast"""
+          else
+            ""
+        } else if (tagId == "news/series/todayinfocus") {
+          if (lastModified.isAfter(theMomentFrom))
+            """. Help support our independent journalism at <a href="https://www.theguardian.com/infocus">theguardian.com/infocus</a>"""
+          else if (lastModified.isAfter(launchDayTIF))
+            """. To support The Guardian’s independent journalism, visit <a href="https://www.theguardian.com/todayinfocus/support">theguardian.com/todayinfocus/support</a>"""
+          else
+            ""
+        } else if (tagId == "books/series/books") {
+          if (lastModified.isAfter(theMomentFrom))
+            """. Help support our independent journalism at <a href="https://www.theguardian.com/bookspod">theguardian.com/bookspod</a>"""
+          else
+            ""
+        } else if (tagId == "news/series/the-audio-long-read") {
+          if (lastModified.isAfter(theMomentFrom))
+            """. Help support our independent journalism at <a href="https://www.theguardian.com/longreadpod">theguardian.com/longreadpod</a>"""
+          else
+            ""
+        } else if (tagId == "science/series/science") {
+          if (lastModified.isAfter(theMomentFrom))
+            """. Help support our independent journalism at <a href="https://www.theguardian.com/sciencepod">theguardian.com/sciencepod</a>"""
+          else
+            ""
+        } else if (tagId == "technology/series/chips-with-everything") {
+          if (lastModified.isAfter(theMomentFrom))
+            """. Help support our independent journalism at <a href="https://www.theguardian.com/chipspod">theguardian.com/chipspod</a>"""
+          else
+            ""
+        } else if (tagId == "football/series/footballweekly") {
+          if (lastModified.isAfter(footballWeekly))
+            """. Help support our independent journalism at <a href="https://www.theguardian.com/footballweeklypod">theguardian.com/footballweeklypod</a>"""
+          else ""
+        } else {
           ""
-      } else if (tagId == "news/series/todayinfocus") {
-        if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://www.theguardian.com/infocus">theguardian.com/infocus</a>"""
-        else if (lastModified.isAfter(launchDayTIF))
-          """. To support The Guardian’s independent journalism, visit <a href="https://www.theguardian.com/todayinfocus/support">theguardian.com/todayinfocus/support</a>"""
-        else
-          ""
-      } else if (tagId == "books/series/books") {
-        if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://www.theguardian.com/bookspod">theguardian.com/bookspod</a>"""
-        else
-          ""
-      } else if (tagId == "news/series/the-audio-long-read") {
-        if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://www.theguardian.com/longreadpod">theguardian.com/longreadpod</a>"""
-        else
-          ""
-      } else if (tagId == "science/series/science") {
-        if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://www.theguardian.com/sciencepod">theguardian.com/sciencepod</a>"""
-        else
-          ""
-      } else if (tagId == "technology/series/chips-with-everything") {
-        if (lastModified.isAfter(theMomentFrom))
-          """. Help support our independent journalism at <a href="https://www.theguardian.com/chipspod">theguardian.com/chipspod</a>"""
-        else
-          ""
-      } else if (tagId == "football/series/footballweekly") {
-        if (lastModified.isAfter(footballWeekly))
-          """. Help support our independent journalism at <a href="https://www.theguardian.com/footballweeklypod">theguardian.com/footballweeklypod</a>"""
-        else ""
+        }
       } else {
         ""
       }
@@ -131,9 +135,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset) {
         AcastLaunchGroup(new DateTime(2021, 6, 8, 0, 0), Seq(
           "lifeandstyle/series/comforteatingwithgracedent")))
 
-      val useAcastProxy: Boolean = acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
+      val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
-
     }
 
     val description = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
