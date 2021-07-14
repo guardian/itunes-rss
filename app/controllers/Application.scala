@@ -43,7 +43,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       .showElements("audio")
       .showTags("keyword")
       .showFields("all")
-      .pageSize(200) // number of podcasts to be served (max single request page size)
+      .pageSize(300) // number of podcasts to be served (max single request page size)
 
     (for {
       itemResponse <- client.getResponse(query)
