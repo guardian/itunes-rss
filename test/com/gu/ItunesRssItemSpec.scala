@@ -2,8 +2,8 @@ package com.gu.itunes
 
 import com.gu.itunes.XmlTestUtils.RemoveWhitespace
 import org.scalatest._
+
 import scala.xml.Utility.trim
-import com.gu.contentapi.client.model.v1.Asset
 
 class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
@@ -11,7 +11,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head: Asset).toXml
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head).toXml
     val trimmedPodcasts = for (p <- podcasts) yield trim(p)
 
     val expectedXml = RemoveWhitespace.transform(
@@ -92,4 +92,26 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
     result foreach (x => x._1 \ "subtitle" should be(x._2 \ "subtitle"))
     result foreach (x => x._1 \ "summary" should be(x._2 \ "summary"))
   }
+
+  it should "mark ad free podcasts as blocked so that the are not indexed in things like Google podcasts" in {
+    // https://developers.google.com/news/assistant/your-news-update/overview
+    // To prevent the feed from public availability on products like iTunes or Google Podcasts, the value can be set to Yes (not case sensitive). Any other value has no effect.
+    val results = itunesCapiResponse.results.getOrElse(Nil)
+    val tagId = itunesCapiResponse.tag.get.id
+
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, true).toXml
+
+    val firstItemsItunesBlock = (podcasts \\ "item" \ "block").filter(_.prefix == "itunes").head
+    firstItemsItunesBlock.text should be("yes")
+  }
+  it should "not prevent non ad free podcasts from been indexed" in {
+    val results = itunesCapiResponse.results.getOrElse(Nil)
+    val tagId = itunesCapiResponse.tag.get.id
+
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, false).toXml
+
+    val itunesBlockTag = (podcasts \\ "item" \ "block").find(_.prefix == "itunes")
+    itunesBlockTag should be(None)
+  }
+
 }
