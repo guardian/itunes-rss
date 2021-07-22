@@ -37,6 +37,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
           <itunes:summary>
             The Guardian's science team bring you the best analysis and interviews from the worlds of science and technology
           </itunes:summary>
+          <itunes:new-feed-url>https://www.theguardian.com/science/series/science/podcast.xml</itunes:new-feed-url>
           <image>
             <title>Science Weekly</title>
             <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
@@ -48,20 +49,21 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
         </channel>
       </rss>)
 
-    expectedXml \ "channel" \ "title" should be(currentXml \ "channel" \ "title")
-    expectedXml \ "channel" \ "link" should be(currentXml \ "channel" \ "link")
-    expectedXml \ "channel" \ "description" should be(currentXml \ "channel" \ "description")
-    expectedXml \ "channel" \ "language" should be(currentXml \ "channel" \ "language")
-    expectedXml \ "channel" \ "copyright" should be(currentXml \ "channel" \ "copyright")
-    expectedXml \ "channel" \ "type" should be(currentXml \ "channel" \ "type")
-    expectedXml \ "channel" \ "ttl" should be(currentXml \ "channel" \ "ttl")
-    expectedXml \ "channel" \ "owner" should be(currentXml \ "channel" \ "owner")
-    expectedXml \ "channel" \ "image" should be(currentXml \ "channel" \ "image")
-    expectedXml \ "channel" \ "author" should be(currentXml \ "channel" \ "author")
-    expectedXml \ "channel" \ "explicit" should be(currentXml \ "channel" \ "explicit")
-    expectedXml \ "channel" \ "summary" should be(currentXml \ "channel" \ "summary")
-    expectedXml \ "channel" \ "image" should be(currentXml \ "channel" \ "image")
-    expectedXml \ "channel" \ "category" should be(currentXml \ "channel" \ "category")
+    currentXml \ "channel" \ "title" should be(expectedXml \ "channel" \ "title")
+    currentXml \ "channel" \ "link" should be(expectedXml \ "channel" \ "link")
+    currentXml \ "channel" \ "description" should be(expectedXml \ "channel" \ "description")
+    currentXml \ "channel" \ "language" should be(expectedXml \ "channel" \ "language")
+    currentXml \ "channel" \ "copyright" should be(expectedXml \ "channel" \ "copyright")
+    currentXml \ "channel" \ "type" should be(expectedXml \ "channel" \ "type")
+    currentXml \ "channel" \ "ttl" should be(expectedXml \ "channel" \ "ttl")
+    currentXml \ "channel" \ "owner" should be(expectedXml \ "channel" \ "owner")
+    currentXml \ "channel" \ "image" should be(expectedXml \ "channel" \ "image")
+    currentXml \ "channel" \ "author" should be(expectedXml \ "channel" \ "author")
+    currentXml \ "channel" \ "explicit" should be(expectedXml \ "channel" \ "explicit")
+    currentXml \ "channel" \ "summary" should be(expectedXml \ "channel" \ "summary")
+    currentXml \ "channel" \ "image" should be(expectedXml \ "channel" \ "image")
+    currentXml \ "channel" \ "category" should be(expectedXml \ "channel" \ "category")
+    currentXml \ "channel" \ "new-feed-url" should be(expectedXml \ "channel" \ "new-feed-url")
   }
 
   it should "return a 404 if a podcast cannot be found" in {
