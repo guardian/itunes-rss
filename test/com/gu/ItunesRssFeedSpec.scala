@@ -3,10 +3,10 @@ package com.gu.itunes
 
 import org.scalactic.Bad
 import org.scalatest._
-
-import scala.util.{ Failure, Success, Try }
-import scala.xml.Utility.trim
 import play.api.mvc.Results._
+
+import scala.util.Try
+import scala.xml.Utility.trim
 
 class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
 
@@ -76,6 +76,13 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
       case _ =>
         fail("""expected Bad(Failed("podcast not found", NotFound))""")
     }
+  }
+
+  it should "not show new-feed-url tag in ad free feeds to avoid confusing robots" in {
+    val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = true).get)
+
+    val itunesNewFeedUrl = (currentXml \\ "channel" \ "new-feed-url").find(_.prefix == "itunes")
+    itunesNewFeedUrl should be(None)
   }
 
 }

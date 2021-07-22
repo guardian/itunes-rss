@@ -104,6 +104,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
     val firstItemsItunesBlock = (podcasts \\ "item" \ "block").filter(_.prefix == "itunes").head
     firstItemsItunesBlock.text should be("yes")
   }
+
   it should "not prevent non ad free podcasts from been indexed" in {
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
