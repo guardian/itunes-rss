@@ -116,7 +116,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
     itunesBlockTag should be(None)
   }
 
-  it should "omit itunes:subtitle tag from ad free feeds as it is often or of spec" in {
+  it should "omit itunes:subtitle tag from ad free feeds as it is often out of spec" in {
     // Often exceeds 255 characters which is reported as a validation failure in the w3c feed validation tool.
     // Omit from ad free feeds to avoid validation rejections.
     val results = itunesCapiResponse.results.getOrElse(Nil)
