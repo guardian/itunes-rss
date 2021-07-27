@@ -11,7 +11,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head).toXml
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, adFree = false).toXml
     val trimmedPodcasts = for (p <- podcasts) yield trim(p)
 
     val expectedXml = RemoveWhitespace.transform(
@@ -79,6 +79,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
           Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains
         </itunes:summary>
       </item>)
+
     val result = trimmedPodcasts zip expectedXml
 
     result foreach (x => x._1 \ "title" should be(x._2 \ "title"))
@@ -113,6 +114,18 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val itunesBlockTag = (podcasts \\ "item" \ "block").find(_.prefix == "itunes")
     itunesBlockTag should be(None)
+  }
+
+  it should "omit itunes:subtitle tag from ad free feeds as it is often out of spec" in {
+    // Often exceeds 255 characters which is reported as a validation failure in the w3c feed validation tool.
+    // Omit from ad free feeds to avoid validation rejections.
+    val results = itunesCapiResponse.results.getOrElse(Nil)
+    val tagId = itunesCapiResponse.tag.get.id
+
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, true).toXml
+
+    val firstItemsItunesBlock = (podcasts \\ "item" \ "subtitle").filter(_.prefix == "itunes")
+    firstItemsItunesBlock.headOption should be(None)
   }
 
 }

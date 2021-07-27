@@ -197,7 +197,11 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         }
       }
       <itunes:keywords>{ keywords }</itunes:keywords>
-      <itunes:subtitle>{ subtitle }</itunes:subtitle>
+      {
+        if (!adFree) {
+          <itunes:subtitle>{ subtitle }</itunes:subtitle>
+        }
+      }
       <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
       {
         if (adFree) {
