@@ -1,7 +1,7 @@
 package com.gu.itunes
 
-import scala.xml.transform.{ RewriteRule, RuleTransformer }
-import scala.xml.{ XML, Elem, Node, Text }
+import scala.xml.transform.{RewriteRule, RuleTransformer}
+import scala.xml.{Elem, Node, Text, XML}
 
 object XmlTestUtils {
 
@@ -17,6 +17,7 @@ object XmlTestUtils {
 
   /**
    * Extract the contents of an RSS item's <content:encoded> tag as XML.
+   *
    * @param itemXml the RSS item as XML
    */
   def parseContentHtml(itemXml: Elem): Elem = {

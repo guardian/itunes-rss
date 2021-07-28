@@ -1,12 +1,13 @@
 package com.gu.itunes
 
-import java.nio.charset.StandardCharsets
+import cats.syntax.either._
 import com.google.common.io.Resources
 import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.json.CirceDecoders.itemResponseDecoder
-import io.circe.{ Decoder, Json }
 import io.circe.parser._
-import cats.syntax.either._
+import io.circe.{Decoder, Json}
+
+import java.nio.charset.StandardCharsets
 
 trait ItunesTestData {
 
