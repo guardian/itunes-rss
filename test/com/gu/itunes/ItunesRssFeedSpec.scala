@@ -1,4 +1,3 @@
-
 package com.gu.itunes
 
 import org.scalactic.Bad
