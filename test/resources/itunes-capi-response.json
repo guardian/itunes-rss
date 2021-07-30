@@ -4,7 +4,7 @@
     "userTier": "internal",
     "total": 563,
     "startIndex": 1,
-    "pageSize": 3,
+    "pageSize": 4,
     "currentPage": 1,
     "pages": 188,
     "orderBy": "newest",
@@ -269,6 +269,136 @@
             "sectionName": "Science"
           }
         ]
+      },
+      {
+        "id": "australia-news/audio/2021/jul/30/are-the-nsw-covid-disaster-payments-too-little-too-late-with-lenore-taylor",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2021-07-29T17:30:38Z",
+        "webTitle": "Are the NSW Covid disaster payments too little too late? – with Lenore Taylor ",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2021/jul/30/are-the-nsw-covid-disaster-payments-too-little-too-late-with-lenore-taylor",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2021/jul/30/are-the-nsw-covid-disaster-payments-too-little-too-late-with-lenore-taylor",
+        "fields": {
+          "headline": "Are the NSW Covid disaster payments too little too late? – with Lenore Taylor ",
+          "standfirst": "<p>As the NSW Covid outbreak continues and millions of Australians struggle to access the financial support they need, the state and federal governments have announced increased Covid support payments. Guardian Australia editor Lenore Taylor and head of news Mike Ticher discuss if this expansion of financial support has hit the mark</p>",
+          "trailText": "Guardian Australia editor Lenore Taylor and head of news Mike Ticher discuss the expansion of Covid financial support in NSW",
+          "byline": "Presented by Gabrielle Jackson with Lenore Taylor and Mike Ticher. Produced by Miles Herbert and Joe Koning. The executive producers are Miles Martignoni and Gabrielle Jackson",
+          "main": "<!-- Invalid audio element without \"html\" field -->",
+          "body": "<p>Read more:</p> <ul> <li><strong><a href=\"https://www.theguardian.com/commentisfree/2021/jul/28/nsw-must-quash-the-covid-outbreak-and-it-cant-without-fair-and-just-income-support\">Excluding the most vulnerable from Covid payments isn’t just cruel – it jeopardises public health </a></strong></li> </ul>",
+          "wordcount": "16",
+          "creationDate": "2021-07-29T06:49:33Z",
+          "firstPublicationDate": "2021-07-29T17:30:38Z",
+          "internalComposerCode": "61024f7d8f089093df86d929",
+          "internalPageCode": "9776795",
+          "isInappropriateForSponsorship": "false",
+          "isPremoderated": "false",
+          "lastModified": "2021-07-29T17:30:38Z",
+          "productionOffice": "AUS",
+          "publication": "theguardian.com",
+          "shortUrl": "https://www.theguardian.com/p/taj6e",
+          "shouldHideAdverts": "false",
+          "showInRelatedContent": "true",
+          "thumbnail": "https://media.guim.co.uk/2b5ca6f9a99c487385c6b541c4a72117a134d87d/0_62_3916_2350/500.jpg",
+          "legallySensitive": "false",
+          "lang": "en",
+          "internalRevision": "164",
+          "isLive": "true",
+          "internalShortId": "/p/taj6e",
+          "bodyText": "Read more: Excluding the most vulnerable from Covid payments isn’t just cruel – it jeopardises public health",
+          "charCount": "108",
+          "shouldHideReaderRevenue": "false",
+          "showAffiliateLinks": "false",
+          "bylineHtml": "Presented by <a href=\"profile/gabrielle-jackson\">Gabrielle Jackson</a> with <a href=\"profile/lenore-taylor\">Lenore Taylor</a> and <a href=\"profile/miketicher\">Mike Ticher</a>. Produced by <a href=\"profile/miles-herbert\">Miles Herbert</a> and <a href=\"profile/joe-koning\">Joe Koning</a>. The executive producers are <a href=\"profile/miles-martignoni\">Miles Martignoni</a> and <a href=\"profile/gabrielle-jackson\">Gabrielle Jackson</a>"
+        },
+        "elements": [
+          {
+            "id": "gu-audio-61024f7d8f089093df86d929",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2021/07/29-32759-fs_friday_jobsaver.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2021/07/29-32759-fs_friday_jobsaver.mp3",
+                  "sizeInBytes": "30513778",
+                  "durationMinutes": "21",
+                  "durationSeconds": "11",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "2b5ca6f9a99c487385c6b541c4a72117a134d87d",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/2b5ca6f9a99c487385c6b541c4a72117a134d87d/0_62_3916_2350/master/3916.jpg",
+                "typeData": {
+                  "altText": "NSW Treasurer Dominic Perrottet, Prime Minister Scott Morrison and NSW Premier Gladys Berejiklian",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "3916",
+                  "height": "2350",
+                  "secureFile": "https://media.guim.co.uk/2b5ca6f9a99c487385c6b541c4a72117a134d87d/0_62_3916_2350/master/3916.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "2b5ca6f9a99c487385c6b541c4a72117a134d87d",
+                  "imageType": "Photograph",
+                  "suppliersReference": "60ed24a0ed2829ad82a905dd",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/2b5ca6f9a99c487385c6b541c4a72117a134d87d"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/2b5ca6f9a99c487385c6b541c4a72117a134d87d/0_62_3916_2350/3916.jpg",
+                "typeData": {
+                  "altText": "NSW Treasurer Dominic Perrottet, Prime Minister Scott Morrison and NSW Premier Gladys Berejiklian",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "3916",
+                  "height": "2350",
+                  "secureFile": "https://media.guim.co.uk/2b5ca6f9a99c487385c6b541c4a72117a134d87d/0_62_3916_2350/3916.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "2b5ca6f9a99c487385c6b541c4a72117a134d87d",
+                  "imageType": "Photograph",
+                  "suppliersReference": "60ed24a0ed2829ad82a905dd",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/2b5ca6f9a99c487385c6b541c4a72117a134d87d"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/2b5ca6f9a99c487385c6b541c4a72117a134d87d/0_62_3916_2350/500.jpg",
+                "typeData": {
+                  "altText": "NSW Treasurer Dominic Perrottet, Prime Minister Scott Morrison and NSW Premier Gladys Berejiklian",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/2b5ca6f9a99c487385c6b541c4a72117a134d87d/0_62_3916_2350/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "2b5ca6f9a99c487385c6b541c4a72117a134d87d",
+                  "imageType": "Photograph",
+                  "suppliersReference": "60ed24a0ed2829ad82a905dd",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/2b5ca6f9a99c487385c6b541c4a72117a134d87d"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
       }
     ],
     "leadContent": [
