@@ -40,3 +40,15 @@ $ curl localhost:9000/{some-podcast-id}/podcast.xml
 ```
 $ sbt test
 ```
+
+
+
+## Docker build
+
+```
+sbt docker:publishLocal
+```
+
+```
+docker run -p 9000:9000 9704f45f8d63
+```
