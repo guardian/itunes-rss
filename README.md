@@ -52,3 +52,19 @@ sbt docker:publishLocal
 ```
 docker run -p 9000:9000 podcasts-rss:0.1.0-SNAPSHOT
 ```
+
+
+## Cloud build
+
+Install Google Cloud SDK:
+`https://cloud.google.com/sdk/docs/install`
+
+Install local cloud build component:
+```
+gcloud components install cloud-build-local
+```
+
+To dry run locally:
+```
+cloud-build-local --config=cloudbuild.yaml --dryrun=false --push=false .
+```
