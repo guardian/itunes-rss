@@ -60,7 +60,7 @@ object iTunesRssFeed {
             <image>
               <title>{ tag.webTitle }</title>
               <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
-              <link>https://www.theguardian.com</link>
+              <link>{ tag.webUrl }</link>
             </image>
             {
               for (category <- podcast.categories.getOrElse(Nil)) yield new CategoryRss(category).toXml

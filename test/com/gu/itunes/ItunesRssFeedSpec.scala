@@ -40,7 +40,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
           <image>
             <title>Science Weekly</title>
             <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
-            <link>https://www.theguardian.com</link>
+            <link>https://www.theguardian.com/science/series/science</link>
           </image>
           <itunes:category text="Health">
             <itunes:category text="Fitness &amp; Nutrition"/>
@@ -63,6 +63,9 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
     currentXml \ "channel" \ "image" should be(expectedXml \ "channel" \ "image")
     currentXml \ "channel" \ "category" should be(expectedXml \ "channel" \ "category")
     currentXml \ "channel" \ "new-feed-url" should be(expectedXml \ "channel" \ "new-feed-url")
+
+    // Channel image link should match channel link
+    currentXml \ "channel" \ "image" \ "link" should be(currentXml \ "channel" \ "link")
   }
 
   it should "return a 404 if a podcast cannot be found" in {
