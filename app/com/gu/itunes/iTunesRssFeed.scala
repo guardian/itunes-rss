@@ -26,8 +26,8 @@ object iTunesRssFeed {
         <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
           <channel>
             {
-              if(!adFree) {
-                <itunes:new-feed-url>{s"${tag.webUrl}/podcast.xml"}</itunes:new-feed-url>
+              if (!adFree) {
+                <itunes:new-feed-url>{ s"${tag.webUrl}/podcast.xml" }</itunes:new-feed-url>
               }
             }
             <title>{ tag.webTitle }</title>
@@ -59,7 +59,13 @@ object iTunesRssFeed {
             <itunes:summary>{ description }</itunes:summary>
             <image>
               <title>{ tag.webTitle }</title>
-              <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
+              {
+                if (adFree) {
+                  <url>{ podcast.image.getOrElse("https://static.guim.co.uk/sitecrumbs/Guardian.gif") }</url>
+                } else {
+                  <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
+                }
+              }
               <link>{ tag.webUrl }</link>
             </image>
             {

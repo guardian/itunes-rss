@@ -87,4 +87,12 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
     itunesNewFeedUrl should be(None)
   }
 
+  it should "show large image specific to this podcast on the channel image tag for ad free feeds" in {
+    val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = true).get)
+
+    val channelImageUrl = currentXml \\ "channel" \ "image" \ "url"
+
+    channelImageUrl.text should be("https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png")
+  }
+
 }
