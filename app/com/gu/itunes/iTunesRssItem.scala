@@ -199,7 +199,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       }
       <itunes:keywords>{ keywords }</itunes:keywords>
       {
-        if (subtitle.length <= 255 && !adFree) {
+        if (!adFree) {
           <itunes:subtitle>{ subtitle }</itunes:subtitle>
         }
       }
