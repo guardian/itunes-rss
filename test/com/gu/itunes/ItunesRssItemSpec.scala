@@ -124,8 +124,18 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, true).toXml
 
-    val firstItemsItunesBlock = (podcasts \\ "item" \ "subtitle").filter(_.prefix == "itunes")
-    firstItemsItunesBlock.headOption should be(None)
+    val firstItemSubtitleTag = (podcasts \\ "item" \ "subtitle").find(_.prefix == "itunes")
+    firstItemSubtitleTag should be(None)
+  }
+
+  it should "use shorter trailtext for itunes:subtitle to help stay within the w3c 255 character limit" in {
+    val results = itunesCapiResponse.results.getOrElse(Nil)
+    val tagId = itunesCapiResponse.tag.get.id
+
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, false).toXml
+
+    val itemSubtitleTags = (podcasts \\ "item" \ "subtitle").filter(_.prefix == "itunes")
+    itemSubtitleTags.lastOption.map(_.text) should be(Some("Guardian Australia editor Lenore Taylor and head of news Mike Ticher discuss the expansion of Covid financial support in NSW"))
   }
 
 }
