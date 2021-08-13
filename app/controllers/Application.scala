@@ -40,18 +40,40 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   private def rawRss(tagId: String, userApiKey: Option[String]): Future[Result] = {
     val client = new CustomCapiClient(apiKey)
 
+    val maxItems = 300
+    val pageSize = 200
+
     val query = ItemQuery(tagId)
       .showElements("audio")
       .showTags("keyword")
       .showFields("all")
 
-    def fetchItems(query: ItemQuery): Future[Seq[ItemResponse]] = {
-      val withPagination = query.pageSize(200)
-      client.getResponse(withPagination).map(Seq(_))
+    def fetchItemsWithPagination(query: ItemQuery, page: Int = 1, resps: Seq[ItemResponse] = Seq.empty): Future[Seq[ItemResponse]] = {
+      // The last page fetch may need to be smaller to prevent returning too many results
+      val currentDepth = (page - 1) * pageSize
+      val pageSizeForThisCall = Seq(maxItems - currentDepth, pageSize).min
+
+      Logger.debug("Fetching page: " + page + " with page size: " + pageSizeForThisCall)
+      val withPagination = query.page(page).pageSize(pageSizeForThisCall)
+
+      client.getResponse(withPagination).flatMap { resp =>
+        val responses = resps :+ resp
+        // Paginate if we have not covered the required number of pages and there are more pages available
+        val lastRequiredPage = (maxItems / pageSize) + (if (maxItems % pageSize > 0) { 1 } else { 0 })
+        val shouldPaginate = (page < lastRequiredPage) && resp.pages.getOrElse(0) > page
+        if (shouldPaginate) {
+          // Recurse with the results and pagination incremented
+          fetchItemsWithPagination(query, page + 1, responses)
+
+        } else {
+          Logger.info("Finished fetching " + responses.map(_.results.map(_.size).getOrElse(0)).sum + " items after paginating to page " + page)
+          Future.successful(responses)
+        }
+      }
     }
 
     (for {
-      itemResponses <- fetchItems(query)
+      itemResponses <- fetchItemsWithPagination(query)
       userApiKeyTier <- userApiKey.map { userApiKey =>
         // If an external partner has identified themselves using an api-key we will query to resolve the user tier
         new CustomCapiClient(userApiKey).getResponse(ItemQuery(tagId).pageSize(0)).map { resp =>
