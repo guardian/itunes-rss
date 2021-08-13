@@ -1,5 +1,6 @@
 package com.gu.itunes
 
+import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.{ DateTime, DateTimeZone }
@@ -43,10 +44,14 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       .showElements("audio")
       .showTags("keyword")
       .showFields("all")
-      .pageSize(200) // number of podcasts to be served (max single request page size)
+
+    def fetchItems(query: ItemQuery): Future[Seq[ItemResponse]] = {
+      val withPagination = query.pageSize(200)
+      client.getResponse(withPagination).map(Seq(_))
+    }
 
     (for {
-      itemResponse <- client.getResponse(query)
+      itemResponses <- fetchItems(query)
       userApiKeyTier <- userApiKey.map { userApiKey =>
         // If an external partner has identified themselves using an api-key we will query to resolve the user tier
         new CustomCapiClient(userApiKey).getResponse(ItemQuery(tagId).pageSize(0)).map { resp =>
@@ -57,26 +62,28 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       }
 
     } yield {
-      itemResponse.status match {
-        case "ok" => {
-          val isAdFree = userApiKeyTier.contains("rights-managed")
-          iTunesRssFeed(itemResponse, isAdFree) match {
-            case Good(xml) =>
-              val now = DateTime.now()
-              val expiresTime = now.plusSeconds(maxAge)
+      // If all item responses were ok then we can render a result
+      if (itemResponses.forall(_.status == "ok")) {
+        val isAdFree = userApiKeyTier.contains("rights-managed")
+        iTunesRssFeed(itemResponses, isAdFree) match {
+          case Good(xml) =>
+            val now = DateTime.now()
+            val expiresTime = now.plusSeconds(maxAge)
 
-              Ok(xml).withHeaders(
-                "Surrogate-Control" -> cacheControl,
-                "Cache-Control" -> cacheControl,
-                "Expires" -> expiresTime.toString(HTTPDateFormat),
-                "Date" -> now.toString(HTTPDateFormat))
-            case Bad(failed: Failed) =>
-              Logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
-              failed.status
-          }
+            Ok(xml).withHeaders(
+              "Surrogate-Control" -> cacheControl,
+              "Cache-Control" -> cacheControl,
+              "Expires" -> expiresTime.toString(HTTPDateFormat),
+              "Date" -> now.toString(HTTPDateFormat))
+          case Bad(failed: Failed) =>
+            Logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
+            failed.status
         }
-        case _ => NotFound
+
+      } else {
+        NotFound
       }
+
     }).recover {
       case ContentApiError(404, _, _) => NotFound
       case ContentApiError(403, _, _) => Forbidden
