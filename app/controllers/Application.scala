@@ -42,7 +42,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     val query = ItemQuery(tagId)
       .showElements("audio")
       .showTags("keyword")
-      .showFields("all")
+      .showFields("webTitle,webPublicationDate,standfirst,trailText,internalComposerCode")
       .pageSize(200) // number of podcasts to be served (max single request page size)
 
     (for {
