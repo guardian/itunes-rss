@@ -14,7 +14,10 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     // TODO: remove the below when suffix is added only where it is needed, and not by journalists
     val suffix = """(.*) [-–—|] podcast$""".r
-    val title = podcast.webTitle match { case suffix(prefix) => prefix; case otherwise => otherwise }
+    val title = podcast.webTitle match {
+      case suffix(prefix) => prefix;
+      case otherwise => otherwise
+    }
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
@@ -134,7 +137,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         AcastLaunchGroup(new DateTime(2021, 1, 19, 0, 0), Seq(
           "music/series/reverberate")),
         AcastLaunchGroup(new DateTime(2021, 6, 8, 0, 0), Seq(
-          "lifeandstyle/series/comforteatingwithgracedent")))
+          "lifeandstyle/series/comforteatingwithgracedent")),
+        AcastLaunchGroup(new DateTime(2021, 10, 9, 0, 0), Seq(
+          "australia-news/series/australia-reads")))
 
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
@@ -184,31 +189,40 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
     <item>
-      <title>{ title }</title>
-      <description>{ description }</description>
-      <enclosure url={ url } length={ sizeInBytes } type={ mType }/>
-      <pubDate>{ pubDate }</pubDate>
-      <guid isPermaLink={ guid._2.toString }>{ guid._1 }</guid>
-      <itunes:duration>{ duration }</itunes:duration>
-      <itunes:author>{ iTunesRssFeed.author }</itunes:author>
-      {
-        explicit match {
-          case Some(value) => <itunes:explicit>{ value }</itunes:explicit>
-          case None =>
-        }
-      }
-      <itunes:keywords>{ keywords }</itunes:keywords>
-      {
-        if (!adFree) {
-          <itunes:subtitle>{ subtitle }</itunes:subtitle>
-        }
-      }
-      <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
-      {
-        if (adFree) {
-          <itunes:block>yes</itunes:block>
-        }
-      }
+      <title>
+        {title}
+      </title>
+      <description>
+        {description}
+      </description>
+      <enclosure url={url} length={sizeInBytes} type={mType}/>
+      <pubDate>
+        {pubDate}
+      </pubDate>
+      <guid isPermaLink={guid._2.toString}>
+        {guid._1}
+      </guid>
+      <itunes:duration>
+        {duration}
+      </itunes:duration>
+      <itunes:author>
+        {iTunesRssFeed.author}
+      </itunes:author>{explicit match {
+      case Some(value) => <itunes:explicit>
+        {value}
+      </itunes:explicit>
+      case None =>
+    }}<itunes:keywords>
+      {keywords}
+    </itunes:keywords>{if (!adFree) {
+      <itunes:subtitle>
+        {subtitle}
+      </itunes:subtitle>
+    }}<itunes:summary>
+      {scala.xml.Utility.escape(summary)}
+    </itunes:summary>{if (adFree) {
+      <itunes:block>yes</itunes:block>
+    }}
     </item>
   }
 
