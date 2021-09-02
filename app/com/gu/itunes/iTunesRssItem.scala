@@ -14,10 +14,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     // TODO: remove the below when suffix is added only where it is needed, and not by journalists
     val suffix = """(.*) [-–—|] podcast$""".r
-    val title = podcast.webTitle match {
-      case suffix(prefix) => prefix;
-      case otherwise => otherwise
-    }
+    val title = podcast.webTitle match { case suffix(prefix) => prefix; case otherwise => otherwise }
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
@@ -189,40 +186,31 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
     <item>
-      <title>
-        {title}
-      </title>
-      <description>
-        {description}
-      </description>
-      <enclosure url={url} length={sizeInBytes} type={mType}/>
-      <pubDate>
-        {pubDate}
-      </pubDate>
-      <guid isPermaLink={guid._2.toString}>
-        {guid._1}
-      </guid>
-      <itunes:duration>
-        {duration}
-      </itunes:duration>
-      <itunes:author>
-        {iTunesRssFeed.author}
-      </itunes:author>{explicit match {
-      case Some(value) => <itunes:explicit>
-        {value}
-      </itunes:explicit>
-      case None =>
-    }}<itunes:keywords>
-      {keywords}
-    </itunes:keywords>{if (!adFree) {
-      <itunes:subtitle>
-        {subtitle}
-      </itunes:subtitle>
-    }}<itunes:summary>
-      {scala.xml.Utility.escape(summary)}
-    </itunes:summary>{if (adFree) {
-      <itunes:block>yes</itunes:block>
-    }}
+      <title>{ title }</title>
+      <description>{ description }</description>
+      <enclosure url={ url } length={ sizeInBytes } type={ mType }/>
+      <pubDate>{ pubDate }</pubDate>
+      <guid isPermaLink={ guid._2.toString }>{ guid._1 }</guid>
+      <itunes:duration>{ duration }</itunes:duration>
+      <itunes:author>{ iTunesRssFeed.author }</itunes:author>
+      {
+        explicit match {
+          case Some(value) => <itunes:explicit>{ value }</itunes:explicit>
+          case None =>
+        }
+      }
+      <itunes:keywords>{ keywords }</itunes:keywords>
+      {
+        if (!adFree) {
+          <itunes:subtitle>{ subtitle }</itunes:subtitle>
+        }
+      }
+      <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
+      {
+        if (adFree) {
+          <itunes:block>yes</itunes:block>
+        }
+      }
     </item>
   }
 
