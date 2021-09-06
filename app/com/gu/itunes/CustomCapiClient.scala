@@ -31,7 +31,7 @@ class CustomCapiClient(val apiKey: String) extends ContentApiClient {
 
     response.future map { result =>
       val end = System.nanoTime()
-      Logger.info(s"Received CAPI response in ${Duration.fromNanos(end - start).toMillis} ms")
+      Logger.info(s"Received CAPI response ${result.statusCode} in ${Duration.fromNanos(end - start).toMillis} ms")
       result
     }
   }
