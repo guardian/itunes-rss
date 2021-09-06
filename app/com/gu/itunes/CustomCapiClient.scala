@@ -37,8 +37,8 @@ class CustomCapiClient(val apiKey: String) extends ContentApiClient {
   }
 
   override implicit val executor: ScheduledExecutor = ScheduledExecutor()
-  private val initialDelay = 250.millis
-  override val backoffStrategy: ContentApiBackoff = ContentApiBackoff.exponentialStrategy(initialDelay, maxAttempts = 5)
+  private val initialDelay = 1000.millis
+  override val backoffStrategy: ContentApiBackoff = ContentApiBackoff.multiplierStrategy(initialDelay, multiplier = 1.5, maxAttempts = 3)
 }
 
 object CustomCapiClient {
