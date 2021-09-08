@@ -39,7 +39,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
           <itunes:new-feed-url>https://www.theguardian.com/science/series/science/podcast.xml</itunes:new-feed-url>
           <image>
             <title>Science Weekly</title>
-            <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
+            <url>https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/22/1398182483649/ScienceWeekly.png</url>
             <link>https://www.theguardian.com/science/series/science</link>
           </image>
           <itunes:category text="Health">
