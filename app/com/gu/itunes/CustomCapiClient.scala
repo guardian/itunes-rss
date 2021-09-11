@@ -44,8 +44,8 @@ class CustomCapiClient(val apiKey: String) extends ContentApiClient {
 object CustomCapiClient {
 
   val http = new OkHttpClient.Builder()
-    .connectTimeout(1000, TimeUnit.SECONDS)
-    .readTimeout(2000, TimeUnit.SECONDS)
+    .connectTimeout(1, TimeUnit.SECONDS)
+    .readTimeout(2, TimeUnit.SECONDS)
     .followRedirects(true)
     .connectionPool(new ConnectionPool(10, 60, TimeUnit.SECONDS))
     .build()
