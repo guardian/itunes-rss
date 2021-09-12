@@ -1,6 +1,4 @@
 <configuration>
-    
-  <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel" />
 
   <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>logs/itunes-rss.log</file>
@@ -15,7 +13,7 @@
 
   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>%date %-5coloredLevel %logger - %msg%n%xException{30}</pattern>
+      <pattern>%date %logger - %msg%n%xException{30}</pattern>
     </encoder>
   </appender>
 
