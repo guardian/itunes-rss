@@ -206,11 +206,6 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         }
       }
       <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
-      {
-        if (adFree) {
-          <itunes:block>yes</itunes:block>
-        }
-      }
     </item>
   }
 

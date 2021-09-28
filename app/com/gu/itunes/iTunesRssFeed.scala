@@ -63,6 +63,11 @@ object iTunesRssFeed {
               <link>{ tag.webUrl }</link>
             </image>
             {
+              if (adFree) {
+                <itunes:block>yes</itunes:block>
+              }
+            }
+            {
               for (category <- podcast.categories.getOrElse(Nil)) yield new CategoryRss(category).toXml
             }
             {

@@ -80,6 +80,22 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
     }
   }
 
+  it should "mark ad free podcast channels as blocked so that the are not indexed in things like Google podcasts" in {
+    // https://developers.google.com/news/assistant/your-news-update/overview
+    // To prevent the feed from public availability on products like iTunes or Google Podcasts, the value can be set to Yes (not case sensitive). Any other value has no effect.
+    val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = true).get)
+
+    val channelLevelItunesBlock = (currentXml \\ "channel" \ "block").filter(_.prefix == "itunes").head
+    channelLevelItunesBlock.text should be("yes")
+  }
+
+  it should "not prevent non ad free podcasts from been indexed" in {
+    val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = false).get)
+
+    val channelLevelItunesBlock = (currentXml \\ "channel" \ "block").filter(_.prefix == "itunes")
+    channelLevelItunesBlock.isEmpty should be(true)
+  }
+
   it should "not show new-feed-url tag in ad free feeds to avoid confusing robots" in {
     val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = true).get)
 
