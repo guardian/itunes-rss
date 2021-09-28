@@ -84,7 +84,6 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
     // https://developers.google.com/news/assistant/your-news-update/overview
     // To prevent the feed from public availability on products like iTunes or Google Podcasts, the value can be set to Yes (not case sensitive). Any other value has no effect.
     val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = true).get)
-    println(currentXml)
 
     val channelLevelItunesBlock = (currentXml \\ "channel" \ "block").filter(_.prefix == "itunes").head
     channelLevelItunesBlock.text should be("yes")
