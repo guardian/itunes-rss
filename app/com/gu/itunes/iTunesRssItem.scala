@@ -134,7 +134,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         AcastLaunchGroup(new DateTime(2021, 1, 19, 0, 0), Seq(
           "music/series/reverberate")),
         AcastLaunchGroup(new DateTime(2021, 6, 8, 0, 0), Seq(
-          "lifeandstyle/series/comforteatingwithgracedent")))
+          "lifeandstyle/series/comforteatingwithgracedent")),
+        AcastLaunchGroup(new DateTime(2021, 9, 1, 0, 0), Seq(
+          "australia-news/series/australia-reads")),
+        AcastLaunchGroup(new DateTime(2021, 10, 5, 0, 0), Seq(
+          "culture/series/saved-for-later"))
+      )
 
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
@@ -184,8 +189,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
     <item>
-      <title> { title } </title>
-      <description> { description } </description>
+      <title>{ title }</title>
+      <description>{ description }</description>
       <enclosure url={ url } length={ sizeInBytes } type={ mType }/>
       <pubDate>{ pubDate }</pubDate>
       <guid isPermaLink={ guid._2.toString }>{ guid._1 }</guid>
@@ -204,11 +209,6 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         }
       }
       <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
-      {
-        if (adFree) {
-          <itunes:block>yes</itunes:block>
-        }
-      }
     </item>
   }
 

@@ -63,15 +63,14 @@ object iTunesRssFeed {
             <itunes:summary>{ description }</itunes:summary>
             <image>
               <title>{ tag.webTitle }</title>
-              {
-                if (adFree) {
-                  <url>{ podcast.image.getOrElse("https://static.guim.co.uk/sitecrumbs/Guardian.gif") }</url>
-                } else {
-                  <url>https://static.guim.co.uk/sitecrumbs/Guardian.gif</url>
-                }
-              }
+              <url>{ podcast.image.getOrElse("https://static.guim.co.uk/sitecrumbs/Guardian.gif") }</url>
               <link>{ tag.webUrl }</link>
             </image>
+            {
+              if (adFree) {
+                <itunes:block>yes</itunes:block>
+              }
+            }
             {
               for (category <- podcast.categories.getOrElse(Nil)) yield new CategoryRss(category).toXml
             }

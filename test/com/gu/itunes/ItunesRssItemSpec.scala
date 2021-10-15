@@ -94,28 +94,6 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
     result foreach (x => x._1 \ "summary" should be(x._2 \ "summary"))
   }
 
-  it should "mark ad free podcasts as blocked so that the are not indexed in things like Google podcasts" in {
-    // https://developers.google.com/news/assistant/your-news-update/overview
-    // To prevent the feed from public availability on products like iTunes or Google Podcasts, the value can be set to Yes (not case sensitive). Any other value has no effect.
-    val results = itunesCapiResponse.results.getOrElse(Nil)
-    val tagId = itunesCapiResponse.tag.get.id
-
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, true).toXml
-
-    val firstItemsItunesBlock = (podcasts \\ "item" \ "block").filter(_.prefix == "itunes").head
-    firstItemsItunesBlock.text should be("yes")
-  }
-
-  it should "not prevent non ad free podcasts from been indexed" in {
-    val results = itunesCapiResponse.results.getOrElse(Nil)
-    val tagId = itunesCapiResponse.tag.get.id
-
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, false).toXml
-
-    val itunesBlockTag = (podcasts \\ "item" \ "block").find(_.prefix == "itunes")
-    itunesBlockTag should be(None)
-  }
-
   it should "omit itunes:subtitle tag from ad free feeds as it is often out of spec" in {
     // Often exceeds 255 characters which is reported as a validation failure in the w3c feed validation tool.
     // Omit from ad free feeds to avoid validation rejections.

@@ -2,12 +2,13 @@ package com.gu.itunes
 
 import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
+
 import org.joda.time.format.DateTimeFormat
-import org.joda.time.{ DateTime, DateTimeZone }
-import org.scalactic.{ Bad, Good }
+import org.joda.time.{DateTime, DateTimeZone, Duration}
+import org.scalactic.{Bad, Good}
 import play.api.mvc.Results._
-import play.api.mvc.{ BaseController, ControllerComponents, Result }
-import play.api.{ Configuration, Logger }
+import play.api.mvc.{BaseController, ControllerComponents, Result}
+import play.api.{Configuration, Logger}
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -29,11 +30,24 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   private val HTTPDateFormat = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss 'GMT'").withZone(DateTimeZone.UTC)
 
   def itunesRss(tagId: String, userApiKey: Option[String]) = Action.async { implicit request =>
+    val startTime = DateTime.now
+    val userAgent = request.headers.get("user-agent").getOrElse("")
+    Logger.info(s"Received request for tag '$tagId' from user agent '$userAgent'")
+
     val redirect = Redirection.redirect(tagId)
-    redirect match {
+    val eventualResult = redirect match {
       case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId, userApiKey).absoluteURL(true)))
       case None =>
         rawRss(tagId, userApiKey)
+    }
+
+    eventualResult.map { result =>
+      Logger.info(s"Returning response status ${result.header.status} for tag '${tagId} after ${durationSince(startTime)}")
+      result
+    }.recover {
+      case t: Throwable =>
+        Logger.warn(s"Failed to complete for tag '$tagId after ${durationSince(startTime)}", t)
+        InternalServerError("Could not complete request")
     }
   }
 
@@ -119,4 +133,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   def healthcheck = Action {
     Ok("OK")
   }
+
+  private def durationSince(time: DateTime): String = new Duration(time, DateTime.now).getMillis + "ms"
+
 }

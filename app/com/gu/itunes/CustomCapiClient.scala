@@ -31,21 +31,21 @@ class CustomCapiClient(val apiKey: String) extends ContentApiClient {
 
     response.future map { result =>
       val end = System.nanoTime()
-      Logger.info(s"Received CAPI response in ${Duration.fromNanos(end - start).toMillis} ms")
+      Logger.info(s"Received CAPI response ${result.statusCode} in ${Duration.fromNanos(end - start).toMillis} ms")
       result
     }
   }
 
   override implicit val executor: ScheduledExecutor = ScheduledExecutor()
-  private val initialDelay = 250.millis
-  override val backoffStrategy: ContentApiBackoff = ContentApiBackoff.exponentialStrategy(initialDelay, maxAttempts = 5)
+  private val initialDelay = 1000.millis
+  override val backoffStrategy: ContentApiBackoff = ContentApiBackoff.multiplierStrategy(initialDelay, multiplier = 1.5, maxAttempts = 3)
 }
 
 object CustomCapiClient {
 
   val http = new OkHttpClient.Builder()
-    .connectTimeout(1000, TimeUnit.SECONDS)
-    .readTimeout(2000, TimeUnit.SECONDS)
+    .connectTimeout(1, TimeUnit.SECONDS)
+    .readTimeout(2, TimeUnit.SECONDS)
     .followRedirects(true)
     .connectionPool(new ConnectionPool(10, 60, TimeUnit.SECONDS))
     .build()

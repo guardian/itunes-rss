@@ -5,7 +5,7 @@ import com.google.common.io.Resources
 import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.json.CirceDecoders.itemResponseDecoder
 import io.circe.parser._
-import io.circe.{Decoder, Json}
+import io.circe.{ Decoder, Json }
 
 import java.nio.charset.StandardCharsets
 
@@ -15,11 +15,11 @@ trait ItunesTestData {
 
   /*
     Search response from CAPI. The URL used is:
-    guardianapis.com/science/series/science?show-fields=all&show-elements=audio&show-tags=keyword&page-size=3
+    guardianapis.com/science/series/science?show-fields=webTitle%2CwebPublicationDate%2Cstandfirst%2CtrailText%2CinternalComposerCode&show-elements=audio&show-tags=keyword&page-size=3
   */
 
   val itunesCapiResponse: ItemResponse = {
-    val json = loadJson("itunes-capi-response.json")
+    val json = loadJson("itunes-capi-sparse-response.json")
     parseJson[ItemResponse](json)
   }
 
