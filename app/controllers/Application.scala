@@ -4,11 +4,11 @@ import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
 
 import org.joda.time.format.DateTimeFormat
-import org.joda.time.{DateTime, DateTimeZone, Duration}
-import org.scalactic.{Bad, Good}
+import org.joda.time.{ DateTime, DateTimeZone, Duration }
+import org.scalactic.{ Bad, Good }
 import play.api.mvc.Results._
-import play.api.mvc.{BaseController, ControllerComponents, Result}
-import play.api.{Configuration, Logger}
+import play.api.mvc.{ BaseController, ControllerComponents, Result }
+import play.api.{ Configuration, Logger }
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
