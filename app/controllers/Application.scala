@@ -60,7 +60,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     val query = ItemQuery(tagId)
       .showElements("audio")
       .showTags("keyword")
-      .showFields("all")
+      .showFields("webTitle,webPublicationDate,standfirst,trailText,internalComposerCode")
 
     def fetchItemsWithPagination(query: ItemQuery, page: Int = 1, resps: Seq[ItemResponse] = Seq.empty): Future[Seq[ItemResponse]] = {
       // The last page fetch may need to be smaller to prevent returning too many results
