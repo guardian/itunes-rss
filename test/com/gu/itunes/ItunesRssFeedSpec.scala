@@ -11,7 +11,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
 
   it should "check that the produced XML for the tags is consistent" in {
 
-    val currentXml = trim(iTunesRssFeed(itunesCapiResponse).get)
+    val currentXml = trim(iTunesRssFeed(Seq(itunesCapiResponse)).get)
 
     val expectedXml = trim(
       <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
@@ -69,7 +69,7 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
   }
 
   it should "return a 404 if a podcast cannot be found" in {
-    val attempt = Try(iTunesRssFeed(tagMissingPodcastFieldResponse))
+    val attempt = Try(iTunesRssFeed(Seq(tagMissingPodcastFieldResponse)))
     attempt.get match {
       case Bad(failed: Failed) =>
         failed.message should be("podcast not found")
@@ -83,28 +83,28 @@ class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
   it should "mark ad free podcast channels as blocked so that the are not indexed in things like Google podcasts" in {
     // https://developers.google.com/news/assistant/your-news-update/overview
     // To prevent the feed from public availability on products like iTunes or Google Podcasts, the value can be set to Yes (not case sensitive). Any other value has no effect.
-    val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = true).get)
+    val currentXml = trim(iTunesRssFeed(Seq(itunesCapiResponse), adFree = true).get)
 
     val channelLevelItunesBlock = (currentXml \\ "channel" \ "block").filter(_.prefix == "itunes").head
     channelLevelItunesBlock.text should be("yes")
   }
 
   it should "not prevent non ad free podcasts from been indexed" in {
-    val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = false).get)
+    val currentXml = trim(iTunesRssFeed(Seq(itunesCapiResponse), adFree = false).get)
 
     val channelLevelItunesBlock = (currentXml \\ "channel" \ "block").filter(_.prefix == "itunes")
     channelLevelItunesBlock.isEmpty should be(true)
   }
 
   it should "not show new-feed-url tag in ad free feeds to avoid confusing robots" in {
-    val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = true).get)
+    val currentXml = trim(iTunesRssFeed(Seq(itunesCapiResponse), adFree = true).get)
 
     val itunesNewFeedUrl = (currentXml \\ "channel" \ "new-feed-url").find(_.prefix == "itunes")
     itunesNewFeedUrl should be(None)
   }
 
   it should "show large image specific to this podcast on the channel image tag for ad free feeds" in {
-    val currentXml = trim(iTunesRssFeed(itunesCapiResponse, adFree = true).get)
+    val currentXml = trim(iTunesRssFeed(Seq(itunesCapiResponse), adFree = true).get)
 
     val channelImageUrl = currentXml \\ "channel" \ "image" \ "url"
 

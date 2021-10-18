@@ -1,12 +1,14 @@
 package com.gu.itunes
 
-import com.gu.contentapi.client.model.{ContentApiError, ItemQuery}
+import com.gu.contentapi.client.model.v1.ItemResponse
+import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
+
 import org.joda.time.format.DateTimeFormat
-import org.joda.time.{DateTime, DateTimeZone, Duration}
-import org.scalactic.{Bad, Good}
+import org.joda.time.{ DateTime, DateTimeZone, Duration }
+import org.scalactic.{ Bad, Good }
 import play.api.mvc.Results._
-import play.api.mvc.{BaseController, ControllerComponents, Result}
-import play.api.{Configuration, Logger}
+import play.api.mvc.{ BaseController, ControllerComponents, Result }
+import play.api.{ Configuration, Logger }
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -52,14 +54,40 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   private def rawRss(tagId: String, userApiKey: Option[String]): Future[Result] = {
     val client = new CustomCapiClient(apiKey)
 
+    val maxItems = 300
+    val pageSize = 200
+
     val query = ItemQuery(tagId)
       .showElements("audio")
       .showTags("keyword")
       .showFields("webTitle,webPublicationDate,standfirst,trailText,internalComposerCode")
-      .pageSize(200) // number of podcasts to be served (max single request page size)
+
+    def fetchItemsWithPagination(query: ItemQuery, page: Int = 1, resps: Seq[ItemResponse] = Seq.empty): Future[Seq[ItemResponse]] = {
+      // The last page fetch may need to be smaller to prevent returning too many results
+      val currentDepth = (page - 1) * pageSize
+      val pageSizeForThisCall = Seq(maxItems - currentDepth, pageSize).min
+
+      Logger.debug("Fetching page: " + page + " with page size: " + pageSizeForThisCall)
+      val withPagination = query.page(page).pageSize(pageSizeForThisCall)
+
+      client.getResponse(withPagination).flatMap { resp =>
+        val responses = resps :+ resp
+        // Paginate if we have not covered the required number of pages and there are more pages available
+        val lastRequiredPage = (maxItems / pageSize) + (if (maxItems % pageSize > 0) { 1 } else { 0 })
+        val shouldPaginate = (page < lastRequiredPage) && resp.pages.getOrElse(0) > page
+        if (shouldPaginate) {
+          // Recurse with the results and pagination incremented
+          fetchItemsWithPagination(query, page + 1, responses)
+
+        } else {
+          Logger.info("Finished fetching " + responses.map(_.results.map(_.size).getOrElse(0)).sum + " items after paginating to page " + page)
+          Future.successful(responses)
+        }
+      }
+    }
 
     (for {
-      itemResponse <- client.getResponse(query)
+      itemResponses <- fetchItemsWithPagination(query)
       userApiKeyTier <- userApiKey.map { userApiKey =>
         // If an external partner has identified themselves using an api-key we will query to resolve the user tier
         new CustomCapiClient(userApiKey).getResponse(ItemQuery(tagId).pageSize(0)).map { resp =>
@@ -70,26 +98,28 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       }
 
     } yield {
-      itemResponse.status match {
-        case "ok" => {
-          val isAdFree = userApiKeyTier.contains("rights-managed")
-          iTunesRssFeed(itemResponse, isAdFree) match {
-            case Good(xml) =>
-              val now = DateTime.now()
-              val expiresTime = now.plusSeconds(maxAge)
+      // If all item responses were ok then we can render a result
+      if (itemResponses.forall(_.status == "ok")) {
+        val isAdFree = userApiKeyTier.contains("rights-managed")
+        iTunesRssFeed(itemResponses, isAdFree) match {
+          case Good(xml) =>
+            val now = DateTime.now()
+            val expiresTime = now.plusSeconds(maxAge)
 
-              Ok(xml).withHeaders(
-                "Surrogate-Control" -> cacheControl,
-                "Cache-Control" -> cacheControl,
-                "Expires" -> expiresTime.toString(HTTPDateFormat),
-                "Date" -> now.toString(HTTPDateFormat))
-            case Bad(failed: Failed) =>
-              Logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
-              failed.status
-          }
+            Ok(xml).withHeaders(
+              "Surrogate-Control" -> cacheControl,
+              "Cache-Control" -> cacheControl,
+              "Expires" -> expiresTime.toString(HTTPDateFormat),
+              "Date" -> now.toString(HTTPDateFormat))
+          case Bad(failed: Failed) =>
+            Logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
+            failed.status
         }
-        case _ => NotFound
+
+      } else {
+        NotFound
       }
+
     }).recover {
       case ContentApiError(404, _, _) => NotFound
       case ContentApiError(403, _, _) => Forbidden

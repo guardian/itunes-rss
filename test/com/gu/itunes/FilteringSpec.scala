@@ -1,6 +1,6 @@
 package com.gu.itunes
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 class FilteringSpec extends FlatSpec with Matchers {
 

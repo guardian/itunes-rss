@@ -1,7 +1,7 @@
 package com.gu.itunes
 
 import com.gu.contentapi.client.model.v1._
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 class AcastProxySpec extends FlatSpec with Matchers with ItunesTestData {
 

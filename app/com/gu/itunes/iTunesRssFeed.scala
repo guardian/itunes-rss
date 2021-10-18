@@ -1,6 +1,5 @@
 package com.gu.itunes
 
-import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.v1._
 import org.joda.time.DateTime
 import org.scalactic.{ Bad, Good, Or }
@@ -12,9 +11,14 @@ object iTunesRssFeed {
 
   val author = "The Guardian"
 
-  def apply(resp: ItemResponse, adFree: Boolean = false): Node Or Failed = resp.tag match {
-    case Some(t) => toXml(t, resp.results.getOrElse(Nil).toList, adFree)
-    case None => Bad(Failed("tag not found", NotFound))
+  def apply(resps: Seq[ItemResponse], adFree: Boolean = false): Node Or Failed = {
+    val tag = resps.headOption.flatMap(_.tag)
+    tag match {
+      case Some(t) =>
+        val content = resps.flatMap(_.results.getOrElse(Nil)).toList
+        toXml(t, content, adFree)
+      case None => Bad(Failed("tag not found", NotFound))
+    }
   }
 
   def toXml(tag: Tag, contents: List[Content], adFree: Boolean): Node Or Failed = {

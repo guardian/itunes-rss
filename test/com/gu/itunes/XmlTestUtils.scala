@@ -1,7 +1,7 @@
 package com.gu.itunes
 
-import scala.xml.transform.{RewriteRule, RuleTransformer}
-import scala.xml.{Elem, Node, Text, XML}
+import scala.xml.transform.{ RewriteRule, RuleTransformer }
+import scala.xml.{ Elem, Node, Text, XML }
 
 object XmlTestUtils {
 
