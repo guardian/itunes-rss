@@ -55,7 +55,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     val client = new CustomCapiClient(apiKey)
 
     val maxItems = 300
-    val pageSize = 200
+    val pageSize = 100
 
     val query = ItemQuery(tagId)
       .showElements("audio")
@@ -63,12 +63,8 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       .showFields("webTitle,webPublicationDate,standfirst,trailText,internalComposerCode")
 
     def fetchItemsWithPagination(query: ItemQuery, page: Int = 1, resps: Seq[ItemResponse] = Seq.empty): Future[Seq[ItemResponse]] = {
-      // The last page fetch may need to be smaller to prevent returning too many results
-      val currentDepth = (page - 1) * pageSize
-      val pageSizeForThisCall = Seq(maxItems - currentDepth, pageSize).min
-
-      Logger.debug("Fetching page: " + page + " with page size: " + pageSizeForThisCall)
-      val withPagination = query.page(page).pageSize(pageSizeForThisCall)
+      Logger.debug("Fetching page: " + page + " with page size: " + pageSize)
+      val withPagination = query.page(page).pageSize(pageSize)
 
       client.getResponse(withPagination).flatMap { resp =>
         val responses = resps :+ resp
