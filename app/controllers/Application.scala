@@ -55,7 +55,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     val client = new CustomCapiClient(apiKey)
 
     val maxItems = 300
-    val pageSize = 200
+    val pageSize = 100
 
     val query = ItemQuery(tagId)
       .showElements("audio")
