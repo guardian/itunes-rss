@@ -5,18 +5,46 @@ import org.joda.time.DateTime
 import org.scalactic.{ Bad, Good, Or }
 import play.api.mvc.Results._
 
+import java.time.Instant
 import scala.xml.Node
 
 object iTunesRssFeed {
 
   val author = "The Guardian"
 
+/* Before 24th December 2021 the podcasts feed had 200 items, but with items
+ * 100-200 repeated so it looked like 300 items. Apple seems to have mostly
+ * ignored items >100 in the feed, presumably because of how they handle
+ * duplicates.
+ *
+ * On 24th December 2021 we fixed the bug so that the feed had 300 unique items.
+ *
+ * Apple downloads of any items that were brought back into the feed by this
+ * change increased massively.  They have since reduced but not to the level we
+ * would expect.  The appleExcessDownloadsWorkaround is intended to allow us to
+ * gradually increase the number of podcasts in the feed to 300, without having
+ * to bring old items back into the feed.
+ *
+ * We should be able to remove this workaround at some point in the future, when
+ * it is no longer filtering out any items.
+ */
+
+  private val feedChangeDate = Instant.parse("2021-12-24T10:30:00Z")
+
+  private def afterFeedChangeDate(capiDateTime: CapiDateTime) =
+    Instant.ofEpochMilli(capiDateTime.dateTime).isAfter(feedChangeDate)
+
+  private def appleExcessDownloadsWorkaround(items: List[Content]) = {
+    val (afterChange, beforeChange) = items.partition(_.webPublicationDate.exists(afterFeedChangeDate))
+    afterChange ++ beforeChange.take(100)
+  }
+
   def apply(resps: Seq[ItemResponse], adFree: Boolean = false): Node Or Failed = {
     val tag = resps.headOption.flatMap(_.tag)
     tag match {
       case Some(t) =>
         val content = resps.flatMap(_.results.getOrElse(Nil)).toList
-        toXml(t, content, adFree)
+        toXml(t, appleExcessDownloadsWorkaround(content), adFree)
       case None => Bad(Failed("tag not found", NotFound))
     }
   }
