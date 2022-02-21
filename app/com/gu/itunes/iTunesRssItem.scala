@@ -145,7 +145,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
           "sport/series/the-final-word-ashes-podcast")),
         AcastLaunchGroup(new DateTime(2022, 1, 31, 0, 0), Seq(
           "lifeandstyle/series/weekend")),
-          AcastLaunchGroup(new DateTime(2022, 2, 21, 0, 0), Seq(
+          AcastLaunchGroup(new DateTime(2022, 2, 18, 0, 0), Seq(
           "politics/series/politics-weekly-america"))
       )
 
