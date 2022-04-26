@@ -197,7 +197,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
     <item>
-      <title>{ title }</title>
+      <itunes:title>{ title }</itunes:title>
       <description>{ description }</description>
       <enclosure url={ url } length={ sizeInBytes } type={ mType }/>
       <pubDate>{ pubDate }</pubDate>
