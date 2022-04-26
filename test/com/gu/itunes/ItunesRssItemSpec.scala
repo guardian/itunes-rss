@@ -16,6 +16,9 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val expectedXml = RemoveWhitespace.transform(
       <item>
+       <title>
+          Inside the mind of renowned mathematician John Conway
+        </title>
         <itunes:title>
           Inside the mind of renowned mathematician John Conway
         </itunes:title>
@@ -38,6 +41,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </itunes:summary>
       </item>
       <item>
+       <title>Why are conspiracy theories so attractive? podcast</title>
        <itunes:title>Why are conspiracy theories so attractive? podcast</itunes:title>
         <description>
           Should we distrust our own ability to reason? Why is debunking conspiracy theories such a risky business? And is David Icke a force for good?
@@ -59,6 +63,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </itunes:summary>
       </item>
       <item>
+        <title>The story of our brains</title>
         <itunes:title>The story of our brains</itunes:title>
         <description>
           Neuroscientist David Eagleman discusses how neuroscience and technology are reshaping how we understand our brains
