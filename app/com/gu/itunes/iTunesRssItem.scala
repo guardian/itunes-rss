@@ -145,9 +145,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
           "sport/series/the-final-word-ashes-podcast")),
         AcastLaunchGroup(new DateTime(2022, 1, 31, 0, 0), Seq(
           "lifeandstyle/series/weekend")),
-          AcastLaunchGroup(new DateTime(2022, 2, 18, 0, 0), Seq(
-          "politics/series/politics-weekly-america"))
-      )
+        AcastLaunchGroup(new DateTime(2022, 2, 18, 0, 0), Seq(
+          "politics/series/politics-weekly-america")))
 
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
@@ -197,7 +196,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
     <item>
-      <title>{ title }</title>
+      <title>{ title.toUpperCase }</title>
       <itunes:title>{ title }</itunes:title>
       <description>{ description }</description>
       <enclosure url={ url } length={ sizeInBytes } type={ mType }/>
