@@ -148,7 +148,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         AcastLaunchGroup(new DateTime(2022, 2, 18, 0, 0), Seq(
           "politics/series/politics-weekly-america")),
         AcastLaunchGroup(new DateTime(2022, 6, 28, 0, 0), Seq(
-          "football/series/theguardianswomensfootballweekly"))
+          "football/series/theguardianswomensfootballweekly")),
+        AcastLaunchGroup(new DateTime(2022, 9, 6, 0, 0), Seq(
+          "society/series/canitellyouasecret"))
       )
 
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
