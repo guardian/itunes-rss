@@ -149,7 +149,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
           "politics/series/politics-weekly-america")),
         AcastLaunchGroup(new DateTime(2022, 6, 28, 0, 0), Seq(
           "football/series/theguardianswomensfootballweekly")),
-        AcastLaunchGroup(new DateTime(2022, 9, 7, 0, 0), Seq(
+        AcastLaunchGroup(new DateTime(2022, 9, 6, 0, 0), Seq(
           "society/series/canitellyouasecret"))
       )
 
