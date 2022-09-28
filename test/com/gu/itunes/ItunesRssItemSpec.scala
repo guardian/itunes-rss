@@ -16,7 +16,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val expectedXml = RemoveWhitespace.transform(
       <item>
-        <title>
+       <title>
           Inside the mind of renowned mathematician John Conway
         </title>
         <itunes:title>
@@ -41,8 +41,8 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
         </itunes:summary>
       </item>
       <item>
-        <title>Why are conspiracy theories so attractive? podcast</title>
-        <itunes:title>Why are conspiracy theories so attractive? podcast</itunes:title>
+       <title>Why are conspiracy theories so attractive? podcast</title>
+       <itunes:title>Why are conspiracy theories so attractive? podcast</itunes:title>
         <description>
           Should we distrust our own ability to reason? Why is debunking conspiracy theories such a risky business? And is David Icke a force for good?
         </description>
@@ -87,6 +87,7 @@ class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
 
     val result = trimmedPodcasts zip expectedXml
 
+    result foreach (x => x._1 \ "title" should be(x._2 \ "title"))
     result foreach (x => x._1 \ "description" should be(x._2 \ "description"))
     result foreach (x => x._1 \ "pubDate" should be(x._2 \ "pubDate"))
     result foreach (x => x._1 \ "guid" should be(x._2 \ "guid"))
