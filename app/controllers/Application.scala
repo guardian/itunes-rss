@@ -119,6 +119,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     }).recover {
       case ContentApiError(404, _, _) => NotFound
       case ContentApiError(403, _, _) => Forbidden
+      case ContentApiError(401, _, _) => Unauthorized
       // maybe this generic InternalServerError could be a better representation of the CAPI failure mode
       case ContentApiError(status, msg, errorResponse) =>
         Logger.warn(s"Unexpected response code from CAPI. tagId = $tagId, HTTP status = $status, error response = $errorResponse")
