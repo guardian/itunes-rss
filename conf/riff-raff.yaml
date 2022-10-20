@@ -6,7 +6,7 @@ deployments:
   podcasts-rss:
     type: autoscaling
     parameters:
-      bucket: content-api-dist
+      bucketSsmLookup: true
     dependencies:
       - podcasts-rss-ami-update
   podcasts-rss-ami-update:
