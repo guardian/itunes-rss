@@ -10,7 +10,7 @@ val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, RiffRaffArtifact, UniversalPlugin)
   .settings(
     libraryDependencies ++= Seq(
-      "org.jsoup" % "jsoup" % "1.10.3",
+      "org.jsoup" % "jsoup" % "1.15.4",
       "com.gu" %% "content-api-client" % "15.7",
       "com.squareup.okhttp3" % "okhttp" % "4.9.2",
       "org.scalactic" %% "scalactic" % "3.0.5",

@@ -12,7 +12,7 @@ object iTunesRssFeed {
 
   val author = "The Guardian"
 
-/* Before 24th December 2021 the podcasts feed had 200 items, but with items
+  /* Before 24th December 2021 the podcasts feed had 200 items, but with items
  * 100-200 repeated so it looked like 300 items. Apple seems to have mostly
  * ignored items >100 in the feed, presumably because of how they handle
  * duplicates.

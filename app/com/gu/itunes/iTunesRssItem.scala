@@ -157,9 +157,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
           "society/series/pop-culture-with-chante-joseph")),
         AcastLaunchGroup(new DateTime(2022, 10, 26, 0, 0), Seq(
           "news/series/ben-roberts-smith-v-the-media")),
-         AcastLaunchGroup(new DateTime(2022, 10, 28, 0, 0), Seq(
-          "news/series/australia-v-the-climate"))
-      )
+        AcastLaunchGroup(new DateTime(2022, 10, 28, 0, 0), Seq(
+          "news/series/australia-v-the-climate")))
 
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
