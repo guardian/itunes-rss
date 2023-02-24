@@ -11,11 +11,6 @@ val root = Project("podcasts-rss", file("."))
   .settings(
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.10.3",
-      // todo -
-      // jsoup is direct dependency and one which to look at, As:
-      // upgrading to highest is causing compilation error for whitelist
-      // upgrading to the recommneded-fix (by snyk) causing compile error same for <br> in filteringspec.scala,
-      // upgrading to even 1.11.1 is causing compile error same as above
       "com.gu" %% "content-api-client" % "15.7",
       "com.squareup.okhttp3" % "okhttp" % "4.9.2",
       "org.scalactic" %% "scalactic" % "3.0.5",
