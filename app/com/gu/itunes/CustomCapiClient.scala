@@ -7,12 +7,12 @@ import com.gu.contentapi.client.model.HttpResponse
 import java.io.IOException
 
 import okhttp3.{ Call, Callback, ConnectionPool, OkHttpClient, Request, Response }
-import play.api.Logger
-
+import org.slf4j.LoggerFactory
 import scala.concurrent.duration._
 import scala.concurrent.{ ExecutionContext, Future, Promise }
 
 class CustomCapiClient(val apiKey: String) extends ContentApiClient {
+  private val logger = LoggerFactory.getLogger(getClass)
 
   // Use the same HTTP client for the whole lifecycle of the Play app,
   // rather than creating a new one per request
@@ -31,7 +31,7 @@ class CustomCapiClient(val apiKey: String) extends ContentApiClient {
 
     response.future map { result =>
       val end = System.nanoTime()
-      Logger.info(s"Received CAPI response ${result.statusCode} in ${Duration.fromNanos(end - start).toMillis} ms")
+      logger.info(s"Received CAPI response ${result.statusCode} in ${Duration.fromNanos(end - start).toMillis} ms")
       result
     }
   }
