@@ -10,9 +10,9 @@ val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, RiffRaffArtifact, UniversalPlugin)
   .settings(
     libraryDependencies ++= Seq(
-      "org.jsoup" % "jsoup" % "1.8.1",
+      "org.jsoup" % "jsoup" % "1.15.4",
       "com.gu" %% "content-api-client" % "15.7",
-      "com.squareup.okhttp3" % "okhttp" % "3.11.0",
+      "com.squareup.okhttp3" % "okhttp" % "4.9.2",
       "org.scalactic" %% "scalactic" % "3.0.5",
       "org.scalatest" %% "scalatest" % "3.0.5" % "test",
       "com.gu" %% "content-api-models-json" % "15.5" % "test"
@@ -23,3 +23,19 @@ val root = Project("podcasts-rss", file("."))
     riffRaffUploadArtifactBucket := Some("riffraff-artifact"),
     riffRaffUploadManifestBucket := Some("riffraff-builds")
   )
+
+dependencyOverrides ++=Seq(
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.12.6.1",
+  "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % "2.9.8",
+
+  "com.typesafe.play" % "play-akka-http-server_2.12" % "2.7.0",
+
+  "com.typesafe.akka" % "akka-actor_2.12" % "2.5.31",
+  "com.typesafe.akka" % "akka-slf4j_2.12" % "2.5.31",
+  "com.typesafe.akka" % "akka-stream_2.12" % "2.5.31",
+  "com.typesafe.akka" % "akka-http-core_2.12" % "10.1.15",
+
+  "org.apache.tomcat.embed" % "tomcat-embed-core" % "8.5.85",
+  "org.apache.tomcat" % "tomcat-annotations-api" % "8.5.85",
+  "org.apache.thrift" % "libthrift" % "0.14.0",
+)

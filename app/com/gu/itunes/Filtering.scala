@@ -1,11 +1,11 @@
 package com.gu.itunes
 
 import org.jsoup.Jsoup
-import org.jsoup.safety.Whitelist
+import org.jsoup.safety.Safelist
 
 object Filtering {
 
-  val whitelist = Whitelist.simpleText().addTags("a")
+  val whitelist = Safelist.simpleText().addTags("a")
 
   def standfirst(input: String): String = filter(input)
 

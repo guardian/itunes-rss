@@ -2,10 +2,10 @@ package com.gu.itunes
 
 import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
-
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.{ DateTime, DateTimeZone, Duration }
 import org.scalactic.{ Bad, Good }
+import org.slf4j.LoggerFactory
 import play.api.mvc.Results._
 import play.api.mvc.{ BaseController, ControllerComponents, Result }
 import play.api.{ Configuration, Logger }
@@ -19,6 +19,7 @@ case class Failed(message: String, status: Status) {
 }
 
 class Application(val controllerComponents: ControllerComponents, val config: Configuration) extends BaseController {
+  private val logger = LoggerFactory.getLogger(getClass)
 
   val apiKey = config.getOptional[String]("apiKey")
     .getOrElse(sys.error("You must provide a CAPI key, either in application.conf or as the API_KEY environment variable"))
@@ -32,7 +33,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   def itunesRss(tagId: String, userApiKey: Option[String]) = Action.async { implicit request =>
     val startTime = DateTime.now
     val userAgent = request.headers.get("user-agent").getOrElse("")
-    Logger.info(s"Received request for tag '$tagId' from user agent '$userAgent'")
+    logger.info(s"Received request for tag '$tagId' from user agent '$userAgent'")
 
     val redirect = Redirection.redirect(tagId)
     val eventualResult = redirect match {
@@ -42,11 +43,11 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     }
 
     eventualResult.map { result =>
-      Logger.info(s"Returning response status ${result.header.status} for tag '${tagId} after ${durationSince(startTime)}")
+      logger.info(s"Returning response status ${result.header.status} for tag '${tagId} after ${durationSince(startTime)}")
       result
     }.recover {
       case t: Throwable =>
-        Logger.warn(s"Failed to complete for tag '$tagId after ${durationSince(startTime)}", t)
+        logger.warn(s"Failed to complete for tag '$tagId after ${durationSince(startTime)}", t)
         InternalServerError("Could not complete request")
     }
   }
@@ -63,7 +64,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       .showFields("webTitle,webPublicationDate,standfirst,trailText,internalComposerCode")
 
     def fetchItemsWithPagination(query: ItemQuery, page: Int = 1, resps: Seq[ItemResponse] = Seq.empty): Future[Seq[ItemResponse]] = {
-      Logger.debug("Fetching page: " + page + " with page size: " + pageSize)
+      logger.debug("Fetching page: " + page + " with page size: " + pageSize)
       val withPagination = query.page(page).pageSize(pageSize)
 
       client.getResponse(withPagination).flatMap { resp =>
@@ -76,7 +77,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
           fetchItemsWithPagination(query, page + 1, responses)
 
         } else {
-          Logger.info("Finished fetching " + responses.map(_.results.map(_.size).getOrElse(0)).sum + " items after paginating to page " + page)
+          logger.info("Finished fetching " + responses.map(_.results.map(_.size).getOrElse(0)).sum + " items after paginating to page " + page)
           Future.successful(responses)
         }
       }
@@ -108,7 +109,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
               "Expires" -> expiresTime.toString(HTTPDateFormat),
               "Date" -> now.toString(HTTPDateFormat))
           case Bad(failed: Failed) =>
-            Logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
+            logger.warn(s"Failed to render XML. tagId = $tagId, ${failed.toString}")
             failed.status
         }
 
@@ -122,7 +123,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       case ContentApiError(401, _, _) => Unauthorized
       // maybe this generic InternalServerError could be a better representation of the CAPI failure mode
       case ContentApiError(status, msg, errorResponse) =>
-        Logger.warn(s"Unexpected response code from CAPI. tagId = $tagId, HTTP status = $status, error response = $errorResponse")
+        logger.warn(s"Unexpected response code from CAPI. tagId = $tagId, HTTP status = $status, error response = $errorResponse")
         InternalServerError
     }
   }

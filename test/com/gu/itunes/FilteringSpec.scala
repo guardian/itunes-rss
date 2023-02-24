@@ -24,7 +24,7 @@ class FilteringSpec extends FlatSpec with Matchers {
 
     val filtered = Filtering.description(source)
 
-    val expected = """The Guardian’s  Jessica Valenti brings you interviews, advice and real life stories from the front lines of feminism. She talks about everything from periods or lack there of, to cyberbullying, objectification, crafting an equal and egalitarian relationship, abortions and sex education. This is the place for women and men to share their questions and thoughts about everyday issues facing women and feminism. Want to ask a question? Leave us a voicemail:  917-900-4577"""
+    val expected = """The Guardian’s Jessica Valenti brings you interviews, advice and real life stories from the front lines of feminism. She talks about everything from periods or lack there of, to cyberbullying, objectification, crafting an equal and egalitarian relationship, abortions and sex education. This is the place for women and men to share their questions and thoughts about everyday issues facing women and feminism. Want to ask a question? Leave us a voicemail: 917-900-4577"""
 
     filtered should be(expected)
 
