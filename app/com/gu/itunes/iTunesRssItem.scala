@@ -158,7 +158,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         AcastLaunchGroup(new DateTime(2022, 10, 26, 0, 0), Seq(
           "news/series/ben-roberts-smith-v-the-media")),
         AcastLaunchGroup(new DateTime(2022, 10, 28, 0, 0), Seq(
-          "news/series/australia-v-the-climate")))
+          "news/series/australia-v-the-climate")),
+         AcastLaunchGroup(new DateTime(2023, 03, 28, 0, 0), Seq(
+          "news/series/cotton-capital-podcast")))
 
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
