@@ -211,7 +211,7 @@ Resources:
       SecurityGroups:
       - Ref: ApplicationSecurityGroup
       - Ref: WazuhSecurityGroup
-      InstanceType: t3.small
+      InstanceType: t4g.small
       IamInstanceProfile:
         Ref: InstanceProfile
       UserData:
