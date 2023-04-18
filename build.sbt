@@ -2,6 +2,7 @@ import com.typesafe.sbt.packager.archetypes.systemloader.ServerLoader.Systemd
 
 organization  := "com.gu"
 description   := "podcasts RSS feed"
+
 scalaVersion  := "2.12.7"
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 routesGenerator := InjectedRoutesGenerator
@@ -18,18 +19,14 @@ val root = Project("podcasts-rss", file("."))
       "com.gu" %% "content-api-models-json" % "15.5" % "test"
     ),
     maintainer := "Guardian Content Platforms <content-platforms.dev@theguardian.com>",
+    version := "1.0",
+    Debian / serverLoading := Some (Systemd),
+    daemonUser := "content-api",
+    daemonGroup := "content-api",
+    linuxPackageMappings += packageTemplateMapping(s"/var/run/${name.value}")() withUser (daemonUser.value) withGroup (daemonUser.value),
+    Test / testOptions += Tests.Argument("junitxml", "junit.outdir", sys.env.getOrElse("SBT_JUNIT_OUTPUT","junit-tests"))
+)
 
-      Debian / serverLoading := Some (Systemd),
-      daemonUser := "content-api",
-      daemonGroup := "content-api",
-      linuxPackageMappings += packageTemplateMapping(s"/var/run/${name.value}")() withUser (daemonUser.value) withGroup (daemonUser.value)
-
-//    riffRaffPackageName := "podcasts-rss",
-//    riffRaffManifestProjectName := s"Off-platform::${name.value}",
-//    riffRaffPackageType := (packageZipTarball in Universal).value,
-//    riffRaffUploadArtifactBucket := Some("riffraff-artifact"),
-//    riffRaffUploadManifestBucket := Some("riffraff-builds")
-  )
 Universal / packageName := normalizedName.value
 
 dependencyOverrides ++=Seq(
