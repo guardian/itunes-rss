@@ -1,12 +1,15 @@
 import type {GuStackProps} from "@guardian/cdk/lib/constructs/core";
 import {GuParameter, GuStack} from "@guardian/cdk/lib/constructs/core";
 import type {App} from "aws-cdk-lib";
-import {GuEc2App, GuPlayApp} from "@guardian/cdk";
+import {aws_ssm, Duration} from "aws-cdk-lib";
+import {GuPlayApp} from "@guardian/cdk";
 import {AccessScope} from "@guardian/cdk/lib/constants";
 import {InstanceClass, InstanceSize, InstanceType, Vpc} from "aws-cdk-lib/aws-ec2";
 import {policies} from "./policies";
-import {aws_ssm} from "aws-cdk-lib";
 import {GuVpc} from "@guardian/cdk/lib/constructs/ec2";
+import {AutoScalingAction} from "aws-cdk-lib/aws-cloudwatch-actions";
+import {AdjustmentType, StepScalingAction} from "aws-cdk-lib/aws-autoscaling";
+import {Alarm, ComparisonOperator, Metric} from "aws-cdk-lib/aws-cloudwatch";
 
 export class PodcastsRss extends GuStack {
   constructor(scope: App, id: string, props: GuStackProps) {
@@ -31,8 +34,7 @@ export class PodcastsRss extends GuStack {
 
     const hostedZone = aws_ssm.StringParameter.valueForStringParameter(this, `/account/services/content-aws.guardianapis/${this.stage}/hostedzoneid`);
 
-
-    new GuPlayApp(this, {
+    const app = new GuPlayApp(this, {
       access: {
         scope: AccessScope.PUBLIC,
       },
@@ -60,7 +62,7 @@ export class PodcastsRss extends GuStack {
       },
       scaling: {
         minimumInstances: 2,
-        maximumInstances: 4,
+        maximumInstances: 20,
       },
       userData: {
         distributable: {
@@ -69,7 +71,49 @@ export class PodcastsRss extends GuStack {
         }
       },
       vpc,
-    })
+    });
+
+    const cpuHighAlarm = new Alarm(this, "HighCPU", {
+      actionsEnabled: true,
+      alarmDescription: "CPU utilization alarm for autoscaling",
+      comparisonOperator: ComparisonOperator.GREATER_THAN_THRESHOLD,
+      datapointsToAlarm: 10,
+      evaluationPeriods: 1,
+      metric: new Metric({
+        dimensionsMap: {
+          AutoScalingGroupName: app.autoScalingGroup.autoScalingGroupName,
+        },
+        metricName: "CPUUtilization",
+        namespace: "AWS/EC2",
+        period: Duration.minutes(1),
+        statistic: "Average",
+      }),
+      threshold: 10,
+      treatMissingData: undefined
+    });
+
+    const scaleUpStep = new StepScalingAction(this, "ScaleUp", {
+      adjustmentType: AdjustmentType.PERCENT_CHANGE_IN_CAPACITY,
+      autoScalingGroup: app.autoScalingGroup,
+      cooldown: Duration.minutes(5),
+    });
+    scaleUpStep.addAdjustment({
+      lowerBound: 0,
+      adjustment: 100
+    });
+    cpuHighAlarm.addAlarmAction(new AutoScalingAction(scaleUpStep));
+
+    const scaleDownStep = new StepScalingAction(this, "ScaleDown", {
+      adjustmentType: AdjustmentType.CHANGE_IN_CAPACITY,
+      autoScalingGroup: app.autoScalingGroup,
+      cooldown: Duration.minutes(5),
+    });
+    scaleDownStep.addAdjustment({
+      lowerBound: 0,
+      adjustment: -1,
+    });
+    cpuHighAlarm.addOkAction(new AutoScalingAction(scaleDownStep));
+
   }
 
   getAccountPath(elementName: string) {
