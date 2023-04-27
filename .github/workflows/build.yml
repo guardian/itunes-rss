@@ -1,0 +1,75 @@
+name: Build and upload
+
+on:
+  push:
+    branches: [ "*" ]
+  workflow_dispatch:
+
+jobs:
+  itunes-rss:
+    runs-on: ubuntu-latest
+
+    # The first two permissions are needed to interact with GitHub's OIDC Token endpoint.
+    # The second set of three permissions are needed to write test results back to GH
+    permissions:
+      id-token: write
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: cdk/package-lock.json
+
+      - run: npm ci
+        name: Prepare for CDK infrastructure build
+        working-directory: cdk
+      - run: npm test
+        name: Test CDK infrastructure integrity
+        working-directory: cdk
+      - run: npm run synth
+        name: Build infrastructure definition from CDK
+        working-directory: cdk
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version: 11
+          cache: sbt
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: eu-west-1
+          role-to-assume: ${{ secrets.GU_RIFF_RAFF_ROLE_ARN }}
+          role-session-name: content-api-podcasts-rss-build
+
+      - name: Build and test
+        env:
+          SBT_JUNIT_OUTPUT: ./junit-tests
+          JAVA_OPTS: -Dsbt.log.noformat=true
+        run: |
+          sbt 'test;debian:packageBin'
+      - uses: guardian/actions-riff-raff@v2
+        with:
+          configPath: conf/riff-raff.yaml
+          projectName: Off-platform::podcasts-rss
+          buildNumberOffset: 374
+          contentDirectories: |
+            cloudformation:
+              - cdk/cdk.out/PodcastsRss-PROD.template.json
+              - cdk/cdk.out/PodcastsRss-CODE.template.json
+            podcasts-rss:
+              - target/podcasts-rss_1.0_all.deb
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()  #runs even if there is a test failure
+        with:
+          files: junit-tests/*.xml
