@@ -1,9 +1,12 @@
 name: Build and upload
 
-on: [push]
+on:
+  push:
+    branches: [ "*" ]
+  workflow_dispatch:
 
 jobs:
-  apple-news:
+  itunes-rss:
     runs-on: ubuntu-latest
 
     # The first two permissions are needed to interact with GitHub's OIDC Token endpoint.
