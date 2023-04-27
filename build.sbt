@@ -24,7 +24,7 @@ val root = Project("podcasts-rss", file("."))
     daemonUser := "content-api",
     daemonGroup := "content-api",
     linuxPackageMappings += packageTemplateMapping(s"/var/run/${name.value}")() withUser (daemonUser.value) withGroup (daemonUser.value),
-    Test / testOptions += Tests.Argument("junitxml", "junit.outdir", sys.env.getOrElse("SBT_JUNIT_OUTPUT","junit-tests"))
+    Test / testOptions += Tests.Argument(TestFrameworks.ScalaTest, "-u", sys.env.getOrElse("SBT_JUNIT_OUTPUT", "junit"))
 )
 
 Universal / packageName := normalizedName.value
