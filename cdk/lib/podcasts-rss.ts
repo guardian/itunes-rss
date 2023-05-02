@@ -68,7 +68,7 @@ export class PodcastsRss extends GuStack {
       userData: {
         distributable: {
           fileName: "podcasts-rss_1.0_all.deb",
-          executionStatement: "dpkg -i podcasts-rss_1.0_all.deb"
+          executionStatement: "dpkg -i /podcasts-rss/podcasts-rss_1.0_all.deb"
         }
       },
       vpc,
