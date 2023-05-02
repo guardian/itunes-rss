@@ -614,6 +614,26 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
       },
       "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
     },
+    "LoadBalancerPodcastsrssHttpToHttps563CC320": {
+      "Properties": {
+        "DefaultActions": [
+          {
+            "RedirectConfig": {
+              "Port": "443",
+              "Protocol": "https",
+              "StatusCode": "HTTP_301",
+            },
+            "Type": "redirect",
+          },
+        ],
+        "LoadBalancerArn": {
+          "Ref": "LoadBalancerPodcastsrssBC7CF35D",
+        },
+        "Port": 80,
+        "Protocol": "HTTP",
+      },
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+    },
     "LoadBalancerPodcastsrssSecurityGroup4AAD19F5": {
       "Properties": {
         "GroupDescription": "Automatically created Security Group for ELB PodcastsRssLoadBalancerPodcastsrss425E3E81",
@@ -624,6 +644,13 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
             "FromPort": 443,
             "IpProtocol": "tcp",
             "ToPort": 443,
+          },
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow from anyone on port 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80,
           },
         ],
         "Tags": [

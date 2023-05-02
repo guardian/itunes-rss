@@ -10,6 +10,7 @@ import {GuVpc} from "@guardian/cdk/lib/constructs/ec2";
 import {AutoScalingAction} from "aws-cdk-lib/aws-cloudwatch-actions";
 import {AdjustmentType, StepScalingAction} from "aws-cdk-lib/aws-autoscaling";
 import {Alarm, ComparisonOperator, Metric} from "aws-cdk-lib/aws-cloudwatch";
+import {ApplicationProtocol, ListenerAction} from "aws-cdk-lib/aws-elasticloadbalancingv2";
 
 export class PodcastsRss extends GuStack {
   constructor(scope: App, id: string, props: GuStackProps) {
@@ -71,6 +72,16 @@ export class PodcastsRss extends GuStack {
         }
       },
       vpc,
+    });
+
+    app.loadBalancer.addListener("HttpToHttps", {
+      protocol: ApplicationProtocol.HTTP,
+      port: 80,
+      defaultAction: ListenerAction.redirect({
+        protocol: "https",
+        port: "443",
+        permanent: true,
+      })
     });
 
     const cpuHighAlarm = new Alarm(this, "HighCPU", {
