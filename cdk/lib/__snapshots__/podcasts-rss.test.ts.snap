@@ -620,7 +620,7 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
           {
             "RedirectConfig": {
               "Port": "443",
-              "Protocol": "https",
+              "Protocol": "HTTPS",
               "StatusCode": "HTTP_301",
             },
             "Type": "redirect",

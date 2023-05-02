@@ -78,7 +78,7 @@ export class PodcastsRss extends GuStack {
       protocol: ApplicationProtocol.HTTP,
       port: 80,
       defaultAction: ListenerAction.redirect({
-        protocol: "https",
+        protocol: "HTTPS",
         port: "443",
         permanent: true,
       })
