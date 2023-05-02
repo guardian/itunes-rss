@@ -77,8 +77,8 @@ export class PodcastsRss extends GuStack {
       actionsEnabled: true,
       alarmDescription: "CPU utilization alarm for autoscaling",
       comparisonOperator: ComparisonOperator.GREATER_THAN_THRESHOLD,
-      datapointsToAlarm: 10,
-      evaluationPeriods: 1,
+      datapointsToAlarm: 5,
+      evaluationPeriods: 5,
       metric: new Metric({
         dimensionsMap: {
           AutoScalingGroupName: app.autoScalingGroup.autoScalingGroupName,
@@ -88,7 +88,7 @@ export class PodcastsRss extends GuStack {
         period: Duration.minutes(1),
         statistic: "Average",
       }),
-      threshold: 10,
+      threshold: 50,
       treatMissingData: undefined
     });
 

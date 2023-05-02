@@ -466,7 +466,7 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
         ],
         "AlarmDescription": "CPU utilization alarm for autoscaling",
         "ComparisonOperator": "GreaterThanThreshold",
-        "DatapointsToAlarm": 10,
+        "DatapointsToAlarm": 5,
         "Dimensions": [
           {
             "Name": "AutoScalingGroupName",
@@ -475,7 +475,7 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
             },
           },
         ],
-        "EvaluationPeriods": 1,
+        "EvaluationPeriods": 5,
         "MetricName": "CPUUtilization",
         "Namespace": "AWS/EC2",
         "OKActions": [
@@ -485,7 +485,7 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
         ],
         "Period": 60,
         "Statistic": "Average",
-        "Threshold": 10,
+        "Threshold": 50,
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
