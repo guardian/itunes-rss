@@ -9,6 +9,8 @@ Renders the audio elements as an iTunes formatted RSS feed.
 
 Requires a configured CAPI API key to make it's CAPI calls.
 
+When running locally, this API key is retrieved from the environment variables.  When running in production,
+it's obtained from Secrets Manager with the key `/{stage}/{stack}/{app}/capiKey`.
 
 ## Acast ads and membership callouts
 
@@ -16,6 +18,10 @@ Depending on the tag, Acast ad urls and membership calls to action may be insert
 
 
 ## To run locally
+
+First, you'll need Janus credentials for your account. Make sure that you set the AWS_PROFILE environment variable
+to point to the correct profile (i.e. capi).
+This is used to obtain the signing secret for Play configuration.
 
 You need to export an env variable `API_KEY`:
 

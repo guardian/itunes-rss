@@ -30,6 +30,18 @@ export const policies = (stack:GuStack) => new GuPolicy(stack, "Policies", {
                     "autoscaling:DescribeAutoScalingInstances"
                 ],
                 resources: ["*"]
+            }),
+            //Allow rotating secret access
+            new PolicyStatement({
+                effect: Effect.ALLOW,
+                actions: ["ssm:GetParameters"],
+                resources: [`arn:aws:ssm:${stack.region}:${stack.account}:parameter/ANY/content-api/podcasts-rss/play-secret`]
+            }),
+            //Allow API key secret access
+            new PolicyStatement({
+                effect: Effect.ALLOW,
+                actions: ["secretsmanager:GetSecretValue"],
+                resources: [`arn:aws:secretsmanager:${stack.region}:${stack.account}:secret:/${stack.stage}/${stack.stack}/${stack.app ?? "podcasts-rss"}/capiKey`]
             })
         ]
     });

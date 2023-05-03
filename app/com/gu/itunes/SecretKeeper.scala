@@ -13,14 +13,14 @@ object SecretKeeper {
   private val logger = LoggerFactory.getLogger(getClass)
   lazy val initialStage = Option(System.getProperty("stage"))
 
-  private lazy val credentialsProviderChain = AwsCredentialsProviderChain.builder().credentialsProviders(
+  lazy val credentialsProviderChain = AwsCredentialsProviderChain.builder().credentialsProviders(
     EnvironmentVariableCredentialsProvider.create(),
     SystemPropertyCredentialsProvider.create(),
     ProfileCredentialsProvider.create("capi"),
     ProfileCredentialsProvider.create(),
     InstanceProfileCredentialsProvider.create()).build()
 
-  private def getIdentity() = if (initialStage.contains("DEV") || initialStage.contains("LOCAL")) {
+  def getIdentity() = if (initialStage.contains("DEV") || initialStage.contains("LOCAL")) {
     Success(DevIdentity("porter"))
   } else {
     AppIdentity.whoAmI("podcasts-rss", () => credentialsProviderChain.resolveCredentials())
