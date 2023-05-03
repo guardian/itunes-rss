@@ -1,13 +1,14 @@
 package com.gu.itunes
 
-import com.gu.{ AppIdentity, AwsIdentity, DevIdentity }
+import com.gu.{AppIdentity, AwsIdentity, DevIdentity}
 import org.slf4j.LoggerFactory
 import play.api.Configuration
-import software.amazon.awssdk.auth.credentials.{ AwsCredentialsProviderChain, EnvironmentVariableCredentialsProvider, InstanceProfileCredentialsProvider, ProfileCredentialsProvider, SystemPropertyCredentialsProvider }
+import software.amazon.awssdk.auth.credentials.{AwsCredentialsProviderChain, EnvironmentVariableCredentialsProvider, InstanceProfileCredentialsProvider, ProfileCredentialsProvider, SystemPropertyCredentialsProvider}
+import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.secretsmanager.SecretsManagerClient
 import software.amazon.awssdk.services.secretsmanager.model.GetSecretValueRequest
 
-import scala.util.{ Failure, Success, Try }
+import scala.util.{Failure, Success, Try}
 
 object SecretKeeper {
   private val logger = LoggerFactory.getLogger(getClass)
@@ -27,12 +28,14 @@ object SecretKeeper {
   }
 
   private def loadKeyFromSecretsManagerImp(): Try[String] = {
-    //we'll just use a basic, blocking client here as it's only used in startup
-    val client = SecretsManagerClient.builder().credentialsProvider(credentialsProviderChain).build()
+
     for {
       identity <- getIdentity()
       result <- identity match {
         case AwsIdentity(app, stack, stage, region) =>
+          //we'll just use a basic, blocking client here as it's only used in startup
+          val client = SecretsManagerClient.builder().credentialsProvider(credentialsProviderChain).region(Region.of(region)).build()
+
           val ssmKey = s"/$stage/$stack/$app/capiKey"
           logger.info(s"Loading API key from secrets manager at $ssmKey")
           Try { client.getSecretValue(GetSecretValueRequest.builder().secretId(ssmKey).build()) }
