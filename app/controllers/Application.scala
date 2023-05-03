@@ -21,8 +21,8 @@ case class Failed(message: String, status: Status) {
 class Application(val controllerComponents: ControllerComponents, val config: Configuration) extends BaseController {
   private val logger = LoggerFactory.getLogger(getClass)
 
-  val apiKey = config.getOptional[String]("apiKey")
-    .getOrElse(sys.error("You must provide a CAPI key, either in application.conf or as the API_KEY environment variable"))
+  val apiKey = SecretKeeper.getApiKey(config).
+    getOrElse(sys.error("You must provide a CAPI key, either in secrets manager, application.conf or as the API_KEY environment variable"))
 
   val maxAge = 300
   val staleWhileRevalidateSeconds = 600

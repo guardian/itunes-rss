@@ -14,9 +14,15 @@ val root = Project("podcasts-rss", file("."))
       "org.jsoup" % "jsoup" % "1.15.4",
       "com.gu" %% "content-api-client" % "15.7",
       "com.squareup.okhttp3" % "okhttp" % "4.9.2",
+      "software.amazon.awssdk" % "secretsmanager" % "2.20.57",
       "org.scalactic" %% "scalactic" % "3.0.5",
       "org.scalatest" %% "scalatest" % "3.0.5" % "test",
-      "com.gu" %% "content-api-models-json" % "15.5" % "test"
+      "net.logstash.logback" % "logstash-logback-encoder" % "7.3",
+      "com.gu" %% "content-api-models-json" % "15.5" % "test",
+      "com.gu" %% "simple-configuration-core" % "1.5.7",
+      //AWS SDK v2 clients
+      "software.amazon.awssdk" % "url-connection-client" % "2.20.26", //only used at startup. For operations we use akka http client
+
     ),
     maintainer := "Guardian Content Platforms <content-platforms.dev@theguardian.com>",
     version := "1.0",
