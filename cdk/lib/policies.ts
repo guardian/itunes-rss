@@ -41,7 +41,7 @@ export const policies = (stack:GuStack) => new GuPolicy(stack, "Policies", {
             new PolicyStatement({
                 effect: Effect.ALLOW,
                 actions: ["secretsmanager:GetSecretValue"],
-                resources: [`arn:aws:secretsmanager:${stack.region}:${stack.account}:secret:/${stack.stage}/${stack.stack}/${stack.app ?? "podcasts-rss"}/capiKey`]
+                resources: [`arn:aws:secretsmanager:/${stack.region}:${stack.account}:secret:/${stack.stage}/${stack.stack}/${stack.app ?? "podcasts-rss"}/*`]
             })
         ]
     });

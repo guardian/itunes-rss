@@ -837,7 +837,7 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
                 "Fn::Join": [
                   "",
                   [
-                    "arn:aws:secretsmanager:",
+                    "arn:aws:secretsmanager:/",
                     {
                       "Ref": "AWS::Region",
                     },
@@ -845,7 +845,7 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
                     {
                       "Ref": "AWS::AccountId",
                     },
-                    ":secret:/TEST/content-api/podcasts-rss/capiKey",
+                    ":secret:/TEST/content-api/podcasts-rss/*",
                   ],
                 ],
               },
