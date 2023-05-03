@@ -618,12 +618,10 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
       "Properties": {
         "DefaultActions": [
           {
-            "RedirectConfig": {
-              "Port": "443",
-              "Protocol": "HTTPS",
-              "StatusCode": "HTTP_301",
+            "TargetGroupArn": {
+              "Ref": "TargetGroupPodcastsrssAFF7CE9E",
             },
-            "Type": "redirect",
+            "Type": "forward",
           },
         ],
         "LoadBalancerArn": {
@@ -837,7 +835,7 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
                 "Fn::Join": [
                   "",
                   [
-                    "arn:aws:secretsmanager:/",
+                    "arn:aws:secretsmanager:",
                     {
                       "Ref": "AWS::Region",
                     },

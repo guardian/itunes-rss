@@ -77,11 +77,7 @@ export class PodcastsRss extends GuStack {
     app.loadBalancer.addListener("HttpToHttps", {
       protocol: ApplicationProtocol.HTTP,
       port: 80,
-      defaultAction: ListenerAction.redirect({
-        protocol: "HTTPS",
-        port: "443",
-        permanent: true,
-      })
+      defaultAction: ListenerAction.forward([app.targetGroup])
     });
 
     const cpuHighAlarm = new Alarm(this, "HighCPU", {

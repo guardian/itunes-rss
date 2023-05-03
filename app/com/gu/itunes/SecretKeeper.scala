@@ -22,7 +22,7 @@ object SecretKeeper {
     InstanceProfileCredentialsProvider.create()).build()
 
   def getIdentity() = if (initialStage.contains("DEV") || initialStage.contains("LOCAL")) {
-    Success(DevIdentity("porter"))
+    Success(DevIdentity("podcasts-rss"))
   } else {
     AppIdentity.whoAmI("podcasts-rss", () => credentialsProviderChain.resolveCredentials())
   }
