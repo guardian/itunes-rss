@@ -17,12 +17,16 @@
     </encoder>
   </appender>
 
+  <appender name="json-encoded" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+  </appender>
+
   <logger name="play" level="INFO" />
   <logger name="application" level="DEBUG" />
+  <logger name="com.gu.itunes" level="DEBUG" />
 
-  <root level="ERROR">
-    <appender-ref ref="console"/>
-    <appender-ref ref="file"/>
+  <root level="INFO">
+    <appender-ref ref="json-encoded"/>
   </root>
 
 </configuration>

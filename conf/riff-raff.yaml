@@ -8,13 +8,17 @@ deployments:
     parameters:
       bucketSsmLookup: true
     dependencies:
-      - podcasts-rss-ami-update
-  podcasts-rss-ami-update:
-    type: ami-cloudformation-parameter
+      - cloudformation
+  cloudformation:
+    type: cloud-formation
     app: podcasts-rss
     parameters:
+      templateStagePaths:
+        CODE: PodcastsRss-CODE.template.json
+        PROD: PodcastsRss-PROD.template.json
+      amiParameter: AMIPodcastsrss
+      amiEncrypted: true
       amiTags:
         Recipe: ubuntu-focal-capi-arm-jdk11
         AmigoStage: PROD
-      amiEncrypted: true
 
