@@ -486,6 +486,7 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
         "Period": 60,
         "Statistic": "Average",
         "Threshold": 50,
+        "TreatMissingData": "missing",
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
