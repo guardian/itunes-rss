@@ -9,7 +9,7 @@ import {policies} from "./policies";
 import {GuVpc} from "@guardian/cdk/lib/constructs/ec2";
 import {AutoScalingAction} from "aws-cdk-lib/aws-cloudwatch-actions";
 import {AdjustmentType, StepScalingAction} from "aws-cdk-lib/aws-autoscaling";
-import {Alarm, ComparisonOperator, Metric} from "aws-cdk-lib/aws-cloudwatch";
+import {Alarm, ComparisonOperator, Metric, TreatMissingData} from "aws-cdk-lib/aws-cloudwatch";
 import {ApplicationProtocol, ListenerAction} from "aws-cdk-lib/aws-elasticloadbalancingv2";
 
 export class PodcastsRss extends GuStack {
@@ -96,7 +96,7 @@ export class PodcastsRss extends GuStack {
         statistic: "Average",
       }),
       threshold: 50,
-      treatMissingData: undefined
+      treatMissingData: TreatMissingData.MISSING,
     });
 
     const scaleUpStep = new StepScalingAction(this, "ScaleUp", {
