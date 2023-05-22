@@ -146,10 +146,10 @@ exports[`The PodcastsRss stack matches the snapshot 1`] = `
     "CertificatePodcastsrssD8DCEF71": {
       "DeletionPolicy": "Retain",
       "Properties": {
-        "DomainName": "itunes-feed.content-aws.guardianapis.com",
+        "DomainName": "podcast-feed.content-aws.guardianapis.com",
         "DomainValidationOptions": [
           {
-            "DomainName": "itunes-feed.content-aws.guardianapis.com",
+            "DomainName": "podcast-feed.content-aws.guardianapis.com",
             "HostedZoneId": {
               "Ref": "SsmParameterValueaccountservicescontentawsguardianapisTESThostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter",
             },
