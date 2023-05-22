@@ -44,7 +44,7 @@ export class PodcastsRss extends GuStack {
         enabled: true,
       },
       certificateProps: {
-        domainName: this.stage==="CODE" ? "itunes-feed.content.code.dev-guardianapis.com" : "itunes-feed.content-aws.guardianapis.com",
+        domainName: this.stage==="CODE" ? "podcast-feed.content.code.dev-guardianapis.com" : "podcast-feed.content-aws.guardianapis.com",
         hostedZoneId: hostedZone,
       },
       instanceType: InstanceType.of(InstanceClass.T4G, InstanceSize.SMALL),
