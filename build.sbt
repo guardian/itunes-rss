@@ -3,7 +3,7 @@ import com.typesafe.sbt.packager.archetypes.systemloader.ServerLoader.Systemd
 organization  := "com.gu"
 description   := "podcasts RSS feed"
 
-scalaVersion  := "2.12.7"
+scalaVersion  := "2.13.10"
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 routesGenerator := InjectedRoutesGenerator
 
@@ -12,19 +12,18 @@ val root = Project("podcasts-rss", file("."))
   .settings(
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.15.4",
-      "com.gu" %% "content-api-client" % "15.7",
-      "com.squareup.okhttp3" % "okhttp" % "4.9.2",
-      "software.amazon.awssdk" % "secretsmanager" % "2.20.57",
-      "org.scalactic" %% "scalactic" % "3.0.5",
-      "org.scalatest" %% "scalatest" % "3.0.5" % "test",
+      "com.gu" %% "content-api-client" % "19.2.1",
+      "com.squareup.okhttp3" % "okhttp" % "4.10.0",
+      "software.amazon.awssdk" % "secretsmanager" % "2.20.69",
+      "org.scalactic" %% "scalactic" % "3.2.15",
+      "org.scalatest" %% "scalatest" % "3.2.15" % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.3",
-      "com.gu" %% "content-api-models-json" % "15.5" % "test",
+      "com.gu" %% "content-api-models-json" % "17.5.1" % "test",
       "com.gu" %% "simple-configuration-core" % "1.5.7",
-      "com.gu.play-secret-rotation" %% "play-v26" % "0.37",
+      "com.gu.play-secret-rotation" %% "play-v28" % "0.37",
       "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "0.37",
       //AWS SDK v2 clients
-      "software.amazon.awssdk" % "url-connection-client" % "2.20.26", //only used at startup. For operations we use akka http client
-
+      "software.amazon.awssdk" % "url-connection-client" % "2.20.68", //only used at startup. For operations we use akka http client
     ),
     maintainer := "Guardian Content Platforms <content-platforms.dev@theguardian.com>",
     version := "1.0",
@@ -38,20 +37,19 @@ val root = Project("podcasts-rss", file("."))
 Universal / packageName := normalizedName.value
 
 dependencyOverrides ++=Seq(
-  "com.fasterxml.jackson.core" % "jackson-databind" % "2.12.6.1",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.12.7.1",
   "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % "2.9.8",
 
-  "org.scala-lang.modules" %% "scala-java8-compat" % "0.9.0",
-  "com.typesafe.play" %% "play-akka-http-server" % "2.7.0",
+  //"org.scala-lang.modules" %% "scala-java8-compat" % "0.9.0",
 
-  "com.typesafe.akka" %% "akka-actor" % "2.5.31",
-  "com.typesafe.akka" %% "akka-slf4j" % "2.5.31",
-  "com.typesafe.akka" %% "akka-stream" % "2.5.31",
-  "com.typesafe.akka" %% "akka-http-core" % "10.1.15",
-
-  "org.apache.tomcat.embed" % "tomcat-embed-core" % "8.5.85",
-  "org.apache.tomcat" % "tomcat-annotations-api" % "8.5.85",
+    "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.12.7",
+  "org.apache.tomcat.embed" % "tomcat-embed-core" % "8.5.86",
+  "org.apache.tomcat" % "tomcat-annotations-api" % "8.5.86",
   "org.apache.thrift" % "libthrift" % "0.14.0",
+
+  "io.netty" % "netty-handler" % "4.1.94.Final",
+
+  "com.google.guava" % "guava" % "32.0.0-jre"
 )
 
 excludeDependencies ++= Seq(
