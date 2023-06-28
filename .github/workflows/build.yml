@@ -2,7 +2,7 @@ name: Build and upload
 
 on:
   push:
-    branches: [ "*" ]
+    branches: [ "**" ]
   workflow_dispatch:
 
 jobs:
