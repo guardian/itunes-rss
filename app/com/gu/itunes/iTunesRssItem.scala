@@ -203,7 +203,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       if (exp) Some("yes") else if (cln) Some("clean") else None
     }
 
-    val keywords = makeKeywordsList(podcast.tags)
+    val keywords = makeKeywordsList(podcast.tags.toSeq)
 
     val subtitle = Filtering.standfirst(trailText.getOrElse(""))
 

@@ -1,14 +1,14 @@
 package com.gu.itunes
 
-import com.gu.{AppIdentity, AwsIdentity, DevIdentity}
+import com.gu.{ AppIdentity, AwsIdentity, DevIdentity }
 import org.slf4j.LoggerFactory
 import play.api.Configuration
-import software.amazon.awssdk.auth.credentials.{AwsCredentialsProviderChain, EnvironmentVariableCredentialsProvider, InstanceProfileCredentialsProvider, ProfileCredentialsProvider, SystemPropertyCredentialsProvider}
+import software.amazon.awssdk.auth.credentials.{ AwsCredentialsProviderChain, EnvironmentVariableCredentialsProvider, InstanceProfileCredentialsProvider, ProfileCredentialsProvider, SystemPropertyCredentialsProvider }
 import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.secretsmanager.SecretsManagerClient
 import software.amazon.awssdk.services.secretsmanager.model.GetSecretValueRequest
 
-import scala.util.{Failure, Success, Try}
+import scala.util.{ Failure, Success, Try }
 
 object SecretKeeper {
   private val logger = LoggerFactory.getLogger(getClass)

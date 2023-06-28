@@ -2,7 +2,7 @@ package com.gu.itunes
 
 import java.util.concurrent.TimeUnit
 
-import com.gu.contentapi.client.{ ContentApiBackoff, ContentApiClient, ScheduledExecutor }
+import com.gu.contentapi.client.{ ContentApiClient, ScheduledExecutor }
 import com.gu.contentapi.client.model.HttpResponse
 import java.io.IOException
 
@@ -36,9 +36,9 @@ class CustomCapiClient(val apiKey: String) extends ContentApiClient {
     }
   }
 
-  override implicit val executor: ScheduledExecutor = ScheduledExecutor()
+  //override implicit val executor: ScheduledExecutor = ScheduledExecutor()
   private val initialDelay = 1000.millis
-  override val backoffStrategy: ContentApiBackoff = ContentApiBackoff.multiplierStrategy(initialDelay, multiplier = 1.5, maxAttempts = 3)
+  //override val backoffStrategy: ContentApiBackoff = ContentApiBackoff.multiplierStrategy(initialDelay, multiplier = 1.5, maxAttempts = 3)
 }
 
 object CustomCapiClient {
