@@ -1,11 +1,12 @@
 package com.gu.itunes
 
 import com.gu.itunes.XmlTestUtils.RemoveWhitespace
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 import scala.xml.Utility.trim
 
-class ItunesRssItemSpec extends FlatSpec with ItunesTestData with Matchers {
+class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers {
 
   it should "check that the produced XML for the podcasts is consistent" in {
 

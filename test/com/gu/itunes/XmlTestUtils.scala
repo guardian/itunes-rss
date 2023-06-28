@@ -6,7 +6,7 @@ import scala.xml.{ Elem, Node, Text, XML }
 object XmlTestUtils {
 
   object RemoveWhitespaceRule extends RewriteRule {
-    override def transform(ns: Seq[Node]): Seq[Node] = ns.collect {
+    override def transform(ns: collection.Seq[Node]): collection.Seq[Node] = ns.collect {
       case Text(t) if t.trim.isEmpty => None
       case Text(t) => Some(Text(t.trim))
       case other => Some(other)

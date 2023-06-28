@@ -1,11 +1,12 @@
 package com.gu.itunes
 
 import com.gu.contentapi.client.model.v1._
-import org.scalatest.{ FlatSpec, Matchers }
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-class AcastProxySpec extends FlatSpec with Matchers with ItunesTestData {
+class AcastProxySpec extends AnyFlatSpec with Matchers with ItunesTestData {
 
-  val testContent: Seq[Content] = itunesCapiResponseAcastTest.results.get
+  val testContent: Seq[Content] = itunesCapiResponseAcastTest.results.get.toSeq
   val tag: String = itunesCapiResponseAcastTest.tag.get.id
 
   it should "use the acast proxy" in {
