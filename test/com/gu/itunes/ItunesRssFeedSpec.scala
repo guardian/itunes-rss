@@ -1,13 +1,14 @@
 package com.gu.itunes
 
 import org.scalactic.Bad
-import org.scalatest._
 import play.api.mvc.Results._
 
 import scala.util.Try
 import scala.xml.Utility.trim
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-class ItunesRssFeedSpec extends FlatSpec with ItunesTestData with Matchers {
+class ItunesRssFeedSpec extends AnyFlatSpec with ItunesTestData with Matchers {
 
   it should "check that the produced XML for the tags is consistent" in {
 
