@@ -24,6 +24,8 @@ val root = Project("podcasts-rss", file("."))
       "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "0.37",
       //AWS SDK v2 clients
       "software.amazon.awssdk" % "url-connection-client" % "2.20.68", //only used at startup. For operations we use akka http client
+      // snyk dependency overrides; try to peel these back as the Play release overtakes them
+      "ch.qos.logback" % "logback-classic" % "1.2.13",
     ),
     maintainer := "Guardian Content Platforms <content-platforms.dev@theguardian.com>",
     version := "1.0",
