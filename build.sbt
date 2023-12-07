@@ -19,7 +19,7 @@ val root = Project("podcasts-rss", file("."))
       "org.scalatest" %% "scalatest" % "3.2.15" % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.3",
       "com.gu" %% "content-api-models-json" % "17.7.0" % "test",
-      "com.gu" %% "simple-configuration-core" % "1.5.7",
+      "com.gu" %% "simple-configuration-core" % "1.5.8",
       "com.gu.play-secret-rotation" %% "play-v28" % "0.37",
       "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "0.37",
       //AWS SDK v2 clients
@@ -41,6 +41,8 @@ dependencyOverrides ++=Seq(
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.12.7",
   "io.netty" % "netty-handler" % "4.1.94.Final",
   "io.netty" % "netty-codec-http2" % "4.1.100.Final", // SNYK-JAVA-IONETTY-5953332
+  "ch.qos.logback" % "logback-classic" % "1.4.12",
+  "ch.qos.logback" % "logback-core" % "1.4.12",
 )
 
 excludeDependencies ++= Seq(
