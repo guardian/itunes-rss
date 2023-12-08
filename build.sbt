@@ -41,8 +41,7 @@ dependencyOverrides ++=Seq(
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.12.7",
   "io.netty" % "netty-handler" % "4.1.94.Final",
   "io.netty" % "netty-codec-http2" % "4.1.100.Final", // SNYK-JAVA-IONETTY-5953332
-  "ch.qos.logback" % "logback-classic" % "1.4.12",
-  "ch.qos.logback" % "logback-core" % "1.4.12",
+  "ch.qos.logback" % "logback-classic" % "1.4.14",
 )
 
 excludeDependencies ++= Seq(
