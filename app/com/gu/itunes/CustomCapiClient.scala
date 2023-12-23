@@ -1,17 +1,15 @@
 package com.gu.itunes
 
 import com.gu.contentapi.client.HttpRetry.withRetry
-
-import java.util.concurrent.TimeUnit
-import com.gu.contentapi.client.{ BackoffStrategy, ContentApiClient, RetryableContentApiClient, ScheduledExecutor }
 import com.gu.contentapi.client.model.HttpResponse
-
-import java.io.IOException
-import okhttp3.{ Call, Callback, ConnectionPool, OkHttpClient, Request, Response }
+import com.gu.contentapi.client.{BackoffStrategy, ContentApiClient, ScheduledExecutor}
+import okhttp3._
 import org.slf4j.LoggerFactory
 
+import java.io.IOException
+import java.util.concurrent.TimeUnit
 import scala.concurrent.duration._
-import scala.concurrent.{ ExecutionContext, Future, Promise }
+import scala.concurrent.{ExecutionContext, Future, Promise}
 
 class CustomCapiClient(val apiKey: String) extends ContentApiClient {
   private val logger = LoggerFactory.getLogger(getClass)

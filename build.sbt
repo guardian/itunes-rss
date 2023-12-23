@@ -13,8 +13,8 @@ val root = Project("podcasts-rss", file("."))
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.15.4",
       "com.gu" %% "content-api-client" % "19.4.0",
-      "com.squareup.okhttp3" % "okhttp" % "4.12.0", // SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744, SNYK-JAVA-COMSQUAREUPOKIO-5820002
-      "software.amazon.awssdk" % "secretsmanager" % "2.20.162", // SNYK-JAVA-IONETTY-1042268
+      "com.squareup.okhttp3" % "okhttp" % "4.12.0",
+      "software.amazon.awssdk" % "secretsmanager" % "2.20.162",
       "org.scalactic" %% "scalactic" % "3.2.15",
       "org.scalatest" %% "scalatest" % "3.2.15" % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.3",
@@ -24,6 +24,8 @@ val root = Project("podcasts-rss", file("."))
       "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "0.37",
       //AWS SDK v2 clients
       "software.amazon.awssdk" % "url-connection-client" % "2.20.68", //only used at startup. For operations we use akka http client
+      // snyk dependency overrides; try to peel these back as the Play release overtakes them
+      "ch.qos.logback" % "logback-classic" % "1.2.13",
     ),
     maintainer := "Guardian Content Platforms <content-platforms.dev@theguardian.com>",
     version := "1.0",
