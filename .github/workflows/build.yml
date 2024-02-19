@@ -44,24 +44,19 @@ jobs:
           java-version: 11
           cache: sbt
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-region: eu-west-1
-          role-to-assume: ${{ secrets.GU_RIFF_RAFF_ROLE_ARN }}
-          role-session-name: content-api-podcasts-rss-build
-
       - name: Build and test
         env:
           SBT_JUNIT_OUTPUT: ./junit-tests
           JAVA_OPTS: -Dsbt.log.noformat=true
         run: |
           sbt 'test;debian:packageBin'
-      - uses: guardian/actions-riff-raff@v2
+      - uses: guardian/actions-riff-raff@v4
         with:
           configPath: conf/riff-raff.yaml
           projectName: Off-platform::podcasts-rss
           buildNumberOffset: 374
+          roleArn: ${{ secrets.GU_RIFF_RAFF_ROLE_ARN }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
           contentDirectories: |
             cloudformation:
               - cdk/cdk.out/PodcastsRss-PROD.template.json
