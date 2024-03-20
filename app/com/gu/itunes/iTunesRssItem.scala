@@ -16,6 +16,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val suffix = """(.*) [-–—|] podcast$""".r
     val title = podcast.webTitle match { case suffix(prefix) => prefix; case otherwise => otherwise }
 
+    val episodeRE = """[Ee]pisode\s+([0-9]+).*""".r
+    val episodeNumber = podcast.webTitle match {
+      case episodeRE(num) => Some(num)
+      case _ => None
+    }
+
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
     val pubDate = DateSupport.toRssTimeFormat(lastModified)
@@ -231,6 +237,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       {
         if (!adFree) {
           <itunes:subtitle>{ subtitle }</itunes:subtitle>
+        }
+      }
+      {
+        episodeNumber match {
+          case Some(num) => <itunes:episode>{ num }</itunes:episode>
+          case None =>
         }
       }
       <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>
