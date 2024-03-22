@@ -138,8 +138,15 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     // this input contains "Episode X" in the title but it should be
     // ignored because it isn't a `itunes:type = "serial"` podcast.
     val tag = itunesCapiResponseNoType.tag.get
-    tag.podcast.value.podcastType shouldNot be(Some("serial"))
     val result = itunesCapiResponseEpisodeNumber.results.get.head
+    val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
+      tag.podcast.value.podcastType).toXml
+    (rssItem \ "episode") shouldBe empty
+  }
+
+  it should "not include itunes:episode tag when episode marker not included even if serial type" in {
+    val tag = itunesCapiResponse.tag.get
+    val result = itunesCapiResponse.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
       tag.podcast.value.podcastType).toXml
     (rssItem \ "episode") shouldBe empty
