@@ -5,7 +5,7 @@ import com.gu.contentapi.client.model.v1._
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None) {
 
   private val trailText = podcast.fields.flatMap(_.trailText)
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
@@ -15,6 +15,14 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     // TODO: remove the below when suffix is added only where it is needed, and not by journalists
     val suffix = """(.*) [-–—|] podcast$""".r
     val title = podcast.webTitle match { case suffix(prefix) => prefix; case otherwise => otherwise }
+
+    val episodePattern = """[Ee]pisode\s+([0-9]+)""".r.unanchored
+    val episodeNumber = for {
+      typ <- podcastType
+      if typ.toLowerCase == "serial"
+      episodeIndicator <- episodePattern.findFirstMatchIn(podcast.webTitle)
+      episodeNumber <- Option(episodeIndicator.group(1))
+    } yield episodeNumber
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
@@ -162,9 +170,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         AcastLaunchGroup(new DateTime(2023, 3, 28, 0, 0), Seq(
           "news/series/cotton-capital-podcast")),
         AcastLaunchGroup(new DateTime(2024, 2, 15, 0, 0), Seq(
-          "technology/series/blackbox"))
-      )
-
+          "technology/series/blackbox")))
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
     }
@@ -231,6 +237,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       {
         if (!adFree) {
           <itunes:subtitle>{ subtitle }</itunes:subtitle>
+        }
+      }
+      {
+        episodeNumber match {
+          case Some(num) => <itunes:episode>{ num }</itunes:episode>
+          case None =>
         }
       }
       <itunes:summary>{ scala.xml.Utility.escape(summary) }</itunes:summary>

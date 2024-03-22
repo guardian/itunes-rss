@@ -33,6 +33,20 @@ trait ItunesTestData {
     val json = loadJson("itunes-capi-response-acast-test.json")
     parseJson[ItemResponse](json)
   }
+
+  // content.guardianapis.com/technology/series/blackbox?show-fields=webTitle%2CwebPublicationDate%2Cstandfirst%2CtrailText%2CinternalComposerCode&show-elements=audio&show-tags=keyword&page-size=3
+  // contains episode number in web title
+  val itunesCapiResponseEpisodeNumber: ItemResponse = {
+    val json = loadJson("itunes-capi-episode-number.json")
+    parseJson[ItemResponse](json)
+  }
+
+  // content.guardianapis.com/news/series/cotton-capital-podcast?show-fields=webTitle%2CwebPublicationDate%2Cstandfirst%2CtrailText%2CinternalComposerCode&show-elements=audio&show-tags=keyword&page-size=3
+  val itunesCapiResponseNoType: ItemResponse = {
+    val json = loadJson("itunes-capi-no-type.json")
+    parseJson[ItemResponse](json)
+  }
+
 }
 
 object JsonHelpers {
