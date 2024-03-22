@@ -1,0 +1,1042 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "internal",
+    "total": 8,
+    "startIndex": 1,
+    "pageSize": 3,
+    "currentPage": 1,
+    "pages": 3,
+    "orderBy": "newest",
+    "tag": {
+      "id": "technology/series/blackbox",
+      "type": "series",
+      "sectionId": "technology",
+      "sectionName": "Technology",
+      "webTitle": "Black Box",
+      "webUrl": "https://www.theguardian.com/technology/series/blackbox",
+      "apiUrl": "https://content.guardianapis.com/technology/series/blackbox",
+      "description": "<p>At some point in the past few years, humanity collided with a new kind of intelligence. And things are getting strange. People are being accused of crimes by algorithms; falling in love with digital beings; pioneering new ways to fight old diseases; turning to machines for comfort in their worst moments, and using artificial intelligence to commit - and hide from - terrible crimes. The Guardian’s Michael Safi investigates the story of a technology so complex that its own creators have no idea what it is thinking, and captures a snapshot of the era when people first made contact with AI</p>",
+      "podcast": {
+        "linkUrl": " ",
+        "copyright": "© 2024 Guardian News & Media Limited or its affiliated companies. All rights reserved.",
+        "author": "theguardian.com",
+        "subscriptionUrl": "https://podcasts.apple.com/us/podcast/black-box/id1731314182",
+        "explicit": false,
+        "image": "https://uploads.guim.co.uk/2024/02/12/BlackBoxPodcast_3000_(2).jpeg",
+        "categories": [
+          {
+            "main": "News"
+          }
+        ],
+        "podcastType": "serial",
+        "spotifyUrl": "https://open.spotify.com/show/57nEonC68q5vgEi6a1k398",
+        "pocketCastsUrl": " "
+      },
+      "internalName": "Black Box (podcast only)"
+    },
+    "results": [
+      {
+        "id": "technology/audio/2024/mar/21/episode-6-shut-it-down",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-21T05:00:22Z",
+        "webTitle": "Episode 6 – Shut it down?",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/21/episode-6-shut-it-down",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/21/episode-6-shut-it-down",
+        "fields": {
+          "standfirst": "<p>For decades, Eliezer Yudkowsky has been trying to warn the world about the dangers of AI. And now people are finally listening to him. But is it too late?</p>",
+          "trailText": "For decades, Eliezer Yudkowsky has been trying to warn the world about the dangers of AI. And now people are finally listening to him. But is it too late?",
+          "internalComposerCode": "65f976f48f08225b69fa0b47"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "science/science",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
+            "references": [],
+            "internalName": "Science"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          },
+          {
+            "id": "technology/computing",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Computing",
+            "webUrl": "https://www.theguardian.com/technology/computing",
+            "apiUrl": "https://content.guardianapis.com/technology/computing",
+            "references": [],
+            "internalName": "Computing (Technology)"
+          },
+          {
+            "id": "world/world",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "World news",
+            "webUrl": "https://www.theguardian.com/world/world",
+            "apiUrl": "https://content.guardianapis.com/world/world",
+            "references": [],
+            "internalName": "World news"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65f976f48f08225b69fa0b47",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/20-72360-BB_ep6_shut.mp3",
+                "typeData": {
+                  "secureFile": "https://audio.guim.co.uk/2024/03/20-72360-BB_ep6_shut.mp3",
+                  "sizeInBytes": "52018399",
+                  "durationMinutes": "41",
+                  "durationSeconds": "16",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/mar/18/episode-5-the-white-mask",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-18T05:00:04Z",
+        "webTitle": "Episode 5 – The white mask ",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/18/episode-5-the-white-mask",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/18/episode-5-the-white-mask",
+        "fields": {
+          "standfirst": "<p>In January 2020, Robert Williams was arrested by Detroit police for a crime he had not committed. The officers were acting on a tip not from a witness or informant. In fact, not from a person at all</p>",
+          "trailText": "In January 2020, Robert Williams was arrested by Detroit police for a crime he had not committed. The officers were acting on a tip not from a witness or informant. In fact, not from a person at all",
+          "internalComposerCode": "65f420b98f08ba0296d1472f"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "technology/facial-recognition",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Facial recognition",
+            "webUrl": "https://www.theguardian.com/technology/facial-recognition",
+            "apiUrl": "https://content.guardianapis.com/technology/facial-recognition",
+            "references": [],
+            "internalName": "Facial recognition"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65f420b98f08ba0296d1472f",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/17-69466-BB_ep5_bias.mp3",
+                "typeData": {
+                  "secureFile": "https://audio.guim.co.uk/2024/03/17-69466-BB_ep5_bias.mp3",
+                  "sizeInBytes": "45877519",
+                  "durationMinutes": "36",
+                  "durationSeconds": "9",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/mar/14/episode-four-bing-and-i-podcast",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-14T05:00:12Z",
+        "webTitle": "Episode 4 – Bing and I",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/14/episode-four-bing-and-i-podcast",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/14/episode-four-bing-and-i-podcast",
+        "fields": {
+          "standfirst": "<p>Two stories about the way AI could – in fact, already is – making the world better. In Montana, when Lee Johnson discovered his wife, Yokie, had cancer, he turned to AI – and was surprised by the answers he got. Meanwhile, in Massachusetts Prof Regina Barzilay’s experience with cancer has led her to build an AI system that can detect the disease years before a human</p>",
+          "trailText": "Two stories about the way AI could – in fact, already is – making the world better. In Montana, when Lee Johnson discovered his wife, Yokie, had cancer, he turned to AI – and was surprised by the answers he got. Meanwhile, in Massachusetts Prof Regina Barzilay’s experience with cancer has led her to build an AI system that can detect the disease years before a human",
+          "internalComposerCode": "65f1890f8f0836980f1afe1e"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          },
+          {
+            "id": "science/cancer",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Cancer research",
+            "webUrl": "https://www.theguardian.com/science/cancer",
+            "apiUrl": "https://content.guardianapis.com/science/cancer",
+            "references": [],
+            "internalName": "Cancer research (Science)"
+          },
+          {
+            "id": "society/cancer",
+            "type": "keyword",
+            "sectionId": "society",
+            "sectionName": "Society",
+            "webTitle": "Cancer",
+            "webUrl": "https://www.theguardian.com/society/cancer",
+            "apiUrl": "https://content.guardianapis.com/society/cancer",
+            "references": [],
+            "internalName": "Cancer (society)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65f1890f8f0836980f1afe1e",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/13-62137-BB_Ep4_Health.mp3",
+                "typeData": {
+                  "secureFile": "https://audio.guim.co.uk/2024/03/13-62137-BB_Ep4_Health.mp3",
+                  "sizeInBytes": "52911429",
+                  "durationMinutes": "42",
+                  "embedType": "audio"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ],
+    "leadContent": [
+      {
+        "id": "technology/audio/2024/mar/21/episode-6-shut-it-down",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-21T05:00:22Z",
+        "webTitle": "Episode 6 – Shut it down?",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/21/episode-6-shut-it-down",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/21/episode-6-shut-it-down",
+        "fields": {
+          "standfirst": "<p>For decades, Eliezer Yudkowsky has been trying to warn the world about the dangers of AI. And now people are finally listening to him. But is it too late?</p>",
+          "trailText": "For decades, Eliezer Yudkowsky has been trying to warn the world about the dangers of AI. And now people are finally listening to him. But is it too late?",
+          "internalComposerCode": "65f976f48f08225b69fa0b47"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "science/science",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
+            "references": [],
+            "internalName": "Science"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          },
+          {
+            "id": "technology/computing",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Computing",
+            "webUrl": "https://www.theguardian.com/technology/computing",
+            "apiUrl": "https://content.guardianapis.com/technology/computing",
+            "references": [],
+            "internalName": "Computing (Technology)"
+          },
+          {
+            "id": "world/world",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "World news",
+            "webUrl": "https://www.theguardian.com/world/world",
+            "apiUrl": "https://content.guardianapis.com/world/world",
+            "references": [],
+            "internalName": "World news"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65f976f48f08225b69fa0b47",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/20-72360-BB_ep6_shut.mp3",
+                "typeData": {
+                  "secureFile": "https://audio.guim.co.uk/2024/03/20-72360-BB_ep6_shut.mp3",
+                  "sizeInBytes": "52018399",
+                  "durationMinutes": "41",
+                  "durationSeconds": "16",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/mar/18/episode-5-the-white-mask",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-18T05:00:04Z",
+        "webTitle": "Episode 5 – The white mask ",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/18/episode-5-the-white-mask",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/18/episode-5-the-white-mask",
+        "fields": {
+          "standfirst": "<p>In January 2020, Robert Williams was arrested by Detroit police for a crime he had not committed. The officers were acting on a tip not from a witness or informant. In fact, not from a person at all</p>",
+          "trailText": "In January 2020, Robert Williams was arrested by Detroit police for a crime he had not committed. The officers were acting on a tip not from a witness or informant. In fact, not from a person at all",
+          "internalComposerCode": "65f420b98f08ba0296d1472f"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "technology/facial-recognition",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Facial recognition",
+            "webUrl": "https://www.theguardian.com/technology/facial-recognition",
+            "apiUrl": "https://content.guardianapis.com/technology/facial-recognition",
+            "references": [],
+            "internalName": "Facial recognition"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65f420b98f08ba0296d1472f",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/17-69466-BB_ep5_bias.mp3",
+                "typeData": {
+                  "secureFile": "https://audio.guim.co.uk/2024/03/17-69466-BB_ep5_bias.mp3",
+                  "sizeInBytes": "45877519",
+                  "durationMinutes": "36",
+                  "durationSeconds": "9",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/mar/14/episode-four-bing-and-i-podcast",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-14T05:00:12Z",
+        "webTitle": "Episode 4 – Bing and I",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/14/episode-four-bing-and-i-podcast",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/14/episode-four-bing-and-i-podcast",
+        "fields": {
+          "standfirst": "<p>Two stories about the way AI could – in fact, already is – making the world better. In Montana, when Lee Johnson discovered his wife, Yokie, had cancer, he turned to AI – and was surprised by the answers he got. Meanwhile, in Massachusetts Prof Regina Barzilay’s experience with cancer has led her to build an AI system that can detect the disease years before a human</p>",
+          "trailText": "Two stories about the way AI could – in fact, already is – making the world better. In Montana, when Lee Johnson discovered his wife, Yokie, had cancer, he turned to AI – and was surprised by the answers he got. Meanwhile, in Massachusetts Prof Regina Barzilay’s experience with cancer has led her to build an AI system that can detect the disease years before a human",
+          "internalComposerCode": "65f1890f8f0836980f1afe1e"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          },
+          {
+            "id": "science/cancer",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Cancer research",
+            "webUrl": "https://www.theguardian.com/science/cancer",
+            "apiUrl": "https://content.guardianapis.com/science/cancer",
+            "references": [],
+            "internalName": "Cancer research (Science)"
+          },
+          {
+            "id": "society/cancer",
+            "type": "keyword",
+            "sectionId": "society",
+            "sectionName": "Society",
+            "webTitle": "Cancer",
+            "webUrl": "https://www.theguardian.com/society/cancer",
+            "apiUrl": "https://content.guardianapis.com/society/cancer",
+            "references": [],
+            "internalName": "Cancer (society)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65f1890f8f0836980f1afe1e",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/13-62137-BB_Ep4_Health.mp3",
+                "typeData": {
+                  "secureFile": "https://audio.guim.co.uk/2024/03/13-62137-BB_Ep4_Health.mp3",
+                  "sizeInBytes": "52911429",
+                  "durationMinutes": "42",
+                  "embedType": "audio"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/mar/11/black-box-episode-three-repocalypse-now-podcast",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-11T05:00:22Z",
+        "webTitle": "Episode 3 – Repocalypse now",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/11/black-box-episode-three-repocalypse-now-podcast",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/11/black-box-episode-three-repocalypse-now-podcast",
+        "fields": {
+          "standfirst": "<p>When Eugenia Kuyda created Replika, the AI companion app, she had no idea it would be downloaded millions of times all around the world. The results were more powerful than she could ever have predicted. But so was the backlash<br></p>",
+          "trailText": "When Eugenia Kuyda created Replika, the AI companion app, she had no idea how popular it would become. The results were powerful … but so was the backlash",
+          "internalComposerCode": "65eae7cf8f087d93d3c5fb33"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "lifeandstyle/relationships",
+            "type": "keyword",
+            "sectionId": "lifeandstyle",
+            "sectionName": "Life and style",
+            "webTitle": "Relationships",
+            "webUrl": "https://www.theguardian.com/lifeandstyle/relationships",
+            "apiUrl": "https://content.guardianapis.com/lifeandstyle/relationships",
+            "references": [],
+            "internalName": "Relationships (romantic)"
+          },
+          {
+            "id": "lifeandstyle/friendship",
+            "type": "keyword",
+            "sectionId": "lifeandstyle",
+            "sectionName": "Life and style",
+            "webTitle": "Friendship",
+            "webUrl": "https://www.theguardian.com/lifeandstyle/friendship",
+            "apiUrl": "https://content.guardianapis.com/lifeandstyle/friendship",
+            "references": [],
+            "internalName": "Friendship"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65eae7cf8f087d93d3c5fb33",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/13-62334-BB_Ep3_RepNEW.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/03/13-62334-BB_Ep3_RepNEW.mp3",
+                  "sizeInBytes": "43957986",
+                  "durationMinutes": "34",
+                  "durationSeconds": "33",
+                  "embedType": "audio",
+                  "explicit": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/mar/07/episode-two-the-hunt-for-clothoff-the-deepfake-porn-app",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-07T05:00:04Z",
+        "webTitle": "Episode 2 – The hunt for ClothOff: the deepfake porn app",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/07/episode-two-the-hunt-for-clothoff-the-deepfake-porn-app",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/07/episode-two-the-hunt-for-clothoff-the-deepfake-porn-app",
+        "fields": {
+          "standfirst": "<p>For the past six months, Guardian journalist Michael Safi has been trying to find out who is behind an AI company that creates deepfakes. Deepfakes that are causing havoc around the world, with police and lawmakers baffled about how to deal with them. And in trying to answer one question, he has been left with a bigger one: is AI going to make it impossible to sort fact from fiction?</p>",
+          "trailText": "For the past six months, Guardian journalist Michael Safi has been trying to find out who is behind an AI company that creates deepfakes. Deepfakes that are causing havoc around the world, with police and lawmakers baffled about how to deal with them. And in trying to answer one question, he has been left with a bigger one: is AI going to make it impossible to sort fact from fiction?",
+          "internalComposerCode": "65e76e368f0827d2af5637a0"
+        },
+        "tags": [
+          {
+            "id": "technology/deepfake",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Deepfake",
+            "webUrl": "https://www.theguardian.com/technology/deepfake",
+            "apiUrl": "https://content.guardianapis.com/technology/deepfake",
+            "references": [],
+            "internalName": "Deepfake"
+          },
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65e76e368f0827d2af5637a0",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/06-85035-06-84622-BB_ep2_Clothoff_.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/03/06-85035-06-84622-BB_ep2_Clothoff_.mp3",
+                  "sizeInBytes": "62587168",
+                  "durationMinutes": "45",
+                  "durationSeconds": "44",
+                  "embedType": "audio",
+                  "explicit": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/mar/04/episode-one-the-connectionists-ai-podcast",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-03-04T05:00:20Z",
+        "webTitle": "Episode 1 – The connectionists",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/mar/04/episode-one-the-connectionists-ai-podcast",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/mar/04/episode-one-the-connectionists-ai-podcast",
+        "fields": {
+          "standfirst": "<p>This is the story of Geoffrey Hinton, a man who set out to understand the brain and ended up working with a group of researchers who invented a technology so powerful that even they don’t truly understand how it works. This is about a collision between two mysterious intelligences – two black boxes – human and artificial. And it’s already having profound consequences</p>",
+          "trailText": "This is the story of Geoffrey Hinton, a man who set out to understand the brain and ended up working with a group of researchers who invented a technology so powerful that even they don’t truly understand how it works",
+          "internalComposerCode": "65e1bb4b8f08a1a184508ab0"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          },
+          {
+            "id": "science/science",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
+            "references": [],
+            "internalName": "Science"
+          },
+          {
+            "id": "science/consciousness",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Consciousness",
+            "webUrl": "https://www.theguardian.com/science/consciousness",
+            "apiUrl": "https://content.guardianapis.com/science/consciousness",
+            "references": [],
+            "internalName": "Consciousness"
+          },
+          {
+            "id": "technology/computing",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Computing",
+            "webUrl": "https://www.theguardian.com/technology/computing",
+            "apiUrl": "https://content.guardianapis.com/technology/computing",
+            "references": [],
+            "internalName": "Computing (Technology)"
+          },
+          {
+            "id": "science/human-biology",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Human biology",
+            "webUrl": "https://www.theguardian.com/science/human-biology",
+            "apiUrl": "https://content.guardianapis.com/science/human-biology",
+            "references": [],
+            "internalName": "Human biology (physiology)"
+          },
+          {
+            "id": "science/neuroscience",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Neuroscience",
+            "webUrl": "https://www.theguardian.com/science/neuroscience",
+            "apiUrl": "https://content.guardianapis.com/science/neuroscience",
+            "references": [],
+            "internalName": "Neuroscience"
+          },
+          {
+            "id": "science/psychology",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Psychology",
+            "webUrl": "https://www.theguardian.com/science/psychology",
+            "apiUrl": "https://content.guardianapis.com/science/psychology",
+            "references": [],
+            "internalName": "Psychology (Science)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65e1bb4b8f08a1a184508ab0",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/03/01-49151-gnl.bb.20240304.ms.ep_one_connectionists.mp3",
+                "typeData": {
+                  "source": "The Guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/03/01-49151-gnl.bb.20240304.ms.ep_one_connectionists.mp3",
+                  "sizeInBytes": "64397069",
+                  "durationMinutes": "39",
+                  "durationSeconds": "21",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/feb/29/black-box-prologue-the-collision-podcast",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-02-29T05:00:08Z",
+        "webTitle": "Episode 0 - The collision ",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/feb/29/black-box-prologue-the-collision-podcast",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/feb/29/black-box-prologue-the-collision-podcast",
+        "fields": {
+          "standfirst": "<p>The beginning of a new series that explores seven stories and the thread that ties them together: artificial intelligence. In this prologue, Hannah (not her real name) has met Noah and he has changed her life for the better. So why does she have concerns about him?</p>",
+          "trailText": "The beginning of a new series that explores seven stories and the thread that ties them together: artificial intelligence. In this prologue, Hannah (not her real name) has met Noah who has changed her life for the better. So why does she have concerns about him?",
+          "internalComposerCode": "65df44228f086601395cbfb3"
+        },
+        "tags": [
+          {
+            "id": "technology/artificialintelligenceai",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Artificial intelligence (AI)",
+            "webUrl": "https://www.theguardian.com/technology/artificialintelligenceai",
+            "apiUrl": "https://content.guardianapis.com/technology/artificialintelligenceai",
+            "references": [],
+            "internalName": "Artificial intelligence (Technology)"
+          },
+          {
+            "id": "science/consciousness",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Consciousness",
+            "webUrl": "https://www.theguardian.com/science/consciousness",
+            "apiUrl": "https://content.guardianapis.com/science/consciousness",
+            "references": [],
+            "internalName": "Consciousness"
+          },
+          {
+            "id": "science/neuroscience",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Neuroscience",
+            "webUrl": "https://www.theguardian.com/science/neuroscience",
+            "apiUrl": "https://content.guardianapis.com/science/neuroscience",
+            "references": [],
+            "internalName": "Neuroscience"
+          },
+          {
+            "id": "science/psychology",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Psychology",
+            "webUrl": "https://www.theguardian.com/science/psychology",
+            "apiUrl": "https://content.guardianapis.com/science/psychology",
+            "references": [],
+            "internalName": "Psychology (Science)"
+          },
+          {
+            "id": "science/human-biology",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Human biology",
+            "webUrl": "https://www.theguardian.com/science/human-biology",
+            "apiUrl": "https://content.guardianapis.com/science/human-biology",
+            "references": [],
+            "internalName": "Human biology (physiology)"
+          },
+          {
+            "id": "technology/computing",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Computing",
+            "webUrl": "https://www.theguardian.com/technology/computing",
+            "apiUrl": "https://content.guardianapis.com/technology/computing",
+            "references": [],
+            "internalName": "Computing (Technology)"
+          },
+          {
+            "id": "science/science",
+            "type": "keyword",
+            "sectionId": "science",
+            "sectionName": "Science",
+            "webTitle": "Science",
+            "webUrl": "https://www.theguardian.com/science/science",
+            "apiUrl": "https://content.guardianapis.com/science/science",
+            "references": [],
+            "internalName": "Science"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65df44228f086601395cbfb3",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/02/28-64796-gnl.bb.20240229.ms.prologue.mp3",
+                "typeData": {
+                  "source": "The Guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/02/28-64796-gnl.bb.20240229.ms.prologue.mp3",
+                  "sizeInBytes": "27110285",
+                  "durationMinutes": "13",
+                  "durationSeconds": "28",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/audio/2024/feb/15/black-box-a-new-podcast-series-about-ai-and-us-trailer",
+        "type": "audio",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2024-02-15T16:24:44Z",
+        "webTitle": "Black Box: a new podcast series about AI and us – trailer",
+        "webUrl": "https://www.theguardian.com/technology/audio/2024/feb/15/black-box-a-new-podcast-series-about-ai-and-us-trailer",
+        "apiUrl": "https://content.guardianapis.com/technology/audio/2024/feb/15/black-box-a-new-podcast-series-about-ai-and-us-trailer",
+        "fields": {
+          "standfirst": "<p>In rural Norway, a young woman’s boyfriend forgets who she is overnight. In Detroit, a man is arrested for a crime, but he was never there. In a Spanish town, disturbing pictures of young girls have appeared, but no one knows who is behind them.</p><p>In this new series from the Guardian, we’ll explore what it is that connects all these stories: the collision between people and artificial intelligence.</p><p>Coming soon …</p><p></p>",
+          "trailText": "Something strange is happening: a collision between people and artificial intelligence. Discover more in this new narrative series from the Guardian’s podcast team",
+          "internalComposerCode": "65ce05f68f08bcf9b9c9a183"
+        },
+        "tags": [
+          {
+            "id": "world/world",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "World news",
+            "webUrl": "https://www.theguardian.com/world/world",
+            "apiUrl": "https://content.guardianapis.com/world/world",
+            "references": [],
+            "internalName": "World news"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-65ce05f68f08bcf9b9c9a183",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/02/15-58841-gnl.bb.20240215.ms.trailer.mp3",
+                "typeData": {
+                  "source": "The Guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/02/15-58841-gnl.bb.20240215.ms.trailer.mp3",
+                  "sizeInBytes": "11882573",
+                  "durationMinutes": "2",
+                  "durationSeconds": "53",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ]
+  }
+}

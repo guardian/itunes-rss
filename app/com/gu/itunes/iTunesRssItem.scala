@@ -5,7 +5,7 @@ import com.gu.contentapi.client.model.v1._
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None) {
 
   private val trailText = podcast.fields.flatMap(_.trailText)
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
@@ -16,11 +16,13 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val suffix = """(.*) [-–—|] podcast$""".r
     val title = podcast.webTitle match { case suffix(prefix) => prefix; case otherwise => otherwise }
 
-    val episodeRE = """[Ee]pisode\s+([0-9]+).*""".r
-    val episodeNumber = podcast.webTitle match {
-      case episodeRE(num) => Some(num)
-      case _ => None
-    }
+    val episodePattern = """[Ee]pisode\s+([0-9]+)""".r.unanchored
+    val episodeNumber = for {
+      typ <- podcastType
+      if typ == "serial"
+      episodeIndicator <- episodePattern.findFirstMatchIn(podcast.webTitle)
+      episodeNumber <- Option(episodeIndicator.group(1))
+    } yield episodeNumber
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
@@ -170,7 +172,6 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         AcastLaunchGroup(new DateTime(2024, 2, 15, 0, 0), Seq(
           "technology/series/blackbox"))
       )
-
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
     }
