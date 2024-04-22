@@ -1,6 +1,6 @@
 package com.gu.itunes
 
-import org.joda.time.{ DateTimeZone, DateTime }
+import org.joda.time.{ DateTime, DateTimeZone }
 import org.joda.time.format.DateTimeFormat
 
 object DateSupport {
