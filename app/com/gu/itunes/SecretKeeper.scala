@@ -27,8 +27,7 @@ object SecretKeeper {
     AppIdentity.whoAmI("podcasts-rss", () => credentialsProviderChain.resolveCredentials())
   }
 
-  private def loadKeyFromSecretsManagerImp(): Try[String] = {
-
+  private def loadFromSecretsManagerImp(lookupKey: String): Try[String] = {
     for {
       identity <- getIdentity()
       result <- identity match {
@@ -36,17 +35,21 @@ object SecretKeeper {
           //we'll just use a basic, blocking client here as it's only used in startup
           val client = SecretsManagerClient.builder().credentialsProvider(credentialsProviderChain).region(Region.of(region)).build()
 
-          val ssmKey = s"/$stage/$stack/$app/capiKey"
-          logger.info(s"Loading API key from secrets manager at $ssmKey")
+          val ssmKey = s"/$stage/$stack/$app/$lookupKey"
+          logger.info(s"Loading $lookupKey key from secrets manager at $ssmKey")
           Try { client.getSecretValue(GetSecretValueRequest.builder().secretId(ssmKey).build()) }
         case _ =>
-          logger.warn("When running locally you should set the API_KEY environment variable or apiKey in application.conf")
+          if (lookupKey == "capiKey") {
+            logger.warn("When running locally you should set the API_KEY environment variable or apiKey in application.conf")
+          } else {
+            logger.warn(s"When running locally you should set $lookupKey in application.conf")
+          }
           Failure(new RuntimeException("Not running in AWS"))
       }
     } yield result.secretString()
   }
 
-  private def loadKeyFromSecretsManager(): Option[String] = loadKeyFromSecretsManagerImp() match {
+  private def loadKeyFromSecretsManager(): Option[String] = loadFromSecretsManagerImp("capiKey") match {
     case Success(result) if result != "" => Some(result)
     case Success(result) if result == "" =>
       logger.error("Loaded API key but it was an empty string")
@@ -56,11 +59,29 @@ object SecretKeeper {
       None
   }
 
+  private def loadFastlySignatureSaltFromSecretsManager(): Option[String] = loadFromSecretsManagerImp("fastlyImageResizerSignatureSalt") match {
+    case Success(result) if result != "" => Some(result)
+    case Success(result) if result == "" =>
+      logger.error("Loaded the fastly image resizer signature salt but it was an empty string")
+      None
+    case Failure(err) =>
+      logger.warn(s"Could not load Fastly image resizer signature salt: ${err.getMessage}")
+      None
+  }
+
   def getApiKey(config: Configuration): Option[String] = config.getOptional[String]("apiKey") match {
     case fromConfig @ Some(apiKey) if apiKey != "" =>
       logger.info("Using CAPI key from configuration file")
       fromConfig
     case _ =>
       loadKeyFromSecretsManager()
+  }
+
+  def getImageResizerSignatureSalt(config: Configuration): Option[String] = config.getOptional[String]("fastlyImageResizerSignatureSalt") match {
+    case fromConfig @ Some(sigSalt) if sigSalt != "" =>
+      logger.info("Using fastly resizer salt from configuration file")
+      fromConfig
+    case _ =>
+      loadFastlySignatureSaltFromSecretsManager()
   }
 }

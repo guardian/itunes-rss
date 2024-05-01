@@ -2,13 +2,19 @@ package com.gu.itunes
 
 import org.joda.time._
 import com.gu.contentapi.client.model.v1._
+import org.apache.commons.codec.digest.DigestUtils.md5Hex
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None, imageResizerSignatureSalt: String) {
 
   private val trailText = podcast.fields.flatMap(_.trailText)
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
+
+  private def signPathForImageResizer(path: String): String = {
+    val separator = if (path.contains("?")) "&" else "?"
+    s"$path${separator}s=${md5Hex(s"$imageResizerSignatureSalt$path")}"
+  }
 
   def toXml: Node = {
 
@@ -220,6 +226,25 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
+    val episodeImage: Option[String] = if (tagId == "australia-news/series/full-story") {
+      val maybeThumbnailImageElements = podcast.elements.find(_.exists(el => el.relation == "thumbnail" && el.`type` == ElementType.Image))
+        .getOrElse(Seq.empty)
+      val assets = maybeThumbnailImageElements.flatMap { el =>
+        el.assets
+          .filterNot(_.typeData.flatMap(_.isMaster).getOrElse(false))
+          .filter(_.typeData.flatMap(_.width).isDefined)
+          .sortBy(_.typeData.map(_.width))
+          .reverse
+      }
+      assets.headOption.flatMap { asset =>
+        asset.file.map { filePath =>
+          signPathForImageResizer(filePath.replace("media.guim.co.uk", "i.guim.co.uk/img/media").concat("?width=3000&height=3000&quality=72&fit=crop"))
+        }
+      }
+    } else {
+      None
+    }
+
     <item>
       <title>{ title }</title>
       <itunes:title>{ title }</itunes:title>
@@ -229,6 +254,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       <guid isPermaLink={ guid._2.toString }>{ guid._1 }</guid>
       <itunes:duration>{ duration }</itunes:duration>
       <itunes:author>{ iTunesRssFeed.author }</itunes:author>
+      {
+        episodeImage match {
+          case Some(image) => <itunes:image>{ image }</itunes:image>
+          case None =>
+        }
+      }
       {
         explicit match {
           case Some(value) => <itunes:explicit>{ value }</itunes:explicit>

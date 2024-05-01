@@ -9,11 +9,13 @@ import org.scalatest.OptionValues
 
 class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers with OptionValues {
 
+  val imageResizerSalt = "TBA"
+
   it should "check that the produced XML for the podcasts is consistent" in {
 
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, adFree = false).toXml
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, adFree = false, imageResizerSignatureSalt = imageResizerSalt).toXml
     val trimmedPodcasts = for (p <- podcasts) yield trim(p)
 
     val expectedXml = RemoveWhitespace.transform(
@@ -107,7 +109,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
 
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, true).toXml
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, true, imageResizerSignatureSalt = imageResizerSalt).toXml
 
     val firstItemSubtitleTag = (podcasts \\ "item" \ "subtitle").find(_.prefix == "itunes")
     firstItemSubtitleTag should be(None)
@@ -117,7 +119,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val results = itunesCapiResponse.results.getOrElse(Nil)
     val tagId = itunesCapiResponse.tag.get.id
 
-    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, false).toXml
+    val podcasts = for (p <- results) yield new iTunesRssItem(p, tagId, p.elements.get.head.assets.head, false, imageResizerSignatureSalt = imageResizerSalt).toXml
 
     val itemSubtitleTags = (podcasts \\ "item" \ "subtitle").filter(_.prefix == "itunes")
     itemSubtitleTags.lastOption.map(_.text) should be(Some("Guardian Australia editor Lenore Taylor and head of news Mike Ticher discuss the expansion of Covid financial support in NSW"))
@@ -128,7 +130,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     tag.podcast.value.podcastType.value should be("serial")
     val result = itunesCapiResponseEpisodeNumber.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType).toXml
+      tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
     val episodeTag = (rssItem \ "episode").head
     episodeTag.prefix should be("itunes")
     episodeTag.text should be("6")
@@ -140,7 +142,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val tag = itunesCapiResponseNoType.tag.get
     val result = itunesCapiResponseEpisodeNumber.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType).toXml
+      tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
     (rssItem \ "episode") shouldBe empty
   }
 
@@ -148,7 +150,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val tag = itunesCapiResponse.tag.get
     val result = itunesCapiResponse.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType).toXml
+      tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
     (rssItem \ "episode") shouldBe empty
   }
 }
