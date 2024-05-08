@@ -47,6 +47,10 @@ trait ItunesTestData {
     parseJson[ItemResponse](json)
   }
 
+  val itunesCapiResponseFullStory: ItemResponse = {
+    val json = loadJson("itunes-capi-full-story-response.json")
+    parseJson[ItemResponse](json)
+  }
 }
 
 object JsonHelpers {

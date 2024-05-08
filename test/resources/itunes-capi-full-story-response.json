@@ -1,0 +1,2075 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "internal",
+    "total": 1233,
+    "startIndex": 1,
+    "pageSize": 4,
+    "currentPage": 1,
+    "pages": 309,
+    "orderBy": "newest",
+    "tag": {
+      "id": "australia-news/series/full-story",
+      "type": "series",
+      "sectionId": "australia-news",
+      "sectionName": "Australia news",
+      "webTitle": "Full Story",
+      "webUrl": "https://www.theguardian.com/australia-news/series/full-story",
+      "apiUrl": "https://content.guardianapis.com/australia-news/series/full-story",
+      "description": "<p>You’ve seen the headlines, now hear the Full Story. Every weekday, join Guardian journalists for a deeper understanding of the news in Australia and beyond. You can support The Guardian at&nbsp;<a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></p>",
+      "podcast": {
+        "linkUrl": "https://www.theguardian.com/au",
+        "copyright": "© 2024 Guardian News & Media Limited or its affiliated companies. All rights reserved. ",
+        "author": "Guardian Australia",
+        "subscriptionUrl": "https://podcasts.apple.com/au/podcast/full-story/id1482061243",
+        "explicit": false,
+        "image": "https://uploads.guim.co.uk/2024/03/31/TheGuardian_FullStory2022_3000x3000.jpg",
+        "categories": [
+          {
+            "main": "News"
+          }
+        ],
+        "podcastType": "episodic",
+        "googlePodcastsUrl": "https://podcasts.google.com/?feed=aHR0cHM6Ly93d3cudGhlZ3VhcmRpYW4uY29tL2F1c3RyYWxpYS1uZXdzL3Nlcmllcy9mdWxsLXN0b3J5L3BvZGNhc3QueG1s&hl=en-AU",
+        "spotifyUrl": "https://open.spotify.com/show/7GJod4EyoLywB1AW6zrSHh"
+      },
+      "internalName": "Full Story (podcast)"
+    },
+    "results": [
+      {
+        "id": "australia-news/audio/2024/may/07/india-election-whats-at-stake-for-democracy-under-modi-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-07T15:00:19Z",
+        "webTitle": "India election: what’s at stake for democracy under Modi? - podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/07/india-election-whats-at-stake-for-democracy-under-modi-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/07/india-election-whats-at-stake-for-democracy-under-modi-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>India’s mammoth election has kicked off with nearly a billion voters expected to head to the polls over six weeks.</p><p><strong>Reged Ahmad</strong> speaks to south Asia correspondent <strong>Hannah Ellis-Petersen</strong> about why prime minister Narendra Modi is popular yet divisive – and the international impact of the election</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "<strong>Reged Ahmad</strong> speaks to south Asia correspondent <strong>Hannah Ellis-Petersen</strong> about the logistical challenges of the mammoth election and why Narendra Modi is popular yet divisive",
+          "internalComposerCode": "6639b49c8f082c8a32eab7d2"
+        },
+        "tags": [
+          {
+            "id": "world/indian-elections-2014",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "India elections 2014",
+            "webUrl": "https://www.theguardian.com/world/indian-elections-2014",
+            "apiUrl": "https://content.guardianapis.com/world/indian-elections-2014",
+            "references": [],
+            "internalName": "India elections 2014 (News)"
+          },
+          {
+            "id": "world/india",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "India",
+            "webUrl": "https://www.theguardian.com/world/india",
+            "apiUrl": "https://content.guardianapis.com/world/india",
+            "references": [],
+            "internalName": "India (News)"
+          },
+          {
+            "id": "world/narendra-modi",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "Narendra Modi",
+            "webUrl": "https://www.theguardian.com/world/narendra-modi",
+            "apiUrl": "https://content.guardianapis.com/world/narendra-modi",
+            "references": [],
+            "internalName": "Narendra Modi"
+          },
+          {
+            "id": "world/south-and-central-asia",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "South and central Asia",
+            "webUrl": "https://www.theguardian.com/world/south-and-central-asia",
+            "apiUrl": "https://content.guardianapis.com/world/south-and-central-asia",
+            "references": [],
+            "internalName": "South and central Asia (News)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-6639b49c8f082c8a32eab7d2",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/07-25426-FS_INDIAN_ELECTION.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/07-25426-FS_INDIAN_ELECTION.mp3",
+                  "sizeInBytes": "34770065",
+                  "durationMinutes": "24",
+                  "durationSeconds": "8",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "343fe14156e38ef3c019e86d48fe259ada017e5a",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/master/4965.jpg",
+                "typeData": {
+                  "altText": "A supporter of India's ruling Bharatiya Janata party holds cutouts of Narendra Modi in Bengaluru, Karnataka",
+                  "credit": "Photograph: Navesh Chitrakar/Reuters",
+                  "photographer": "Navesh Chitrakar",
+                  "source": "Reuters",
+                  "width": "4965",
+                  "height": "2980",
+                  "secureFile": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/master/4965.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "343fe14156e38ef3c019e86d48fe259ada017e5a",
+                  "imageType": "Photograph",
+                  "suppliersReference": "RC2BA7AOJEDG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/343fe14156e38ef3c019e86d48fe259ada017e5a"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/4965.jpg",
+                "typeData": {
+                  "altText": "A supporter of India's ruling Bharatiya Janata party holds cutouts of Narendra Modi in Bengaluru, Karnataka",
+                  "credit": "Photograph: Navesh Chitrakar/Reuters",
+                  "photographer": "Navesh Chitrakar",
+                  "source": "Reuters",
+                  "width": "4965",
+                  "height": "2980",
+                  "secureFile": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/4965.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "343fe14156e38ef3c019e86d48fe259ada017e5a",
+                  "imageType": "Photograph",
+                  "suppliersReference": "RC2BA7AOJEDG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/343fe14156e38ef3c019e86d48fe259ada017e5a"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/500.jpg",
+                "typeData": {
+                  "altText": "A supporter of India's ruling Bharatiya Janata party holds cutouts of Narendra Modi in Bengaluru, Karnataka",
+                  "credit": "Photograph: Navesh Chitrakar/Reuters",
+                  "photographer": "Navesh Chitrakar",
+                  "source": "Reuters",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "343fe14156e38ef3c019e86d48fe259ada017e5a",
+                  "imageType": "Photograph",
+                  "suppliersReference": "RC2BA7AOJEDG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/343fe14156e38ef3c019e86d48fe259ada017e5a"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/may/07/alleged-mushroom-murders-erin-patterson-faces-court-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-06T15:00:46Z",
+        "webTitle": "Alleged mushroom murders: Erin Patterson faces court – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/07/alleged-mushroom-murders-erin-patterson-faces-court-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/07/alleged-mushroom-murders-erin-patterson-faces-court-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>In July 2023, Erin Patterson hosted four relatives for lunch in the Victorian town of Leongatha. The guests were served beef wellington – which police allege was laced with a deadly mushroom. </p><p>Patterson was charged with three counts of murder and five counts of attempted murder and is due to face court today. Courts and justice reporter <strong>Nino Bucci </strong>tells <strong>Nour Haydar </strong>about the latest developments in the case and why it has drawn intense media interest</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "<strong>Nino Bucci </strong>tells <strong>Nour Haydar </strong>about the months-long investigation into Victoria’s alleged mushroom murders and the latest court developments",
+          "internalComposerCode": "663487398f082dacd4220cb8"
+        },
+        "tags": [
+          {
+            "id": "australia-news/crime-australia",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Crime - Australia",
+            "webUrl": "https://www.theguardian.com/australia-news/crime-australia",
+            "apiUrl": "https://content.guardianapis.com/australia-news/crime-australia",
+            "references": [],
+            "description": "Latest news on crime in Australia from the Guardian",
+            "internalName": "Crime (Australia)"
+          },
+          {
+            "id": "australia-news/australia-news",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australia news",
+            "webUrl": "https://www.theguardian.com/australia-news/australia-news",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australia-news",
+            "references": [],
+            "internalName": "Australia (News)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-663487398f082dacd4220cb8",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/06-16434-FS_MUSHROOMS.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/06-16434-FS_MUSHROOMS.mp3",
+                  "sizeInBytes": "21646350",
+                  "durationMinutes": "15",
+                  "durationSeconds": "1",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "88f87136902566dd56e3462537885b664af059af",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/master/3500.jpg",
+                "typeData": {
+                  "altText": "In this courtroom sketch, Erin Patterson appears in Latrobe Valley magistrates court, Australia on 3 November 2023",
+                  "credit": "Photograph: Anita Lester/AP",
+                  "photographer": "Anita Lester",
+                  "source": "AP",
+                  "width": "3500",
+                  "height": "2101",
+                  "secureFile": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/master/3500.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "88f87136902566dd56e3462537885b664af059af",
+                  "imageType": "Photograph",
+                  "suppliersReference": "f2bfa0e5-18d2-494b-8044-c1d34ce6d282",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/88f87136902566dd56e3462537885b664af059af"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/3500.jpg",
+                "typeData": {
+                  "altText": "In this courtroom sketch, Erin Patterson appears in Latrobe Valley magistrates court, Australia on 3 November 2023",
+                  "credit": "Photograph: Anita Lester/AP",
+                  "photographer": "Anita Lester",
+                  "source": "AP",
+                  "width": "3500",
+                  "height": "2101",
+                  "secureFile": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/3500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "88f87136902566dd56e3462537885b664af059af",
+                  "imageType": "Photograph",
+                  "suppliersReference": "f2bfa0e5-18d2-494b-8044-c1d34ce6d282",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/88f87136902566dd56e3462537885b664af059af"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/500.jpg",
+                "typeData": {
+                  "altText": "In this courtroom sketch, Erin Patterson appears in Latrobe Valley magistrates court, Australia on 3 November 2023",
+                  "credit": "Photograph: Anita Lester/AP",
+                  "photographer": "Anita Lester",
+                  "source": "AP",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "88f87136902566dd56e3462537885b664af059af",
+                  "imageType": "Photograph",
+                  "suppliersReference": "f2bfa0e5-18d2-494b-8044-c1d34ce6d282",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/88f87136902566dd56e3462537885b664af059af"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/may/06/why-are-australian-schools-failing-children-with-disabilities-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-05T15:00:13Z",
+        "webTitle": "Why are Australian schools failing children with disabilities? - podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/06/why-are-australian-schools-failing-children-with-disabilities-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/06/why-are-australian-schools-failing-children-with-disabilities-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>The number of disabled students recognised as needing greater learning support has grown to almost 1 million nationally. But these children are increasingly being suspended from schools, including some as young as five years old. Investigative reporter <strong>Sarah Martin</strong> explains to <strong>Jane Lee</strong> how Australia’s education system has reached crisis point</p>",
+          "trailText": "Investigative reporter <strong>Sarah Martin</strong> explains to <strong>Jane Lee</strong> how the education system has reached crisis point",
+          "internalComposerCode": "6634405e8f082dacd4220ab7"
+        },
+        "tags": [
+          {
+            "id": "australia-news/australian-education",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australian education",
+            "webUrl": "https://www.theguardian.com/australia-news/australian-education",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australian-education",
+            "references": [],
+            "internalName": "Education (Australia)"
+          },
+          {
+            "id": "australia-news/australia-news",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australia news",
+            "webUrl": "https://www.theguardian.com/australia-news/australia-news",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australia-news",
+            "references": [],
+            "internalName": "Australia (News)"
+          },
+          {
+            "id": "society/disability",
+            "type": "keyword",
+            "sectionId": "society",
+            "sectionName": "Society",
+            "webTitle": "Disability",
+            "webUrl": "https://www.theguardian.com/society/disability",
+            "apiUrl": "https://content.guardianapis.com/society/disability",
+            "references": [],
+            "internalName": "Disability (Society)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-6634405e8f082dacd4220ab7",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/03-23893-FS_DisabilityEducation.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/03-23893-FS_DisabilityEducation.mp3",
+                  "sizeInBytes": "32577049",
+                  "durationMinutes": "22",
+                  "durationSeconds": "37",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "1ab3d6bd851ef1359628ab3533376f00806b7f41",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/master/2500.jpg",
+                "typeData": {
+                  "altText": "Alicia Cook with her son Emerson",
+                  "credit": "Photograph: Sarah Rhodes/The Guardian",
+                  "photographer": "Sarah Rhodes",
+                  "source": "The Guardian",
+                  "width": "2500",
+                  "height": "1500",
+                  "secureFile": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/master/2500.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "1ab3d6bd851ef1359628ab3533376f00806b7f41",
+                  "imageType": "Photograph",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/1ab3d6bd851ef1359628ab3533376f00806b7f41"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/2500.jpg",
+                "typeData": {
+                  "altText": "Alicia Cook with her son Emerson",
+                  "credit": "Photograph: Sarah Rhodes/The Guardian",
+                  "photographer": "Sarah Rhodes",
+                  "source": "The Guardian",
+                  "width": "2500",
+                  "height": "1500",
+                  "secureFile": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/2500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "1ab3d6bd851ef1359628ab3533376f00806b7f41",
+                  "imageType": "Photograph",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/1ab3d6bd851ef1359628ab3533376f00806b7f41"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/500.jpg",
+                "typeData": {
+                  "altText": "Alicia Cook with her son Emerson",
+                  "credit": "Photograph: Sarah Rhodes/The Guardian",
+                  "photographer": "Sarah Rhodes",
+                  "source": "The Guardian",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "1ab3d6bd851ef1359628ab3533376f00806b7f41",
+                  "imageType": "Photograph",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/1ab3d6bd851ef1359628ab3533376f00806b7f41"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/may/02/newsroom-edition-political-lessons-from-scott-morrisons-faith-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-02T15:00:13Z",
+        "webTitle": "Newsroom edition: Scott Morrison’s memoir and the role for faith in politics – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/02/newsroom-edition-political-lessons-from-scott-morrisons-faith-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/02/newsroom-edition-political-lessons-from-scott-morrisons-faith-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>In Australia – a multifaith and sometimes agnostic country – what role does faith play in the decision-making of those who run the country? With the upcoming release of his book, <strong>Plans For Your Good: A Prime Minister’s Testimony of God’s Faithfulness</strong>, Scott Morrison has placed his faith front and centre. But is this something new? Or has religion always been a part of Australia’s political democracy?</p><p><strong>Bridie Jabour</strong> speaks with editor in chief <strong>Lenore Taylor</strong> and deputy editor <strong>Patrick Keneally</strong> on the nuanced relationship between faith and politics</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "<strong>Bridie Jabour</strong> speaks with editor in chief <strong>Lenore Taylor</strong> and deputy editor <strong>Patrick Keneally</strong> on the nuanced relationship between faith and politics",
+          "internalComposerCode": "66331a978f08cb0a1ccaaa62"
+        },
+        "tags": [
+          {
+            "id": "australia-news/australian-politics",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australian politics",
+            "webUrl": "https://www.theguardian.com/australia-news/australian-politics",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australian-politics",
+            "references": [],
+            "internalName": "Australian politics"
+          },
+          {
+            "id": "australia-news/scott-morrison",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Scott Morrison",
+            "webUrl": "https://www.theguardian.com/australia-news/scott-morrison",
+            "apiUrl": "https://content.guardianapis.com/australia-news/scott-morrison",
+            "references": [],
+            "internalName": "Scott Morrison"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-66331a978f08cb0a1ccaaa62",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/02-25348-FS_FS_Religion_ch_020524_1700.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/02-25348-FS_FS_Religion_ch_020524_1700.mp3",
+                  "sizeInBytes": "32066089",
+                  "durationMinutes": "22",
+                  "durationSeconds": "16",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "ec5daa5e78456158616f8a58710e402c05e51674",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/master/3286.jpg",
+                "typeData": {
+                  "altText": "Former Australian Prime Minister Scott Morrison and wife Jenny sing during an Easter Sunday service at Horizon Church, in Sydney, in 2019.",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "3286",
+                  "height": "1972",
+                  "secureFile": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/master/3286.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "ec5daa5e78456158616f8a58710e402c05e51674",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AAP",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/ec5daa5e78456158616f8a58710e402c05e51674"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/3286.jpg",
+                "typeData": {
+                  "altText": "Former Australian Prime Minister Scott Morrison and wife Jenny sing during an Easter Sunday service at Horizon Church, in Sydney, in 2019.",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "3286",
+                  "height": "1972",
+                  "secureFile": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/3286.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "ec5daa5e78456158616f8a58710e402c05e51674",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AAP",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/ec5daa5e78456158616f8a58710e402c05e51674"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/500.jpg",
+                "typeData": {
+                  "altText": "Former Australian Prime Minister Scott Morrison and wife Jenny sing during an Easter Sunday service at Horizon Church, in Sydney, in 2019.",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "ec5daa5e78456158616f8a58710e402c05e51674",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AAP",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/ec5daa5e78456158616f8a58710e402c05e51674"
+                }
+              }
+            ]
+          }
+        ],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ],
+    "leadContent": [
+      {
+        "id": "australia-news/audio/2024/may/07/india-election-whats-at-stake-for-democracy-under-modi-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-07T15:00:19Z",
+        "webTitle": "India election: what’s at stake for democracy under Modi? - podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/07/india-election-whats-at-stake-for-democracy-under-modi-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/07/india-election-whats-at-stake-for-democracy-under-modi-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>India’s mammoth election has kicked off with nearly a billion voters expected to head to the polls over six weeks.</p><p><strong>Reged Ahmad</strong> speaks to south Asia correspondent <strong>Hannah Ellis-Petersen</strong> about why prime minister Narendra Modi is popular yet divisive – and the international impact of the election</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "<strong>Reged Ahmad</strong> speaks to south Asia correspondent <strong>Hannah Ellis-Petersen</strong> about the logistical challenges of the mammoth election and why Narendra Modi is popular yet divisive",
+          "internalComposerCode": "6639b49c8f082c8a32eab7d2"
+        },
+        "tags": [
+          {
+            "id": "world/indian-elections-2014",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "India elections 2014",
+            "webUrl": "https://www.theguardian.com/world/indian-elections-2014",
+            "apiUrl": "https://content.guardianapis.com/world/indian-elections-2014",
+            "references": [],
+            "internalName": "India elections 2014 (News)"
+          },
+          {
+            "id": "world/india",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "India",
+            "webUrl": "https://www.theguardian.com/world/india",
+            "apiUrl": "https://content.guardianapis.com/world/india",
+            "references": [],
+            "internalName": "India (News)"
+          },
+          {
+            "id": "world/narendra-modi",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "Narendra Modi",
+            "webUrl": "https://www.theguardian.com/world/narendra-modi",
+            "apiUrl": "https://content.guardianapis.com/world/narendra-modi",
+            "references": [],
+            "internalName": "Narendra Modi"
+          },
+          {
+            "id": "world/south-and-central-asia",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "South and central Asia",
+            "webUrl": "https://www.theguardian.com/world/south-and-central-asia",
+            "apiUrl": "https://content.guardianapis.com/world/south-and-central-asia",
+            "references": [],
+            "internalName": "South and central Asia (News)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-6639b49c8f082c8a32eab7d2",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/07-25426-FS_INDIAN_ELECTION.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/07-25426-FS_INDIAN_ELECTION.mp3",
+                  "sizeInBytes": "34770065",
+                  "durationMinutes": "24",
+                  "durationSeconds": "8",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "343fe14156e38ef3c019e86d48fe259ada017e5a",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/master/4965.jpg",
+                "typeData": {
+                  "altText": "A supporter of India's ruling Bharatiya Janata party holds cutouts of Narendra Modi in Bengaluru, Karnataka",
+                  "credit": "Photograph: Navesh Chitrakar/Reuters",
+                  "photographer": "Navesh Chitrakar",
+                  "source": "Reuters",
+                  "width": "4965",
+                  "height": "2980",
+                  "secureFile": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/master/4965.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "343fe14156e38ef3c019e86d48fe259ada017e5a",
+                  "imageType": "Photograph",
+                  "suppliersReference": "RC2BA7AOJEDG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/343fe14156e38ef3c019e86d48fe259ada017e5a"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/4965.jpg",
+                "typeData": {
+                  "altText": "A supporter of India's ruling Bharatiya Janata party holds cutouts of Narendra Modi in Bengaluru, Karnataka",
+                  "credit": "Photograph: Navesh Chitrakar/Reuters",
+                  "photographer": "Navesh Chitrakar",
+                  "source": "Reuters",
+                  "width": "4965",
+                  "height": "2980",
+                  "secureFile": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/4965.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "343fe14156e38ef3c019e86d48fe259ada017e5a",
+                  "imageType": "Photograph",
+                  "suppliersReference": "RC2BA7AOJEDG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/343fe14156e38ef3c019e86d48fe259ada017e5a"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/500.jpg",
+                "typeData": {
+                  "altText": "A supporter of India's ruling Bharatiya Janata party holds cutouts of Narendra Modi in Bengaluru, Karnataka",
+                  "credit": "Photograph: Navesh Chitrakar/Reuters",
+                  "photographer": "Navesh Chitrakar",
+                  "source": "Reuters",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "343fe14156e38ef3c019e86d48fe259ada017e5a",
+                  "imageType": "Photograph",
+                  "suppliersReference": "RC2BA7AOJEDG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/343fe14156e38ef3c019e86d48fe259ada017e5a"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/may/07/alleged-mushroom-murders-erin-patterson-faces-court-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-06T15:00:46Z",
+        "webTitle": "Alleged mushroom murders: Erin Patterson faces court – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/07/alleged-mushroom-murders-erin-patterson-faces-court-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/07/alleged-mushroom-murders-erin-patterson-faces-court-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>In July 2023, Erin Patterson hosted four relatives for lunch in the Victorian town of Leongatha. The guests were served beef wellington – which police allege was laced with a deadly mushroom. </p><p>Patterson was charged with three counts of murder and five counts of attempted murder and is due to face court today. Courts and justice reporter <strong>Nino Bucci </strong>tells <strong>Nour Haydar </strong>about the latest developments in the case and why it has drawn intense media interest</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "<strong>Nino Bucci </strong>tells <strong>Nour Haydar </strong>about the months-long investigation into Victoria’s alleged mushroom murders and the latest court developments",
+          "internalComposerCode": "663487398f082dacd4220cb8"
+        },
+        "tags": [
+          {
+            "id": "australia-news/crime-australia",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Crime - Australia",
+            "webUrl": "https://www.theguardian.com/australia-news/crime-australia",
+            "apiUrl": "https://content.guardianapis.com/australia-news/crime-australia",
+            "references": [],
+            "description": "Latest news on crime in Australia from the Guardian",
+            "internalName": "Crime (Australia)"
+          },
+          {
+            "id": "australia-news/australia-news",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australia news",
+            "webUrl": "https://www.theguardian.com/australia-news/australia-news",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australia-news",
+            "references": [],
+            "internalName": "Australia (News)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-663487398f082dacd4220cb8",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/06-16434-FS_MUSHROOMS.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/06-16434-FS_MUSHROOMS.mp3",
+                  "sizeInBytes": "21646350",
+                  "durationMinutes": "15",
+                  "durationSeconds": "1",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "88f87136902566dd56e3462537885b664af059af",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/master/3500.jpg",
+                "typeData": {
+                  "altText": "In this courtroom sketch, Erin Patterson appears in Latrobe Valley magistrates court, Australia on 3 November 2023",
+                  "credit": "Photograph: Anita Lester/AP",
+                  "photographer": "Anita Lester",
+                  "source": "AP",
+                  "width": "3500",
+                  "height": "2101",
+                  "secureFile": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/master/3500.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "88f87136902566dd56e3462537885b664af059af",
+                  "imageType": "Photograph",
+                  "suppliersReference": "f2bfa0e5-18d2-494b-8044-c1d34ce6d282",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/88f87136902566dd56e3462537885b664af059af"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/3500.jpg",
+                "typeData": {
+                  "altText": "In this courtroom sketch, Erin Patterson appears in Latrobe Valley magistrates court, Australia on 3 November 2023",
+                  "credit": "Photograph: Anita Lester/AP",
+                  "photographer": "Anita Lester",
+                  "source": "AP",
+                  "width": "3500",
+                  "height": "2101",
+                  "secureFile": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/3500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "88f87136902566dd56e3462537885b664af059af",
+                  "imageType": "Photograph",
+                  "suppliersReference": "f2bfa0e5-18d2-494b-8044-c1d34ce6d282",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/88f87136902566dd56e3462537885b664af059af"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/500.jpg",
+                "typeData": {
+                  "altText": "In this courtroom sketch, Erin Patterson appears in Latrobe Valley magistrates court, Australia on 3 November 2023",
+                  "credit": "Photograph: Anita Lester/AP",
+                  "photographer": "Anita Lester",
+                  "source": "AP",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/88f87136902566dd56e3462537885b664af059af/0_267_3500_2101/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "88f87136902566dd56e3462537885b664af059af",
+                  "imageType": "Photograph",
+                  "suppliersReference": "f2bfa0e5-18d2-494b-8044-c1d34ce6d282",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/88f87136902566dd56e3462537885b664af059af"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/may/06/why-are-australian-schools-failing-children-with-disabilities-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-05T15:00:13Z",
+        "webTitle": "Why are Australian schools failing children with disabilities? - podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/06/why-are-australian-schools-failing-children-with-disabilities-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/06/why-are-australian-schools-failing-children-with-disabilities-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>The number of disabled students recognised as needing greater learning support has grown to almost 1 million nationally. But these children are increasingly being suspended from schools, including some as young as five years old. Investigative reporter <strong>Sarah Martin</strong> explains to <strong>Jane Lee</strong> how Australia’s education system has reached crisis point</p>",
+          "trailText": "Investigative reporter <strong>Sarah Martin</strong> explains to <strong>Jane Lee</strong> how the education system has reached crisis point",
+          "internalComposerCode": "6634405e8f082dacd4220ab7"
+        },
+        "tags": [
+          {
+            "id": "australia-news/australian-education",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australian education",
+            "webUrl": "https://www.theguardian.com/australia-news/australian-education",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australian-education",
+            "references": [],
+            "internalName": "Education (Australia)"
+          },
+          {
+            "id": "australia-news/australia-news",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australia news",
+            "webUrl": "https://www.theguardian.com/australia-news/australia-news",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australia-news",
+            "references": [],
+            "internalName": "Australia (News)"
+          },
+          {
+            "id": "society/disability",
+            "type": "keyword",
+            "sectionId": "society",
+            "sectionName": "Society",
+            "webTitle": "Disability",
+            "webUrl": "https://www.theguardian.com/society/disability",
+            "apiUrl": "https://content.guardianapis.com/society/disability",
+            "references": [],
+            "internalName": "Disability (Society)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-6634405e8f082dacd4220ab7",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/03-23893-FS_DisabilityEducation.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/03-23893-FS_DisabilityEducation.mp3",
+                  "sizeInBytes": "32577049",
+                  "durationMinutes": "22",
+                  "durationSeconds": "37",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "1ab3d6bd851ef1359628ab3533376f00806b7f41",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/master/2500.jpg",
+                "typeData": {
+                  "altText": "Alicia Cook with her son Emerson",
+                  "credit": "Photograph: Sarah Rhodes/The Guardian",
+                  "photographer": "Sarah Rhodes",
+                  "source": "The Guardian",
+                  "width": "2500",
+                  "height": "1500",
+                  "secureFile": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/master/2500.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "1ab3d6bd851ef1359628ab3533376f00806b7f41",
+                  "imageType": "Photograph",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/1ab3d6bd851ef1359628ab3533376f00806b7f41"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/2500.jpg",
+                "typeData": {
+                  "altText": "Alicia Cook with her son Emerson",
+                  "credit": "Photograph: Sarah Rhodes/The Guardian",
+                  "photographer": "Sarah Rhodes",
+                  "source": "The Guardian",
+                  "width": "2500",
+                  "height": "1500",
+                  "secureFile": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/2500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "1ab3d6bd851ef1359628ab3533376f00806b7f41",
+                  "imageType": "Photograph",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/1ab3d6bd851ef1359628ab3533376f00806b7f41"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/500.jpg",
+                "typeData": {
+                  "altText": "Alicia Cook with her son Emerson",
+                  "credit": "Photograph: Sarah Rhodes/The Guardian",
+                  "photographer": "Sarah Rhodes",
+                  "source": "The Guardian",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/1ab3d6bd851ef1359628ab3533376f00806b7f41/0_0_2500_1500/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "1ab3d6bd851ef1359628ab3533376f00806b7f41",
+                  "imageType": "Photograph",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/1ab3d6bd851ef1359628ab3533376f00806b7f41"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/may/02/newsroom-edition-political-lessons-from-scott-morrisons-faith-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-02T15:00:13Z",
+        "webTitle": "Newsroom edition: Scott Morrison’s memoir and the role for faith in politics – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/02/newsroom-edition-political-lessons-from-scott-morrisons-faith-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/02/newsroom-edition-political-lessons-from-scott-morrisons-faith-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>In Australia – a multifaith and sometimes agnostic country – what role does faith play in the decision-making of those who run the country? With the upcoming release of his book, <strong>Plans For Your Good: A Prime Minister’s Testimony of God’s Faithfulness</strong>, Scott Morrison has placed his faith front and centre. But is this something new? Or has religion always been a part of Australia’s political democracy?</p><p><strong>Bridie Jabour</strong> speaks with editor in chief <strong>Lenore Taylor</strong> and deputy editor <strong>Patrick Keneally</strong> on the nuanced relationship between faith and politics</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "<strong>Bridie Jabour</strong> speaks with editor in chief <strong>Lenore Taylor</strong> and deputy editor <strong>Patrick Keneally</strong> on the nuanced relationship between faith and politics",
+          "internalComposerCode": "66331a978f08cb0a1ccaaa62"
+        },
+        "tags": [
+          {
+            "id": "australia-news/australian-politics",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australian politics",
+            "webUrl": "https://www.theguardian.com/australia-news/australian-politics",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australian-politics",
+            "references": [],
+            "internalName": "Australian politics"
+          },
+          {
+            "id": "australia-news/scott-morrison",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Scott Morrison",
+            "webUrl": "https://www.theguardian.com/australia-news/scott-morrison",
+            "apiUrl": "https://content.guardianapis.com/australia-news/scott-morrison",
+            "references": [],
+            "internalName": "Scott Morrison"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-66331a978f08cb0a1ccaaa62",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/02-25348-FS_FS_Religion_ch_020524_1700.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/02-25348-FS_FS_Religion_ch_020524_1700.mp3",
+                  "sizeInBytes": "32066089",
+                  "durationMinutes": "22",
+                  "durationSeconds": "16",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "ec5daa5e78456158616f8a58710e402c05e51674",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/master/3286.jpg",
+                "typeData": {
+                  "altText": "Former Australian Prime Minister Scott Morrison and wife Jenny sing during an Easter Sunday service at Horizon Church, in Sydney, in 2019.",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "3286",
+                  "height": "1972",
+                  "secureFile": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/master/3286.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "ec5daa5e78456158616f8a58710e402c05e51674",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AAP",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/ec5daa5e78456158616f8a58710e402c05e51674"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/3286.jpg",
+                "typeData": {
+                  "altText": "Former Australian Prime Minister Scott Morrison and wife Jenny sing during an Easter Sunday service at Horizon Church, in Sydney, in 2019.",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "3286",
+                  "height": "1972",
+                  "secureFile": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/3286.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "ec5daa5e78456158616f8a58710e402c05e51674",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AAP",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/ec5daa5e78456158616f8a58710e402c05e51674"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/500.jpg",
+                "typeData": {
+                  "altText": "Former Australian Prime Minister Scott Morrison and wife Jenny sing during an Easter Sunday service at Horizon Church, in Sydney, in 2019.",
+                  "credit": "Photograph: Mick Tsikas/AAP",
+                  "photographer": "Mick Tsikas",
+                  "source": "AAP",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/ec5daa5e78456158616f8a58710e402c05e51674/922_0_3286_1972/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "ec5daa5e78456158616f8a58710e402c05e51674",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AAP",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/ec5daa5e78456158616f8a58710e402c05e51674"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/may/01/is-stubborn-inflation-taking-away-any-hope-for-an-interest-rate-cut-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-05-01T15:00:33Z",
+        "webTitle": "Is stubborn inflation taking away any hope for an interest rate cut? – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/may/01/is-stubborn-inflation-taking-away-any-hope-for-an-interest-rate-cut-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/may/01/is-stubborn-inflation-taking-away-any-hope-for-an-interest-rate-cut-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>Rising education, health and rental costs have kept inflation higher than expected this year. Economics correspondent Peter Hannam tells Nour Haydar what the Reserve Bank’s reaction might be – are all hopes of an interest rate cut this year gone? And what does this mean for any cost of living relief the government might be considering?</p>",
+          "trailText": "Economics correspondent Peter Hannam tells Nour Haydar what the Reserve Bank’s reaction might be",
+          "internalComposerCode": "6631c74d8f08df7ec2bd9be4"
+        },
+        "tags": [
+          {
+            "id": "australia-news/reserve-bank-of-australia",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Reserve Bank of Australia",
+            "webUrl": "https://www.theguardian.com/australia-news/reserve-bank-of-australia",
+            "apiUrl": "https://content.guardianapis.com/australia-news/reserve-bank-of-australia",
+            "references": [],
+            "description": "Latest news on the Reserve Bank of Australia from the Guardian",
+            "internalName": "Reserve Bank of Australia"
+          },
+          {
+            "id": "business/inflation",
+            "type": "keyword",
+            "sectionId": "business",
+            "sectionName": "Business",
+            "webTitle": "Inflation",
+            "webUrl": "https://www.theguardian.com/business/inflation",
+            "apiUrl": "https://content.guardianapis.com/business/inflation",
+            "references": [],
+            "internalName": "Inflation (Business)"
+          },
+          {
+            "id": "australia-news/interest-rates-australia",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Interest rates",
+            "webUrl": "https://www.theguardian.com/australia-news/interest-rates-australia",
+            "apiUrl": "https://content.guardianapis.com/australia-news/interest-rates-australia",
+            "references": [],
+            "internalName": "Interest rates (Australia)"
+          },
+          {
+            "id": "business/australia-economy",
+            "type": "keyword",
+            "sectionId": "business",
+            "sectionName": "Business",
+            "webTitle": "Australian economy",
+            "webUrl": "https://www.theguardian.com/business/australia-economy",
+            "apiUrl": "https://content.guardianapis.com/business/australia-economy",
+            "references": [],
+            "internalName": "Australian economy"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-6631c74d8f08df7ec2bd9be4",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/05/01-22317-fs_economics_.mp3",
+                "typeData": {
+                  "source": "podcast",
+                  "secureFile": "https://audio.guim.co.uk/2024/05/01-22317-fs_economics_.mp3",
+                  "sizeInBytes": "20925501",
+                  "durationMinutes": "14",
+                  "durationSeconds": "31",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "c2884539b95352a5fa5bea91059024f2b7cf8931",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/c2884539b95352a5fa5bea91059024f2b7cf8931/252_764_7188_4313/master/7188.jpg",
+                "typeData": {
+                  "altText": "The Reserve Bank of Australia headquaters in Sydney, Tuesday, October 4, 2022. The Reserve Bank of Australia board holds its monthly meeting ahead of an announcement on interest rates. (AAP Image/Dean Lewins) NO ARCHIVING",
+                  "credit": "Photograph: Dean Lewins/AAP",
+                  "photographer": "Dean Lewins",
+                  "source": "AAP",
+                  "width": "7188",
+                  "height": "4313",
+                  "secureFile": "https://media.guim.co.uk/c2884539b95352a5fa5bea91059024f2b7cf8931/252_764_7188_4313/master/7188.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "c2884539b95352a5fa5bea91059024f2b7cf8931",
+                  "imageType": "Photograph",
+                  "suppliersReference": "633b45cdefe1bd46c725a75e",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/c2884539b95352a5fa5bea91059024f2b7cf8931"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/c2884539b95352a5fa5bea91059024f2b7cf8931/252_764_7188_4313/7188.jpg",
+                "typeData": {
+                  "altText": "The Reserve Bank of Australia headquaters in Sydney, Tuesday, October 4, 2022. The Reserve Bank of Australia board holds its monthly meeting ahead of an announcement on interest rates. (AAP Image/Dean Lewins) NO ARCHIVING",
+                  "credit": "Photograph: Dean Lewins/AAP",
+                  "photographer": "Dean Lewins",
+                  "source": "AAP",
+                  "width": "7188",
+                  "height": "4313",
+                  "secureFile": "https://media.guim.co.uk/c2884539b95352a5fa5bea91059024f2b7cf8931/252_764_7188_4313/7188.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "c2884539b95352a5fa5bea91059024f2b7cf8931",
+                  "imageType": "Photograph",
+                  "suppliersReference": "633b45cdefe1bd46c725a75e",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/c2884539b95352a5fa5bea91059024f2b7cf8931"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/c2884539b95352a5fa5bea91059024f2b7cf8931/252_764_7188_4313/500.jpg",
+                "typeData": {
+                  "altText": "The Reserve Bank of Australia headquaters in Sydney, Tuesday, October 4, 2022. The Reserve Bank of Australia board holds its monthly meeting ahead of an announcement on interest rates. (AAP Image/Dean Lewins) NO ARCHIVING",
+                  "credit": "Photograph: Dean Lewins/AAP",
+                  "photographer": "Dean Lewins",
+                  "source": "AAP",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/c2884539b95352a5fa5bea91059024f2b7cf8931/252_764_7188_4313/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "c2884539b95352a5fa5bea91059024f2b7cf8931",
+                  "imageType": "Photograph",
+                  "suppliersReference": "633b45cdefe1bd46c725a75e",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/c2884539b95352a5fa5bea91059024f2b7cf8931"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/apr/30/the-fringe-groups-taking-an-interest-in-queenslands-council-elections-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-04-30T15:00:34Z",
+        "webTitle": "The fringe groups taking an interest in Queensland’s council elections – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/apr/30/the-fringe-groups-taking-an-interest-in-queenslands-council-elections-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/apr/30/the-fringe-groups-taking-an-interest-in-queenslands-council-elections-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>My Place emerged from the highly vocal Covid-19 anti-lockdown protests. It’s a network which reportedly has thousands of members and is predominantly active in Facebook community groups. Some of the ideas that these groups believe are that vaccines are deadly, fluoride in water is dangerous and 5G is a threat.</p><p>Lately My Place has been taking its ideologies offline and into local government, with some groups allegedly playing a role in supporting candidates in  Queensland council elections.</p><p>So with the Queensland state election coming up in October, what might be the potential impact of groups such as My Place on the polling results?</p><p>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></p><p></p>",
+          "trailText": "My Place has been taking its ideologies offline and into local government",
+          "internalComposerCode": "6628862a8f0839cf006b1636"
+        },
+        "tags": [
+          {
+            "id": "australia-news/queensland-politics",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Queensland politics",
+            "webUrl": "https://www.theguardian.com/australia-news/queensland-politics",
+            "apiUrl": "https://content.guardianapis.com/australia-news/queensland-politics",
+            "references": [],
+            "description": "Latest news and comment on Queensland politics ",
+            "internalName": "Queensland politics"
+          },
+          {
+            "id": "australia-news/australia-news",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australia news",
+            "webUrl": "https://www.theguardian.com/australia-news/australia-news",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australia-news",
+            "references": [],
+            "internalName": "Australia (News)"
+          },
+          {
+            "id": "australia-news/queensland",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Queensland",
+            "webUrl": "https://www.theguardian.com/australia-news/queensland",
+            "apiUrl": "https://content.guardianapis.com/australia-news/queensland",
+            "references": [],
+            "description": "Latest news and comment on the Australian state of Queensland",
+            "internalName": "Queensland (news)"
+          },
+          {
+            "id": "media/social-media",
+            "type": "keyword",
+            "sectionId": "media",
+            "sectionName": "Media",
+            "webTitle": "Social media",
+            "webUrl": "https://www.theguardian.com/media/social-media",
+            "apiUrl": "https://content.guardianapis.com/media/social-media",
+            "references": [],
+            "internalName": "Social media"
+          },
+          {
+            "id": "australia-news/health",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Health",
+            "webUrl": "https://www.theguardian.com/australia-news/health",
+            "apiUrl": "https://content.guardianapis.com/australia-news/health",
+            "references": [],
+            "internalName": "Health (Australia)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-6628862a8f0839cf006b1636",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/04/30-06743-FS_MyPlace_ch_300424_1045.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/04/30-06743-FS_MyPlace_ch_300424_1045.mp3",
+                  "sizeInBytes": "26048727",
+                  "durationMinutes": "18",
+                  "durationSeconds": "5",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "c6f1e510b85a149600f98d8ccac5d4ee33568ab2",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/c6f1e510b85a149600f98d8ccac5d4ee33568ab2/0_2_3000_1800/master/3000.jpg",
+                "typeData": {
+                  "altText": "A dentist inspects a patient's teeth",
+                  "credit": "Photograph: Rui Vieira/PA",
+                  "photographer": "Rui Vieira",
+                  "source": "PA",
+                  "width": "3000",
+                  "height": "1800",
+                  "secureFile": "https://media.guim.co.uk/c6f1e510b85a149600f98d8ccac5d4ee33568ab2/0_2_3000_1800/master/3000.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "c6f1e510b85a149600f98d8ccac5d4ee33568ab2",
+                  "imageType": "Photograph",
+                  "suppliersReference": "pa-new/HEALTH Dental  06524935.JPG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/c6f1e510b85a149600f98d8ccac5d4ee33568ab2"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/c6f1e510b85a149600f98d8ccac5d4ee33568ab2/0_2_3000_1800/3000.jpg",
+                "typeData": {
+                  "altText": "A dentist inspects a patient's teeth",
+                  "credit": "Photograph: Rui Vieira/PA",
+                  "photographer": "Rui Vieira",
+                  "source": "PA",
+                  "width": "3000",
+                  "height": "1800",
+                  "secureFile": "https://media.guim.co.uk/c6f1e510b85a149600f98d8ccac5d4ee33568ab2/0_2_3000_1800/3000.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "c6f1e510b85a149600f98d8ccac5d4ee33568ab2",
+                  "imageType": "Photograph",
+                  "suppliersReference": "pa-new/HEALTH Dental  06524935.JPG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/c6f1e510b85a149600f98d8ccac5d4ee33568ab2"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/c6f1e510b85a149600f98d8ccac5d4ee33568ab2/0_2_3000_1800/500.jpg",
+                "typeData": {
+                  "altText": "A dentist inspects a patient's teeth",
+                  "credit": "Photograph: Rui Vieira/PA",
+                  "photographer": "Rui Vieira",
+                  "source": "PA",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/c6f1e510b85a149600f98d8ccac5d4ee33568ab2/0_2_3000_1800/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "c6f1e510b85a149600f98d8ccac5d4ee33568ab2",
+                  "imageType": "Photograph",
+                  "suppliersReference": "pa-new/HEALTH Dental  06524935.JPG",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/c6f1e510b85a149600f98d8ccac5d4ee33568ab2"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/apr/29/jess-hill-on-what-it-will-take-to-stop-men-killing-women-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-04-29T15:00:21Z",
+        "webTitle": "Jess Hill on what it will take to stop men killing women – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/apr/29/jess-hill-on-what-it-will-take-to-stop-men-killing-women-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/apr/29/jess-hill-on-what-it-will-take-to-stop-men-killing-women-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>For many years political leaders have condemned violence against women and expressed platitudes about the need for change. But government policies to reduce gender-based violence have failed and frontline services say they are severely underfunded. Journalist and coercive control educator <strong>Jess Hill</strong> speaks to <strong>Nour Haydar</strong> about the major paradigm shift that governments still need to make</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "Journalist and coercive control educator <strong>Jess Hill</strong> speaks to <strong>Nour Haydar</strong>",
+          "internalComposerCode": "662f31a98f082fbf29749f44"
+        },
+        "tags": [
+          {
+            "id": "society/women",
+            "type": "keyword",
+            "sectionId": "society",
+            "sectionName": "Society",
+            "webTitle": "Women",
+            "webUrl": "https://www.theguardian.com/society/women",
+            "apiUrl": "https://content.guardianapis.com/society/women",
+            "references": [],
+            "internalName": "Women (Society)"
+          },
+          {
+            "id": "society/domestic-violence",
+            "type": "keyword",
+            "sectionId": "society",
+            "sectionName": "Society",
+            "webTitle": "Domestic violence",
+            "webUrl": "https://www.theguardian.com/society/domestic-violence",
+            "apiUrl": "https://content.guardianapis.com/society/domestic-violence",
+            "references": [],
+            "internalName": "Domestic violence (Society)"
+          },
+          {
+            "id": "australia-news/crime-australia",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Crime - Australia",
+            "webUrl": "https://www.theguardian.com/australia-news/crime-australia",
+            "apiUrl": "https://content.guardianapis.com/australia-news/crime-australia",
+            "references": [],
+            "description": "Latest news on crime in Australia from the Guardian",
+            "internalName": "Crime (Australia)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-662f31a98f082fbf29749f44",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/04/29-41283-FS_JH.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/04/29-41283-FS_JH.mp3",
+                  "sizeInBytes": "33724456",
+                  "durationMinutes": "23",
+                  "durationSeconds": "25",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "547d903fa0f98d6dd04609d7462aa5b37603fe92",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/547d903fa0f98d6dd04609d7462aa5b37603fe92/0_444_8256_4954/master/8256.jpg",
+                "typeData": {
+                  "altText": "Australian Prime Minister Anthony Albanese attends a rally to a call for action to end violence against women, in Canberra",
+                  "credit": "Photograph: Lukas Coch/AAP",
+                  "photographer": "Lukas Coch",
+                  "source": "AAP",
+                  "width": "8256",
+                  "height": "4954",
+                  "secureFile": "https://media.guim.co.uk/547d903fa0f98d6dd04609d7462aa5b37603fe92/0_444_8256_4954/master/8256.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "547d903fa0f98d6dd04609d7462aa5b37603fe92",
+                  "imageType": "Photograph",
+                  "suppliersReference": "CNB",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/547d903fa0f98d6dd04609d7462aa5b37603fe92"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/547d903fa0f98d6dd04609d7462aa5b37603fe92/0_444_8256_4954/8256.jpg",
+                "typeData": {
+                  "altText": "Australian Prime Minister Anthony Albanese attends a rally to a call for action to end violence against women, in Canberra",
+                  "credit": "Photograph: Lukas Coch/AAP",
+                  "photographer": "Lukas Coch",
+                  "source": "AAP",
+                  "width": "8256",
+                  "height": "4954",
+                  "secureFile": "https://media.guim.co.uk/547d903fa0f98d6dd04609d7462aa5b37603fe92/0_444_8256_4954/8256.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "547d903fa0f98d6dd04609d7462aa5b37603fe92",
+                  "imageType": "Photograph",
+                  "suppliersReference": "CNB",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/547d903fa0f98d6dd04609d7462aa5b37603fe92"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/547d903fa0f98d6dd04609d7462aa5b37603fe92/0_444_8256_4954/500.jpg",
+                "typeData": {
+                  "altText": "Australian Prime Minister Anthony Albanese attends a rally to a call for action to end violence against women, in Canberra",
+                  "credit": "Photograph: Lukas Coch/AAP",
+                  "photographer": "Lukas Coch",
+                  "source": "AAP",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/547d903fa0f98d6dd04609d7462aa5b37603fe92/0_444_8256_4954/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "547d903fa0f98d6dd04609d7462aa5b37603fe92",
+                  "imageType": "Photograph",
+                  "suppliersReference": "CNB",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/547d903fa0f98d6dd04609d7462aa5b37603fe92"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/apr/29/why-are-police-cracking-down-on-us-campus-protests-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-04-28T15:00:08Z",
+        "webTitle": "Why are police cracking down on US campus protests? – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/apr/29/why-are-police-cracking-down-on-us-campus-protests-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/apr/29/why-are-police-cracking-down-on-us-campus-protests-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>Police have arrested dozens of pro-Palestinian university students. <strong>Erum Salam</strong> and <strong>Margaret Sullivan</strong> report from New York</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "Police have arrested dozens of pro-Palestinian university students. <strong>Erum Salam</strong> and <strong>Margaret Sullivan</strong> report from New York",
+          "internalComposerCode": "662b20f38f080a6bbc5902d6"
+        },
+        "tags": [
+          {
+            "id": "us-news/us-universities",
+            "type": "keyword",
+            "sectionId": "us-news",
+            "sectionName": "US news",
+            "webTitle": "US universities",
+            "webUrl": "https://www.theguardian.com/us-news/us-universities",
+            "apiUrl": "https://content.guardianapis.com/us-news/us-universities",
+            "references": [],
+            "internalName": "Universities (US)"
+          },
+          {
+            "id": "world/protest",
+            "type": "keyword",
+            "sectionId": "world",
+            "sectionName": "World news",
+            "webTitle": "Protest",
+            "webUrl": "https://www.theguardian.com/world/protest",
+            "apiUrl": "https://content.guardianapis.com/world/protest",
+            "references": [],
+            "internalName": "Protest (News)"
+          },
+          {
+            "id": "us-news/us-news",
+            "type": "keyword",
+            "sectionId": "us-news",
+            "sectionName": "US news",
+            "webTitle": "US news",
+            "webUrl": "https://www.theguardian.com/us-news/us-news",
+            "apiUrl": "https://content.guardianapis.com/us-news/us-news",
+            "references": [],
+            "internalName": "US news"
+          },
+          {
+            "id": "us-news/us-campus-protests",
+            "type": "keyword",
+            "sectionId": "us-news",
+            "sectionName": "US news",
+            "webTitle": "US campus protests",
+            "webUrl": "https://www.theguardian.com/us-news/us-campus-protests",
+            "apiUrl": "https://content.guardianapis.com/us-news/us-campus-protests",
+            "references": [],
+            "internalName": "US campus protests (2024)"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-662b20f38f080a6bbc5902d6",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/04/26-13250-Tif_FS_USUniversities_129.mp3",
+                "typeData": {
+                  "source": "Guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/04/26-13250-Tif_FS_USUniversities_129.mp3",
+                  "sizeInBytes": "42046324",
+                  "durationMinutes": "29",
+                  "durationSeconds": "11",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91/0_274_5568_3341/master/5568.jpg",
+                "typeData": {
+                  "altText": "Columbia Univeristy Pro-Palestinian encampment endures, New York",
+                  "credit": "Photograph: Andrea Renault/ZUMA Press Wire/REX/Shutterstock",
+                  "photographer": "Andrea Renault",
+                  "source": "ZUMA Press Wire/REX/Shutterstock",
+                  "width": "5568",
+                  "height": "3341",
+                  "secureFile": "https://media.guim.co.uk/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91/0_274_5568_3341/master/5568.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91",
+                  "imageType": "Photograph",
+                  "suppliersReference": "14449408ae",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91/0_274_5568_3341/5568.jpg",
+                "typeData": {
+                  "altText": "Columbia Univeristy Pro-Palestinian encampment endures, New York",
+                  "credit": "Photograph: Andrea Renault/ZUMA Press Wire/REX/Shutterstock",
+                  "photographer": "Andrea Renault",
+                  "source": "ZUMA Press Wire/REX/Shutterstock",
+                  "width": "5568",
+                  "height": "3341",
+                  "secureFile": "https://media.guim.co.uk/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91/0_274_5568_3341/5568.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91",
+                  "imageType": "Photograph",
+                  "suppliersReference": "14449408ae",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91/0_274_5568_3341/500.jpg",
+                "typeData": {
+                  "altText": "Columbia Univeristy Pro-Palestinian encampment endures, New York",
+                  "credit": "Photograph: Andrea Renault/ZUMA Press Wire/REX/Shutterstock",
+                  "photographer": "Andrea Renault",
+                  "source": "ZUMA Press Wire/REX/Shutterstock",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91/0_274_5568_3341/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91",
+                  "imageType": "Photograph",
+                  "suppliersReference": "14449408ae",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/4cf41dc3d5cffc62bb98024dbe0ad19a5fe62e91"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/apr/26/newsroom-edition-musk-meta-and-tiktok-can-governments-control-big-tech-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-04-25T15:00:29Z",
+        "webTitle": "Newsroom edition: can governments control big tech? – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/apr/26/newsroom-edition-musk-meta-and-tiktok-can-governments-control-big-tech-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/apr/26/newsroom-edition-musk-meta-and-tiktok-can-governments-control-big-tech-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>As the Australian government faces off with Elon Musk and his social media platform X, a global battle to better regulate the world’s biggest social platforms is kicking off.<br><br><strong>Nour Haydar</strong> speaks to editor-in-chief <strong>Lenore Taylor</strong> and deputy editor <strong>Patrick Keneally </strong>about the trouble with regulating global social media giants, and how it will affect the future of journalism</p>",
+          "trailText": "<strong>Nour Haydar</strong> speaks to editor-in-chief <strong>Lenore Taylor</strong> and deputy editor <strong>Patrick Keneally </strong>about the trouble with regulating global social media giants, and how it’ll affect the future of journalism",
+          "internalComposerCode": "6629ef0c8f0881afefd55e74"
+        },
+        "tags": [
+          {
+            "id": "media/social-media",
+            "type": "keyword",
+            "sectionId": "media",
+            "sectionName": "Media",
+            "webTitle": "Social media",
+            "webUrl": "https://www.theguardian.com/media/social-media",
+            "apiUrl": "https://content.guardianapis.com/media/social-media",
+            "references": [],
+            "internalName": "Social media"
+          },
+          {
+            "id": "technology/elon-musk",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Elon Musk",
+            "webUrl": "https://www.theguardian.com/technology/elon-musk",
+            "apiUrl": "https://content.guardianapis.com/technology/elon-musk",
+            "references": [],
+            "internalName": "Elon Musk"
+          },
+          {
+            "id": "technology/meta",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Meta",
+            "webUrl": "https://www.theguardian.com/technology/meta",
+            "apiUrl": "https://content.guardianapis.com/technology/meta",
+            "references": [],
+            "internalName": "Meta"
+          },
+          {
+            "id": "technology/twitter",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "X",
+            "webUrl": "https://www.theguardian.com/technology/twitter",
+            "apiUrl": "https://content.guardianapis.com/technology/twitter",
+            "references": [],
+            "description": "<p><br></p>",
+            "internalName": "Twitter X Corp (Technology)"
+          },
+          {
+            "id": "technology/tiktok",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "TikTok",
+            "webUrl": "https://www.theguardian.com/technology/tiktok",
+            "apiUrl": "https://content.guardianapis.com/technology/tiktok",
+            "references": [],
+            "internalName": "TikTok"
+          },
+          {
+            "id": "australia-news/australian-politics",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Australian politics",
+            "webUrl": "https://www.theguardian.com/australia-news/australian-politics",
+            "apiUrl": "https://content.guardianapis.com/australia-news/australian-politics",
+            "references": [],
+            "internalName": "Australian politics"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-6629ef0c8f0881afefd55e74",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/04/25-29028-FS_FS_Platforms_ch_250424_1725.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/04/25-29028-FS_FS_Platforms_ch_250424_1725.mp3",
+                  "sizeInBytes": "36424569",
+                  "durationMinutes": "25",
+                  "durationSeconds": "17",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "7ea75de00d3cc53e25ad09cca23782b28787017e",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/7ea75de00d3cc53e25ad09cca23782b28787017e/0_156_4500_2700/master/4500.jpg",
+                "typeData": {
+                  "altText": "A person looks at an iPhone screen showing various social media apps including TikTok, Facebook and X",
+                  "credit": "Photograph: Matt Cardy/Getty Images",
+                  "photographer": "Matt Cardy",
+                  "source": "Getty Images",
+                  "width": "4500",
+                  "height": "2700",
+                  "secureFile": "https://media.guim.co.uk/7ea75de00d3cc53e25ad09cca23782b28787017e/0_156_4500_2700/master/4500.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "7ea75de00d3cc53e25ad09cca23782b28787017e",
+                  "imageType": "Photograph",
+                  "suppliersReference": "1892966240",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/7ea75de00d3cc53e25ad09cca23782b28787017e"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/7ea75de00d3cc53e25ad09cca23782b28787017e/0_156_4500_2700/4500.jpg",
+                "typeData": {
+                  "altText": "A person looks at an iPhone screen showing various social media apps including TikTok, Facebook and X",
+                  "credit": "Photograph: Matt Cardy/Getty Images",
+                  "photographer": "Matt Cardy",
+                  "source": "Getty Images",
+                  "width": "4500",
+                  "height": "2700",
+                  "secureFile": "https://media.guim.co.uk/7ea75de00d3cc53e25ad09cca23782b28787017e/0_156_4500_2700/4500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "7ea75de00d3cc53e25ad09cca23782b28787017e",
+                  "imageType": "Photograph",
+                  "suppliersReference": "1892966240",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/7ea75de00d3cc53e25ad09cca23782b28787017e"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/7ea75de00d3cc53e25ad09cca23782b28787017e/0_156_4500_2700/500.jpg",
+                "typeData": {
+                  "altText": "A person looks at an iPhone screen showing various social media apps including TikTok, Facebook and X",
+                  "credit": "Photograph: Matt Cardy/Getty Images",
+                  "photographer": "Matt Cardy",
+                  "source": "Getty Images",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/7ea75de00d3cc53e25ad09cca23782b28787017e/0_156_4500_2700/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "7ea75de00d3cc53e25ad09cca23782b28787017e",
+                  "imageType": "Photograph",
+                  "suppliersReference": "1892966240",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/7ea75de00d3cc53e25ad09cca23782b28787017e"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "australia-news/audio/2024/apr/24/is-elon-musk-above-australian-law-full-story-podcast",
+        "type": "audio",
+        "sectionId": "australia-news",
+        "sectionName": "Australia news",
+        "webPublicationDate": "2024-04-24T15:00:14Z",
+        "webTitle": "Is Elon Musk above Australian law? – podcast",
+        "webUrl": "https://www.theguardian.com/australia-news/audio/2024/apr/24/is-elon-musk-above-australian-law-full-story-podcast",
+        "apiUrl": "https://content.guardianapis.com/australia-news/audio/2024/apr/24/is-elon-musk-above-australian-law-full-story-podcast",
+        "fields": {
+          "standfirst": "<p>Anthony Albanese has labelled X’s owner, Elon Musk, an “arrogant billionaire who thinks he is above the law” as the rift deepens between Australia and the tech platform over the removal of videos of a violent stabbing in a Sydney church.</p><p>Reporter <strong>Josh Taylor</strong> tells <strong>Jane Lee</strong> how this stoush started, and if it’s possible to stop the spread of violent material and misinformation online</p><ul><li>You can support the Guardian at <a href=\"http://theguardian.com/fullstorysupport\">theguardian.com/fullstorysupport</a></li></ul>",
+          "trailText": "Reporter <strong>Josh Taylor</strong> tells <strong>Jane Lee</strong> how the stoush between Elon Musk’s X and Australia started, and if it’s possible to stop the spread of violent material and misinformation online",
+          "internalComposerCode": "66289cdf8f0839cf006b16c1"
+        },
+        "tags": [
+          {
+            "id": "technology/elon-musk",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Elon Musk",
+            "webUrl": "https://www.theguardian.com/technology/elon-musk",
+            "apiUrl": "https://content.guardianapis.com/technology/elon-musk",
+            "references": [],
+            "internalName": "Elon Musk"
+          },
+          {
+            "id": "australia-news/anthony-albanese",
+            "type": "keyword",
+            "sectionId": "australia-news",
+            "sectionName": "Australia news",
+            "webTitle": "Anthony Albanese",
+            "webUrl": "https://www.theguardian.com/australia-news/anthony-albanese",
+            "apiUrl": "https://content.guardianapis.com/australia-news/anthony-albanese",
+            "references": [],
+            "internalName": "Anthony Albanese (Australian politics)"
+          },
+          {
+            "id": "media/social-media",
+            "type": "keyword",
+            "sectionId": "media",
+            "sectionName": "Media",
+            "webTitle": "Social media",
+            "webUrl": "https://www.theguardian.com/media/social-media",
+            "apiUrl": "https://content.guardianapis.com/media/social-media",
+            "references": [],
+            "internalName": "Social media"
+          },
+          {
+            "id": "technology/twitter",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "X",
+            "webUrl": "https://www.theguardian.com/technology/twitter",
+            "apiUrl": "https://content.guardianapis.com/technology/twitter",
+            "references": [],
+            "description": "<p><br></p>",
+            "internalName": "Twitter X Corp (Technology)"
+          },
+          {
+            "id": "media/media",
+            "type": "keyword",
+            "sectionId": "media",
+            "sectionName": "Media",
+            "webTitle": "Media",
+            "webUrl": "https://www.theguardian.com/media/media",
+            "apiUrl": "https://content.guardianapis.com/media/media",
+            "references": [],
+            "internalName": "Media"
+          },
+          {
+            "id": "technology/technology",
+            "type": "keyword",
+            "sectionId": "technology",
+            "sectionName": "Technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology/technology",
+            "apiUrl": "https://content.guardianapis.com/technology/technology",
+            "references": [],
+            "internalName": "Technology"
+          }
+        ],
+        "elements": [
+          {
+            "id": "gu-audio-66289cdf8f0839cf006b16c1",
+            "relation": "main",
+            "type": "audio",
+            "assets": [
+              {
+                "type": "audio",
+                "mimeType": "audio/mpeg",
+                "file": "https://audio.guim.co.uk/2024/04/24-29461-FullStory_Musk_JM_8_2024-04-24_17_15.mp3",
+                "typeData": {
+                  "source": "guardian",
+                  "secureFile": "https://audio.guim.co.uk/2024/04/24-29461-FullStory_Musk_JM_8_2024-04-24_17_15.mp3",
+                  "sizeInBytes": "28884925",
+                  "durationMinutes": "20",
+                  "durationSeconds": "3",
+                  "embedType": "audio",
+                  "clean": "true"
+                }
+              }
+            ]
+          },
+          {
+            "id": "a4f69a74eb31bc50a419ca2983527fd93e095e20",
+            "relation": "thumbnail",
+            "type": "image",
+            "assets": [
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/a4f69a74eb31bc50a419ca2983527fd93e095e20/0_0_3932_2358/master/3932.jpg",
+                "typeData": {
+                  "altText": "Elon Musk",
+                  "credit": "Photograph: Peter Parks/AFP/Getty Images",
+                  "photographer": "Peter Parks",
+                  "source": "AFP/Getty Images",
+                  "width": "3932",
+                  "height": "2358",
+                  "secureFile": "https://media.guim.co.uk/a4f69a74eb31bc50a419ca2983527fd93e095e20/0_0_3932_2358/master/3932.jpg",
+                  "isMaster": "true",
+                  "displayCredit": "true",
+                  "mediaId": "a4f69a74eb31bc50a419ca2983527fd93e095e20",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AFP_1A7945",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/a4f69a74eb31bc50a419ca2983527fd93e095e20"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/a4f69a74eb31bc50a419ca2983527fd93e095e20/0_0_3932_2358/3932.jpg",
+                "typeData": {
+                  "altText": "Elon Musk",
+                  "credit": "Photograph: Peter Parks/AFP/Getty Images",
+                  "photographer": "Peter Parks",
+                  "source": "AFP/Getty Images",
+                  "width": "3932",
+                  "height": "2358",
+                  "secureFile": "https://media.guim.co.uk/a4f69a74eb31bc50a419ca2983527fd93e095e20/0_0_3932_2358/3932.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "a4f69a74eb31bc50a419ca2983527fd93e095e20",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AFP_1A7945",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/a4f69a74eb31bc50a419ca2983527fd93e095e20"
+                }
+              },
+              {
+                "type": "image",
+                "file": "https://media.guim.co.uk/a4f69a74eb31bc50a419ca2983527fd93e095e20/0_0_3932_2358/500.jpg",
+                "typeData": {
+                  "altText": "Elon Musk",
+                  "credit": "Photograph: Peter Parks/AFP/Getty Images",
+                  "photographer": "Peter Parks",
+                  "source": "AFP/Getty Images",
+                  "width": "500",
+                  "height": "300",
+                  "secureFile": "https://media.guim.co.uk/a4f69a74eb31bc50a419ca2983527fd93e095e20/0_0_3932_2358/500.jpg",
+                  "displayCredit": "true",
+                  "mediaId": "a4f69a74eb31bc50a419ca2983527fd93e095e20",
+                  "imageType": "Photograph",
+                  "suppliersReference": "AFP_1A7945",
+                  "mediaApiUri": "https://api.media.gutools.co.uk/images/a4f69a74eb31bc50a419ca2983527fd93e095e20"
+                }
+              }
+            ]
+          }
+        ],
+        "references": [],
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ]
+  }
+}

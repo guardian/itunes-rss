@@ -3,6 +3,7 @@ package com.gu.itunes
 import org.joda.time._
 import com.gu.contentapi.client.model.v1._
 import org.apache.commons.codec.digest.DigestUtils.md5Hex
+import java.net.URI
 
 import scala.xml.Node
 
@@ -11,9 +12,14 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
   private val trailText = podcast.fields.flatMap(_.trailText)
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
 
-  private def signPathForImageResizer(path: String): String = {
-    val separator = if (path.contains("?")) "&" else "?"
-    s"$path${separator}s=${md5Hex(s"$imageResizerSignatureSalt$path")}"
+  private def signPathForImageResizer(pathWithResizeString: String): String = {
+    val separator = if (pathWithResizeString.contains("?")) "&" else "?"
+    s"$pathWithResizeString${separator}s=${md5Hex(s"$imageResizerSignatureSalt$pathWithResizeString")}"
+  }
+
+  private def isValidForEpisodicArtwork(podcast: Content): Boolean = {
+    tagId == "australia-news/series/full-story" &&
+      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 5, 7, 0, 0).getMillis)
   }
 
   def toXml: Node = {
@@ -226,7 +232,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
-    val episodeImage: Option[String] = if (tagId == "australia-news/series/full-story") {
+    val episodeImage: Option[String] = if (isValidForEpisodicArtwork(podcast)) {
       val maybeThumbnailImageElements = podcast.elements.find(_.exists(el => el.relation == "thumbnail" && el.`type` == ElementType.Image))
         .getOrElse(Seq.empty)
       val assets = maybeThumbnailImageElements.flatMap { el =>
@@ -236,9 +242,18 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
           .sortBy(_.typeData.map(_.width))
           .reverse
       }
+      val maxDim = 3000 // we're going for square crops, so width will always == height anyway
+      val quality = 75 // reads like a compression limiter (rather than dpi)
+      val fit = "crop" // automatically crop from the centre of the original
+
       assets.headOption.flatMap { asset =>
         asset.file.map { filePath =>
-          signPathForImageResizer(filePath.replace("media.guim.co.uk", "i.guim.co.uk/img/media").concat("?width=3000&height=3000&quality=72&fit=crop"))
+          val uri = new URI(filePath)
+          val scheme = uri.getScheme
+          val imgType = uri.getHost.split("\\.").headOption.map(name => s"/$name").getOrElse("") // eg. media.guim.go.uk becomes /media
+          val resizeString = s"width=$maxDim&height=$maxDim&quality=$quality&fit=$fit"
+          val imageUri = s"$scheme://i.guim.co.uk/img$imgType${signPathForImageResizer(s"${uri.getRawPath}?$resizeString")}"
+          imageUri
         }
       }
     } else {
