@@ -9,7 +9,7 @@ import org.scalatest.OptionValues
 
 class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers with OptionValues {
 
-  val imageResizerSalt = "abcdefabcdefabcdef"
+  val imageResizerSalt = Some("abcdefabcdefabcdef")
 
   it should "check that the produced XML for the podcasts is consistent" in {
 
@@ -179,8 +179,37 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val expectedGuid = "66331a978f08cb0a1ccaaa62"
     val actualGuid = (rssItem \ "guid").head.text
     actualGuid shouldBe (expectedGuid)
-    rssItem should not be (null)
     val itunesImages = (rssItem \\ "image")
+    itunesImages.size shouldBe (0)
+  }
+
+  it should "not add episodic artwork if there is no fastly salt defined" in {
+    val tag = itunesCapiResponseFullStory.tag.get
+    val noneResizerSalt: Option[String] = None
+    val resultWithEpisodicImage = itunesCapiResponseFullStory.results.get.head
+    val rssItemWithEpisodicImage = new iTunesRssItem(resultWithEpisodicImage, tag.id, resultWithEpisodicImage.elements.get.head.assets.head, false,
+      tag.podcast.value.podcastType, imageResizerSignatureSalt = noneResizerSalt).toXml
+    // make sure we have the expected item!
+    val expectedGuid = "6639b49c8f082c8a32eab7d2"
+    val actualGuid = (rssItemWithEpisodicImage \ "guid").head.text
+    actualGuid shouldBe (expectedGuid)
+    // now check our image exists
+    val itunesImages = (rssItemWithEpisodicImage \\ "image")
+    itunesImages.size shouldBe (0)
+  }
+
+  it should "not add episodic artwork if the fastly salt is defined as an empty string" in {
+    val tag = itunesCapiResponseFullStory.tag.get
+    val emptyResizerSalt: Option[String] = Some("")
+    val resultWithEpisodicImage = itunesCapiResponseFullStory.results.get.head
+    val rssItemWithEpisodicImage = new iTunesRssItem(resultWithEpisodicImage, tag.id, resultWithEpisodicImage.elements.get.head.assets.head, false,
+      tag.podcast.value.podcastType, imageResizerSignatureSalt = emptyResizerSalt).toXml
+    // make sure we have the expected item!
+    val expectedGuid = "6639b49c8f082c8a32eab7d2"
+    val actualGuid = (rssItemWithEpisodicImage \ "guid").head.text
+    actualGuid shouldBe (expectedGuid)
+    // now check our image exists
+    val itunesImages = (rssItemWithEpisodicImage \\ "image")
     itunesImages.size shouldBe (0)
   }
 

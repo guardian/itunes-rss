@@ -30,8 +30,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   val cacheControl = s"max-age=$maxAge, stale-while-revalidate=$staleWhileRevalidateSeconds, stale-if-error=$oneDayInSeconds"
   private val HTTPDateFormat = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss 'GMT'").withZone(DateTimeZone.UTC)
 
-  private val imageResizerSignatureSalt: String = SecretKeeper.getImageResizerSignatureSalt(config).
-    getOrElse(sys.error("No image signature salt is configured!"))
+  private val imageResizerSignatureSalt: Option[String] = SecretKeeper.getImageResizerSignatureSalt(config)
 
   def itunesRss(tagId: String, userApiKey: Option[String]) = Action.async { implicit request =>
     val startTime = DateTime.now

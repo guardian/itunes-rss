@@ -61,9 +61,13 @@ object SecretKeeper {
 
   private def loadFastlySignatureSaltFromSecretsManager(): Option[String] = loadFromSecretsManagerImp("fastlyImageResizerSignatureSalt") match {
     case Success(result) if result != "" => Some(result)
+    // In the event we can't load the signature salt, or we load
+    // an empty value, this shouldn't crash the application.
+    // Instead we just suppress the generation of episodic artwork
+    // images if we determine that the salt is NONE or an empty string
     case Success(result) if result == "" =>
-      logger.error("Loaded the fastly image resizer signature salt but it was an empty string")
-      None
+      logger.warn("Loaded the fastly image resizer signature salt but it was an empty string")
+      Some(result)
     case Failure(err) =>
       logger.warn(s"Could not load Fastly image resizer signature salt: ${err.getMessage}")
       None
@@ -79,7 +83,10 @@ object SecretKeeper {
 
   def getImageResizerSignatureSalt(config: Configuration): Option[String] = config.getOptional[String]("fastlyImageResizerSignatureSalt") match {
     case fromConfig @ Some(sigSalt) if sigSalt != "" =>
-      logger.info("Using fastly resizer salt from configuration file")
+      logger.info("Loaded the fastly image resizer signature salt from configuration")
+      fromConfig
+    case fromConfig @ Some(sigSalt) if sigSalt == "" =>
+      logger.warn("Loaded the fastly image resizer signature salt from configuration but it was an empty string")
       fromConfig
     case _ =>
       loadFastlySignatureSaltFromSecretsManager()

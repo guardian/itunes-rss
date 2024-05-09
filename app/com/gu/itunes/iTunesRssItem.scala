@@ -7,15 +7,10 @@ import java.net.URI
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None, imageResizerSignatureSalt: String) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None, imageResizerSignatureSalt: Option[String]) {
 
   private val trailText = podcast.fields.flatMap(_.trailText)
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
-
-  private def signPathForImageResizer(pathWithResizeString: String): String = {
-    val separator = if (pathWithResizeString.contains("?")) "&" else "?"
-    s"$pathWithResizeString${separator}s=${md5Hex(s"$imageResizerSignatureSalt$pathWithResizeString")}"
-  }
 
   private def isValidForEpisodicArtwork(podcast: Content): Boolean = {
     tagId == "australia-news/series/full-story" &&
@@ -232,7 +227,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
-    val episodeImage: Option[String] = if (isValidForEpisodicArtwork(podcast)) {
+    val episodeImage: Option[String] = if (isValidForEpisodicArtwork(podcast) && imageResizerSignatureSalt.exists(_.nonEmpty)) {
       val maybeThumbnailImageElements = podcast.elements.find(_.exists(el => el.relation == "thumbnail" && el.`type` == ElementType.Image))
         .getOrElse(Seq.empty)
       val assets = maybeThumbnailImageElements.flatMap { el =>
@@ -245,6 +240,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       val maxDim = 3000 // we're going for square crops, so width will always == height anyway
       val quality = 75 // reads like a compression limiter (rather than dpi)
       val fit = "crop" // automatically crop from the centre of the original
+      val salt = imageResizerSignatureSalt.get // we know it exists(_.nonEmpty) at this point, so get is safe
 
       assets.headOption.flatMap { asset =>
         asset.file.map { filePath =>
@@ -252,7 +248,10 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
           val scheme = uri.getScheme
           val imgType = uri.getHost.split("\\.").headOption.map(name => s"/$name").getOrElse("") // eg. media.guim.go.uk becomes /media
           val resizeString = s"width=$maxDim&height=$maxDim&quality=$quality&fit=$fit"
-          val imageUri = s"$scheme://i.guim.co.uk/img$imgType${signPathForImageResizer(s"${uri.getRawPath}?$resizeString")}"
+          val pathWithResizeString = s"${uri.getRawPath}?$resizeString"
+          val separator = if (pathWithResizeString.contains("?")) "&" else "?"
+          val signedPath = s"$pathWithResizeString${separator}s=${md5Hex(s"$salt$pathWithResizeString")}"
+          val imageUri = s"$scheme://i.guim.co.uk/img$imgType$signedPath"
           imageUri
         }
       }
