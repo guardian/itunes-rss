@@ -9,7 +9,7 @@ import org.scalatest.OptionValues
 
 class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers with OptionValues {
 
-  val imageResizerSalt = Some("abcdefabcdefabcdef")
+  val imageResizerSalt: Option[String] = Some("abcdefabcdefabcdef")
 
   it should "check that the produced XML for the podcasts is consistent" in {
 
@@ -199,6 +199,8 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
   }
 
   it should "not add episodic artwork if the fastly salt is defined as an empty string" in {
+    // this shouldn't happen naturally but if iTunesRssItem.episodeImage is ever changed
+    // and allows the salt param through as an empty string this test should start failing
     val tag = itunesCapiResponseFullStory.tag.get
     val emptyResizerSalt: Option[String] = Some("")
     val resultWithEpisodicImage = itunesCapiResponseFullStory.results.get.head

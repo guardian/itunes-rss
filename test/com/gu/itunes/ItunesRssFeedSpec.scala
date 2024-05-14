@@ -10,7 +10,7 @@ import org.scalatest.matchers.should.Matchers
 
 class ItunesRssFeedSpec extends AnyFlatSpec with ItunesTestData with Matchers {
 
-  private val imageResizerSalt = Some("TBA")
+  private val imageResizerSalt: Option[String] = None
 
   it should "check that the produced XML for the tags is consistent" in {
 

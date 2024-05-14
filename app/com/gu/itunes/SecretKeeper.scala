@@ -64,10 +64,11 @@ object SecretKeeper {
     // In the event we can't load the signature salt, or we load
     // an empty value, this shouldn't crash the application.
     // Instead we just suppress the generation of episodic artwork
-    // images if we determine that the salt is NONE or an empty string
+    // images if we determine that the salt is NONE (or an empty
+    // string which we treat as NONE)
     case Success(result) if result == "" =>
       logger.warn("Loaded the fastly image resizer signature salt but it was an empty string")
-      Some(result)
+      None
     case Failure(err) =>
       logger.warn(s"Could not load Fastly image resizer signature salt: ${err.getMessage}")
       None
@@ -87,7 +88,7 @@ object SecretKeeper {
       fromConfig
     case fromConfig @ Some(sigSalt) if sigSalt == "" =>
       logger.warn("Loaded the fastly image resizer signature salt from configuration but it was an empty string")
-      fromConfig
+      None
     case _ =>
       loadFastlySignatureSaltFromSecretsManager()
   }

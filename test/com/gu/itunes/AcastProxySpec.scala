@@ -6,7 +6,7 @@ import org.scalatest.matchers.should.Matchers
 
 class AcastProxySpec extends AnyFlatSpec with Matchers with ItunesTestData {
 
-  private val imageResizerSalt = Some("TBA")
+  private val imageResizerSalt: Option[String] = None
 
   val testContent: Seq[Content] = itunesCapiResponseAcastTest.results.get.toSeq
   val tag: String = itunesCapiResponseAcastTest.tag.get.id
