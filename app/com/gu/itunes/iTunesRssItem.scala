@@ -227,7 +227,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
-    val episodeImage: Option[String] = if (isValidForEpisodicArtwork(podcast) && imageResizerSignatureSalt.exists(_.nonEmpty)) {
+    val episodeImage: Option[String] = imageResizerSignatureSalt.filter(_.nonEmpty && isValidForEpisodicArtwork(podcast)).flatMap { salt =>
       val maybeThumbnailImageElements = podcast.elements.find(_.exists(el => el.relation == "thumbnail" && el.`type` == ElementType.Image))
         .getOrElse(Seq.empty)
       val assets = maybeThumbnailImageElements.flatMap { el =>
@@ -240,7 +240,6 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       val maxDim = 3000 // we're going for square crops, so width will always == height anyway
       val quality = 75 // reads like a compression limiter (rather than dpi)
       val fit = "crop" // automatically crop from the centre of the original
-      val salt = imageResizerSignatureSalt.get // we know it exists(_.nonEmpty) at this point, so get is safe
 
       assets.headOption.flatMap { asset =>
         asset.file.map { filePath =>
@@ -255,8 +254,6 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
           imageUri
         }
       }
-    } else {
-      None
     }
 
     <item>
