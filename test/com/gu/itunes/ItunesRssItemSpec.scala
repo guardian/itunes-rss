@@ -155,28 +155,28 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
   }
 
   it should "add episodic artwork where appropriate" in {
-    val tag = itunesCapiResponseFullStory.tag.get
-    val resultWithEpisodicImage = itunesCapiResponseFullStory.results.get.head
+    val tag = itunesCapiResponseComfortEating.tag.get
+    val resultWithEpisodicImage = itunesCapiResponseComfortEating.results.get.head
     val rssItemWithEpisodicImage = new iTunesRssItem(resultWithEpisodicImage, tag.id, resultWithEpisodicImage.elements.get.head.assets.head, false,
       tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
     // make sure we have the expected item!
-    val expectedGuid = "6639b49c8f082c8a32eab7d2"
+    val expectedGuid = "66168c368f085cc6169111c5"
     val actualGuid = (rssItemWithEpisodicImage \ "guid").head.text
     actualGuid shouldBe (expectedGuid)
     // now check our image exists
     val itunesImages = (rssItemWithEpisodicImage \\ "image")
     itunesImages.size shouldBe (1)
-    val expectedImage = "<itunes:image>https://i.guim.co.uk/img/media/343fe14156e38ef3c019e86d48fe259ada017e5a/0_209_4965_2980/4965.jpg?width=3000&amp;height=3000&amp;quality=75&amp;fit=crop&amp;s=db30bbd54f69d1216cda0593a95f784f</itunes:image>"
+    val expectedImage = "<itunes:image>https://i.guim.co.uk/img/media/39f24967bf11d6a8298201d29e7f7a3b7e0517b8/0_0_2999_1800/2999.jpg?width=3000&amp;height=3000&amp;quality=75&amp;fit=crop&amp;s=c14d895fa1e69eeff7948fe06f7c4c01</itunes:image>"
     itunesImages.head.toString() shouldBe (expectedImage)
   }
 
   it should "not add episodic artwork where not appropriate" in {
-    val tag = itunesCapiResponseFullStory.tag.get
-    val content = itunesCapiResponseFullStory.results.map(_.drop(3).head).head
+    val tag = itunesCapiResponseComfortEating.tag.get
+    val content = itunesCapiResponseComfortEating.results.map(_.drop(3).head).head
     val rssItem = new iTunesRssItem(content, tag.id, content.elements.get.head.assets.head, false,
       tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
     // make sure we have the expected item!
-    val expectedGuid = "66331a978f08cb0a1ccaaa62"
+    val expectedGuid = "65fd51098f0872bcdbfc1d5d"
     val actualGuid = (rssItem \ "guid").head.text
     actualGuid shouldBe (expectedGuid)
     val itunesImages = (rssItem \\ "image")
@@ -184,13 +184,13 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
   }
 
   it should "not add episodic artwork if there is no fastly salt defined" in {
-    val tag = itunesCapiResponseFullStory.tag.get
+    val tag = itunesCapiResponseComfortEating.tag.get
     val noneResizerSalt: Option[String] = None
-    val resultWithEpisodicImage = itunesCapiResponseFullStory.results.get.head
+    val resultWithEpisodicImage = itunesCapiResponseComfortEating.results.get.head
     val rssItemWithEpisodicImage = new iTunesRssItem(resultWithEpisodicImage, tag.id, resultWithEpisodicImage.elements.get.head.assets.head, false,
       tag.podcast.value.podcastType, imageResizerSignatureSalt = noneResizerSalt).toXml
     // make sure we have the expected item!
-    val expectedGuid = "6639b49c8f082c8a32eab7d2"
+    val expectedGuid = "66168c368f085cc6169111c5"
     val actualGuid = (rssItemWithEpisodicImage \ "guid").head.text
     actualGuid shouldBe (expectedGuid)
     // now check our image exists
@@ -201,13 +201,13 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
   it should "not add episodic artwork if the fastly salt is defined as an empty string" in {
     // this shouldn't happen naturally but if iTunesRssItem.episodeImage is ever changed
     // and allows the salt param through as an empty string this test should start failing
-    val tag = itunesCapiResponseFullStory.tag.get
+    val tag = itunesCapiResponseComfortEating.tag.get
     val emptyResizerSalt: Option[String] = Some("")
-    val resultWithEpisodicImage = itunesCapiResponseFullStory.results.get.head
+    val resultWithEpisodicImage = itunesCapiResponseComfortEating.results.get.head
     val rssItemWithEpisodicImage = new iTunesRssItem(resultWithEpisodicImage, tag.id, resultWithEpisodicImage.elements.get.head.assets.head, false,
       tag.podcast.value.podcastType, imageResizerSignatureSalt = emptyResizerSalt).toXml
     // make sure we have the expected item!
-    val expectedGuid = "6639b49c8f082c8a32eab7d2"
+    val expectedGuid = "66168c368f085cc6169111c5"
     val actualGuid = (rssItemWithEpisodicImage \ "guid").head.text
     actualGuid shouldBe (expectedGuid)
     // now check our image exists
