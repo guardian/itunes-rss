@@ -86,9 +86,6 @@ object SecretKeeper {
     case fromConfig @ Some(sigSalt) if sigSalt != "" =>
       logger.info("Loaded the fastly image resizer signature salt from configuration")
       fromConfig
-    case fromConfig @ Some(sigSalt) if sigSalt == "" =>
-      logger.warn("Loaded the fastly image resizer signature salt from configuration but it was an empty string")
-      None
     case _ =>
       loadFastlySignatureSaltFromSecretsManager()
   }
