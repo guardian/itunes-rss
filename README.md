@@ -29,6 +29,18 @@ You need to export an env variable `API_KEY`:
 $ export API_KEY="some-internal-tier-key"
 ```
 
+and an AWS region:
+
+```
+$export AWS_REGION=eu-west-1
+```
+
+and a fastly signature salt:
+
+```
+$export FASTLY_SALT=astringthatactuallyworkswillbeneeded
+```
+
 then
 
 ```

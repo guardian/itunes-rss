@@ -2,13 +2,20 @@ package com.gu.itunes
 
 import org.joda.time._
 import com.gu.contentapi.client.model.v1._
+import org.apache.commons.codec.digest.DigestUtils.md5Hex
+import java.net.URI
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None, imageResizerSignatureSalt: Option[String]) {
 
   private val trailText = podcast.fields.flatMap(_.trailText)
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
+
+  private def isValidForEpisodicArtwork(podcast: Content): Boolean = {
+    tagId == "lifeandstyle/series/comforteatingwithgracedent" &&
+      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 6, 11, 0, 0).getMillis)
+  }
 
   def toXml: Node = {
 
@@ -220,6 +227,35 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
 
+    val episodeImage: Option[String] = imageResizerSignatureSalt.filter(_.nonEmpty && isValidForEpisodicArtwork(podcast)).flatMap { salt =>
+      val maybeThumbnailImageElements = podcast.elements.find(_.exists(el => el.relation == "thumbnail" && el.`type` == ElementType.Image))
+        .getOrElse(Seq.empty)
+      val assets = maybeThumbnailImageElements.flatMap { el =>
+        el.assets
+          .filterNot(_.typeData.flatMap(_.isMaster).getOrElse(false))
+          .filter(_.typeData.flatMap(_.width).isDefined)
+          .sortBy(_.typeData.map(_.width))
+          .reverse
+      }
+      val maxDim = 3000 // we're going for square crops, so width will always == height anyway
+      val quality = 75 // reads like a compression limiter (rather than dpi)
+      val fit = "crop" // automatically crop from the centre of the original
+
+      assets.headOption.flatMap { asset =>
+        asset.file.map { filePath =>
+          val uri = new URI(filePath)
+          val scheme = uri.getScheme
+          val imgType = uri.getHost.split("\\.").headOption.map(name => s"/$name").getOrElse("") // eg. media.guim.go.uk becomes /media
+          val resizeString = s"width=$maxDim&height=$maxDim&quality=$quality&fit=$fit"
+          val pathWithResizeString = s"${uri.getRawPath}?$resizeString"
+          val separator = if (pathWithResizeString.contains("?")) "&" else "?"
+          val signedPath = s"$pathWithResizeString${separator}s=${md5Hex(s"$salt$pathWithResizeString")}"
+          val imageUri = s"$scheme://i.guim.co.uk/img$imgType$signedPath"
+          imageUri
+        }
+      }
+    }
+
     <item>
       <title>{ title }</title>
       <itunes:title>{ title }</itunes:title>
@@ -229,6 +265,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       <guid isPermaLink={ guid._2.toString }>{ guid._1 }</guid>
       <itunes:duration>{ duration }</itunes:duration>
       <itunes:author>{ iTunesRssFeed.author }</itunes:author>
+      {
+        episodeImage match {
+          case Some(image) => <itunes:image>{ image }</itunes:image>
+          case None =>
+        }
+      }
       {
         explicit match {
           case Some(value) => <itunes:explicit>{ value }</itunes:explicit>

@@ -39,17 +39,17 @@ object iTunesRssFeed {
     afterChange ++ beforeChange.take(100)
   }
 
-  def apply(resps: Seq[ItemResponse], adFree: Boolean = false): Node Or Failed = {
+  def apply(resps: Seq[ItemResponse], adFree: Boolean = false, imageResizerSalt: Option[String]): Node Or Failed = {
     val tag = resps.headOption.flatMap(_.tag)
     tag match {
       case Some(t) =>
         val content = resps.flatMap(_.results.getOrElse(Nil)).toList
-        toXml(t, appleExcessDownloadsWorkaround(content), adFree)
+        toXml(t, appleExcessDownloadsWorkaround(content), adFree, imageResizerSalt)
       case None => Bad(Failed("tag not found", NotFound))
     }
   }
 
-  def toXml(tag: Tag, contents: List[Content], adFree: Boolean): Node Or Failed = {
+  def toXml(tag: Tag, contents: List[Content], adFree: Boolean, imageResizerSalt: Option[String]): Node Or Failed = {
 
     val description = Filtering.description(tag.description.getOrElse(""))
 
@@ -106,7 +106,7 @@ object iTunesRssFeed {
               for {
                 podcastContent <- contents
                 asset <- getFirstAudioAsset(podcastContent)
-              } yield new iTunesRssItem(podcastContent, tag.id, asset, adFree, podcast.podcastType).toXml
+              } yield new iTunesRssItem(podcastContent, tag.id, asset, adFree, podcast.podcastType, imageResizerSalt).toXml
             }
           </channel>
         </rss>

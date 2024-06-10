@@ -47,6 +47,17 @@ trait ItunesTestData {
     parseJson[ItemResponse](json)
   }
 
+  // TODO reinstate when Full Story episodes need images
+  //  val itunesCapiResponseFullStory: ItemResponse = {
+  //    val json = loadJson("itunes-capi-full-story-response.json")
+  //    parseJson[ItemResponse](json)
+  //  }
+
+  val itunesCapiResponseComfortEating: ItemResponse = {
+    val json = loadJson("itunes-capi-comfort-eating-response.json")
+    parseJson[ItemResponse](json)
+  }
+
 }
 
 object JsonHelpers {

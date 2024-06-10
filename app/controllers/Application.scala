@@ -30,6 +30,8 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
   val cacheControl = s"max-age=$maxAge, stale-while-revalidate=$staleWhileRevalidateSeconds, stale-if-error=$oneDayInSeconds"
   private val HTTPDateFormat = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss 'GMT'").withZone(DateTimeZone.UTC)
 
+  private val imageResizerSignatureSalt: Option[String] = SecretKeeper.getImageResizerSignatureSalt(config)
+
   def itunesRss(tagId: String, userApiKey: Option[String]) = Action.async { implicit request =>
     val startTime = DateTime.now
     val userAgent = request.headers.get("user-agent").getOrElse("")
@@ -59,7 +61,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
     val pageSize = 100
 
     val query = ItemQuery(tagId)
-      .showElements("audio")
+      .showElements("audio,image")
       .showTags("keyword")
       .showFields("webTitle,webPublicationDate,standfirst,trailText,internalComposerCode")
 
@@ -98,7 +100,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       // If all item responses were ok then we can render a result
       if (itemResponses.forall(_.status == "ok")) {
         val isAdFree = userApiKeyTier.contains("rights-managed")
-        iTunesRssFeed(itemResponses, isAdFree) match {
+        iTunesRssFeed(itemResponses, isAdFree, imageResizerSignatureSalt) match {
           case Good(xml) =>
             val now = DateTime.now()
             val expiresTime = now.plusSeconds(maxAge)
