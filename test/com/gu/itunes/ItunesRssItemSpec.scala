@@ -166,7 +166,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     // now check our image exists
     val itunesImages = (rssItemWithEpisodicImage \\ "image")
     itunesImages.size shouldBe (1)
-    val expectedImage = "<itunes:image>https://i.guim.co.uk/img/media/39f24967bf11d6a8298201d29e7f7a3b7e0517b8/0_0_2999_1800/2999.jpg?width=3000&amp;height=3000&amp;quality=75&amp;fit=crop&amp;s=c14d895fa1e69eeff7948fe06f7c4c01</itunes:image>"
+    val expectedImage = """<itunes:image href="https://i.guim.co.uk/img/media/39f24967bf11d6a8298201d29e7f7a3b7e0517b8/0_0_2999_1800/2999.jpg?width=3000&amp;height=3000&amp;quality=75&amp;fit=crop&amp;s=c14d895fa1e69eeff7948fe06f7c4c01"/>"""
     itunesImages.head.toString() shouldBe (expectedImage)
   }
 

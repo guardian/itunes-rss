@@ -267,7 +267,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       <itunes:author>{ iTunesRssFeed.author }</itunes:author>
       {
         episodeImage match {
-          case Some(image) => <itunes:image>{ image }</itunes:image>
+          case Some(image) => <itunes:image href={ image }/>
           case None =>
         }
       }
