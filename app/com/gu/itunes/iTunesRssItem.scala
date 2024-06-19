@@ -81,7 +81,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
             ""
         } else if (tagId == "football/series/footballweekly") {
           if (lastModified.isAfter(footballWeekly))
-            """. Help support our independent journalism at <a href="https://www.theguardian.com/footballweeklypod">theguardian.com/footballweeklypod</a>"""
+            """. Help support our independent journalism at <a href="https://www.theguardian.com/euro-support">theguardian.com/euro-support</a>"""
           else ""
         } else {
           ""
