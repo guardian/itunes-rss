@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %-5level %logger - %msg%n%xException{30}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="play" level="OFF" />
+    <logger name="com.gu.crier" level="OFF"/>
+
+    <root level="OFF">
+       <appender-ref ref="console"/>
+    </root>
+</configuration>
