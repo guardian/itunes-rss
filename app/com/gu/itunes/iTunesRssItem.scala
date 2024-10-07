@@ -13,8 +13,10 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
 
   private def isValidForEpisodicArtwork(podcast: Content): Boolean = {
-    tagId == "lifeandstyle/series/comforteatingwithgracedent" &&
-      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 6, 11, 0, 0).getMillis)
+    (tagId == "lifeandstyle/series/comforteatingwithgracedent" &&
+      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 6, 11, 0, 0).getMillis)) ||
+      (tagId == "australia-news/series/full-story" &&
+        podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 10, 7, 0, 0).getMillis))
   }
 
   def toXml: Node = {
