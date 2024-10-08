@@ -16,7 +16,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     (tagId == "lifeandstyle/series/comforteatingwithgracedent" &&
       podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 6, 11, 0, 0).getMillis)) ||
       (tagId == "australia-news/series/full-story" &&
-        podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 10, 7, 0, 0).getMillis))
+        podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 10, 8, 0, 0).getMillis))
   }
 
   def toXml: Node = {
