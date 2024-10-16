@@ -37,12 +37,7 @@ jobs:
         name: Build infrastructure definition from CDK
         working-directory: cdk
 
-      - name: Setup JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: corretto
-          java-version: 11
-          cache: sbt
+      - uses: guardian/setup-scala@v1
 
       - name: Build and test
         env:
