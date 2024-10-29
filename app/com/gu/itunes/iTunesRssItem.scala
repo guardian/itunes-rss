@@ -16,7 +16,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     (tagId == "lifeandstyle/series/comforteatingwithgracedent" &&
       podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 6, 11, 0, 0).getMillis)) ||
       (tagId == "australia-news/series/full-story" &&
-        podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 10, 8, 0, 0).getMillis))
+        podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 10, 8, 0, 0).getMillis)) ||
+        (tagId == "news/series/guardian-australia-podcast-series" &&
+          podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2022, 10, 1, 0, 0).getMillis))
   }
 
   def toXml: Node = {
@@ -181,7 +183,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
         AcastLaunchGroup(new DateTime(2024, 2, 15, 0, 0), Seq(
           "technology/series/blackbox")),
         AcastLaunchGroup(new DateTime(2024, 4, 11, 0, 0), Seq(
-          "australia-news/series/who-screwed-millennials")))
+          "australia-news/series/who-screwed-millennials")),
+        // Yes, the launch date for the guardian-australia-podcast-series is correct. This is a new series tag for
+        // pre-existing episodes that have been re-invigorated by the addition of episodic artwork, but it won't be
+        // re-published. The oldest piece is expected to be from October 2022.
+        AcastLaunchGroup(new DateTime(2022, 10, 1, 0, 0), Seq(
+          "news/series/guardian-australia-podcast-series")))
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
     }
