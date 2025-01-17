@@ -193,7 +193,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
     }
 
-    val description = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
+    val description = Filtering.standfirst(standfirstOrTrail.getOrElse(""), asHtml = true) + membershipCta
 
     val url = acastProxy(asset.file.getOrElse(""))
 
@@ -232,9 +232,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     val keywords = makeKeywordsList(podcast.tags.toSeq)
 
-    val subtitle = Filtering.standfirst(trailText.getOrElse(""))
+    val subtitle = Filtering.standfirst(trailText.getOrElse(""), asHtml = false)
 
-    val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
+    val summary = Filtering.standfirst(standfirstOrTrail.getOrElse(""), asHtml = false) + membershipCta
 
     val episodeImage: Option[String] = imageResizerSignatureSalt.filter(_.nonEmpty && isValidForEpisodicArtwork(podcast)).flatMap { salt =>
       val maybeThumbnailImageElements = podcast.elements.find(_.exists(el => el.relation == "thumbnail" && el.`type` == ElementType.Image))
