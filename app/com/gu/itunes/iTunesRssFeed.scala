@@ -51,7 +51,7 @@ object iTunesRssFeed {
 
   def toXml(tag: Tag, contents: List[Content], adFree: Boolean, imageResizerSalt: Option[String]): Node Or Failed = {
 
-    val description = Filtering.description(tag.description.getOrElse(""), asHtml = false)
+    val description = Filtering.description(tag.description.getOrElse(""))
 
     tag.podcast match {
       case Some(podcast) => Good {
