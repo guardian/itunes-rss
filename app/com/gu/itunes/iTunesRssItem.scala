@@ -193,7 +193,13 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
     }
 
-    val description = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
+    // enabling html in descriptions is a bit of an unknown so we'll restrict the potential for upset
+    // by limiting the effect to just the TiF series for the moment. We can extend or remove this
+    // as we (or editorial) like - assuming it doesn't break any of the platforms along the way, obvs.
+    val shouldPreserveHtmlInDescription =
+      tagId == "news/series/todayinfocus"
+
+    val description = Filtering.standfirst(standfirstOrTrail.getOrElse(""), preserveHtml = shouldPreserveHtmlInDescription) + membershipCta
 
     val url = acastProxy(asset.file.getOrElse(""))
 
@@ -232,9 +238,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     val keywords = makeKeywordsList(podcast.tags.toSeq)
 
-    val subtitle = Filtering.standfirst(trailText.getOrElse(""))
+    val subtitle = Filtering.standfirst(trailText.getOrElse(""), preserveHtml = false)
 
-    val summary = Filtering.standfirst(standfirstOrTrail.getOrElse("")) + membershipCta
+    val summary = Filtering.standfirst(standfirstOrTrail.getOrElse(""), preserveHtml = false) + membershipCta
 
     val episodeImage: Option[String] = imageResizerSignatureSalt.filter(_.nonEmpty && isValidForEpisodicArtwork(podcast)).flatMap { salt =>
       val maybeThumbnailImageElements = podcast.elements.find(_.exists(el => el.relation == "thumbnail" && el.`type` == ElementType.Image))

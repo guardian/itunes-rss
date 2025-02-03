@@ -5,19 +5,31 @@ import org.jsoup.safety.Safelist
 
 object Filtering {
 
-  val whitelist = Safelist.simpleText().addTags("a")
+  def standfirst(input: String, preserveHtml: Boolean): String = filter(input, preserveHtml) // standFirst can support html tags
 
-  def standfirst(input: String): String = filter(input)
+  def description(input: String): String = filter(input, preserveHtml = false) // description should not contain html tags
 
-  def description(input: String): String = filter(input)
-
-  private[this] def filter(input: String): String = {
+  private[this] def filter(input: String, preserveHtml: Boolean): String = {
 
     val doc = Jsoup.parse(input)
     doc.select("br").remove
 
-    val cleaned = Jsoup.clean(doc.outerHtml(), whitelist)
-    Jsoup.parse(cleaned).text()
+    val safeList = if (preserveHtml) {
+      Safelist.simpleText()
+        .addAttributes("a", "href")
+        .addEnforcedAttribute("a", "rel", "nofollow")
+    } else {
+      Safelist.simpleText()
+    }
+
+    val cleaned = Jsoup.clean(doc.outerHtml(), safeList)
+
+    if (preserveHtml) {
+      Jsoup.parse(cleaned).body.html()
+    } else {
+      Jsoup.parse(cleaned).text()
+    }
+
   }
 
 }
