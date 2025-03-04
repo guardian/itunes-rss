@@ -15,12 +15,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
   private def isValidForEpisodicArtwork(podcast: Content): Boolean = {
     (tagId == "lifeandstyle/series/comforteatingwithgracedent" &&
       podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 6, 11, 0, 0).getMillis)) ||
-      (tagId == "australia-news/series/full-story" &&
-        podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 10, 8, 0, 0).getMillis)) ||
-        (tagId == "news/series/guardian-australia-podcast-series" &&
-          podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2022, 10, 1, 0, 0).getMillis)) ||
-          (tagId == "news/series/todayinfocus" &&
-            podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2125, 1, 1, 0, 0).getMillis)) // TODO: update this date when we know what it should be
+    (tagId == "australia-news/series/full-story" &&
+      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 10, 8, 0, 0).getMillis)) ||
+    (tagId == "news/series/guardian-australia-podcast-series" &&
+      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2022, 10, 1, 0, 0).getMillis)) ||
+    (tagId == "news/series/todayinfocus" &&
+      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2025, 3, 10, 0, 0).getMillis))
   }
 
   def toXml: Node = {
