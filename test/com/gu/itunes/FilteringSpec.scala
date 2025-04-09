@@ -28,6 +28,13 @@ class FilteringSpec extends AnyFlatSpec with Matchers {
     filtered should be(expected)
   }
 
+  it should "retain br tags from within the standFirst when instructed" in {
+    val source = "<p>This is a <strong>strong introductory</strong> paragraph.</p><p>• Here we <b>boldly</b> link to <a href=\"https://www.theguardian.com/news/audio/2023/apr/24/embracing-a-childfree-life-podcast\">another episode</a> from April 2023, and <em>emphasise this link</em> to an <i>italicised</i> article that is related to and <u>underscores</u><br>(on a new line) this episode <a href=\"https://www.theguardian.com/lifeandstyle/2024/nov/16/friendship-after-motherhood\">here</a>.</p>"
+    val filtered = Filtering.standfirst(source, preserveHtml = true)
+    val expected = "This is a <strong>strong introductory</strong> paragraph. • Here we <b>boldly</b> link to <a href=\"https://www.theguardian.com/news/audio/2023/apr/24/embracing-a-childfree-life-podcast\" rel=\"nofollow\">another episode</a> from April 2023, and <em>emphasise this link</em> to an <i>italicised</i> article that is related to and <u>underscores</u>\n<br>\n (on a new line) this episode <a href=\"https://www.theguardian.com/lifeandstyle/2024/nov/16/friendship-after-motherhood\" rel=\"nofollow\">here</a>."
+    filtered should be(expected)
+  }
+
   it should "remove all html from the standFirst <p> when instructed" in {
     val source = "<p>This is a <strong>strong introductory</strong> paragraph.</p><p>• Here we <b>boldly</b> link to <a href=\"https://www.theguardian.com/news/audio/2023/apr/24/embracing-a-childfree-life-podcast\">another episode</a> from April 2023, and <em>emphasise this link</em> to an <i>italicised</i> article that is related to and <u>underscores</u> this episode <a href=\"https://www.theguardian.com/lifeandstyle/2024/nov/16/friendship-after-motherhood\">here</a>.</p>"
     val filtered = Filtering.standfirst(source, preserveHtml = false)
