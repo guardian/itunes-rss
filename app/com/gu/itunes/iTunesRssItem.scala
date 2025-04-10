@@ -196,10 +196,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     }
 
     // enabling html in descriptions is a bit of an unknown so we'll restrict the potential for upset
-    // by limiting the effect to just the TiF series for the moment. We can extend or remove this
-    // as we (or editorial) like - assuming it doesn't break any of the platforms along the way, obvs.
+    // by limiting the effect to just the TiF series generally and Politics Weekly America from April 4th 2025
+    // for the moment. We can extend or remove this as we (or editorial) like - assuming it doesn't break
+    // any of the platforms along the way, obvs.
     val shouldPreserveHtmlInDescription =
-      tagId == "news/series/todayinfocus"
+      tagId == "news/series/todayinfocus" ||
+      (tagId == "politics/series/politics-weekly-america" && podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2025, 4, 4, 0, 0).getMillis))
 
     val description = Filtering.standfirst(standfirstOrTrail.getOrElse(""), preserveHtml = shouldPreserveHtmlInDescription) + membershipCta
 

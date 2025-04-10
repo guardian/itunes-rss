@@ -12,10 +12,10 @@ object Filtering {
   private[this] def filter(input: String, preserveHtml: Boolean): String = {
 
     val doc = Jsoup.parse(input)
-    doc.select("br").remove
 
     val safeList = if (preserveHtml) {
       Safelist.simpleText()
+        .addTags("br")
         .addAttributes("a", "href")
         .addEnforcedAttribute("a", "rel", "nofollow")
     } else {
@@ -25,7 +25,7 @@ object Filtering {
     val cleaned = Jsoup.clean(doc.outerHtml(), safeList)
 
     if (preserveHtml) {
-      Jsoup.parse(cleaned).body.html()
+      Jsoup.parse(cleaned).body.html() // need this as .html() for the links etc to work!
     } else {
       Jsoup.parse(cleaned).text()
     }
