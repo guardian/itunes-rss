@@ -36,7 +36,7 @@ class FilteringSpec extends AnyFlatSpec with Matchers {
   }
 
   it should "remove all html from the standFirst <p> when instructed" in {
-    val source = "<p>This is a <strong>strong introductory</strong> paragraph.</p><p>• Here we <b>boldly</b> link to <a href=\"https://www.theguardian.com/news/audio/2023/apr/24/embracing-a-childfree-life-podcast\">another episode</a> from April 2023, and <em>emphasise this link</em> to an <i>italicised</i> article that is related to and <u>underscores</u> this episode <a href=\"https://www.theguardian.com/lifeandstyle/2024/nov/16/friendship-after-motherhood\">here</a>.</p>"
+    val source = "<p>This is a <strong>strong introductory</strong> paragraph.</p><p>• Here we <b>boldly</b> link to <a href=\"https://www.theguardian.com/news/audio/2023/apr/24/embracing-a-childfree-life-podcast\">another episode</a> from April 2023, and <em>emphasise this link</em> to an <i>italicised</i> article that is<br> related to and <u>underscores</u> this episode <a href=\"https://www.theguardian.com/lifeandstyle/2024/nov/16/friendship-after-motherhood\">here</a>.</p>"
     val filtered = Filtering.standfirst(source, preserveHtml = false)
     val expected = "This is a strong introductory paragraph. • Here we boldly link to another episode from April 2023, and emphasise this link to an italicised article that is related to and underscores this episode here."
     filtered should be(expected)
