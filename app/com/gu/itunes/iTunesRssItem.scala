@@ -7,21 +7,28 @@ import java.net.URI
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastType: Option[String] = None, imageResizerSignatureSalt: Option[String]) {
+class iTunesRssItem(
+  val podcast: Content,
+  val tagId: String,
+  asset: Asset,
+  adFree: Boolean = false,
+  podcastType: Option[String] = None,
+  imageResizerSignatureSalt: Option[String],
+  episodicArtworkEnabled: Option[Boolean] = None,
+  episodicArtworkEnabledFrom: Option[DateTime] = None) {
 
   private val trailText = podcast.fields.flatMap(_.trailText)
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
 
-  private def isValidForEpisodicArtwork(podcast: Content): Boolean = {
-    (tagId == "lifeandstyle/series/comforteatingwithgracedent" &&
-      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 6, 11, 0, 0).getMillis)) ||
-    (tagId == "australia-news/series/full-story" &&
-      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2024, 10, 8, 0, 0).getMillis)) ||
-    (tagId == "news/series/guardian-australia-podcast-series" &&
-      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2022, 10, 1, 0, 0).getMillis)) ||
-    (tagId == "news/series/todayinfocus" &&
-      podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2025, 3, 13, 0, 0).getMillis)) ||
-    tagId == "technology/series/blackbox"
+  private def isValidForEpisodicArtwork(podcast: Content, episodicArtworkEnabled: Option[Boolean], episodicArtworkEnabledFrom: Option[DateTime]): Boolean = {
+    if (episodicArtworkEnabled.getOrElse(false)) {
+      episodicArtworkEnabledFrom match {
+        case Some(date) => podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).isAfter(new DateTime(date)))
+        case None => true // If no date is provided, we assume it is enabled for all episodes
+      }
+    } else {
+      false // Episodic artwork is disabled
+    }
   }
 
   def toXml: Node = {
@@ -202,7 +209,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     // any of the platforms along the way, obvs.
     val shouldPreserveHtmlInDescription =
       tagId == "news/series/todayinfocus" ||
-      (tagId == "politics/series/politics-weekly-america" && podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2025, 4, 4, 0, 0).getMillis))
+        (tagId == "politics/series/politics-weekly-america" && podcast.webPublicationDate.exists(wpd => new DateTime(wpd.dateTime).getMillis >= new DateTime(2025, 4, 4, 0, 0).getMillis))
 
     val description = Filtering.standfirst(standfirstOrTrail.getOrElse(""), preserveHtml = shouldPreserveHtmlInDescription) + membershipCta
 
@@ -247,7 +254,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
 
     val summary = Filtering.standfirst(standfirstOrTrail.getOrElse(""), preserveHtml = false) + membershipCta
 
-    val episodeImage: Option[String] = imageResizerSignatureSalt.filter(_.nonEmpty && isValidForEpisodicArtwork(podcast)).flatMap { salt =>
+    val episodeImage: Option[String] = imageResizerSignatureSalt.filter(_.nonEmpty && isValidForEpisodicArtwork(podcast, episodicArtworkEnabled, episodicArtworkEnabledFrom)).flatMap { salt =>
       val maybeThumbnailImageElements = podcast.elements.find(_.exists(el => el.relation == "thumbnail" && el.`type` == ElementType.Image))
         .getOrElse(Seq.empty)
       val assets = maybeThumbnailImageElements.flatMap { el =>
