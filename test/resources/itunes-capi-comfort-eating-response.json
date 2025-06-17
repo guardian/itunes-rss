@@ -31,7 +31,9 @@
           }
         ],
         "googlePodcastsUrl": "https://www.google.com/podcasts?feed=aHR0cHM6Ly93d3cudGhlZ3VhcmRpYW4uY29tL2xpZmVhbmRzdHlsZS9zZXJpZXMvY29tZm9ydGVhdGluZ3dpdGhncmFjZWRlbnQvcG9kY2FzdC54bWw%3D",
-        "spotifyUrl": "https://open.spotify.com/show/5fMtMMKSlUoDuxhd3a3IS0?si=3B38GpeFThy4YtxSyNxApA&dl_branch=1"
+        "spotifyUrl": "https://open.spotify.com/show/5fMtMMKSlUoDuxhd3a3IS0?si=3B38GpeFThy4YtxSyNxApA&dl_branch=1",
+        "episodicArtworkEnabled": "true",
+        "episodicArtworkEnabledFrom": "2024-06-11T00:00:00Z"
       },
       "internalName": "Comfort Eating with Grace Dent (PODCAST ONLY)"
     },
