@@ -106,7 +106,15 @@ object iTunesRssFeed {
               for {
                 podcastContent <- contents
                 asset <- getFirstAudioAsset(podcastContent)
-              } yield new iTunesRssItem(podcastContent, tag.id, asset, adFree, podcast.podcastType, imageResizerSalt).toXml
+              } yield new iTunesRssItem(
+                podcastContent,
+                tag.id,
+                asset,
+                adFree,
+                podcast.podcastType,
+                imageResizerSalt,
+                tag.episodicArtworkEnabled,
+                tag.episodicArtworkEnabledFrom).toXml
             }
           </channel>
         </rss>
