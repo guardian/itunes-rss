@@ -1,11 +1,14 @@
 package com.gu.itunes
 
+import com.gu.contentapi.client.model.v1.AssetType.Audio
+import com.gu.contentapi.client.model.v1.{ Asset, CapiDateTime, Content, Podcast }
 import com.gu.itunes.XmlTestUtils.RemoveWhitespace
+import org.joda.time.DateTime
+import org.scalatest.OptionValues
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 import scala.xml.Utility.trim
-import org.scalatest.OptionValues
 
 class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers with OptionValues {
 
@@ -130,7 +133,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     tag.podcast.value.podcastType.value should be("serial")
     val result = itunesCapiResponseEpisodeNumber.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
+      tag.podcast, imageResizerSignatureSalt = imageResizerSalt).toXml
     val episodeTag = (rssItem \ "episode").head
     episodeTag.prefix should be("itunes")
     episodeTag.text should be("6")
@@ -142,7 +145,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val tag = itunesCapiResponseNoType.tag.get
     val result = itunesCapiResponseEpisodeNumber.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
+      tag.podcast, imageResizerSignatureSalt = imageResizerSalt).toXml
     (rssItem \ "episode") shouldBe empty
   }
 
@@ -150,7 +153,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val tag = itunesCapiResponse.tag.get
     val result = itunesCapiResponse.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
+      tag.podcast, imageResizerSignatureSalt = imageResizerSalt).toXml
     (rssItem \ "episode") shouldBe empty
   }
 
@@ -158,7 +161,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val tag = itunesCapiResponseComfortEating.tag.get
     val resultWithEpisodicImage = itunesCapiResponseComfortEating.results.get.head
     val rssItemWithEpisodicImage = new iTunesRssItem(resultWithEpisodicImage, tag.id, resultWithEpisodicImage.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
+      tag.podcast, imageResizerSignatureSalt = imageResizerSalt).toXml
     // make sure we have the expected item!
     val expectedGuid = "66168c368f085cc6169111c5"
     val actualGuid = (rssItemWithEpisodicImage \ "guid").head.text
@@ -174,7 +177,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val tag = itunesCapiResponseComfortEating.tag.get
     val content = itunesCapiResponseComfortEating.results.map(_.drop(3).head).head
     val rssItem = new iTunesRssItem(content, tag.id, content.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType, imageResizerSignatureSalt = imageResizerSalt).toXml
+      tag.podcast, imageResizerSignatureSalt = imageResizerSalt).toXml
     // make sure we have the expected item!
     val expectedGuid = "65fd51098f0872bcdbfc1d5d"
     val actualGuid = (rssItem \ "guid").head.text
@@ -188,7 +191,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val noneResizerSalt: Option[String] = None
     val resultWithEpisodicImage = itunesCapiResponseComfortEating.results.get.head
     val rssItemWithEpisodicImage = new iTunesRssItem(resultWithEpisodicImage, tag.id, resultWithEpisodicImage.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType, imageResizerSignatureSalt = noneResizerSalt).toXml
+      tag.podcast, imageResizerSignatureSalt = noneResizerSalt).toXml
     // make sure we have the expected item!
     val expectedGuid = "66168c368f085cc6169111c5"
     val actualGuid = (rssItemWithEpisodicImage \ "guid").head.text
@@ -205,7 +208,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     val emptyResizerSalt: Option[String] = Some("")
     val resultWithEpisodicImage = itunesCapiResponseComfortEating.results.get.head
     val rssItemWithEpisodicImage = new iTunesRssItem(resultWithEpisodicImage, tag.id, resultWithEpisodicImage.elements.get.head.assets.head, false,
-      tag.podcast.value.podcastType, imageResizerSignatureSalt = emptyResizerSalt).toXml
+      tag.podcast, imageResizerSignatureSalt = emptyResizerSalt).toXml
     // make sure we have the expected item!
     val expectedGuid = "66168c368f085cc6169111c5"
     val actualGuid = (rssItemWithEpisodicImage \ "guid").head.text
@@ -215,4 +218,72 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     itunesImages.size shouldBe (0)
   }
 
+  // For testing episodic artwork conditions. I've only set required fields for simplicity.
+  val mockContent: Content = Content(webTitle = "", webUrl = "", id = "", apiUrl = "")
+  val mockPodcastMeta: Podcast = Podcast(author = "", linkUrl = "", copyright = "", explicit = false)
+
+  val dateFrom2020: CapiDateTime = CapiDateTime(new DateTime(2020, 7, 1, 0, 0, 0, 0).getMillis, "2020-07-01T00:00:00Z")
+  val dateFrom2021: CapiDateTime = CapiDateTime(new DateTime(2021, 7, 1, 0, 0, 0, 0).getMillis, "2021-07-01T00:00:00Z")
+
+  it should "enable episodic artwork if episodicArtworkEnabled is true and episodicArtworkEnabledFrom isn't set" in {
+    val content = mockContent.copy(
+      webPublicationDate = Some(dateFrom2021))
+
+    val podcastMeta = mockPodcastMeta.copy(
+      episodicArtworkEnabled = Some(true))
+
+    val rssItem = new iTunesRssItem(
+      content,
+      podcastMeta = Some(podcastMeta),
+      tagId = "", asset = Asset(`type` = Audio), adFree = false, imageResizerSignatureSalt = Some(""))
+
+    rssItem.isValidForEpisodicArtwork shouldBe true
+  }
+
+  it should "not enable episodic artwork if episodicArtworkEnabled is false" in {
+    val content = mockContent.copy(
+      webPublicationDate = Some(dateFrom2021))
+
+    val podcastMeta = mockPodcastMeta.copy(
+      episodicArtworkEnabled = Some(false))
+
+    val rssItem = new iTunesRssItem(
+      content,
+      podcastMeta = Some(podcastMeta),
+      tagId = "", asset = Asset(`type` = Audio), adFree = false, imageResizerSignatureSalt = Some(""))
+
+    rssItem.isValidForEpisodicArtwork shouldBe false
+  }
+
+  it should "enable episodic artwork if episodicArtworkEnabled is true and episodicArtworkEnabledFrom is before webPublicationDate" in {
+    val content = mockContent.copy(
+      webPublicationDate = Some(dateFrom2021))
+
+    val podcastMeta = mockPodcastMeta.copy(
+      episodicArtworkEnabled = Some(true),
+      episodicArtworkEnabledFrom = Some(dateFrom2020))
+
+    val rssItem = new iTunesRssItem(
+      content,
+      podcastMeta = Some(podcastMeta),
+      tagId = "", asset = Asset(`type` = Audio), adFree = false, imageResizerSignatureSalt = Some(""))
+
+    rssItem.isValidForEpisodicArtwork shouldBe true
+  }
+
+  it should "not enable episodic artwork if episodicArtworkEnabledFrom is after webPublicationDate" in {
+    val content = mockContent.copy(
+      webPublicationDate = Some(dateFrom2020))
+
+    val podcastMeta = mockPodcastMeta.copy(
+      episodicArtworkEnabled = Some(true),
+      episodicArtworkEnabledFrom = Some(dateFrom2021))
+
+    val rssItem = new iTunesRssItem(
+      content,
+      podcastMeta = Some(podcastMeta),
+      tagId = "", asset = Asset(`type` = Audio), adFree = false, imageResizerSignatureSalt = Some(""))
+
+    rssItem.isValidForEpisodicArtwork shouldBe false
+  }
 }
