@@ -72,6 +72,11 @@ export class PodcastsRss extends GuStack {
         }
       },
       vpc,
+      accessLogging: {
+        enabled: true,
+        // This is the prefix pattern DevX assumes so that the logs can be searched in Grafana and shown on the Availability dashboard.
+        prefix: `application-load-balancer/${this.stage}/${this.stack}/podcasts-rss`,
+      }
     });
 
     app.loadBalancer.addListener("HttpToHttps", {
