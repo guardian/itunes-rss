@@ -106,7 +106,8 @@ object iTunesRssFeed {
               for {
                 podcastContent <- contents
                 asset <- getFirstAudioAsset(podcastContent)
-              } yield new iTunesRssItem(podcastContent, tag.id, asset, adFree, Some(podcast), imageResizerSalt).toXml
+                element <- getFirstAudioElement(podcastContent)
+              } yield new iTunesRssItem(podcastContent, tag.id, asset, element, adFree, Some(podcast), imageResizerSalt).toXml
             }
           </channel>
         </rss>
@@ -126,6 +127,13 @@ object iTunesRssFeed {
     } yield asset
   }
 
+  private def getFirstAudioElement(podcast: Content): Option[BlockElement] = {
+    for {
+      blocks <- podcast.blocks
+      main <- blocks.main
+      element <- main.elements.find(_.`type` == ElementType.Audio)
+    } yield element
+  }
 }
 
 class CategoryRss(val category: PodcastCategory) {

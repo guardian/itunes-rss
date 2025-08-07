@@ -35,9 +35,13 @@ trait ItunesTestData {
   }
 
   // content.guardianapis.com/technology/series/blackbox?show-fields=webTitle%2CwebPublicationDate%2Cstandfirst%2CtrailText%2CinternalComposerCode&show-elements=audio&show-tags=keyword&page-size=3
-  // contains episode number in web title
   val itunesCapiResponseEpisodeNumber: ItemResponse = {
     val json = loadJson("itunes-capi-episode-number.json")
+    parseJson[ItemResponse](json)
+  }
+
+  val itunesCapiResponseNoEpisodeNumber: ItemResponse = {
+    val json = loadJson("itunes-capi-no-episode-number.json")
     parseJson[ItemResponse](json)
   }
 

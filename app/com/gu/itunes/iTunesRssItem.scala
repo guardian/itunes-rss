@@ -7,7 +7,7 @@ import java.net.URI
 
 import scala.xml.Node
 
-class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFree: Boolean = false, podcastMeta: Option[Podcast] = None, imageResizerSignatureSalt: Option[String]) {
+class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, element: BlockElement, adFree: Boolean = false, podcastMeta: Option[Podcast] = None, imageResizerSignatureSalt: Option[String]) {
 
   private val trailText = podcast.fields.flatMap(_.trailText)
   private val standfirstOrTrail = podcast.fields.flatMap(_.standfirst) orElse trailText
@@ -33,13 +33,11 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val suffix = """(.*) [-–—|] podcast$""".r
     val title = podcast.webTitle match { case suffix(prefix) => prefix; case otherwise => otherwise }
 
-    val episodePattern = """[Ee]pisode\s+([0-9]+)""".r.unanchored
-    val episodeNumber = for {
-      typ <- podcastMeta.flatMap(_.podcastType)
-      if typ.toLowerCase == "serial"
-      episodeIndicator <- episodePattern.findFirstMatchIn(podcast.webTitle)
-      episodeNumber <- Option(episodeIndicator.group(1))
-    } yield episodeNumber
+    val isSerial = podcastMeta.flatMap(_.podcastType).contains("serial")
+
+    val episodeNumber = if (isSerial) element.audioTypeData.flatMap(_.podcastEpisodeNumber) else None
+    val seasonNumber = if (isSerial) element.audioTypeData.flatMap(_.podcastSeasonNumber) else None
+    val episodeType = element.audioTypeData.flatMap(_.podcastEpisodeType)
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
@@ -309,6 +307,18 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       {
         episodeNumber match {
           case Some(num) => <itunes:episode>{ num }</itunes:episode>
+          case None =>
+        }
+      }
+      {
+        seasonNumber match {
+          case Some(num) => <itunes:season>{ num }</itunes:season>
+          case None =>
+        }
+      }
+      {
+        episodeType match {
+          case Some(etype) => <itunes:episodeType>{ etype }</itunes:episodeType>
           case None =>
         }
       }

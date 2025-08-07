@@ -12,13 +12,13 @@ val root = Project("podcasts-rss", file("."))
   .settings(
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.18.1",
-      "com.gu" %% "content-api-client" % "35.0.0",
+      "com.gu" %% "content-api-client" % "36.0.0-PREVIEW.bump-capi-models-to-bring-in-new-podcast-fields.2025-08-28T1530.804e7d48",
       "com.squareup.okhttp3" % "okhttp" % "4.12.0", // SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744, SNYK-JAVA-COMSQUAREUPOKIO-5820002
       "software.amazon.awssdk" % "secretsmanager" % "2.25.32", // SNYK-JAVA-IONETTY-1042268
       "org.scalactic" %% "scalactic" % "3.2.19",
       "org.scalatest" %% "scalatest" % "3.2.19" % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.4",
-      "com.gu" %% "content-api-models-json" % "29.0.0" % "test", // keeping in line with imports from content-api-client
+      "com.gu" %% "content-api-models-json" % "30.0.0-PREVIEW.add-new-podcast-fields.2025-08-28T1513.9b26e163" % "test", // keeping in line with imports from content-api-client
       "com.gu" %% "simple-configuration-core" % "2.0.0",
       "com.gu.play-secret-rotation" %% "play-v30" % "8.2.1",
       "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "8.2.1",

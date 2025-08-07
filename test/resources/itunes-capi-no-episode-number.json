@@ -175,10 +175,7 @@
                 "audioTypeData": {
                   "durationMinutes": 41,
                   "durationSeconds": 16,
-                  "clean": true,
-                  "podcastEpisodeNumber": 6,
-                  "podcastSeasonNumber": 1,
-                  "podcastEpisodeType": "bonus"
+                  "clean": true
                 }
               }
             ]
