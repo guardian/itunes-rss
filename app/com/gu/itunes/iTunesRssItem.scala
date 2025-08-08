@@ -33,13 +33,10 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
     val suffix = """(.*) [-–—|] podcast$""".r
     val title = podcast.webTitle match { case suffix(prefix) => prefix; case otherwise => otherwise }
 
-    val episodePattern = """[Ee]pisode\s+([0-9]+)""".r.unanchored
-    val episodeNumber = for {
-      typ <- podcastMeta.flatMap(_.podcastType)
-      if typ.toLowerCase == "serial"
-      episodeIndicator <- episodePattern.findFirstMatchIn(podcast.webTitle)
-      episodeNumber <- Option(episodeIndicator.group(1))
-    } yield episodeNumber
+    val isSerial = podcastMeta.flatMap(_.podcastType).contains("serial")
+
+    val episodeNumber = if (isSerial) podcast.fields.flatMap(_.podcastEpisodeNumber) else None
+    val seasonNumber = if (isSerial) podcast.fields.flatMap(_.podcastSeasonNumber) else None
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
@@ -308,6 +305,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       }
       {
         episodeNumber match {
+          case Some(num) => <itunes:episode>{ num }</itunes:episode>
+          case None =>
+        }
+      }
+      {
+        seasonNumber match {
           case Some(num) => <itunes:episode>{ num }</itunes:episode>
           case None =>
         }
