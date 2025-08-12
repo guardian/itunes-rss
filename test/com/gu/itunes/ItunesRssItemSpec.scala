@@ -128,19 +128,24 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     itemSubtitleTags.lastOption.map(_.text) should be(Some("Guardian Australia editor Lenore Taylor and head of news Mike Ticher discuss the expansion of Covid financial support in NSW"))
   }
 
-  it should "include itunes:episode tag for serial podcast with episode in web title" in {
+  it should "include itunes:episode and itunes:season tags for serial podcast with episode and season numbers present in CAPI response" in {
     val tag = itunesCapiResponseEpisodeNumber.tag.get
     tag.podcast.value.podcastType.value should be("serial")
     val result = itunesCapiResponseEpisodeNumber.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,
       tag.podcast, imageResizerSignatureSalt = imageResizerSalt).toXml
+
     val episodeTag = (rssItem \ "episode").head
     episodeTag.prefix should be("itunes")
     episodeTag.text should be("6")
+
+    val seasonTag = (rssItem \ "season").head
+    seasonTag.prefix should be("itunes")
+    seasonTag.text should be("1")
   }
 
   it should "not set itunes:episode tag when not a serial podcast" in {
-    // this input contains "Episode X" in the title but it should be
+    // this input contains episode and season numbers but it should be
     // ignored because it isn't a `itunes:type = "serial"` podcast.
     val tag = itunesCapiResponseNoType.tag.get
     val result = itunesCapiResponseEpisodeNumber.results.get.head
@@ -149,7 +154,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
     (rssItem \ "episode") shouldBe empty
   }
 
-  it should "not include itunes:episode tag when episode marker not included even if serial type" in {
+  it should "not include itunes:episode tag when episode number is not present in CAPI response even if serial type" in {
     val tag = itunesCapiResponse.tag.get
     val result = itunesCapiResponse.results.get.head
     val rssItem = new iTunesRssItem(result, tag.id, result.elements.get.head.assets.head, false,

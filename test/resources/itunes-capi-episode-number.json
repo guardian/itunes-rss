@@ -48,7 +48,9 @@
         "fields": {
           "standfirst": "<p>For decades, Eliezer Yudkowsky has been trying to warn the world about the dangers of AI. And now people are finally listening to him. But is it too late?</p>",
           "trailText": "For decades, Eliezer Yudkowsky has been trying to warn the world about the dangers of AI. And now people are finally listening to him. But is it too late?",
-          "internalComposerCode": "65f976f48f08225b69fa0b47"
+          "internalComposerCode": "65f976f48f08225b69fa0b47",
+          "podcastEpisodeNumber": 6,
+          "podcastSeasonNumber": 1
         },
         "tags": [
           {
