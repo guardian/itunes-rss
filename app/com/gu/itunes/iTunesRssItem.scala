@@ -51,6 +51,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
       val launchDayPW = new DateTime(2016, 12, 6, 0, 0)
       val launchDayPWNew = new DateTime(2018, 11, 15, 0, 0)
       val footballWeekly = new DateTime(2019, 4, 4, 0, 0)
+      val euro2024Start = new DateTime(2024, 6, 14, 0, 0)
+      val euro2024End = new DateTime(2024, 7, 25, 0, 0)
 
       if (!adFree) {
         if (tagId == "politics/series/politicsweekly") {
@@ -90,9 +92,10 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, adFre
           else
             ""
         } else if (tagId == "football/series/footballweekly") {
-          if (lastModified.isAfter(footballWeekly))
-            """. Help support our independent journalism at <a href="https://www.theguardian.com/footballweeklypod">theguardian.com/footballweeklypod</a>"""
-          else ""
+          if (lastModified.isAfter(footballWeekly)) {
+            val linkPath = if (lastModified.isAfter(euro2024Start) && lastModified.isBefore(euro2024End)) "euro-support" else "footballweeklypod"
+            s""". Help support our independent journalism at <a href="https://www.theguardian.com/$linkPath">theguardian.com/$linkPath</a>"""
+          } else ""
         } else {
           ""
         }
