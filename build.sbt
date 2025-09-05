@@ -18,7 +18,7 @@ val root = Project("podcasts-rss", file("."))
       "org.scalactic" %% "scalactic" % "3.2.19",
       "org.scalatest" %% "scalatest" % "3.2.19" % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.4",
-      "com.gu" %% "content-api-models-json" % "30.0.0-PREVIEW.add-new-podcast-fields.2025-08-28T1513.9b26e163" % "test", // keeping in line with imports from content-api-client
+      "com.gu" %% "content-api-models-json" % "30.0.0" % "test", // keeping in line with imports from content-api-client
       "com.gu" %% "simple-configuration-core" % "2.0.0",
       "com.gu.play-secret-rotation" %% "play-v30" % "8.2.1",
       "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "8.2.1",
