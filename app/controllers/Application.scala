@@ -64,6 +64,7 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
       .showElements("audio,image")
       .showTags("keyword")
       .showFields("webTitle,webPublicationDate,standfirst,trailText,internalComposerCode")
+      .showBlocks("main")
 
     def fetchItemsWithPagination(query: ItemQuery, page: Int = 1, resps: Seq[ItemResponse] = Seq.empty): Future[Seq[ItemResponse]] = {
       logger.debug("Fetching page: " + page + " with page size: " + pageSize)
