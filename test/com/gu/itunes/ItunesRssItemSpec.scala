@@ -145,7 +145,7 @@ class ItunesRssItemSpec extends AnyFlatSpec with ItunesTestData with Matchers wi
 
     val episodeTypeTag = (rssItem \ "episodeType").head
     episodeTypeTag.prefix should be("itunes")
-    episodeTypeTag.text should be("Bonus")
+    episodeTypeTag.text should be("bonus")
   }
 
   it should "not set itunes:episode or itunes:season when the podcast does not have type 'serial'" in {
