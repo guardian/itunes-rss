@@ -37,7 +37,7 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, eleme
 
     val episodeNumber = if (isSerial) element.audioTypeData.flatMap(_.podcastEpisodeNumber) else None
     val seasonNumber = if (isSerial) element.audioTypeData.flatMap(_.podcastSeasonNumber) else None
-    val episodeType = element.audioTypeData.flatMap(_.podcastEpisodeType)
+    val episodeType = element.audioTypeData.flatMap(_.podcastEpisodeType.map(_.name.toLowerCase))
 
     val lastModified = podcast.webPublicationDate.map(date => new DateTime(date.dateTime)).getOrElse(DateTime.now)
 
