@@ -19,6 +19,6 @@ deployments:
       amiParameter: AMIPodcastsrss
       amiEncrypted: true
       amiTags:
-        Recipe: ubuntu-focal-capi-arm-jdk11
+        Recipe: ubuntu-jammy-capi-arm-jdk11
         AmigoStage: PROD
 
