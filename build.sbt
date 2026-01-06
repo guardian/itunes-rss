@@ -3,7 +3,7 @@ import com.typesafe.sbt.packager.archetypes.systemloader.ServerLoader.Systemd
 organization  := "com.gu"
 description   := "podcasts RSS feed"
 
-scalaVersion  := "2.13.10"
+scalaVersion  := "2.13.18"
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 routesGenerator := InjectedRoutesGenerator
 
