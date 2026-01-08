@@ -3,7 +3,7 @@ import com.typesafe.sbt.packager.archetypes.systemloader.ServerLoader.Systemd
 organization  := "com.gu"
 description   := "podcasts RSS feed"
 
-scalaVersion  := "2.13.10"
+scalaVersion  := "2.13.18"
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 routesGenerator := InjectedRoutesGenerator
 
@@ -20,8 +20,8 @@ val root = Project("podcasts-rss", file("."))
       "net.logstash.logback" % "logstash-logback-encoder" % "7.4",
       "com.gu" %% "content-api-models-json" % "30.0.0" % "test", // keeping in line with imports from content-api-client
       "com.gu" %% "simple-configuration-core" % "2.0.0",
-      "com.gu.play-secret-rotation" %% "play-v30" % "8.2.1",
-      "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "8.2.1",
+      "com.gu.play-secret-rotation" %% "play-v30" % "16.0.1",
+      "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "16.0.1",
       //AWS SDK v2 clients
       "software.amazon.awssdk" % "url-connection-client" % "2.26.22", //only used at startup. For operations we use akka http client
       "joda-time" % "joda-time" % "2.12.7"
