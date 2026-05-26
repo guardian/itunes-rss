@@ -2,6 +2,7 @@ package com.gu.itunes
 
 import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
+import com.gu.itunes.Redirection.{ExternalRedirect, TagRedirect}
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.{ DateTime, DateTimeZone, Duration }
 import org.scalactic.{ Bad, Good }
@@ -39,7 +40,8 @@ class Application(val controllerComponents: ControllerComponents, val config: Co
 
     val redirect = Redirection.redirect(tagId)
     val eventualResult = redirect match {
-      case Some(redirectedTagId) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId, userApiKey).absoluteURL(true)))
+      case Some(TagRedirect(redirectedTagId)) => Future.successful(MovedPermanently(routes.Application.itunesRss(redirectedTagId, userApiKey).absoluteURL(true)))
+      case Some(ExternalRedirect(redirectUrl)) => Future.successful(MovedPermanently(redirectUrl))
       case None =>
         rawRss(tagId, userApiKey)
     }

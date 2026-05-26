@@ -15,13 +15,19 @@ object Redirection {
 
   val BaseUrl = "https://www.theguardian.com"
 
-  val redirectsMapping = Map[String, String](
-    "film/series/filmweekly" -> "film/series/the-dailies-podcast",
-    "technology/series/techweekly" -> "technology/series/chips-with-everything",
-    "politics/series/politics-for-humans" -> "us-news/series/politics-for-humans",
-    "australia-news/series/token-podcast" -> "society/series/token",
-    "membership/series/guardian-live-podcast" -> "membership/series/we-need-to-talk-about")
+  sealed trait Redirect
+  case class TagRedirect(tagId: String) extends Redirect
+  case class ExternalRedirect(url: String) extends Redirect
 
-  def redirect(tagId: String): Option[String] = redirectsMapping.get(tagId)
+  val redirectsMapping = Map[String, Redirect](
+    "film/series/filmweekly" -> TagRedirect("film/series/the-dailies-podcast"),
+    "technology/series/techweekly" -> TagRedirect("technology/series/chips-with-everything"),
+    "politics/series/politics-for-humans" -> TagRedirect("us-news/series/politics-for-humans"),
+    "australia-news/series/token-podcast" -> TagRedirect("society/series/token"),
+    "membership/series/guardian-live-podcast" -> TagRedirect("membership/series/we-need-to-talk-about"),
+    "music/series/reverberate" -> ExternalRedirect("https://feeds.acast.com/public/shows/e56efa7c-717d-54a0-9d42-2535caea7ccf")
+  )
+
+  def redirect(tagId: String): Option[Redirect] = redirectsMapping.get(tagId)
 
 }
