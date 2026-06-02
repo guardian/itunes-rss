@@ -105,7 +105,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, eleme
       val acastPodcasts: Seq[AcastLaunchGroup] = Seq(
         AcastLaunchGroup(new DateTime(2017, 4, 19, 0, 0), Seq("technology/series/chips-with-everything")),
         AcastLaunchGroup(new DateTime(2017, 5, 2, 0, 0), Seq(
-          "football/series/footballweekly",
+//  Football Weekly has been transferred to Acast hosted platform
+//          "football/series/footballweekly",
           "news/series/the-audio-long-read",
           "science/series/science",
           "politics/series/politicsweekly",
