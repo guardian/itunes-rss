@@ -193,7 +193,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, eleme
         // pre-existing episodes that have been re-invigorated by the addition of episodic artwork, but it won't be
         // re-published. The oldest piece is expected to be from October 2022.
         AcastLaunchGroup(new DateTime(2022, 10, 1, 0, 0), Seq(
-          "news/series/guardian-australia-podcast-series")))
+          "news/series/guardian-australia-podcast-series")),
+        AcastLaunchGroup(new DateTime(2026, 7, 7, 0, 0), Seq(
+          "world/series/thebirthkeepers")))
 //  Ashes Weekly has been transferred to Acast hosted platform
 //        AcastLaunchGroup(new DateTime(2025, 11, 7, 0, 0), Seq(
 //          "sport/series/ashespodcast")))
