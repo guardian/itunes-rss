@@ -154,9 +154,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, eleme
           "society/series/innermost")),
         AcastLaunchGroup(new DateTime(2020, 11, 25, 0, 0), Seq(
           "australia-news/series/temporary")),
-//  Reverberate has been transferred to Acast hosted platform
-//        AcastLaunchGroup(new DateTime(2021, 1, 19, 0, 0), Seq(
-//          "music/series/reverberate")),
+        //  Reverberate has been transferred to Acast hosted platform
+        //        AcastLaunchGroup(new DateTime(2021, 1, 19, 0, 0), Seq(
+        //          "music/series/reverberate")),
         AcastLaunchGroup(new DateTime(2021, 6, 8, 0, 0), Seq(
           "lifeandstyle/series/comforteatingwithgracedent")),
         AcastLaunchGroup(new DateTime(2021, 9, 1, 0, 0), Seq(
@@ -195,10 +195,12 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, eleme
         AcastLaunchGroup(new DateTime(2022, 10, 1, 0, 0), Seq(
           "news/series/guardian-australia-podcast-series")),
         AcastLaunchGroup(new DateTime(2026, 7, 7, 0, 0), Seq(
-          "world/series/thebirthkeepers")))
-//  Ashes Weekly has been transferred to Acast hosted platform
-//        AcastLaunchGroup(new DateTime(2025, 11, 7, 0, 0), Seq(
-//          "sport/series/ashespodcast")))
+          "world/series/thebirthkeepers")),
+        AcastLaunchGroup(new DateTime(2026, 8, 6, 0, 0), Seq(
+          "australia-news/series/alan-jones-on-trial")))
+      //  Ashes Weekly has been transferred to Acast hosted platform
+      //        AcastLaunchGroup(new DateTime(2025, 11, 7, 0, 0), Seq(
+      //          "sport/series/ashespodcast")))
       val useAcastProxy = !adFree && acastPodcasts.find(_.tagIds.contains(tagId)).exists(p => lastModified.isAfter(p.launchDate))
       if (useAcastProxy) "https://flex.acast.com/" + url.replace("https://", "") else url
     }

@@ -2,7 +2,7 @@ package com.gu.itunes
 
 import com.gu.contentapi.client.model.v1.ItemResponse
 import com.gu.contentapi.client.model.{ ContentApiError, ItemQuery }
-import com.gu.itunes.Redirection.{ExternalRedirect, TagRedirect}
+import com.gu.itunes.Redirection.{ ExternalRedirect, TagRedirect }
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.{ DateTime, DateTimeZone, Duration }
 import org.scalactic.{ Bad, Good }
