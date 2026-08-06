@@ -26,8 +26,7 @@ object Redirection {
     "australia-news/series/token-podcast" -> TagRedirect("society/series/token"),
     "membership/series/guardian-live-podcast" -> TagRedirect("membership/series/we-need-to-talk-about"),
     "music/series/reverberate" -> ExternalRedirect("https://feeds.acast.com/public/shows/e56efa7c-717d-54a0-9d42-2535caea7ccf"),
-    "sport/series/ashespodcast" -> ExternalRedirect("https://feeds.acast.com/public/shows/bf30dbed-f4f9-5d07-8ae5-479f88a4f585")
-  )
+    "sport/series/ashespodcast" -> ExternalRedirect("https://feeds.acast.com/public/shows/bf30dbed-f4f9-5d07-8ae5-479f88a4f585"))
 
   def redirect(tagId: String): Option[Redirect] = redirectsMapping.get(tagId)
 
