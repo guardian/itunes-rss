@@ -189,6 +189,8 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, eleme
           "technology/series/blackbox")),
         AcastLaunchGroup(new DateTime(2024, 4, 11, 0, 0), Seq(
           "australia-news/series/who-screwed-millennials")),
+        AcastLaunchGroup(new DateTime(2025, 2, 21, 0, 0), Seq(
+          "australia-news/series/back-to-back-barries")),
         // Yes, the launch date for the guardian-australia-podcast-series is correct. This is a new series tag for
         // pre-existing episodes that have been re-invigorated by the addition of episodic artwork, but it won't be
         // re-published. The oldest piece is expected to be from October 2022.
