@@ -14,7 +14,7 @@ val root = Project("podcasts-rss", file("."))
       "org.jsoup" % "jsoup" % "1.18.1",
       "com.gu" %% "content-api-client" % "36.0.0",
       "com.squareup.okhttp3" % "okhttp" % "4.12.0", // SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744, SNYK-JAVA-COMSQUAREUPOKIO-5820002
-      "software.amazon.awssdk" % "secretsmanager" % "2.25.32", // SNYK-JAVA-IONETTY-1042268
+      "software.amazon.awssdk" % "secretsmanager" % "2.55.11", // SNYK-JAVA-IONETTY-1042268
       "org.scalactic" %% "scalactic" % "3.2.19",
       "org.scalatest" %% "scalatest" % "3.2.19" % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.4",
