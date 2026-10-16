@@ -58,3 +58,11 @@ $ curl localhost:9000/{some-podcast-id}/podcast.xml
 ```
 $ sbt test
 ```
+
+## Adding a new podcast flex URL for acast
+To add a new podcast flex URL for acast (a common request), add an entry to the `acastPodcasts` map in `iTunesRssItem.scala` using its `podcast.xml` file. You need to include:
+
+- **Launch date:** usually the first episode's date, found under `pubDate` at the bottom of the XML.
+- **Tag ID:** the part of the `link` URL at the top of the XML after `https://www.theguardian.com/`. For example, `https://www.theguardian.com/australia-news/series/back-to-back-barries` gives `australia-news/series/back-to-back-barries`.
+
+Example PR: https://github.com/guardian/itunes-rss/pull/200.
