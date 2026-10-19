@@ -7,6 +7,8 @@ scalaVersion  := "2.13.18"
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 routesGenerator := InjectedRoutesGenerator
 
+val awsSdkVersion = "2.55.11"
+
 val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin)
   .settings(
@@ -14,16 +16,17 @@ val root = Project("podcasts-rss", file("."))
       "org.jsoup" % "jsoup" % "1.18.1",
       "com.gu" %% "content-api-client" % "36.0.0",
       "com.squareup.okhttp3" % "okhttp" % "4.12.0", // SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744, SNYK-JAVA-COMSQUAREUPOKIO-5820002
-      "software.amazon.awssdk" % "secretsmanager" % "2.55.11", // SNYK-JAVA-IONETTY-1042268
+      "software.amazon.awssdk" % "secretsmanager" % awsSdkVersion, // SNYK-JAVA-IONETTY-1042268
+      "software.amazon.awssdk" % "ssm" % awsSdkVersion, // SNYK-JAVA-IONETTY-1042268
       "org.scalactic" %% "scalactic" % "3.2.19",
       "org.scalatest" %% "scalatest" % "3.2.19" % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.4",
       "com.gu" %% "content-api-models-json" % "30.0.0" % "test", // keeping in line with imports from content-api-client
-      "com.gu" %% "simple-configuration-core" % "2.0.0",
-      "com.gu.play-secret-rotation" %% "play-v30" % "16.0.1",
-      "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "16.0.1",
+      "com.gu" %% "simple-configuration-core" % "15.0.0",
+      "com.gu.play-secret-rotation" %% "play-v30" % "21.1.0",
+      "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "21.1.0",
       //AWS SDK v2 clients
-      "software.amazon.awssdk" % "url-connection-client" % "2.26.22", //only used at startup. For operations we use akka http client
+      "software.amazon.awssdk" % "url-connection-client" % awsSdkVersion, //only used at startup. For operations we use akka http client
       "joda-time" % "joda-time" % "2.12.7"
     ),
     maintainer := "Guardian Content Platforms <content-platforms.dev@theguardian.com>",
