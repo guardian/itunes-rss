@@ -8,7 +8,7 @@ scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 routesGenerator := InjectedRoutesGenerator
 
 val awsSdkVersion = "2.55.11"
-val jacksonVersion = "2.18.11"
+val jacksonVersion = "2.21.8"
 
 val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin)
@@ -52,7 +52,7 @@ dependencyOverrides ++= Seq(
   "com.fasterxml.jackson.module" % "jackson-module-parameter-names" % jacksonVersion,
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
   "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion,
-  "com.fasterxml.jackson.core" % "jackson-annotations" % jacksonVersion,
+  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.21", // Minor-only version since Jackson 2.20, per the BOM.
   "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion
 )
 
