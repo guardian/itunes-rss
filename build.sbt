@@ -8,6 +8,7 @@ scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 routesGenerator := InjectedRoutesGenerator
 
 val awsSdkVersion = "2.55.11"
+val jacksonVersion = "2.18.11"
 
 val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin)
@@ -44,16 +45,15 @@ val root = Project("podcasts-rss", file("."))
 
 Universal / packageName := normalizedName.value
 
-dependencyOverrides ++=Seq(
-  "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % "2.17.1",
-  "com.fasterxml.jackson.datatype" % "jackson-datatype-jdk8" % "2.17.2",
-  "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % "2.17.2",
-  "com.fasterxml.jackson.module" % "jackson-module-parameter-names" % "2.17.2",
-  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.17.2",
-  "com.fasterxml.jackson.core" % "jackson-core" % "2.17.2",
-  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.17.2",
-  "com.fasterxml.jackson.core" % "jackson-databind" % "2.17.0",
-  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.17.2"
+dependencyOverrides ++= Seq(
+  "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % jacksonVersion,
+  "com.fasterxml.jackson.datatype" % "jackson-datatype-jdk8" % jacksonVersion,
+  "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % jacksonVersion,
+  "com.fasterxml.jackson.module" % "jackson-module-parameter-names" % jacksonVersion,
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
+  "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion,
+  "com.fasterxml.jackson.core" % "jackson-annotations" % jacksonVersion,
+  "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion
 )
 
 excludeDependencies ++= Seq(
