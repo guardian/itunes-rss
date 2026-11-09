@@ -16,14 +16,14 @@ val root = Project("podcasts-rss", file("."))
   .settings(
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.23.2",
-      "com.gu" %% "content-api-client" % "36.0.0",
+      "com.gu" %% "content-api-client" % "51.0.0",
       "com.squareup.okhttp3" % "okhttp" % "4.12.0", // SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744, SNYK-JAVA-COMSQUAREUPOKIO-5820002
       "software.amazon.awssdk" % "secretsmanager" % awsSdkVersion, // SNYK-JAVA-IONETTY-1042268
       "software.amazon.awssdk" % "ssm" % awsSdkVersion, // SNYK-JAVA-IONETTY-1042268
       "org.scalactic" %% "scalactic" % "3.2.19",
       "org.scalatest" %% "scalatest" % "3.2.19" % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.4",
-      "com.gu" %% "content-api-models-json" % "30.0.0" % "test", // keeping in line with imports from content-api-client
+      "com.gu" %% "content-api-models-json" % "53.0.0" % "test", // keeping in line with imports from content-api-client
       "com.gu" %% "simple-configuration-core" % "15.0.0",
       "com.gu.play-secret-rotation" %% "play-v30" % "21.1.0",
       "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "21.1.0",
