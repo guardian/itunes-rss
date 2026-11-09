@@ -31,7 +31,7 @@ class FilteringSpec extends AnyFlatSpec with Matchers {
   it should "retain br tags from within the standFirst when instructed" in {
     val source = "<p>This is a <strong>strong introductory</strong> paragraph.</p><p>• Here we <b>boldly</b> link to <a href=\"https://www.theguardian.com/news/audio/2023/apr/24/embracing-a-childfree-life-podcast\">another episode</a> from April 2023, and <em>emphasise this link</em> to an <i>italicised</i> article that is related to and <u>underscores</u><br>(on a new line) this episode <a href=\"https://www.theguardian.com/lifeandstyle/2024/nov/16/friendship-after-motherhood\">here</a>.</p>"
     val filtered = Filtering.standfirst(source, preserveHtml = true)
-    val expected = "This is a <strong>strong introductory</strong> paragraph. • Here we <b>boldly</b> link to <a href=\"https://www.theguardian.com/news/audio/2023/apr/24/embracing-a-childfree-life-podcast\" rel=\"nofollow\">another episode</a> from April 2023, and <em>emphasise this link</em> to an <i>italicised</i> article that is related to and <u>underscores</u>\n<br>\n (on a new line) this episode <a href=\"https://www.theguardian.com/lifeandstyle/2024/nov/16/friendship-after-motherhood\" rel=\"nofollow\">here</a>."
+    val expected = "This is a <strong>strong introductory</strong> paragraph. • Here we <b>boldly</b> link to <a href=\"https://www.theguardian.com/news/audio/2023/apr/24/embracing-a-childfree-life-podcast\" rel=\"nofollow\">another episode</a> from April 2023, and <em>emphasise this link</em> to an <i>italicised</i> article that is related to and <u>underscores</u>\n<br>\n(on a new line) this episode <a href=\"https://www.theguardian.com/lifeandstyle/2024/nov/16/friendship-after-motherhood\" rel=\"nofollow\">here</a>."
     filtered should be(expected)
   }
 
@@ -42,7 +42,19 @@ class FilteringSpec extends AnyFlatSpec with Matchers {
     filtered should be(expected)
   }
 
+  it should "remove scripts and event handlers while preserving links and escaped text" in {
+    val source = """<p>Listen &amp; learn <script>alert('unsafe')</script><a href="https://www.theguardian.com/podcasts?one=1&amp;two=2" onclick="alert('unsafe')">here &amp; now</a><img src="invalid" onerror="alert('unsafe')"></p>"""
+    val filtered = Filtering.standfirst(source, preserveHtml = true)
+    val expected = """Listen &amp; learn <a href="https://www.theguardian.com/podcasts?one=1&amp;two=2" rel="nofollow">here &amp; now</a>"""
+    filtered should be(expected)
+  }
+
   behavior of "description"
+
+  it should "remove scripts and decode escaped text without retaining markup" in {
+    val source = """<p>Listen &amp; learn <script>alert('unsafe')</script><a href="https://www.theguardian.com/podcasts">here &amp; now</a></p>"""
+    Filtering.description(source) should be("Listen & learn here & now")
+  }
 
   it should "remove <br>, extract content inside <p> and remove <a> tags but retain text from within" in {
     val source = """<p>The Guardian’s&nbsp;<a href=\"http://www.theguardian.com/profile/jessicavalenti\">Jessica Valenti</a>&nbsp;brings you interviews, advice and real life stories from the front lines of feminism. She talks about everything from periods or lack there of, to cyberbullying, objectification, crafting an equal and egalitarian relationship, abortions and sex education. This is the place for women and men to share their questions and thoughts about everyday issues facing women and feminism. Want to ask a question? Leave us a voicemail:&nbsp;<a href=\"tel:917-900-4577\">917-900-4577</a><br></p>"""
