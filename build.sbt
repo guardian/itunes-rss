@@ -46,6 +46,7 @@ val root = Project("podcasts-rss", file("."))
 Universal / packageName := normalizedName.value
 
 dependencyOverrides ++= Seq(
+  "com.google.guava" % "guava" % "33.7.2-jre", // CVE-2026-102554; avoid a Play migration solely for Guava.
   "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % jacksonVersion,
   "com.fasterxml.jackson.datatype" % "jackson-datatype-jdk8" % jacksonVersion,
   "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % jacksonVersion,
