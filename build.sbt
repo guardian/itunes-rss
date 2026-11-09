@@ -9,6 +9,7 @@ routesGenerator := InjectedRoutesGenerator
 
 val awsSdkVersion = "2.55.11"
 val jacksonVersion = "2.21.8"
+val circeVersion = "0.14.16"
 
 val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin)
@@ -55,7 +56,10 @@ dependencyOverrides ++= Seq(
   "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion,
   "com.fasterxml.jackson.core" % "jackson-annotations" % "2.21", // Minor-only version since Jackson 2.20, per the BOM.
   "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion
-)
+) ++ Seq(
+  // content-api-models-json still selects vulnerable Jawn; circe-optics is versioned separately.
+  "circe-core", "circe-generic", "circe-parser", "circe-jawn", "circe-numbers"
+).map("io.circe" %% _ % circeVersion)
 
 excludeDependencies ++= Seq(
   ExclusionRule("software.amazon.awssdk", "apache-client")
