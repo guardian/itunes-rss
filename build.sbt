@@ -14,7 +14,7 @@ val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin)
   .settings(
     libraryDependencies ++= Seq(
-      "org.jsoup" % "jsoup" % "1.18.1",
+      "org.jsoup" % "jsoup" % "1.23.2",
       "com.gu" %% "content-api-client" % "36.0.0",
       "com.squareup.okhttp3" % "okhttp" % "4.12.0", // SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744, SNYK-JAVA-COMSQUAREUPOKIO-5820002
       "software.amazon.awssdk" % "secretsmanager" % awsSdkVersion, // SNYK-JAVA-IONETTY-1042268
