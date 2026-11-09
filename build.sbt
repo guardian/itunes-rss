@@ -10,6 +10,7 @@ routesGenerator := InjectedRoutesGenerator
 val awsSdkVersion = "2.55.11"
 val jacksonVersion = "2.21.8"
 val circeVersion = "0.14.16"
+val logbackVersion = "1.6.6"
 
 val root = Project("podcasts-rss", file("."))
   .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin)
@@ -47,6 +48,8 @@ val root = Project("podcasts-rss", file("."))
 Universal / packageName := normalizedName.value
 
 dependencyOverrides ++= Seq(
+  "ch.qos.logback" % "logback-core" % logbackVersion,
+  "ch.qos.logback" % "logback-classic" % logbackVersion,
   "com.google.guava" % "guava" % "33.7.2-jre", // CVE-2026-102554; avoid a Play migration solely for Guava.
   "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % jacksonVersion,
   "com.fasterxml.jackson.datatype" % "jackson-datatype-jdk8" % jacksonVersion,
