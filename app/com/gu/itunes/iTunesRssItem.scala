@@ -201,7 +201,9 @@ class iTunesRssItem(val podcast: Content, val tagId: String, asset: Asset, eleme
         AcastLaunchGroup(new DateTime(2026, 7, 7, 0, 0), Seq(
           "world/series/thebirthkeepers")),
         AcastLaunchGroup(new DateTime(2026, 8, 6, 0, 0), Seq(
-          "australia-news/series/alan-jones-on-trial")))
+          "australia-news/series/alan-jones-on-trial")),
+        AcastLaunchGroup(new DateTime(2026, 11, 9, 0, 0), Seq(
+          "culture/series/the-close-up")))
       //  Ashes Weekly has been transferred to Acast hosted platform
       //        AcastLaunchGroup(new DateTime(2025, 11, 7, 0, 0), Seq(
       //          "sport/series/ashespodcast")))
