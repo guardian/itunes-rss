@@ -7,7 +7,6 @@
     </appender>
 
     <logger name="play" level="OFF" />
-    <logger name="com.gu.crier" level="OFF"/>
 
     <root level="OFF">
        <appender-ref ref="console"/>
