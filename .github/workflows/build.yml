@@ -1,18 +1,16 @@
 name: Build and upload
 
 on:
+  pull_request:
   push:
-    branches: [ "**" ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   itunes-rss:
     runs-on: ubuntu-latest
 
-    # The first two permissions are needed to interact with GitHub's OIDC Token endpoint.
-    # The second set of three permissions are needed to write test results back to GH
     permissions:
-      id-token: write
       contents: read
       issues: read
       checks: write
@@ -45,6 +43,38 @@ jobs:
           JAVA_OPTS: -Dsbt.log.noformat=true
         run: |
           sbt 'test;debian:packageBin'
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: ${{ !cancelled() && github.event_name != 'pull_request' }}
+        with:
+          files: junit-tests/*.xml
+
+      - name: Upload deployable artifacts
+        uses: actions/upload-artifact@v4
+        if: github.event_name != 'pull_request'
+        with:
+          name: riff-raff-artifacts
+          path: |
+            cdk/cdk.out/PodcastsRss-PROD.template.json
+            cdk/cdk.out/PodcastsRss-CODE.template.json
+            target/podcasts-rss_1.0_all.deb
+          if-no-files-found: error
+          retention-days: 1
+
+  riff-raff:
+    if: github.event_name != 'pull_request'
+    needs: itunes-rss
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/download-artifact@v4
+        with:
+          name: riff-raff-artifacts
       - uses: guardian/actions-riff-raff@v4
         with:
           configPath: conf/riff-raff.yaml
@@ -58,8 +88,3 @@ jobs:
               - cdk/cdk.out/PodcastsRss-CODE.template.json
             podcasts-rss:
               - target/podcasts-rss_1.0_all.deb
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: always()  #runs even if there is a test failure
-        with:
-          files: junit-tests/*.xml
