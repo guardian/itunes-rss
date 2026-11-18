@@ -1,4 +1,5 @@
 import com.typesafe.sbt.packager.archetypes.systemloader.ServerLoader.Systemd
+import scala.sys.process._
 
 organization  := "com.gu"
 description   := "podcasts RSS feed"
@@ -11,9 +12,10 @@ val awsSdkVersion = "2.55.11"
 val jacksonVersion = "2.21.8"
 val circeVersion = "0.14.16"
 val logbackVersion = "1.6.6"
+val requestLoggingVersion = "0.1.1"
 
 val root = Project("podcasts-rss", file("."))
-  .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin)
+  .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin, BuildInfoPlugin)
   .settings(
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.23.2",
@@ -23,11 +25,14 @@ val root = Project("podcasts-rss", file("."))
       "software.amazon.awssdk" % "ssm" % awsSdkVersion, // SNYK-JAVA-IONETTY-1042268
       "org.scalactic" %% "scalactic" % "3.2.19",
       "org.scalatest" %% "scalatest" % "3.2.19" % "test",
+      "org.playframework" %% "play-test" % play.core.PlayVersion.current % "test",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.4",
       "com.gu" %% "content-api-models-json" % "53.0.0" % "test", // keeping in line with imports from content-api-client
       "com.gu" %% "simple-configuration-core" % "15.0.0",
       "com.gu.play-secret-rotation" %% "play-v30" % "21.1.0",
       "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v2" % "21.1.0",
+      "com.gu" %% "requestlogging" % requestLoggingVersion,
+      "com.gu" %% "requestlogging-testkit" % requestLoggingVersion % "test",
       //AWS SDK v2 clients
       "software.amazon.awssdk" % "url-connection-client" % awsSdkVersion, //only used at startup. For operations we use akka http client
       "joda-time" % "joda-time" % "2.12.7"
@@ -44,6 +49,18 @@ val root = Project("podcasts-rss", file("."))
       "-o"
     )
 )
+
+def commitId(): String = try {
+  "git rev-parse HEAD".!!.trim
+} catch {
+  case _: Exception => "unknown"
+}
+
+buildInfoKeys := Seq[BuildInfoKey](
+  name,
+  "gitCommitId" -> commitId()
+)
+buildInfoPackage := "app"
 
 Universal / packageName := normalizedName.value
 

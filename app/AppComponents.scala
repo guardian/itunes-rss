@@ -4,6 +4,7 @@ import controllers.AssetsComponents
 import play.api.ApplicationLoader.Context
 import play.api.{ BuiltInComponentsFromContext, NoHttpFiltersComponents }
 import play.api.routing.Router
+import requestLogging.RequestLoggingComponents
 import router.Routes
 import software.amazon.awssdk.services.ssm.SsmClient
 
@@ -17,7 +18,7 @@ import java.time.Duration.{ ofHours, ofMinutes }
 
 class AppComponents(context: Context)
   extends BuiltInComponentsFromContext(context)
-  with NoHttpFiltersComponents
+  with RequestLoggingComponents
   with AssetsComponents
   with RotatingSecretComponents {
 
